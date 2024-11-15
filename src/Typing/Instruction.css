@@ -1,0 +1,240 @@
+.instruction-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .instruction-header {
+    background-color: rgb(45, 112, 182);
+    height: 50px;
+  
+  }
+
+  .instructions-para{
+    height: 74.680%;
+
+    overflow: auto;
+    padding-left: 23px;
+  }
+  .instructions-para2{
+    height: 317px;
+
+    overflow: auto;
+    padding-left: 23px;
+  }
+
+  
+  .instruction-content {
+    display: flex;
+  }
+  
+  .instruction-left {
+    flex: 4 ;
+    float: left;
+    border-right: 1px solid rgb(0, 0, 0);
+    height: 91vh;
+    width: 79%;
+    overflow: hidden;
+    
+  }
+
+  .read-inst{
+    text-align: center;
+    margin-bottom: 0;
+    font-family: auto;
+    font-size: 18px;
+    margin-top: 0;
+
+  }
+  .general-inst {
+    text-align: left;
+    margin-bottom: 0;
+    font-family: auto;
+    font-size: 18px;
+    margin-top: 0;
+    font-weight: bold; /* Makes the text bold */
+    text-decoration: underline; /* Adds an underline */
+  }
+
+  .nextbutton{
+    border: 1px solid #ccc;
+    height: 5rem;
+    display: flex;
+justify-content: end;
+align-items: center;
+  }
+
+  .next-button-arrow{
+
+  }
+  .next-and-previ{
+   line-height: 38px;
+    float: left;
+    font-weight: bold;
+    outline: none;
+    background-color: #fff;
+    color: #252525;
+    border: 1px solid #c8c8c8;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    height: 39px;
+    padding-left: 20px;
+    padding-right: 20px;
+    /* text-align: center; */
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      }
+  
+      .next-and-previ{
+
+      }
+
+      .nextbutton2{
+        border: 1px solid #ccc;
+        height: 11rem;
+        display: flex;
+        /* justify-content: end; */
+        /* align-items: center; */
+        flex-direction: column;
+      }
+
+
+      .understood{
+        line-height: 16px;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    margin-top: 2%;
+
+      }
+      .understood1{
+        padding-left: 15px;
+        /* overflow: auto; */
+        max-height: 120px;
+        font-size: 12px;
+        /* font-family: auto; */
+        font-family: sans-serif;
+      }
+      .discl-check{
+        appearance: auto;
+      }
+      
+      .agree{
+        width: 98%;
+        display: block;
+        margin-left: 1.5em;
+        margin-left: 5px;
+      }
+
+.sky-blue-color{
+    padding-left: 10px;
+    text-align: left;
+
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #676568;
+    background: #BCE8F5;
+}
+
+.btnsection{
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  /* width: 50%; */
+  /* border: solid; */
+  padding-top: 27px;
+}
+
+.previousbtn {
+  width: 10%;
+  display: flex;
+  display: flex;
+  font-size: 1em;
+  font-weight: 400;
+  height: 39px;
+  line-height: 38px;
+  display: flex;
+ 
+  align-items: center;
+  outline: none;
+  background-color: #fff;
+  color: #252525;
+  border: 1px solid #c8c8c8;
+  border-radius: 2px;
+  cursor: pointer;
+ 
+  
+  padding-left: 20px;
+  padding-right: 20px;
+ 
+  white-space: nowrap;
+ 
+ 
+ 
+}
+
+.readylinkButton{
+  margin-left: 31%;
+  
+}
+
+.imaready {
+    background-color: #38aae9;
+    border-color: #38aae9;
+    color: #ffffff;
+  font-size: 12px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 400;
+  height: 39px;
+  padding-left: 20px;
+  padding-right: 20px;
+  white-space: nowrap; 
+}
+
+
+
+.imaready:hover {
+  background-color: #168ecf;
+  border-color: black solid 1px;
+}
+
+.previousbtn,.next-and-previ:hover{
+  border-color: black solid 1px;
+  background-color: #068fda;
+  color: white;
+}
+.userName-declare{
+  text-align: center;
+  font-weight: bolder;
+  color: #555;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+  .instruction-right {
+    flex: 1; /* Smaller width */
+    padding: 10px;
+    padding-top: 20px;
+  }
+  
+  .instruction-title {
+    padding-left: 10px;
+    text-align: left;
+  }
+  
+
+  

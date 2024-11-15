@@ -1,0 +1,157 @@
+.plans-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 79px auto;
+    width: 92%;
+    
+}
+
+.small-plan-card {
+    border-radius: 12px;
+    padding: 12px;
+    padding-bottom: 23px;
+    margin: 21px;
+
+    position: relative;
+    border-bottom:  1px solid #ccc;
+    /* background: #00bcd408; */
+    font-family: sans-serif;
+    width: calc(30% - 25px);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.small-plan-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-plan-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.small-price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #9b59b6;
+    font-weight: 600;
+}
+
+.small-plan-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.small-plan-price {
+    font-size: 14px;
+    color: #777;
+    text-decoration: line-through;
+}
+
+.small-price-drop {
+    margin-right: 5px;
+}
+
+.small-extra-discount {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+}
+
+.small-savings {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-size: 14px;
+    color: #4caf50; /* Green for savings */
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+.small-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: bold;
+    padding-left: 8px;
+    padding-right: 10px;
+}
+
+.small-amount p,
+.small-amount span {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .small-plan-card {
+        width: calc(50% - 30px); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .small-plan-card {
+        width: calc(100% - 30px); /* 1 card per row on very small screens */
+    }
+}
+.proceed-but-now {
+    width: 100%;
+    padding: 13px;
+
+    background-color: purple;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+}
+
+.proceed-but-now:hover {
+    background-color: #8e44ad;
+}
+
+
+.small-plan-header {
+    background: linear-gradient(135deg, #fbc02d, #ffe57f);
+    border-radius: 60px;
+    padding: 12px;
+    text-align: center;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+    margin-bottom: 35px;
+    margin-top: 12px;
+}
+
+.small-details-title {
+    font-size: 12px;
+    font-weight: 900;
+    color: #070707;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: flare 1.5s infinite;
+    margin-bottom: 3px;
+    margin-top: 0px;
+}
+
+/* Keyframes for animation */
+@keyframes flare {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                     0 0 20px rgba(255, 255, 255, 0.4),
+                     0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+                     0 0 30px rgba(255, 255, 255, 0.7),
+                     0 0 40px rgba(255, 255, 255, 0.5);
+    }
+}

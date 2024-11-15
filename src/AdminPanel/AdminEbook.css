@@ -1,0 +1,27 @@
+.admin-ebook {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; /* Adjust for header height */
+}
+
+.admin-ebook__container {
+  display: flex;
+  transition: margin-left 0.3s ease;
+}
+
+.admin-ebook__container.sidebar-hidden {
+  margin-left: 0;
+}
+
+.admin-ebook__main-content {
+  margin-left: 256px;
+  /* padding: 20px; */
+  width: calc(100% - 260px); /* Adjusted for sidebar width */
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  margin-top: -2rem;
+}
+
+.admin-ebook__container.sidebar-hidden .admin-ebook__main-content {
+  margin-left: 0;
+  width: 100%;
+}

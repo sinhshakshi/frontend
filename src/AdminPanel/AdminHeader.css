@@ -1,0 +1,91 @@
+.header-admin-ebook {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #343a40;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.admin-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-header__left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-header__toggle-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.admin-header__icon {
+  font-size: 24px;
+}
+
+.admin-header__title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.admin-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.admin-header__link, .admin-header__profile, .admin-header__link button {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.admin-header__link:hover, .admin-header__profile:hover, .admin-header__link button:hover {
+  color: #ffc107;
+}
+
+.admin-header__link button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.admin-header__profile {
+  font-weight: bold;
+}
+
+/* Add some padding to the top of the page content to prevent it from being hidden behind the fixed header */
+.admin-ebook__main-content {
+  padding-top: 70px; /* Adjust this value based on the height of your header */
+}
+
+@media (max-width: 768px) {
+  .admin-header__title {
+    font-size: 18px;
+  }
+
+  .admin-header__link, .admin-header__profile, .admin-header__link button {
+    font-size: 14px;
+  }
+
+  .admin-header__toggle-btn {
+    font-size: 20px;
+  }
+}

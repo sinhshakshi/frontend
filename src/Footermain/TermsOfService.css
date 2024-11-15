@@ -1,0 +1,78 @@
+/* Styles for the Terms and Conditions component */
+.terms-container {
+    max-width: 800px; /* Maximum width for the content */
+    margin: 40px auto; /* Center the container with margin */
+    padding: 30px; /* Add padding inside the container */
+    background: linear-gradient(to bottom right, #ffffff, #e9ecef); /* Gradient background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
+    font-family: 'Arial', sans-serif; /* Use a modern font */
+    color: #333; /* Dark color for text */
+  }
+  
+  .terms-container h1 {
+    font-size: 1.8em; /* Size for the main heading */
+    color: #5b5c97; /* Dark blue color for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    border-bottom: 2px solid #5b5c97; /* Bottom border for emphasis */
+    padding-bottom: 10px; /* Padding below the heading */
+  }
+  
+  .terms-container h2 {
+    font-size: 1.4em; /* Size for subheadings */
+    color: #5b5c97; /* Dark blue color for subheadings */
+    margin-top: 25px; /* Space above subheadings */
+    margin-bottom: 10px; /* Space below subheadings */
+  }
+  
+  .terms-container p {
+    font-size: 0.9em; /* Smaller font size for paragraphs */
+    line-height: 1.5; /* Increase line height for readability */
+    color: #555; /* Medium gray color for paragraph text */
+    margin-bottom: 15px; /* Space below paragraphs */
+  }
+  
+  .terms-container ul {
+    margin-left: 20px; /* Indent unordered lists */
+    margin-bottom: 15px; /* Space below lists */
+  }
+  
+  .terms-container li {
+    font-size: 0.9em; /* Smaller font size for list items */
+    line-height: 1.5; /* Increase line height for readability */
+    color: #555; /* Medium gray color for list items */
+    position: relative; /* Positioning for custom bullet */
+  }
+  
+  .terms-container li::marker {
+    color: #5b5c97; /* Custom color for list item markers */
+    font-weight: bold; /* Make bullet points bold */
+  }
+  
+  /* Style for links */
+  .terms-container a {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .terms-container a:hover {
+    color: #0056b3; /* Darker shade on hover */
+    text-decoration: underline; /* Underline on hover for links */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .terms-container {
+      padding: 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .terms-container h1 {
+      font-size: 1.6em; /* Adjust heading size */
+    }
+  
+    .terms-container h2 {
+      font-size: 1.3em; /* Adjust subheading size */
+    }
+  }
+  

@@ -1,0 +1,219 @@
+
+import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+import './TypingTestSelector.css';
+import pic3 from "../i/NewCandidateImage.jpg"; 
+import { useNavigate, useParams } from 'react-router-dom';
+import { useAuth } from '../AuthContext/AuthContext';
+import { useCookies } from 'react-cookie';
+
+const TypingTestSelector = () => {
+  const [selectedMonth, setSelectedMonth] = useState('');
+  const [selectedPaperCode, setSelectedPaperCode] = useState('');
+  const [selectedTestName, setSelectedTestName] = useState('');
+  const [paragraphs, setParagraphs] = useState([]);
+  const navigate = useNavigate();
+  const { exam, examName, paperCode } = useParams();
+  const { userDetails, isLoggedIn } = useAuth();
+  const [cookies] = useCookies(['token']);
+
+  const months = [
+    'January', 'February', 'March', 'April', 
+    'May', 'June', 'July', 'August', 
+    'September', 'October', 'November', 'December'
+  ];
+
+
+  console.log('userDetails:', userDetails);
+
+
+  useEffect(() => {
+    const checkAccessAndFetchParagraphs = async () => {
+      if (!cookies.token) {
+        navigate('/login');
+        return;
+      }
+
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${cookies.token}`
+          }
+        });
+
+        if (response.ok) {
+          const { access } = await response.json();
+          if (access === "access") {
+            const productResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTypingProduct`, {
+              method: 'POST',
+              headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": `Bearer ${cookies.token}`
+              },
+              body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
+            });
+
+            if (productResponse.ok) {
+              const { access: productAccess } = await productResponse.json();
+              if (productAccess === "access") {
+                // Fetch paragraphs if access is granted
+                await fetchParagraphs();
+              } else {
+                navigate('/login');
+              }
+            } else {
+              navigate('/login');
+            }
+          } else {
+            navigate('/login');
+          }
+        } else {
+          navigate('/login');
+        }
+      } catch (error) {
+        navigate('/login');
+      }
+    };
+
+    const fetchParagraphs = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typingParagraphs-paperCode`, {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${cookies.token}`,
+          },
+          body: JSON.stringify({ paper_code: paperCode }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        const data = await response.json();
+        setParagraphs(data);
+      } catch (error) {
+        console.error('Error fetching paragraphs:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Fetch Error',
+          text: 'Failed to fetch paragraphs. Please try again later.',
+        });
+      }
+    };
+
+    checkAccessAndFetchParagraphs();
+  }, [cookies.token, navigate, paperCode]);
+
+  const handleStartTest = () => {
+    if (!selectedMonth || !selectedTestName) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Selection Required',
+        text: 'Please select both a month and a test before proceeding.',
+      });
+      return;
+    }
+    console.log(`Starting test for ${selectedMonth} with paper code: ${selectedTestName}`);
+    navigate(`/instruction/${paperCode}/${examName}/${selectedTestName}`); // Navigate to the test page
+  };
+
+  // Filter paragraphs based on the selected month
+  const filteredTests = paragraphs.filter(paragraph => {
+    const testDate = new Date(paragraph.date);
+    return testDate.toLocaleString('default', { month: 'long' }) === selectedMonth;
+  });
+
+  // Utility function to format date to DD-MM-YYYY
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0'); // Get day and pad with zero if necessary
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Get month (0-based, so add 1) and pad
+    const year = date.getFullYear(); // Get full year
+    return `${day}-${month}-${year}`; // Return formatted date
+  };
+
+  return (
+    <>
+      <div id="minwidth">
+        <div id="header" style={{ backgroundColor: 'rgb(45, 112, 182)' }}></div>
+        <div className="userInfo">
+          <div className="system_info">
+            <div className="system_name">
+              <div id="sysName" className="name1">System Name :</div>
+              <div className="details1" id="mockSysNum">{paperCode}</div>
+              <div style={{ fontSize: '15px' }} className="details3">
+                <a href="#" style={{ color: 'white', textDecoration: 'none', border: '0 none' }} id="notMySystem">
+                  Kindly contact the invigilator if there are any discrepancies in the
+                  Name and Photograph displayed on the screen or if the photograph is not
+                  yours
+                </a>
+              </div>
+            </div>
+
+            <div className="user_name">
+              <div id="indexCandName" className="name2">Candidate Name :</div>
+              <div className="details2">
+                <span title={userDetails?.fullName} className="candOriginalName">{userDetails?.fullName || 'Your name'}</span>
+              </div>
+              <div style={{ marginTop: '10px', textAlign: 'right' }}>
+                <span className="name2" id="subName">Subject :</span>
+                <span style={{ fontSize: '15px' }} className="details2" id="mockSubName">Typing test</span>
+              </div>
+            </div>
+            <div align="center" className="user_pic">
+              <img width="94" height="101" align="absmiddle" className="candidateImg" src={pic3} alt="Candidate" />
+            </div>
+            <div className="clear"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className='check-sub'>
+        <div className='header-for-sub'>{paperCode}</div>
+        <div className="payment-component">
+          <div className="month-selector">
+            <select
+              id="month-select"
+              value={selectedMonth}
+              onChange={(e) => setSelectedMonth(e.target.value)}
+              className="plan-select"
+            >
+              <option value="" disabled>Select a month</option>
+              {months.map((month, index) => (
+                <option key={index} value={month}>{month}</option>
+              ))}
+            </select>
+          </div>
+          <div className="paper-code-selector">
+            <select
+              id="testName"
+              value={selectedTestName}
+              onChange={(e) => setSelectedTestName(e.target.value)}
+              className="plan-select"
+            >
+              <option value="" disabled>Select a test</option>
+              {filteredTests.map((test, index) => (
+                <option key={index} value={test.testName}>
+                  {test.testName} on {formatDate(test.date)}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button onClick={handleStartTest} className="check-button" disabled={!selectedMonth || !selectedTestName}>
+            Start Test
+          </button>
+        </div>
+      </div>
+      <div id="footer">Version : 17.07.00</div>
+    </>
+  );
+};
+
+export default TypingTestSelector;
+

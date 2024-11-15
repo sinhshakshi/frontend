@@ -1,0 +1,404 @@
+
+/* .typing-header-container {
+  background-color: #495057; 
+  padding: 4px;
+
+  color: rgb(7, 7, 7);
+  position: relative;
+  z-index: 4; 
+} */
+
+.typing-header-container {
+  background-color: #495057; 
+  padding: 4px;
+  color: rgb(7, 7, 7);
+  position: fixed; /* Change to fixed to keep it at the top */
+  top: 0; /* Set to top */
+  left: 0; /* Ensure it starts from the left */
+  width: 100%; /* Full width */
+  z-index: 4; /* Ensure the header is above other content */
+}
+
+
+.typing-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: #6a5acd;  */
+  color: #fff; /* White text */
+  padding: 10px 20px;
+  border-radius: 8px;
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.typing-dashboard:hover {
+  /* background-color: #5b4cc9;  */
+  /* transform: translateY(-3px); */
+  text-decoration: underline;
+  color: white;
+}
+
+.user-icon {
+  font-size: 24px; /* Icon size */
+  margin-right: 12px; /* Space between icon and text */
+  color: #fff; /* White icon */
+}
+
+.typing-dashboard:hover .user-icon {
+  /* color: #ffdf00;  */
+
+}
+
+
+.typing-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Brand Styling */
+/* .typing-brand {
+  font-size: 2rem;
+  font-weight: bold;
+} */
+.typing-brand-logo {
+
+    height: 42px;
+    width: auto;
+    /* border: solid; */
+    /* color: white; */
+    margin-left: 9px;
+
+}
+/* Navigation Menu */
+.typing-nav-menu {
+  position: relative;
+  width: 26%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: solid; */
+  margin-right: 39rem;
+
+
+}
+.typing-nav-item {
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 500;
+  color: white; /* Text color */
+ 
+  position: relative;
+  padding: 13px;
+ 
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  
+}
+
+.typing-nav-item:hover {
+  background-color: purple; /* Hover background color */
+  transform: scale(1.05); /* Slightly enlarge the item on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+
+.typing-dropdown-menu {
+  position: absolute;
+  top: 94%;
+
+  left: 0;
+  width: 133%;
+  background-color: rgb(66, 65, 65);
+  border-radius: 8px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  max-height: 0;
+  /* opacity: 0; */
+  overflow: hidden;
+  transform: translateY(-20px) scaleY(0.8);
+  transform-origin: top;
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  z-index: 2;
+}
+
+.typing-dropdown-menu.show {
+  max-height: 300px;
+  /* opacity: 1; */
+  transform: translateX(0%) translateY(5px) scale(1); /* Scale back to original size */
+}
+
+
+/* Dropdown Items */
+.typing-dropdown-item {
+  padding: 15px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: white;
+  color: #3b3b98;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.typing-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.typing-dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Help and Buy Now Styling */
+.typing-help-item {
+  /* background-color: #ffdd57; */
+  color: white; 
+  /* font-weight: bold; */
+}
+
+.typing-help-item:hover {
+  /* background-color: #ffd700; */
+}
+
+.typing-buy-now-item {
+  /* background-color: #28a745; */
+  color: white; 
+  /* font-weight: bold; */
+}
+
+.typing-buy-now-item:hover {
+  /* background-color: #218838; */
+}
+
+/* Divider */
+.typing-dropdown-divider {
+  height: 1px;
+  background-color: #0a0a0a;
+  margin: 5px 0;
+}
+
+/* Login and Sign Up Buttons */
+.typing-auth-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-right: 10px;
+}
+
+.typing-btn {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Login Button Styling */
+.typing-login-btn {
+  background-color: #ffdd57;
+  color: #343a40;
+  font-size: 15px;
+
+}
+
+.typing-login-btn:hover {
+  background-color: #ffd700;
+}
+
+/* Sign Up Button Styling */
+.typing-signup-btn {
+  background-color: #28a745;
+  color: white;
+  font-size: 15px;
+
+}
+
+.typing-signup-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive Behavior */
+@media (max-width: 768px) {
+  .typing-nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .typing-dropdown-menu {
+    width: 100%;
+  }
+
+  .typing-auth-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .typing-header-container{
+    width: 100%;
+
+  }
+}
+
+
+/* Search Pop-up Overlay Styling */
+.typing-search-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.typing-search-popup-overlay.fade-in {
+  opacity: 1;
+}
+
+/* Search Pop-up Box */
+.typing-search-popup {
+  position: relative;
+  width: 80%;
+  max-width: 526px;
+  background-color: white;
+  padding: 34px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  animation: slide-down 0.5s ease;
+}
+
+/* Slide down effect */
+@keyframes slide-down {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 7px;
+
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.typing-search-popup input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.typing-search-popup button {
+ 
+  padding: 10px;
+  background-color: #3b3b98;
+  width: 100%;
+  padding: 13px;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.hamburger {
+  display: none; /* Initially hidden */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger menu on smaller screens */
+    font-size: 24px; /* Adjust size */
+    color: white; /* Hamburger color */
+  }
+
+  .typing-nav-menu {
+    display: none; /* Hide the normal nav menu */
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #495057;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    animation: slideOut 0.3s forwards; /* Start with slide-out animation */
+    z-index: 7;
+  }
+  
+  /* Show sidebar when active */
+  .mobile-menu.show {
+    animation: slideIn 0.3s forwards; /* Apply slide-in animation */
+  }
+  
+  /* Slide-in animation */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide-out animation */
+  @keyframes slideOut {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+
+
+  
+  /* Sidebar Menu Links */
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 15px 0;
+    transition: color 0.2s ease;
+  }
+
+  
+  /* Sidebar Menu Links */
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 15px 0;
+    transition: color 0.2s ease;
+  }
+  .mobile-menu a:hover {
+    color: #ffdd57; /* Highlight on hover */
+  }
+}

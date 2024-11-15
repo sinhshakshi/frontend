@@ -1,0 +1,66 @@
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    right: 0;
+    z-index: 20;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  }
+  .dashboard-header-part2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .typing-brand{
+    cursor: pointer;
+  }
+  
+  .header-title {
+    font-size: 24px; /* Size of the dashboard title */
+    font-weight: bold; /* Bold text */
+  }
+  
+
+
+  .header-logout{
+    margin-right: 23px;
+
+  }
+  .header-notification,
+  .header-account,
+  .header-logout {
+    margin-left: 20px; /* Spacing between items */
+    cursor: pointer; /* Pointer cursor for interactivity */
+    position: relative; /* For dropdown positioning */
+  }
+  
+  .header-dropdown {
+    position: absolute; /* Position dropdown absolutely */
+    top: 100%; /* Align below the account item */
+    right: 0; /* Align to the right */
+    background-color: white; /* Dropdown background */
+    color: black; /* Dropdown text color */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+    display: block; /* Initially shown if dropdownVisible is true */
+    z-index: 30; /* Ensure it appears above other elements */
+  }
+  
+  .header-account:hover .header-dropdown {
+    display: block; /* Show dropdown on hover */
+  }
+  
+
+  .header-notification:hover,
+.header-account:hover,
+.header-logout:hover {
+   color: #800080; /* Purple background on hover */
+
+}

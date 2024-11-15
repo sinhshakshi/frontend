@@ -1,0 +1,139 @@
+/* Container styling */
+.container-for-register-project {
+    display: flex;
+    width: 100%; /* Set width to 100% */
+   
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(109.8deg, #FFFFFF 0%, #f2dbff 100%); /* Gradient background */
+}
+
+/* Left side styling */
+.left-side {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center image vertically */
+    align-items: flex-start; /* Align items at the top */
+    padding: 20px; /* Add padding to the left side */
+}
+
+/* Image styling */
+.sign-up-img {
+    width: 75%; /* Set width to 100% */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 300px; /* Optional: limit height to prevent overflow */
+}
+
+/* Right side styling */
+.right-side {
+    flex: 1;
+    padding: 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Video instructions */
+.video-instructions {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Form Styling */
+.register-login-form {
+    width: 95%;
+    /* Set width to 100% */
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the form */
+}
+
+/* Form header styling */
+.register-login-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+.user-register{
+    margin-top: 20px;
+}
+
+/* Grid Layout for Form Inputs */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; /* Space between items */
+}
+
+/* Form Group Styling */
+.register-admin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+.form-group label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
+    color: #333; /* Dark color for labels */
+}
+
+/* Input, Select, and Button Styling */
+.register-login-form input
+
+ {
+   
+    width: 92%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.register-login-form button {
+   
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+
+.register-login-form select
+ {
+   
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus Styles */
+.register-login-form input:focus,
+.register-login-form select:focus {
+    box-shadow: 0 0 8px rgba(123, 55, 255, 0.5);
+    border-color: #6a11cb;
+}
+
+/* Button Styles */
+.register-login-form button {
+    background-color: #6a11cb; /* Purple color */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.register-login-form button:hover {
+    background-color: #2575fc; /* Darker purple on hover */
+    box-shadow: 0 8px 16px rgba(123, 55, 255, 0.2);
+}

@@ -1,0 +1,59 @@
+.typing-paragraph-form {
+
+    max-width: 71%;
+      margin: 0 auto;
+
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+.add-ebook-form{
+  text-align: center;
+}
+
+.typing-paragraph-form-group {
+  margin-bottom: 15px;
+}
+
+.typing-paragraph-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.typing-paragraph-input,
+.typing-paragraph-textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.typing-paragraph-textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.typing-paragraph-button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.typing-paragraph-button:hover {
+  background-color: #0056b3;
+}
+
+.typing-paragraph-input:focus,
+.typing-paragraph-textarea:focus {
+  border-color: #66afe9;
+  outline: none;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.6);
+}

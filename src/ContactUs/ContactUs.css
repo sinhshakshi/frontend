@@ -1,0 +1,119 @@
+.contactus-container {
+  max-width: 800px;
+  margin: 90px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactus-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contactus-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.contactus-option {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contactus-option h2 {
+  margin-top: 0;
+}
+
+.contactus-link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: purple;
+  font-weight: bold;
+}
+
+.case-number-input,
+.case-email-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.case-track-button {
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.case-track-button:hover {
+  background-color: darkviolet;
+}
+
+.contactus-form {
+  margin-top: 20px;
+  padding: 10px
+}
+
+.contactus-label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contactus-input,
+.contactus-textarea {
+  width: 97%;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.contactus-textarea {
+height: 2rem;
+height: 11rem;
+
+}
+
+.contactus-button {
+  width: 100%;
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contactus-button:hover {
+  background-color: darkviolet;
+}
+
+.contactus-required {
+  color: red;
+}
+
+.contactus-error-message {
+  color: red;
+  margin-bottom: 15px;
+}
+
+.contactus-success-message {
+  color: green;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,223 @@
+/* Login.css */
+.container-for-login {
+  border-radius: 4px;
+ 
+  left: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 478px;
+  z-index: 150;
+  color: black;
+}
+
+.for-signup{
+  display: none;
+}
+
+
+.login-form {
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 16px;
+  box-sizing: border-box;
+  height: 100%;
+  left: 0;
+  padding: 48px;
+  position: relative;
+  text-align: left;
+  top: 0;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 34px;
+  font-size: 28px;
+}
+
+.login-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+
+
+.userName-user{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 36px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 50px;
+}
+
+
+.password-input-wrapper input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 36px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 50px;
+}
+.login-button{
+  background-color: #04aa6d;
+      color: #fff;
+      border: 0;
+      border-radius: 25px;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 17px;
+      font-stretch: normal;
+      font-style: normal;
+      font-weight: 600;
+      height: 50px;
+      letter-spacing: normal;
+      line-height: 1.17;
+      margin: 0;
+      padding-left: 40px;
+      padding-right: 40px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      width: 100%;
+      margin-bottom: 21px;
+    
+}
+.continue-facebook {
+  background-color: #0d6efd;
+  color: #fff;
+  border: 0;
+  border-radius: 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+ 
+  font-weight: 200;
+  height: 50px;
+  letter-spacing: normal;
+  line-height: 1.17;
+  margin: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.continue-google{
+  
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  
+  font-weight: 200;
+  height: 50px;
+ 
+  line-height: 1.17;
+  margin: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: 100%;
+  border: 1px solid #83808078;
+  border-radius: 48px;
+  color: #282a35;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  margin-bottom: 21px;
+  font-size: 12px;
+}
+
+.forgot-password {
+  color: #282a35;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.forgot-password:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.sign-up {
+  text-align: center;
+}
+
+.sign-up a {
+  color: #04aa6d;
+  text-decoration: none;
+}
+
+.EmailInput {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.EmailInput span{
+  font-size: 12px;
+}
+
+
+.EmailInput .s {
+  color: #04aa6d;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 6px;
+ 
+}
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 36.5%;
+  right: 49px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px;
+  width: 63px;
+  display: flex;
+}
+
+.eyeicon {
+  width: 26px;
+  margin-top: 4px;
+  font-size: 16px;
+}

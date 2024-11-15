@@ -1,0 +1,77 @@
+/* Container for the registration form */
+.container-for-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  background-color: #f0f2f5; /* Soft background color */
+}
+
+/* Form styling */
+.register-form-admin {
+  background-color: #ffffff; /* White background for the form */
+  padding: 2em; /* Padding inside the form */
+  border-radius: 12px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  width: 350px; /* Slightly wider width */
+  transition: transform 0.3s; /* Smooth transition */
+}
+
+/* Title styling */
+.register-form-admin h2 {
+  margin-bottom: 1em; /* Margin below the title */
+  color: #333; /* Dark text color */
+  text-align: center; /* Center align the title */
+  font-family: 'Arial', sans-serif; /* Font family */
+}
+
+/* Input field styling */
+.register-admin-input {
+  color: #333; /* Text color */
+  margin-bottom: 1em; /* Space below each input */
+  padding: 0 16px; /* Horizontal padding */
+  width: 90%; /* Full width */
+  height: 40px; /* Slightly taller height */
+  border: 1px solid #ced4da; /* Light gray border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Input focus effect */
+.register-admin-input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft blue glow */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styling */
+.register-admin-button {
+  width: 100%; /* Full width */
+  height: 45px; /* Fixed height */
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+/* Button hover effect */
+.register-admin-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect */
+}
+
+/* Button active effect */
+.register-admin-button:active {
+  transform: translateY(1px); /* Push down effect */
+}
+
+/* Responsive styling */
+@media (max-width: 400px) {
+  .register-form-admin {
+    width: 90%; /* Responsive width on small screens */
+  }
+}

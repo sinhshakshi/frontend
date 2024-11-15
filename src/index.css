@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+ font-family: 'Open Sans', sans-serif!important;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Reset all input styles */
+input {
+  appearance: none; /* Remove default appearance */
+  background: none ; /* Remove background */
+  color: inherit ; /* Use inherited text color */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  margin: 0 ; /* Remove margin */
+  font: inherit ; /* Use inherited font */
+  outline: none ; /* Remove outline */
+  box-shadow: none ; /* Remove box-shadow */
+}
+
+
+

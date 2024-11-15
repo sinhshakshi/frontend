@@ -1,0 +1,83 @@
+.sidebar-ebook {
+ 
+  width: 230px;
+    height: calc(100vh - 45px);
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 46px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow-x: auto;
+}
+
+.sidebar-ebook__title {
+  margin-bottom: 20px;
+  font-size: 22px; /* Slightly smaller font size */
+  text-align: center;
+  font-weight: bold;
+}
+
+.sidebar-ebook__nav {
+  flex-grow: 1;
+}
+
+.sidebar-ebook__group {
+  margin-bottom: 10px;
+}
+
+.sidebar-ebook__group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 16px; /* Slightly smaller font size */
+  color: #ecf0f1;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-ebook__group-title:hover {
+  background-color: #34495e;
+}
+
+.sidebar-ebook__link {
+  color: white;
+  padding: 16px 15px;
+  text-decoration: none;
+  font-size: 16px; /* Slightly smaller font size */
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, padding-left 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 4px;
+  margin-left: 10px; /* Indent sub-items */
+}
+
+.sidebar-ebook__link:hover, .sidebar-ebook__link--active {
+  background-color: #34495e;
+  padding-left: 20px; /* Increase padding-left on hover */
+}
+
+.sidebar-ebook__link-icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.sidebar-ebook__subitems {
+  display: none; /* Initially hidden */
+  flex-direction: column;
+}
+
+.sidebar-ebook__group-title.open + .sidebar-ebook__subitems {
+  display: flex; /* Show sub-items when group is open */
+}

@@ -1,0 +1,113 @@
+/* Container for the Edit Typing Paragraph Component */
+.container-for-edit-typing-paragraph {
+
+  max-width: 99%;
+  margin: 0 auto;
+    padding: 20px;
+
+    border-radius: 8px;
+   
+  }
+  
+  .edit-typing-paragraph-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .modal-delete{
+    margin-top: 15px!important;
+  }
+  
+  /* Modal Styles */
+  .modal-container-for-editing-typing-paragraph {
+    position: relative;
+    /* width: 500px; */
+    max-width: 90%;
+    width: 72%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* overflow: auto; */
+    overflow-y: auto;
+    height: -webkit-fill-available;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  
+  .modal-header-for-editing-typing-paragraph {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .modal-header-for-editing-typing-paragraph h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .modal-form-for-editing-typing-paragraph {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-form-for-editing-typing-paragraph label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .modal-form-for-editing-typing-paragraph input,
+  .modal-form-for-editing-typing-paragraph textarea {
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .modal-form-for-editing-typing-paragraph textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .styling-the-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .styling-the-button button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .styling-the-button button:hover {
+    background-color: #0056b3;
+  }
+  

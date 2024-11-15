@@ -1,0 +1,203 @@
+/* Container styling */
+.report-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    border-radius: 10px;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+    margin-top: 57px;
+}
+
+/* Heading styling */
+.heading-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.report-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #4a148c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+/* Layout for table and chart side by side */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* Table styling */
+.report-table {
+    width: 60%;
+    border-collapse: collapse;
+    font-size: 1.1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.report-table thead {
+    background-color: #6a5acd;
+    color: #ffffff;
+}
+
+.report-table th,
+.report-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-table th {
+    font-weight: bold;
+}
+
+.report-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.report-table tr:hover {
+    background-color: #eaeaea;
+    transition: background-color 0.3s;
+}
+
+/* Chart container styling */
+.chart-container {
+    width: 35%; /* Smaller width than the table */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.chart-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4a148c;
+    margin-bottom: 20px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .report-table, .chart-container {
+        width: 100%;
+    }
+}
+
+
+/* Two-column layout for the paragraph comparison */
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 2px solid #4a148c;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.left-column:hover, .right-column:hover {
+    transform: scale(1.02);
+}
+
+/* Paragraph styles */
+.left-column p, .right-column p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .table-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .report-table {
+        width: 100%;
+    }
+
+    .row-container {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+.correctword {
+    color: rgb(56, 55, 55)!important;  /* Correct words appear in black */
+}
+
+.wrongword {
+    color: rgb(11, 87, 11)!important;
+    background-color: #e6ffe6!important;  /* Incorrect words typed by the user are shown in green */
+}
+
+.recommendedword {
+    color: #a90f0f!important;
+    background-color: #ffd1d1!important;    /* The correct words for incorrectly typed ones are shown in red */
+}
+
+.missingword {
+    color: #a90f0f!important;
+    background-color: #ffd1d1!important;    /* Words missing from the user's input are shown in red */
+}
+.extraword{
+    color: #a90f0f!important;
+    background-color: #ffd1d1!important;
+}
+
+.butndash{
+    text-align: center;
+}
+
+.student-dashboard {
+
+    padding: .6rem 5rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: .3rem;
+    color: #fff;
+    background-color: purple;
+    border-color: purple;
+    margin-top: 47px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    text-align: center;
+
+}
+
+.student-dashboard:hover {
+background-color: #9b59b6; /* Darker shade for hover */
+border-color:#9b59b6 ; /* Darker border on hover */
+color: #ffffff; /* Maintain white text color on hover */
+}
+
+.info-typing-error{
+    margin-top: 22px;
+}

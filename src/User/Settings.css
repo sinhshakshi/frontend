@@ -1,0 +1,93 @@
+.settings-page {
+    /* padding: 30px; */
+    max-width: 100%;
+    margin: auto;
+    border-radius: 8px;
+    background: white;
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+ 
+    padding: 14px;
+    padding-left: 26px;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    padding-right: 275px;
+    /* border: solid; */
+}
+
+.setting-form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+.setting-form-group label {
+    display: block;
+    margin-bottom: 8px;
+ 
+    color: #333; /* Darker text for better readability */
+}
+
+.input-group {
+    position: relative; /* Allows positioning of the icon */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 40px 12px 10px; /* Add padding on the right for the icon */
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded input corners */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+.input-group input:focus {
+    border-color: #800080; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.toggle-password {
+    position: absolute; /* Position the icon inside the input */
+    right: 10px; /* Right padding */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust vertical centering */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor */
+    color: #800080; /* Purple color for the icon */
+    font-size: 22px; /* Adjust icon size */
+}
+
+.settings-page button {
+    width: 100%; /* Full-width button */
+    padding: 12px 15px;
+    background-color: #800080; /* Purple background for the button */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded button corners */
+    cursor: pointer;
+    font-size: 16px; /* Larger font size */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.settings-page button:hover {
+    background-color: #6a006a; /* Darker shade of purple on hover */
+}
+
+.settings-page h2{
+    font-weight: 100;
+    color: rgb(160, 74, 124);
+}
+
+.success-message {
+    color: #4caf50; /* Green for success messages */
+    margin-top: 10px;
+ 
+}
+
+.error-message {
+    color: red; /* Red for error messages */
+    margin-top: 10px;
+   
+}
+
+small{
+    color: green;
+    font-weight: 800;
+}

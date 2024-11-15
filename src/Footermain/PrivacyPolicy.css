@@ -1,0 +1,78 @@
+/* Styles for the Privacy Policy container */
+.privacy-policy-container {
+    max-width: 800px; /* Limit the width of the container */
+    margin: 40px auto; /* Center the container with auto margins */
+    padding: 30px; /* Add padding around the content */
+    background: linear-gradient(to bottom right, #f8f9fa, #e2e6ea); /* Light gradient background */
+    border-radius: 12px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: 'Arial', sans-serif; /* Use a clean, modern font */
+    color: #333; /* Dark color for text for good readability */
+  }
+  
+  .privacy-policy-container h1 {
+    font-size: 2em; /* Size for the main heading */
+    color: #5b5c97; /* Dark blue color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    border-bottom: 3px solid #5b5c97; /* Bottom border for emphasis */
+    padding-bottom: 10px; /* Padding below the heading */
+  }
+  
+  .privacy-policy-container h2 {
+    font-size: 1.6em; /* Size for subheadings */
+    color: #5b5c97; /* Dark blue color for subheadings */
+    margin-top: 25px; /* Space above subheadings */
+    margin-bottom: 10px; /* Space below subheadings */
+  }
+  
+  .privacy-policy-container p {
+    font-size: 0.95em; /* Slightly smaller font size for paragraphs */
+    line-height: 1.7; /* Increased line height for improved readability */
+    margin-bottom: 15px; /* Space below paragraphs */
+    color: #555; /* Medium gray color for body text */
+  }
+  
+  .privacy-policy-container ul {
+    margin-left: 20px; /* Indent unordered lists */
+    margin-bottom: 15px; /* Space below lists */
+  }
+  
+  .privacy-policy-container li {
+    font-size: 0.95em; /* Smaller font size for list items */
+    line-height: 1.7; /* Increase line height for readability */
+    color: #555; /* Medium gray color for list items */
+    position: relative; /* Positioning for custom bullet */
+  }
+  
+  .privacy-policy-container li::marker {
+    color: #5b5c97; /* Custom color for list item markers */
+    font-weight: bold; /* Make bullet points bold */
+  }
+  
+  /* Style for links */
+  .privacy-policy-container a {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  .privacy-policy-container a:hover {
+    color: #0056b3; /* Darker shade on hover */
+    text-decoration: underline; /* Underline on hover for links */
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 600px) {
+    .privacy-policy-container {
+      padding: 20px; /* Adjust padding for smaller screens */
+    }
+  
+    .privacy-policy-container h1 {
+      font-size: 1.8em; /* Adjust heading size for small screens */
+    }
+  
+    .privacy-policy-container h2 {
+      font-size: 1.4em; /* Adjust subheading size for small screens */
+    }
+  }
+  

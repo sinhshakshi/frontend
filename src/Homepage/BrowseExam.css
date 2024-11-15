@@ -1,0 +1,70 @@
+.browse-exam-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: #f5f5f5;
+}
+
+
+.title-for {
+    font-size: 38px;
+    font-weight: bolder;
+    margin-top: 53px;
+}
+
+
+.browse-content {
+    text-align: center;
+}
+
+.browse-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.exam-image {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.browse-button {
+    background-color: #8a2be2; /* Purple color */
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.browse-button:hover {
+    background-color: #6a1bb8; /* Darker shade of purple for hover */
+}
+
+
+.tut-button-sign {
+    background-color: #6f42c1;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    width: 296px;
+    border-radius: 54px;
+    padding: 13px 23px;
+    border: 1px solid #6f42c1;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 48px;
+
+    margin-bottom: 53px;
+}
+.tut-button-sign:hover {
+    background-color: #5a36a8;
+}
