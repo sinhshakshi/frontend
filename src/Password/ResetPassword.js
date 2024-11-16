@@ -1,14 +1,53 @@
 import React, { useState } from 'react';
-import Swal from 'sweetalert2';
 import { useSearchParams } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing eye icons
+import './ResetPassword.css'; // Import the CSS file for styling
+import MainFooter from '../Footermain/Footer';
+import Header from "../component/Header";
 
 const ResetPassword = () => {
   const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [searchParams] = useSearchParams();
   const token = searchParams.get('token');
 
+  // Password validation function
+  const passwordValidationMessage = () => {
+    if (newPassword.length < 8) {
+      return 'Password must be at least 8 characters long.';
+    }
+    if (!/[A-Z]/.test(newPassword)) {
+      return 'Password must contain at least one uppercase letter.';
+    }
+    if (!/[a-z]/.test(newPassword)) {
+      return 'Password must contain at least one lowercase letter.';
+    }
+    if (!/[0-9]/.test(newPassword)) {
+      return 'Password must contain at least one number.';
+    }
+    if (!/[\W_]/.test(newPassword)) {
+      return 'Password must contain at least one special character.';
+    }
+    if (newPassword !== confirmPassword) {
+      return 'New password and confirmation do not match.';
+    }
+    return '';
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMessage('');
+    setError('');
+
+    const validationMessage = passwordValidationMessage();
+    if (validationMessage) {
+      setError(validationMessage);
+      return;
+    }
 
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/reset-password`, {
@@ -22,46 +61,87 @@ const ResetPassword = () => {
       const data = await response.json();
 
       if (response.ok) {
-        Swal.fire({
-          title: 'Success!',
-          text: data.message,
-          icon: 'success',
-          confirmButtonText: 'Login',
-        });
+        setMessage(data.message);
       } else {
-        Swal.fire({
-          title: 'Error!',
-          text: data.error,
-          icon: 'error',
-          confirmButtonText: 'Retry',
-        });
+        setError(data.error || 'Failed to reset the password.');
       }
     } catch (error) {
-      console.error('Error:', error);
-      Swal.fire({
-        title: 'Error!',
-        text: 'Failed to reset the password. Please try again.',
-        icon: 'error',
-        confirmButtonText: 'Retry',
-      });
+      console.error('Error resetting password:', error);
+      setError('An unexpected error occurred. Please try again.');
     }
   };
 
   return (
-    <div>
-      <h2>Reset Password</h2>
-      <form onSubmit={handleSubmit}>
-        <label>New Password</label>
-        <input
-          type="password"
-          value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-          placeholder="Enter your new password"
-          required
-        />
-        <button type="submit">Reset Password</button>
+    <>
+      <Header />
+    <div className="reset-password-page">
+      <h2 className="reset-password-title">Reset Password</h2>
+      <form onSubmit={handleSubmit} className="reset-password-form">
+        {/* New Password Field */}
+        <div className="reset-password-field">
+          <label className="reset-password-label" htmlFor="new-password">New Password:</label>
+          <div className="reset-password-input-group">
+            <input
+              id="new-password"
+              type={showNewPassword ? 'text' : 'password'}
+              className="reset-password-input"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              placeholder="Enter your new password"
+              required
+            />
+            <div
+              className="reset-password-toggle"
+              onClick={() => setShowNewPassword(!showNewPassword)}
+              role="button"
+              tabIndex="0"
+              onKeyPress={(e) => e.key === 'Enter' && setShowNewPassword(!showNewPassword)}
+            >
+              {showNewPassword ? <FaEyeSlash /> : <FaEye />}
+            </div>
+          </div>
+        </div>
+
+        {/* Confirm Password Field */}
+        <div className="reset-password-field">
+          <label className="reset-password-label" htmlFor="confirm-password">Confirm Password:</label>
+          <div className="reset-password-input-group">
+            <input
+              id="confirm-password"
+              type={showConfirmPassword ? 'text' : 'password'}
+              className="reset-password-input"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              placeholder="Confirm your new password"
+              required
+            />
+            <div
+              className="reset-password-toggle"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              role="button"
+              tabIndex="0"
+              onKeyPress={(e) => e.key === 'Enter' && setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+            </div>
+          </div>
+        </div>
+
+        {/* Validation Message */}
+        {passwordValidationMessage() && (
+          <small className="reset-password-validation">{passwordValidationMessage()}</small>
+        )}
+
+        {/* Submit Button */}
+        <button type="submit" className="reset-password-button">Reset Password</button>
       </form>
+
+      {/* Feedback Messages */}
+      {message && <p className="reset-password-success">{message}</p>}
+      {error && <p className="reset-password-error">{error}</p>}
     </div>
+    <MainFooter/>
+    </>
   );
 };
 
