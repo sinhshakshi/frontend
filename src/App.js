@@ -29,6 +29,8 @@ import PrivacyPolicy from './Footermain/PrivacyPolicy';
 import TermsAndConditions from './Footermain/TermsOfService';
 import AcceptableUsePolicy from './Footermain/AcceptableUsePolicy';
 import ContactUs from './ContactUs/ContactUs';
+import ForgetPassword from "./Password/ForgetPassword";
+import ResetPassword from "./Password/ResetPassword";
 
 const App = () => {
 
@@ -88,6 +90,9 @@ const App = () => {
       <Route path='/acceptable-use-policy' element={<AcceptableUsePolicy />} />  
       <Route path='/privacy-policy' element={<PrivacyPolicy />} />  
       <Route path='/terms-of-service' element={<TermsAndConditions />} /> 
+
+      <Route path="/forget-password" element={<ForgetPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
 
       <Route path='/buy-now' element={<PlansDisplay />} />  
       <Route path='/pay' element={<PaymentModal />} />  

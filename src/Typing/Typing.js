@@ -283,7 +283,15 @@ console.log(process.env.REACT_APP_API_URL);
               </div>
             </div>
             <div className="message-for-login">
-  <p>If you are not logged in, <a href="/register">Signup</a></p>
+  <p>
+    If you are not logged in, <a href="/register">Signup</a>. 
+    <a 
+      href="/forget-password" 
+      style={{ marginLeft: '10px', color: '#007bff', textDecoration: 'none' }}
+    >
+      Forgot Password?
+    </a>
+  </p>
 </div>
 
             <div id="login">
