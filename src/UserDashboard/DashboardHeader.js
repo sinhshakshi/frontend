@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const DashboardHeader = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-  const [cookies, setCookie, removeCookie] = useCookies(['token', 'email_id', 'userDetails']); // Include cookies to remove
+  const [cookies, setCookie, removeCookie] = useCookies(['session_id', 'SSIDCE', 'SSDSD']); // Include cookies to remove
   const navigate = useNavigate();
 
 
@@ -28,7 +28,7 @@ const DashboardHeader = () => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`,
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
       });
 
@@ -38,8 +38,8 @@ const DashboardHeader = () => {
          // Redirect to home page after successful logout
      
         // Clear cookies after successful logout
-        removeCookie('token');
-        removeCookie('email_id');
+        removeCookie('session_id');
+        removeCookie('SSIDCE');
         removeCookie('userDetails');
         // navigate("/");
         window.location.href = '/';

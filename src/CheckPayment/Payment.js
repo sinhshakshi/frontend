@@ -18,7 +18,7 @@
 //   const [cashfree, setCashfree] = useState(null);
 //   const [hasAccess, setHasAccess] = useState(false);
 //   const [isProcessing, setIsProcessing] = useState(false); 
-//   const [cookies] = useCookies(["email_id", "token"]);
+//   const [cookies] = useCookies(["email_id", "session_id"]);
 //   const navigate = useNavigate();
 //   console.log("user", userDetails)
   
@@ -33,9 +33,9 @@
 //   }, []);
 
 //   const checkAccess = async () => {
-//     const token = cookies.token;
+//     const session_id = cookies.session_id;
 
-//     if (!token) {
+//     if (!session_id) {
 //       Swal.fire({
 //         icon: "error",
 //         title: "Error",
@@ -55,7 +55,7 @@
 //         headers: {
 //           "Content-Type": "application/json",
 //           "Accept": "application/json",
-//           Authorization: `Bearer ${token}`,
+//           Authorization: `Bearer ${session_id}`,
 //         },
 //       });
 
@@ -230,7 +230,7 @@ const BuyTyping = ({
 }) => {
   const [isProcessing, setIsProcessing] = useState(false); 
   const [hasAccess, setHasAccess] = useState(false);
-  const [cookies] = useCookies(["email_id", "token"]);
+  const [cookies] = useCookies(["SSIDCE", "session_id"]);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -238,9 +238,9 @@ const BuyTyping = ({
   }, []);
 
   const checkAccess = async () => {
-    const token = cookies.token;
+    const session_id = cookies.session_id;
 
-    if (!token) {
+    if (!session_id) {
       Swal.fire({
         icon: "error",
         title: "Error",
@@ -260,7 +260,7 @@ const BuyTyping = ({
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${session_id}`,
         },
       });
 

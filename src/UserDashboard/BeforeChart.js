@@ -9,7 +9,7 @@ import { BsCalendarCheckFill } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
 
 const BeforeChart = () => {
-  const [cookies] = useCookies(['token', 'email_id']);
+  const [cookies] = useCookies(['session_id', 'SSIDCE']);
   const [speedData, setSpeedData] = useState([]);
   const [subscriptionPlan, setSubscriptionPlan] = useState('Loading...');
   const [overallSpeed, setOverallSpeed] = useState(0);
@@ -20,7 +20,7 @@ const BeforeChart = () => {
 
   const fetchSpeedData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.email_id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.SSIDCE}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setSpeedData(data);
@@ -35,7 +35,7 @@ const BeforeChart = () => {
 
   const fetchSubscriptionData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/access-typing/${cookies.email_id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/access-typing/${cookies.SSIDCE}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setSubscriptionPlan(data.selectedPlan || 'No Plan');
@@ -47,7 +47,7 @@ const BeforeChart = () => {
 
   const fetchEmailCount = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing-performance/count/${cookies.email_id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing-performance/count/${cookies.SSIDCE}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setEmailCount(data.count);
@@ -58,7 +58,7 @@ const BeforeChart = () => {
 
   const fetchSubscriptionInfo = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/subscription-info/${cookies.email_id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/subscription-info/${cookies.SSIDCE}`);
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setSubscriptionInfo(data);

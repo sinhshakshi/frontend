@@ -65,11 +65,11 @@
 } */
 .typing-brand-logo {
 
-    height: 42px;
-    width: auto;
-    /* border: solid; */
-    /* color: white; */
-    margin-left: 9px;
+  height: 44px;
+  width: auto;
+  /* border: solid; */
+  /* color: white; */
+  margin-left: 38px;
 
 }
 /* Navigation Menu */
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
   /* border: solid; */
-  margin-right: 39rem;
+  margin-right: 44rem;
 
 
 }

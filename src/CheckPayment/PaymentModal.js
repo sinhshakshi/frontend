@@ -18,7 +18,7 @@ const PaymentModal = ({ closeModal  }) => {
   const [mobile, setMobile] = useState('');
   const [selectedPlan, setSelectedPlan] = useState("30 Days"); // Define selectedPlan state here
   const [showPlanModal, setShowPlanModal] = useState(false);
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
   const { userDetails, isLoggedIn } = useAuth();
   const navigate = useNavigate();
 

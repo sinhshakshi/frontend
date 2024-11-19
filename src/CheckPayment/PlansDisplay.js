@@ -139,7 +139,7 @@ const PlansDisplay = () => {
   const [hasAccess, setHasAccess] = useState(false);
   const navigate = useNavigate();
   const { userDetails, isLoggedIn } = useAuth();
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
   
   const plans = [
     { name: "30 Days", priceDrop: "₹10", savings: "₹10", oldAmount: "₹79", totalAmount: "₹69" },
@@ -158,7 +158,7 @@ const PlansDisplay = () => {
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`,
+            "Authorization": `Bearer ${cookies.session_id}`,
           },
           body: JSON.stringify({ product_id: '999' }) // Use dynamic product ID if necessary
         });
@@ -173,7 +173,7 @@ const PlansDisplay = () => {
     };
 
     if (isLoggedIn) checkProductAccess();
-  }, [isLoggedIn, cookies.token]);
+  }, [isLoggedIn, cookies.session_id]);
 
   const calculateSubscriptionDates = () => {
     const startDate = new Date();

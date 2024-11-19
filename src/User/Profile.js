@@ -8,10 +8,10 @@ const Profile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const userId = 'user-id'; // Replace with the actual user ID
-  const [cookies] = useCookies(['token, email_id']);
+  const [cookies] = useCookies(['session_id, SSIDCE']);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/users/profile/${cookies.email_id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/profile/${cookies.SSIDCE}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie'; // Ensure you import this if using co
 
 const Banner = () => {
   const navigate = useNavigate();
-  const [cookies] = useCookies(['token']); // Access the token from cookies
+  const [cookies] = useCookies(['session_id']); // Access the session_id from cookies
   const [showPaymentModal, setShowPaymentModal] = useState(false);
 
   const checkProductAccess = async () => {
@@ -19,7 +19,7 @@ const Banner = () => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`,
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
       });

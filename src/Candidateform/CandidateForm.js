@@ -11,7 +11,7 @@ const CandidateForm = () => {
   const { accuracy, wrongper, actualdep, speed, testcode, exam, testname } = useParams(); // Added exam parameter
  console.log(testname)
   const [isChecked, setIsChecked] = useState(false);
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
   const navigate = useNavigate();
   const { userDetails } = useAuth();
   
@@ -51,7 +51,7 @@ const CandidateForm = () => {
 
   useEffect(() => {
     const checkAccess = async () => {
-      if (!cookies.token) {
+      if (!cookies.session_id) {
         navigate('/login');
         return;
       }
@@ -62,7 +62,7 @@ const CandidateForm = () => {
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`
+            "Authorization": `Bearer ${cookies.session_id}`
           }
         });
 
@@ -74,7 +74,7 @@ const CandidateForm = () => {
               headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": `Bearer ${cookies.token}`
+                "Authorization": `Bearer ${cookies.session_id}`
               },
               body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
             });
@@ -99,7 +99,7 @@ const CandidateForm = () => {
     };
 
     checkAccess();
-  }, [cookies.token, navigate]);
+  }, [cookies.session_id, navigate]);
 
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
@@ -130,7 +130,7 @@ const CandidateForm = () => {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${cookies.token}` // Sending the token in the headers
+                "Authorization": `Bearer ${cookies.session_id}` // Sending the session_id in the headers
             },
             body: JSON.stringify(feedbackData), // Sending the feedback data
         });

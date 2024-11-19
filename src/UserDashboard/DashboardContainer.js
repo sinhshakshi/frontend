@@ -14,7 +14,7 @@ import DashboardHeader from './DashboardHeader';
 const DashboardContainer = () => {
   // State to keep track of which component to render
   const [activeComponent, setActiveComponent] = useState('UserOverallChart');
-  const [cookies] = useCookies(['token']); // Get cookies
+  const [cookies] = useCookies(['session_id']); // Get cookies
   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
@@ -29,14 +29,14 @@ const DashboardContainer = () => {
 
   // Function to check access
   const checkAccess = async () => {
-    if (cookies.token) {
+    if (cookies.session_id) {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`
+            "Authorization": `Bearer ${cookies.session_id}`
           }
         });
 
@@ -50,7 +50,7 @@ const DashboardContainer = () => {
         navigate('/login'); // Redirect to login on error
       }
     } else {
-      // If no token, redirect to login
+      // If no session_id, redirect to login
       navigate('/login');
     }
   };

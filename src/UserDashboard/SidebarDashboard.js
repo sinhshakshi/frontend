@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie'; // Import useCookies for cookie manag
 
 const SidebarDashboard = ({ onMenuClick }) => {
   const [activeMenu, setActiveMenu] = useState('UserOverallChart'); // State to keep track of active menu
-  const [cookies, removeCookie] = useCookies(['token', 'email_id', 'userDetails']); // Cookie management
+  const [cookies, removeCookie] = useCookies(['session_id', 'SSIDCE', 'SSDSD']); // Cookie management
 
   const handleMenuClick = (menu) => {
     setActiveMenu(menu); // Set the active menu item
@@ -23,7 +23,7 @@ const SidebarDashboard = ({ onMenuClick }) => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`, // Include token in the request
+          "Authorization": `Bearer ${cookies.session_id}`, // Include session_id in the request
         },
       });
 
@@ -32,8 +32,8 @@ const SidebarDashboard = ({ onMenuClick }) => {
         console.log(data.message); // Optional: Show success message
         
         // Clear cookies after successful logout
-        removeCookie('token');
-        removeCookie('email_id');
+        removeCookie('session_id');
+        removeCookie('SSIDCE');
         removeCookie('userDetails');
 
         // Redirect to home page after successful logout

@@ -5,7 +5,7 @@ import { useCookies } from 'react-cookie';
 const Login = () => {
   const [emailId, setEmailId] = useState('');
   const [password, setPassword] = useState('');
-  const [cookies, setCookie] = useCookies(['token']);
+  const [cookies, setCookie] = useCookies(['session_id']);
   const navigate = useNavigate();
 
   const handleEmailId = (event) => {
@@ -28,9 +28,9 @@ const Login = () => {
     });
 
     if (response.ok) {
-      const { message, token } = await response.json();
+      const { message, session_id } = await response.json();
       alert(message);
-      setCookie("token", token, { path: "/", maxAge: 24 * 60 * 60 });
+      setCookie("session_id", session_id, { path: "/", maxAge: 24 * 60 * 60 });
       navigate(`/typingexamselection`);
     } else {
       const { message } = await response.json();

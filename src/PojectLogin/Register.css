@@ -1,139 +1,298 @@
-/* Container styling */
-.container-for-register-project {
-    display: flex;
-    width: 100%; /* Set width to 100% */
-   
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(109.8deg, #FFFFFF 0%, #f2dbff 100%); /* Gradient background */
+/* Overall container styling */
+.register-container {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(to bottom, #ffecd2, #fcb69f); /* Warm gradient background */
+  font-family: "Arial", sans-serif;
 }
 
-/* Left side styling */
-.left-side {
+.register-content {
+  display: flex;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+}
+
+/* Left section */
+.register-left {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #333;
+}
+
+.register-left h1 {
+  font-size: 40px;
+  color: #60167e;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.register-left p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.play-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #60167e;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.play-btn:hover {
+  background-color: #9a3dbe;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 75, 43, 0.3);
+}
+
+/* Right section */
+.register-right {
     flex: 1;
-    display: flex;
-    justify-content: center; /* Center image vertically */
-    align-items: flex-start; /* Align items at the top */
-    padding: 20px; /* Add padding to the left side */
+  background: linear-gradient(135deg, #60167e, #8e44ad);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 30px;
 }
 
-/* Image styling */
-.sign-up-img {
-    width: 75%; /* Set width to 100% */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 300px; /* Optional: limit height to prevent overflow */
+/* Form styling */
+.register-form {
+    width: 600px;
+
+  /* background: rgba(255, 255, 255, 0.15);  */
+  backdrop-filter: blur(10px); 
+  border-radius: 15px;
+  padding: 30px;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);  */
 }
 
-/* Right side styling */
-.right-side {
-    flex: 1;
-    padding: 20px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+.register-form h2 {
+    text-align: left;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 32px;
+    margin-bottom: 21px;
+    font-weight: 100;
+
 }
 
-/* Video instructions */
-.video-instructions {
+.register-form p {
+    text-align: left;
+  font-size: 14px;
+  /* color: #eeeeee; */
+  margin-bottom: 25px;
+  font-family: monospace;
+}
+
+/* Input fields with inline icons */
+.register-test-input-groups {
+  position: relative;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #ffffff; /* Underlined fields with focus effect */
+  transition: border-color 0.3s ease;
+}
+
+.register-test-input-groups:focus-within {
+  border-bottom-color: #ff4b2b;
+}
+
+.input-group-test label {
+  font-size: 12px;
+  color: #eee;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon svg {
+  color: #ffffff;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.register-test-input-groups input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  flex: 1;
+  padding: 8px 0;
+  background: transparent;
+  color: #ffffff;
+}
+.register-logo{
+  width: 233px;
+cursor: pointer;
     margin-bottom: 20px;
-    width: 100%;
-}
-
-/* Form Styling */
-.register-login-form {
-    width: 95%;
-    /* Set width to 100% */
-    padding: 20px;
-    border-radius: 8px;
-    color: #333;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background for form */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the form */
-}
-
-/* Form header styling */
-.register-login-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-.user-register{
-    margin-top: 20px;
-}
-
-/* Grid Layout for Form Inputs */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px; /* Space between items */
-}
-
-/* Form Group Styling */
-.register-admin-form {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Label Styling */
-.form-group label {
-    margin-bottom: 5px; /* Space between label and input */
-    font-weight: bold; /* Bold labels */
-    color: #333; /* Dark color for labels */
-}
-
-/* Input, Select, and Button Styling */
-.register-login-form input
-
- {
-   
-    width: 92%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-.register-login-form button {
-   
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
-}
+  }
 
 
-.register-login-form select
- {
-   
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
+/* Select dropdown */
+.register-test-input-groups select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 8px 0;
+  color: #ffffff;
+}
+.input-status-option{
+    color: black;
 }
 
-/* Focus Styles */
-.register-login-form input:focus,
-.register-login-form select:focus {
-    box-shadow: 0 0 8px rgba(123, 55, 255, 0.5);
-    border-color: #6a11cb;
+/* Checkbox and terms */
+.terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #eeeeee;
 }
 
-/* Button Styles */
-.register-login-form button {
-    background-color: #6a11cb; /* Purple color */
-    color: #fff;
-    font-weight: bold;
+/* .terms input {
+  margin-right: 10px;
+  appearance: auto;
+} */
+
+
+/* Terms Checkbox Styling */
+.terms input[type="checkbox"] {
+    appearance: none; /* Remove default browser styling */
+    -webkit-appearance: none; /* For WebKit browsers */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 2px solid white; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: transparent; /* Transparent background */
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
     cursor: pointer;
-    transition: all 0.3s ease;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Checkbox Checked State */
+  .terms input[type="checkbox"]:checked {
+    background-color: transparent; /* Background remains transparent */
+    border-color: white; /* Keep the border white */
+  }
+  
+  .terms input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode for checkmark */
+    color: white; /* White tick */
+    font-size: 16px; /* Adjust size */
+    position: absolute;
+    left: 3px; /* Position tick inside the box */
+    top: -3px;
+    font-weight: bold;
+  }
+  
+  /* Hover Effect */
+  .terms input[type="checkbox"]:hover {
+    border-color: #e6e6e6; /* Slightly lighter border on hover */
+  }
+  
+
+
+
+
+
+
+
+/* Sign Up Button */
+.register-btn {
+    width: 50%;
+    background: white;
+    color: black;
+    border: none;
+    font-weight: 600;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  
+  }
+  .register-test-input-groups input::placeholder {
+    color: white;
+    font-size: 14px;
 }
 
-.register-login-form button:hover {
-    background-color: #2575fc; /* Darker purple on hover */
-    box-shadow: 0 8px 16px rgba(123, 55, 255, 0.2);
+  .mybuttonsignup{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .register-btn:hover {
+    /* Slightly darker on hover */
+    transform: translateY(-3px) scale(1.03); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  }
+  
+  .register-btn:active {
+    transform: translateY(0); /* Neutralize hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow for "pressed" state */
+  }
+  
+  
+
+/* Sign In link */
+.signin-link {
+    text-align: center!important;
+  font-size: 14px;
+  color: #eeeeee;
+  margin-top: 15px;
+ 
 }
+.signin-link p{
+   
+
+}
+
+.signin-link span {
+    color: #f1ff2b;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.signin-link span:hover {
+    color: #a0a82d;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+  
+  }
+
+.register-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 1rem; /* Space between fields */
+  }
+  
+  .register-test-input-groups {
+    width: 100%; /* Ensure each input group takes full space in its column */
+  }

@@ -8,6 +8,8 @@ import "./AdminEbook.css";
 
 import AddTypingParagraph from "../Forms/AddTypingParagraph";
 import EditTypingParagraph from "../Forms/EditTypingParagraph";
+import ExamForm from "../Forms/Examform";
+import ExamTable from "../Forms/ExamTable";
 
 
 const AdminTyping = () => {
@@ -71,7 +73,10 @@ const AdminTyping = () => {
         return <AddTypingParagraph />;
       case "EditTypingParagraph":
         return <EditTypingParagraph />;
-      
+        case "ExamForm":
+          return <ExamForm />;
+          case "ExamTable":
+            return <ExamTable />;
 
       default:
         return <AddTypingParagraph />;

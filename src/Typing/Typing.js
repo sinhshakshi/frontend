@@ -16,7 +16,7 @@ const Typing = () => {
   const { email_id } = useParams();
   const [emailId, setEmailId] = useState('');
   const [password, setPassword] = useState('');
-  const [cookies, setCookie] = useCookies(["email_id", "token"]);
+  const [cookies, setCookie] = useCookies(["SSIDCE", "session_id"]);
   const [showModal, setShowModal] = useState(false);
   const [activeInput, setActiveInput] = useState(null);
   const [showKeyboard, setShowKeyboard] = useState(false);
@@ -74,7 +74,7 @@ console.log(process.env.REACT_APP_API_URL);
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`
+          "Authorization": `Bearer ${cookies.session_id}`
         },
         body: JSON.stringify({ product_id: 'dummy-product-id' }) // Replace with actual product ID
       });
@@ -111,7 +111,7 @@ console.log(process.env.REACT_APP_API_URL);
     });
   
     if (response.ok) {
-      const { message, token, userDetails } = await response.json(); // Ensure userDetails is returned from the API
+      const { message, session_id, userDetails } = await response.json(); // Ensure userDetails is returned from the API
   
       if (userDetails) {
         // Display success modal using Swal2
@@ -121,11 +121,11 @@ console.log(process.env.REACT_APP_API_URL);
           icon: 'success',
           confirmButtonText: 'Continue',
           willClose: () => {
-            // Save email_id, token, and userDetails in cookies
-            setCookie("email_id", emailId, { path: "/", maxAge: 24 * 60 * 60 });
-            setCookie("token", token, { path: "/", maxAge: 24 * 60 * 60 });
+            // Save email_id, session_id, and userDetails in cookies
+            setCookie("SSIDCE", emailId, { path: "/", maxAge: 24 * 60 * 60 });
+            setCookie("session_id", session_id, { path: "/", maxAge: 24 * 60 * 60 });
             const userDetailsString = JSON.stringify(userDetails);
-            setCookie("userDetails", userDetailsString, { path: "/", maxAge: 24 * 60 * 60 });
+            setCookie("SSDSD", userDetailsString, { path: "/", maxAge: 24 * 60 * 60 });
   
             // Navigate to /home after modal closes
             // navigate('/');
@@ -168,14 +168,14 @@ console.log(process.env.REACT_APP_API_URL);
 
   useEffect(() => {
     const checkAccess = async () => {
-      if (cookies.token) {
+      if (cookies.session_id) {
         try {
           const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
             method: 'POST',
             headers: {
               "Content-Type": "application/json",
               "Accept": "application/json",
-              "Authorization": `Bearer ${cookies.token}`
+              "Authorization": `Bearer ${cookies.session_id}`
             }
           });
   
@@ -212,16 +212,16 @@ console.log(process.env.REACT_APP_API_URL);
           console.error("Error fetching access:", error);
         }
       } else {
-        console.log("Token not found in cookies");
+        console.log("session_id not found in cookies");
       }
     };
   
-    if (cookies.token) {
+    if (cookies.session_id) {
       checkAccess();
     } else {
-      console.log("Waiting for token to be set in cookies");
+      console.log("Waiting for session_id to be set in cookies");
     }
-  }, [cookies.token]);
+  }, [cookies.session_id]);
   
 
   

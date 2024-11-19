@@ -22,7 +22,7 @@ const TypingModule = () => {
   const [paragraph, setParagraph] = useState("");
   const [typing, setTyping] = useState(false);
   const [contentLength, setContentLength] = useState("");
-  const [cookies] = useCookies(["token"]);
+  const [cookies] = useCookies(["session_id"]);
   const [showDetails, setShowDetails] = useState(false);
   const [oldparagraph, setoldParagraph] = useState("");
   const { userDetails, isLoggedIn } = useAuth();
@@ -87,7 +87,7 @@ const TypingModule = () => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${cookies.token}`,
+          Authorization: `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify(dt),
       }
@@ -109,7 +109,7 @@ const TypingModule = () => {
       // Additional logic if needed
     }
     const checkAccess = async () => {
-      if (!cookies.token) {
+      if (!cookies.session_id) {
         navigate("/login");
         return;
       }
@@ -122,7 +122,7 @@ const TypingModule = () => {
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
-              Authorization: `Bearer ${cookies.token}`,
+              Authorization: `Bearer ${cookies.session_id}`,
             },
           }
         );
@@ -137,7 +137,7 @@ const TypingModule = () => {
                 headers: {
                   "Content-Type": "application/json",
                   Accept: "application/json",
-                  Authorization: `Bearer ${cookies.token}`,
+                  Authorization: `Bearer ${cookies.session_id}`,
                 },
                 body: JSON.stringify({ product_id: "999" }), // Replace with actual product ID
               }
@@ -165,7 +165,7 @@ const TypingModule = () => {
     };
 
     checkAccess();
-  }, [testcode, exam, cookies.token, userDetails, navigate]);
+  }, [testcode, exam, cookies.session_id, userDetails, navigate]);
 
   let d = paragraph;
 
@@ -255,7 +255,7 @@ const TypingModule = () => {
   
       // Prepare the result object
       const typing_performance_result = {
-        email_id: cookies.email_id,
+        email_id: cookies.SSIDCE,
         paper_code: testcode,
         student_paragraph: message,
         paragraph: finalParagraph, // Formatted comparison result with HTML
@@ -278,7 +278,7 @@ const TypingModule = () => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${cookies.token}`,
+          Authorization: `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify(typing_performance_result), // Convert to JSON string
       });

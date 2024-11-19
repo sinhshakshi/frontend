@@ -15,7 +15,7 @@ const TypingTestSelector = () => {
   const navigate = useNavigate();
   const { exam, examName, paperCode } = useParams();
   const { userDetails, isLoggedIn } = useAuth();
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
 
   const months = [
     'January', 'February', 'March', 'April', 
@@ -29,7 +29,7 @@ const TypingTestSelector = () => {
 
   useEffect(() => {
     const checkAccessAndFetchParagraphs = async () => {
-      if (!cookies.token) {
+      if (!cookies.session_id) {
         navigate('/login');
         return;
       }
@@ -40,7 +40,7 @@ const TypingTestSelector = () => {
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`
+            "Authorization": `Bearer ${cookies.session_id}`
           }
         });
 
@@ -52,7 +52,7 @@ const TypingTestSelector = () => {
               headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": `Bearer ${cookies.token}`
+                "Authorization": `Bearer ${cookies.session_id}`
               },
               body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
             });
@@ -86,7 +86,7 @@ const TypingTestSelector = () => {
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`,
+            "Authorization": `Bearer ${cookies.session_id}`,
           },
           body: JSON.stringify({ paper_code: paperCode }),
         });
@@ -108,7 +108,7 @@ const TypingTestSelector = () => {
     };
 
     checkAccessAndFetchParagraphs();
-  }, [cookies.token, navigate, paperCode]);
+  }, [cookies.session_id, navigate, paperCode]);
 
   const handleStartTest = () => {
     if (!selectedMonth || !selectedTestName) {

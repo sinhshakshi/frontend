@@ -33,7 +33,7 @@ const TypingPerformanceTest = () => {
 
     useEffect(() => {
         const fetchPerformanceStatusTest = async () => {
-            let dt = { paper_code: testcode, email_id: cookies.email_id, exam: exam, category: category };
+            let dt = { paper_code: testcode, email_id: cookies.SSIDCE, exam: exam, category: category };
             let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/typingPerformanceStatusTest`, {
                 method: 'POST',
                 headers: {
@@ -58,7 +58,7 @@ const TypingPerformanceTest = () => {
         };
 
         fetchPerformanceStatusTest();
-    }, [testcode, cookies.email_id, exam, category]);
+    }, [testcode, cookies.SSIDCE, exam, category]);
 
     const startTest = () => {
         navigate(`/typingparagraph/${exam}/${category}`);
@@ -68,7 +68,7 @@ const TypingPerformanceTest = () => {
         <>                 
             <Row className="tp-fr tp-fr1">
                 <Col md={12} className="tp-fr-col12">
-                  <p className="tp-fr-col12p">{cookies.email_id}</p>
+                  <p className="tp-fr-col12p">{cookies.SSIDCE}</p>
                   <p className="tp-fr-col12p1">
                       <span className="tp-fr-col12p1-span1">SSC TYPING RESULT: </span>
                       {testresult === 'Pass' ? 

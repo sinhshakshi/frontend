@@ -10,7 +10,7 @@ const Instruction = () => {
   const { testcode, exam, testname } = useParams();
   const [showNextStep, setShowNextStep] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-  const [cookies] = useCookies(['token']); // Reading token from cookies
+  const [cookies] = useCookies(['session_id']); // Reading session_id from cookies
   const navigate = useNavigate();
   const { userDetails, isLoggedIn } = useAuth();
 
@@ -23,7 +23,7 @@ const Instruction = () => {
   // Check access for the user
   useEffect(() => {
     const checkAccess = async () => {
-      if (!cookies.token) {
+      if (!cookies.session_id) {
         navigate('/login');
         return;
       }
@@ -34,7 +34,7 @@ const Instruction = () => {
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`
+            "Authorization": `Bearer ${cookies.session_id}`
           }
         });
 
@@ -46,7 +46,7 @@ const Instruction = () => {
               headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "Authorization": `Bearer ${cookies.token}`
+                "Authorization": `Bearer ${cookies.session_id}`
               },
               body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
             });
@@ -74,7 +74,7 @@ const Instruction = () => {
     };
 
     checkAccess();
-  }, [cookies.token, navigate]);
+  }, [cookies.session_id, navigate]);
 
   const handleNextClick = () => {
     setShowNextStep(true);

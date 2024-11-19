@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams,useNavigate  } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importing eye icons
 import './ResetPassword.css'; // Import the CSS file for styling
 import MainFooter from '../Footermain/Footer';
 import Header from "../component/Header";
+import Swal from 'sweetalert2'; // Import SweetAlert2
 
 const ResetPassword = () => {
   const [newPassword, setNewPassword] = useState('');
+  const navigate = useNavigate();
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [searchParams] = useSearchParams();
-  const token = searchParams.get('token');
+  const session_id = searchParams.get('session_id');
 
   // Password validation function
   const passwordValidationMessage = () => {
@@ -55,13 +57,23 @@ const ResetPassword = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ token, newPassword }),
+        body: JSON.stringify({ session_id, newPassword }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        setMessage(data.message);
+        // Show SweetAlert and redirect
+        Swal.fire({
+          title: 'Password Reset Successful',
+          text: 'Your password has been successfully reset. Redirecting to login...',
+          icon: 'success',
+          timer: 3000,
+          timerProgressBar: true,
+          showConfirmButton: false,
+        }).then(() => {
+          navigate('/login'); // Redirect after the SweetAlert closes
+        });
       } else {
         setError(data.error || 'Failed to reset the password.');
       }

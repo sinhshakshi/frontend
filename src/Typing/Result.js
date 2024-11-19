@@ -27,7 +27,7 @@ const TypingPerformance = () => {
     const [correctedword, setCorrectedword] = useState(0);
     const [totaltyped, settotaltyped] = useState(0);
     const [Incorrectedword, setIncorrectedword] = useState(0);
-    const [cookies, setCookie, removeCookie] = useCookies(['token', 'userDetaila']); 
+    const [cookies, setCookie, removeCookie] = useCookies(['session_id', 'SSDSD']); 
     const { isLoggedIn, userDetails, logout } = useAuth();
     let tracc = Math.round(accuracy * 3.6);
     let trwro = Math.round(wrongper * 3.6);    
@@ -63,8 +63,8 @@ const TypingPerformance = () => {
 
     useEffect(() => {
         const fetchPerformanceStatus = async () => {
-            if (!cookies.token) {
-                // console.log("Token not found in cookies");
+            if (!cookies.session_id) {
+                // console.log("session_id not found in cookies");
                 navigate('/');
                 return;
             }
@@ -75,7 +75,7 @@ const TypingPerformance = () => {
                     headers: {
                         "Content-Type": "application/json",
                         "Accept": "application/json",
-                        "Authorization": `Bearer ${cookies.token}`
+                        "Authorization": `Bearer ${cookies.session_id}`
                     }
                 });
         
@@ -87,7 +87,7 @@ const TypingPerformance = () => {
                             headers: {
                                 "Content-Type": "application/json",
                                 "Accept": "application/json",
-                                "Authorization": `Bearer ${cookies.token}`
+                                "Authorization": `Bearer ${cookies.session_id}`
                             },
                             body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
                         });
@@ -102,7 +102,7 @@ const TypingPerformance = () => {
                                     headers: {
                                         "Content-Type": "application/json",
                                         "Accept": "application/json",
-                                        "Authorization": `Bearer ${cookies.token}`
+                                        "Authorization": `Bearer ${cookies.session_id}`
                                     },
                                     body: JSON.stringify(dt)
                                 });
@@ -143,7 +143,7 @@ const TypingPerformance = () => {
         };
 
         fetchPerformanceStatus();
-    }, [testcode, emailId, exam, category, cookies.token, navigate]);
+    }, [testcode, emailId, exam, category, cookies.session_id, navigate]);
 
     const startTest = () => {
         navigate(`/typingparagraph/${exam}/${category}`);

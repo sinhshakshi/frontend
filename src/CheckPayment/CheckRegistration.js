@@ -15,7 +15,7 @@ const PaymentComponent = () => {
   const [isRegistered, setIsRegistered] = useState(null);
   const [plan, setPlan] = useState('30 Days');
   const [orderAmount, setOrderAmount] = useState(0);
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
   
   const navigate = useNavigate();
   const { exam, examName, paperCode } = useParams();
@@ -77,7 +77,7 @@ const PaymentComponent = () => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`,
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify({ product_id: productId })
       });

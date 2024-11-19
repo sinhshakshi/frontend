@@ -14,7 +14,7 @@ const AfterBanner = () => {
   const [accessStatus, setAccessStatus] = useState({});
   const [selectedExam, setSelectedExam] = useState('CHSL'); // Default selection for CHSL
   const navigate = useNavigate();
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
   const [isStartButtonEnabled, setIsStartButtonEnabled] = useState(false);
   const selectedExamCategory = 'ssc'; // Fixed selected category as 'ssc'
 
@@ -44,7 +44,7 @@ const AfterBanner = () => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`,
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify({ product_id: '999' }) // Use dynamic paper code if necessary
       });
@@ -78,7 +78,7 @@ const AfterBanner = () => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`,
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify({ product_id: '999' }) // Static product_id
       });

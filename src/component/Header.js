@@ -13,7 +13,7 @@ const TypingHeader = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const searchRef = useRef(null);
   const navigate = useNavigate();
-  const [cookies] = useCookies(["token"]);
+  const [cookies] = useCookies(["session_id"]);
   const { userDetails } = useAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false); // State for mobile menu
@@ -21,14 +21,14 @@ const TypingHeader = () => {
   const [loading, setLoading] = useState(true); // Add loading state
 
   const checkAccess = async () => {
-    if (cookies.token) {
+    if (cookies.session_id) {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.token}`
+            "Authorization": `Bearer ${cookies.session_id}`
           }
         });
 
@@ -47,7 +47,7 @@ const TypingHeader = () => {
         setIsLoggedIn(false); // On error, set isLoggedIn to false
       }
     } else {
-      setIsLoggedIn(false); // If no token, set isLoggedIn to false
+      setIsLoggedIn(false); // If no session_id, set isLoggedIn to false
     }
 
     setLoading(false); // Stop loading once the API call completes
@@ -56,7 +56,7 @@ const TypingHeader = () => {
   // Call checkAccess when the component mounts
   useEffect(() => {
     checkAccess();
-  }, [cookies.token]);
+  }, [cookies.session_id]);
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);

@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie';
 
 const HomePageDescription = () => {
   const navigate = useNavigate();
-  const [cookies] = useCookies(['token']);
+  const [cookies] = useCookies(['session_id']);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const { userDetails, isLoggedIn } = useAuth();
 
@@ -30,7 +30,7 @@ const HomePageDescription = () => {
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.token}`,
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify({ product_id: '999' }) // Replace with actual product ID
       });

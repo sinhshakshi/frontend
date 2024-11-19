@@ -1,0 +1,50 @@
+.examtable-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .examtable-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .examtable-message {
+    margin-top: 10px;
+    color: green;
+  }
+  
+  .examtable-message-error {
+    color: red;
+  }
+  
+  .examtable-table {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .examtable-button {
+    margin: 5px;
+  }
+  .css-rsks93-MuiPaper-root-MuiDialog-paper {
+width: 821px;
+  }
+ 
+  
+  .examtable-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .examtable-label {
+    font-weight: bold;
+  }
+  
+  .examtable-quill {
+    margin-top: 20px;
+    min-height: 200px;
+  }
+  
+  .examtable-textfield {
+    margin-bottom: 10px;
+  }
+  

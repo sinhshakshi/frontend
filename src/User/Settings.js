@@ -10,7 +10,7 @@ const Settings = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [cookies] = useCookies(['token', 'email_id']);
+  const [cookies] = useCookies(['session_id', 'SSIDCE']);
   const [showOldPassword, setShowOldPassword] = useState(false);
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -56,7 +56,7 @@ const Settings = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-          email_id: cookies.email_id, 
+          email_id: cookies.SSIDCE, 
           old_password: oldPassword, 
           new_password: newPassword 
         }),
@@ -77,7 +77,7 @@ const Settings = () => {
   return (
     <div className="settings-page">
       <h2>User Settings</h2>
-      <p>Email: <strong>{cookies.email_id}</strong></p> {/* Display user's email */}
+      <p>Email: <strong>{cookies.SSIDCE}</strong></p> {/* Display user's email */}
       
       <h2>Change Password</h2>
       <form onSubmit={handleChangePassword}>

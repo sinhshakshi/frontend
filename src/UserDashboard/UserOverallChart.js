@@ -14,15 +14,15 @@ const UserOverallChart = () => {
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear()); // Year
   const [viewOption, setViewOption] = useState('month'); // 'month' or 'year'
   const { userDetails } = useAuth();
-  const [cookies] = useCookies(['token, email_id']);
+  const [cookies] = useCookies(['session_id, SSIDCE']);
   const navigate = useNavigate(); // Initialize useNavigate
 
   useEffect(() => {
     checkAccess();
-  }, [cookies.token]);
+  }, [cookies.session_id]);
 
   const checkAccess = async () => {
-    if (!cookies.token) {
+    if (!cookies.session_id) {
       navigate("/login");
       return;
     }
@@ -33,7 +33,7 @@ const UserOverallChart = () => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          Authorization: `Bearer ${cookies.token}`,
+          Authorization: `Bearer ${cookies.session_id}`,
         },
       });
   
@@ -54,7 +54,7 @@ const UserOverallChart = () => {
   
   const fetchSpeedData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.email_id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.SSIDCE}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

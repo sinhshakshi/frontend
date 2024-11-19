@@ -7,23 +7,23 @@ import { useCookies } from "react-cookie";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [cookies, setCookie, removeCookie] = useCookies(["token", "userDetails"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["session_id", "SSDSD"]);
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(cookies.token || null);
+  const [session_id, setToken] = useState(cookies.session_id || null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [accessTypingStatus, setAccessTypingStatus] = useState(null);
 
   const getUserDetailsFromCookies = () => {
     const cookieString = document.cookie
       .split('; ')
-      .find(row => row.startsWith('userDetails='));
+      .find(row => row.startsWith('SSDSD='));
 
     if (cookieString) {
       const cookieValue = decodeURIComponent(cookieString.split('=')[1]);
       try {
         return JSON.parse(cookieValue);
       } catch (error) {
-        console.error('Error parsing userDetails from cookies:', error);
+        console.error('Error parsing SSDSD from cookies:', error);
       }
     }
     return null; // or default user details
@@ -32,15 +32,15 @@ export const AuthProvider = ({ children }) => {
   const [userDetails, setUserDetails] = useState(getUserDetailsFromCookies());
 
   useEffect(() => {
-    // Check if the token cookie exists
-    const token = getCookie('token');
+    // Check if the session_id cookie exists
+    const session_id = getCookie('session_id');
 
-    // If the token does not exist, clear related cookies and redirect to login
-    if (!token) {
+    // If the session_id does not exist, clear related cookies and redirect to login
+    if (!session_id) {
       clearCookies();
-      // window.location.href = '/login'; // Redirect to login page if no token
+      // window.location.href = '/login'; // Redirect to login page if no session_id
     } else {
-      // setIsLoggedIn(true); // Set logged in status to true if token exists
+      // setIsLoggedIn(true); // Set logged in status to true if session_id exists
     }
   }, []);
 
@@ -51,18 +51,18 @@ export const AuthProvider = ({ children }) => {
   };
 
   const clearCookies = () => {
-    // Clear token and userDetails cookies
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
-    document.cookie = "userDetails=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
-    removeCookie("token"); // Remove cookie using useCookies hook
-    removeCookie("userDetails"); // Remove cookie using useCookies hook
+    // Clear session_id and userDetails cookies
+    document.cookie = "session_id=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+    document.cookie = "SSDSD=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;";
+    removeCookie("session_id"); // Remove cookie using useCookies hook
+    removeCookie("SSDSD"); // Remove cookie using useCookies hook
     setUserDetails(null); // Clear user details from state
     setIsLoggedIn(false); // Update logged in status
   };
 
   useEffect(() => {
     const checkAccessTyping = async () => {
-      if (!token) return; // Skip if there's no token
+      if (!session_id) return; // Skip if there's no session_id
 
       try {
         const response = await fetch(
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${session_id}`,
             },
           }
         );
@@ -102,13 +102,13 @@ export const AuthProvider = ({ children }) => {
     };
 
     checkAccessTyping(); // Call the function to check access typing
-  }, [token, userDetails]);
+  }, [session_id, userDetails]);
 
   // Effect to update cookies when userDetails is set
   useEffect(() => {
     if (userDetails) {
       const userDetailsString = JSON.stringify(userDetails);
-      setCookie("userDetails", userDetailsString, { path: "/", maxAge: 24 * 60 * 60 });
+      setCookie("SSDSD", userDetailsString, { path: "/", maxAge: 24 * 60 * 60 });
     }
   }, [userDetails, setCookie]);
 
@@ -125,7 +125,7 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider
       value={{
         user,
-        token,
+        session_id,
         logout,
         isLoggedIn,
         accessTypingStatus,
