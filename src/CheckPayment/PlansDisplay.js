@@ -144,7 +144,7 @@ const PlansDisplay = () => {
   const plans = [
     { name: "30 Days", priceDrop: "₹10", savings: "₹10", oldAmount: "₹79", totalAmount: "₹69" },
     { name: "25 Days", priceDrop: "₹10", savings: "₹10", oldAmount: "₹69", totalAmount: "₹59" },
-    { name: "3 Days", priceDrop: "₹10", savings: "₹10", oldAmount: "₹39", totalAmount: "₹29" },
+    { name: "3 Days", priceDrop: "₹10", savings: "₹10", oldAmount: "₹39", totalAmount: "₹1" },
     { name: "90 Days", priceDrop: "₹40", savings: "₹40", oldAmount: "₹199", totalAmount: "₹159" },
     { name: "180 Days", priceDrop: "₹50", savings: "₹50", oldAmount: "₹349", totalAmount: "₹299" },
     { name: "365 Days", priceDrop: "₹100", savings: "₹100", oldAmount: "₹699", totalAmount: "₹599" },
