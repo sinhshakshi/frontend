@@ -10,6 +10,7 @@ import AddTypingParagraph from "../Forms/AddTypingParagraph";
 import EditTypingParagraph from "../Forms/EditTypingParagraph";
 import ExamForm from "../Forms/Examform";
 import ExamTable from "../Forms/ExamTable";
+import AddPlanForm from "../Forms/AddPlanForm";
 
 
 const AdminTyping = () => {
@@ -77,6 +78,8 @@ const AdminTyping = () => {
           return <ExamForm />;
           case "ExamTable":
             return <ExamTable />;
+            case "AddPlanForm":
+              return <AddPlanForm />;
 
       default:
         return <AddTypingParagraph />;

@@ -57,6 +57,12 @@ const SidebarEbook = ({ setComponent }) => {
               >
                 Edit exam image
               </button>
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("AddPlanForm")}
+              >
+                Add price plans
+              </button>
             </div>
           )}
         </div>

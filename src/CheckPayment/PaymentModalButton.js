@@ -20,7 +20,8 @@ const Paymentmodalbutton = ({
   const [cookies] = useCookies(["SSIDCE", "session_id"]);
   const navigate = useNavigate();
 
-  const numericOrderAmount = parseFloat(orderAmount.replace(/[^0-9.]/g, ""));
+  const numericOrderAmount = orderAmount ? parseFloat(String(orderAmount).replace(/[^0-9.]/g, "")) : 0;
+
 
   const doPayment = async (orderId, amount) => {
     const options = {
