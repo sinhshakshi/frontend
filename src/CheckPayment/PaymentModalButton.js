@@ -22,94 +22,94 @@ const Paymentmodalbutton = ({
 
   const numericOrderAmount = parseFloat(orderAmount.replace(/[^0-9.]/g, ""));
 
-  // const doPayment = async (orderId, amount) => {
-  //   const options = {
-  //     key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-  //     amount: amount * 100, // Amount in paise
-  //     currency: "INR",
-  //     order_id: orderId,
-  //     name: "TestDesk",
-  //     description: `Payment for ${selectedPlan}`,
-  //     handler: async function (response) {
-  //       // Payment successful
-  //       Swal.fire("Payment Successful!", "Thank you for your purchase!", "success");
-
-  //       try {
-  //         const body = {
-  //           razorpay_order_id: orderId,
-  //           razorpay_payment_id: response.razorpay_payment_id,
-  //           razorpay_signature: response.razorpay_signature,
-  //         };
-
-  //         const validateResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/validate`, {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           body: JSON.stringify(body),
-  //         });
-
-  //         const jsonResponse = await validateResponse.json();
-
-  //         if (jsonResponse.success) {
-  //           window.location.href = jsonResponse.redirectUrl;
-  //         } else {
-  //           Swal.fire({
-  //             icon: "error",
-  //             title: "Validation Failed",
-  //             text: "Payment validation failed. Please contact support.",
-  //           });
-  //         }
-  //       } catch (error) {
-  //         console.error("Error validating payment:", error);
-  //         Swal.fire({
-  //           icon: "error",
-  //           title: "Error",
-  //           text: "An error occurred during payment validation. Please try again.",
-  //         });
-  //       }
-  //     },
-  //     prefill: {
-  //       name: fullName,
-  //       email: email,
-  //       contact: mobile,
-  //     },
-  //     theme: {
-  //       color: "#3399cc",
-  //     },
-  //   };
-
-  //   const razorpay = new window.Razorpay(options);
-  //   razorpay.open();
-  // };
-
-
   const doPayment = async (orderId, amount) => {
     const options = {
-        key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-        amount: amount * 100, // Amount in paise
-        currency: "INR",
-        order_id: orderId,
-        name: "TestDesk",
-        description: `Payment for ${selectedPlan}`,
-        handler: function () {
-            // Inform the user that payment is being processed
-            Swal.fire("Payment Successful!", "Processing your payment confirmation...", "success");
-            window.location.href = "https://testdesk.in/payment-success"; // Redirect to a confirmation page
-        },
-        prefill: {
-            name: fullName,
-            email: email,
-            contact: mobile,
-        },
-        theme: {
-            color: "#3399cc",
-        },
+      key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+      amount: amount * 100, // Amount in paise
+      currency: "INR",
+      order_id: orderId,
+      name: "TestDesk",
+      description: `Payment for ${selectedPlan}`,
+      handler: async function (response) {
+        // Payment successful
+        Swal.fire("Payment Successful!", "Thank you for your purchase!", "success");
+
+        try {
+          const body = {
+            razorpay_order_id: orderId,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+          };
+
+          const validateResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/validate`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(body),
+          });
+
+          const jsonResponse = await validateResponse.json();
+
+          if (jsonResponse.success) {
+            window.location.href = jsonResponse.redirectUrl;
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Validation Failed",
+              text: "Payment validation failed. Please contact support.",
+            });
+          }
+        } catch (error) {
+          console.error("Error validating payment:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "An error occurred during payment validation. Please try again.",
+          });
+        }
+      },
+      prefill: {
+        name: fullName,
+        email: email,
+        contact: mobile,
+      },
+      theme: {
+        color: "#3399cc",
+      },
     };
 
     const razorpay = new window.Razorpay(options);
     razorpay.open();
-};
+  };
+
+
+//   const doPayment = async (orderId, amount) => {
+//     const options = {
+//         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
+//         amount: amount * 100, // Amount in paise
+//         currency: "INR",
+//         order_id: orderId,
+//         name: "TestDesk",
+//         description: `Payment for ${selectedPlan}`,
+//         handler: function () {
+//             // Inform the user that payment is being processed
+//             Swal.fire("Payment Successful!", "Processing your payment confirmation...", "success");
+//             window.location.href = "https://testdesk.in/payment-success"; // Redirect to a confirmation page
+//         },
+//         prefill: {
+//             name: fullName,
+//             email: email,
+//             contact: mobile,
+//         },
+//         theme: {
+//             color: "#3399cc",
+//         },
+//     };
+
+//     const razorpay = new window.Razorpay(options);
+//     razorpay.open();
+// };
 
   const payMe = async () => {
     if (isProcessing) return;
