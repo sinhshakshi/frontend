@@ -24,11 +24,7 @@ const PlansDisplay = () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getPlans`, {
           method: 'GET',  // The HTTP method (GET is typically used for fetching data)
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.session_id}`,  // Add session_id to the Authorization header
-          },
+      
         });
   
         if (response.ok) {

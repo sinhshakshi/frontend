@@ -265,11 +265,7 @@ const PaymentComponent = () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getPlans`, {
           method: 'GET', 
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Authorization": `Bearer ${cookies.session_id}`, // Send session_id in headers
-          }
+
         });
 
         if (response.ok) {
