@@ -20,8 +20,11 @@ const Paymentmodalbutton = ({
   const [cookies] = useCookies(["SSIDCE", "session_id"]);
   const navigate = useNavigate();
 
-  const numericOrderAmount = parseFloat(orderAmount.replace(/[^0-9.]/g, ""));
+  const numericOrderAmount = parseFloat(String(orderAmount).replace(/[^0-9.]/g, ""));
 
+
+console.log(numericOrderAmount)
+  
   const doPayment = async (orderId, amount) => {
     const options = {
       key: process.env.REACT_APP_RAZORPAY_KEY_ID,
@@ -31,21 +34,16 @@ const Paymentmodalbutton = ({
       name: "TestDesk",
       description: `Payment for ${selectedPlan}`,
       handler: async function (response) {
-        // Log the order_id, payment_id, and signature
-        console.log("Received Razorpay Order ID:", orderId);
-        console.log("Received Razorpay Payment ID:", response.razorpay_payment_id);
-        console.log("Received Razorpay Signature:", response.razorpay_signature);
-  
         // Payment successful
         Swal.fire("Payment Successful!", "Thank you for your purchase!", "success");
-  
+
         try {
           const body = {
             razorpay_order_id: orderId,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
           };
-  
+
           const validateResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/validate`, {
             method: "POST",
             headers: {
@@ -53,9 +51,9 @@ const Paymentmodalbutton = ({
             },
             body: JSON.stringify(body),
           });
-  
+
           const jsonResponse = await validateResponse.json();
-  
+
           if (jsonResponse.success) {
             window.location.href = jsonResponse.redirectUrl;
           } else {
@@ -83,11 +81,10 @@ const Paymentmodalbutton = ({
         color: "#3399cc",
       },
     };
-  
+
     const razorpay = new window.Razorpay(options);
     razorpay.open();
   };
-  
 
 
 //   const doPayment = async (orderId, amount) => {
