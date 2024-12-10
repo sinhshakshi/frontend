@@ -31,6 +31,7 @@ import AcceptableUsePolicy from './Footermain/AcceptableUsePolicy';
 import ContactUs from './ContactUs/ContactUs';
 import ForgetPassword from "./Password/ForgetPassword";
 import ResetPassword from "./Password/ResetPassword";
+import ExamResult from "./Exam Result/ExamResult";
 
 const App = () => {
 
@@ -86,6 +87,7 @@ const App = () => {
     <AuthProvider> 
     <Router>
       <Routes>
+      <Route path='/typing-test-dest-results' element={<ExamResult />} /> 
       <Route path='/help' element={<ContactUs />} />  
       <Route path='/acceptable-use-policy' element={<AcceptableUsePolicy />} />  
       <Route path='/privacy-policy' element={<PrivacyPolicy />} />  

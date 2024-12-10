@@ -8,13 +8,13 @@ const AddTypingParagraph = () => {
   const [formData, setFormData] = useState({
     exam: '',
     examName: '',
-    testName: '', // New field for test name
-    type: '',
-    date: '', // Ensure date is in the correct format
     paper_code: '',
+    testName: '', // New field for test name
     title: '',
-    paragraph: '',
+    date: '',
     time: '',
+    type: '',
+    paragraph: '',
     status: '1',
   });
 
@@ -47,10 +47,10 @@ const AddTypingParagraph = () => {
       setFormData({
         exam: '',
         examName: '',
+        paper_code: '',
         testName: '', // Reset test name field
         type: '',
-        date: '',
-        paper_code: '',
+        date: '',       
         title: '',
         paragraph: '',
         time: '',

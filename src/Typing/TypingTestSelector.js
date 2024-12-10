@@ -23,8 +23,11 @@ const TypingTestSelector = () => {
     'September', 'October', 'November', 'December'
   ];
 
+  const today = new Date();
 
-  console.log('userDetails:', userDetails);
+
+
+  // console.log('userDetails:', userDetails);
 
 
   useEffect(() => {
@@ -100,9 +103,12 @@ const TypingTestSelector = () => {
       } catch (error) {
         console.error('Error fetching paragraphs:', error);
         Swal.fire({
-          icon: 'error',
-          title: 'Fetch Error',
-          text: 'Failed to fetch paragraphs. Please try again later.',
+          icon: 'info', // Use 'info' to indicate that it's informational, not an error
+          title: 'Live Test Info',
+          text: 'This feature will only be available during the live test. Please check your schedule!',
+          confirmButtonText: 'Okay',
+          allowOutsideClick: false, // Prevent accidental dismiss
+          allowEscapeKey: true, // Allow dismiss using the Escape key
         });
       }
     };
@@ -137,6 +143,8 @@ const TypingTestSelector = () => {
     const year = date.getFullYear(); // Get full year
     return `${day}-${month}-${year}`; // Return formatted date
   };
+
+  
 
   return (
     <>
@@ -174,6 +182,12 @@ const TypingTestSelector = () => {
         </div>
       </div>
 
+      <div className="scrolling-message">
+  <span>
+    Live Test Schedule: Morning Session 6 AM TO 7 AM And Evening Session 7 PM TO 8 PM - Special For 2024 Typing Test
+  </span>
+</div>
+
       <div className='check-sub'>
         <div className='header-for-sub'>{paperCode}</div>
         <div className="payment-component">
@@ -190,7 +204,7 @@ const TypingTestSelector = () => {
               ))}
             </select>
           </div>
-          <div className="paper-code-selector">
+          {/* <div className="paper-code-selector">
             <select
               id="testName"
               value={selectedTestName}
@@ -204,7 +218,36 @@ const TypingTestSelector = () => {
                 </option>
               ))}
             </select>
-          </div>
+          </div> */}
+          <div className="paper-code-selector">
+  <select
+    id="testName"
+    value={selectedTestName}
+    onChange={(e) => setSelectedTestName(e.target.value)}
+    className="plan-select"
+  >
+    <option value="" disabled>Select a test</option>
+    {filteredTests.map((test, index) => {
+      const testDate = new Date(test.date);
+      const today = new Date();
+      const isToday =
+        testDate.getDate() === today.getDate() &&
+        testDate.getMonth() === today.getMonth() &&
+        testDate.getFullYear() === today.getFullYear();
+
+        return (
+          <option
+            key={index}
+            value={test.testName}
+            style={isToday ? { color: "green", fontWeight: "bold" } : {}}
+          >
+            {test.testName} on {formatDate(test.date)} {isToday ? "LIVE" : ""}
+          </option>
+        );
+    })}
+  </select>
+</div>
+
           <button onClick={handleStartTest} className="check-button" disabled={!selectedMonth || !selectedTestName}>
             Start Test
           </button>

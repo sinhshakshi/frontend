@@ -98,7 +98,9 @@ const TypingHeader = () => {
   const examclick = () => {
     navigate('/choose-exam');
   };
-
+  const handleresultClick = () => {
+    navigate('/typing-test-dest-results');
+  };
   const handleDashboardClick = () => {
     navigate('/user-dashboard');
   };
@@ -127,6 +129,8 @@ const TypingHeader = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+
+
   return (
     <>
     <header className="typing-header-container">
@@ -145,7 +149,7 @@ const TypingHeader = () => {
           </div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
-          {/* <div className="typing-nav-item" onClick={toggleSearch}>Search</div> */}
+          <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
         </div>
 
         <div className="typing-auth-buttons">
@@ -158,6 +162,7 @@ const TypingHeader = () => {
             <>
               <button className="typing-btn typing-login-btn" onClick={handleLoginClick}>Login</button>
               <button className="typing-btn typing-signup-btn" onClick={handleSignUpClick}>Sign Up</button>
+              
             </>
           )}
         </div>

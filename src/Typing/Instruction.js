@@ -13,6 +13,7 @@ const Instruction = () => {
   const [cookies] = useCookies(['session_id']); // Reading session_id from cookies
   const navigate = useNavigate();
   const { userDetails, isLoggedIn } = useAuth();
+  const [testTime, setTestTime] = useState(0);
 
   useEffect(() => {
     if (isLoggedIn && userDetails) {
@@ -73,6 +74,33 @@ const Instruction = () => {
       }
     };
 
+    const fetchTestTime = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getTestDetails`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${cookies.session_id}`,
+          },
+          body: JSON.stringify({ testcode, exam, testname }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setTestTime(data.time); // Update the time dynamically
+        } else {
+          console.error('Failed to fetch test time.');
+          setTestTime(0); // Default time in case of failure
+        }
+      } catch (error) {
+        console.error('Error fetching test time:', error);
+        setTestTime(0); // Default time in case of error
+      }
+    };
+
+    fetchTestTime();
+
     checkAccess();
   }, [cookies.session_id, navigate]);
 
@@ -97,6 +125,9 @@ const Instruction = () => {
     }
   };
 
+console.log(testTime)
+
+
   return (
     <>
       <div className="instruction-container">
@@ -115,12 +146,12 @@ const Instruction = () => {
                 <p className="read-inst">Please read instructions carefully</p>
                 <br /><br />
                 <p className="general-inst">General instructions</p>
-                <p>Total duration of examination is 12 minutes.</p>
+                <p>Total duration of examination is {testTime} minutes.</p>
                 <p>The clock will be set at the server. The countdown timer in the top right corner of the screen will display the remaining time available for you to complete the typing test. When the timer reaches zero, the typing test will end automatically. You do not need to manually submit the test.</p>
                 <br /><br />
                 <p>Typing Test Instructions:</p>
                 <br /><br />
-                <p>This typing test consists of a paragraph that you must type accurately within the 12-minute time limit. Errors will impact your final score.</p>
+                <p>This typing test consists of a paragraph that you must type accurately within the {testTime}-minute time limit. Errors will impact your final score.</p>
                 <p>Ensure that you maintain proper speed and accuracy throughout the test to achieve the required typing standard.</p>
               </div>
             ) : (

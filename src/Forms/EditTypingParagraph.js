@@ -63,6 +63,7 @@ const EditTypingParagraph = () => {
     { accessorKey: 'type', header: 'Type' },
     { accessorKey: 'date', header: 'Date' },
     { accessorKey: 'paper_code', header: 'Paper Code' },
+    { accessorKey: 'title', header: 'Title' },
     {
       id: 'edit',
       header: 'Edit',
@@ -297,10 +298,72 @@ const EditTypingParagraph = () => {
           <button className="modal-close" onClick={closeModal}>&times;</button>
         </div>
         <form className="modal-form-for-editing-typing-paragraph" onSubmit={handleEditSubmit}>
-          {/* Form fields for editing (same as before) */}
-          <Button type="submit" variant="contained" color="primary" className="modal-submit">Update</Button>
-          <Button variant="contained" color="secondary" className="modal-delete" onClick={handleDelete}>Delete</Button>
-        </form>
+  <TextField
+    label="Exam"
+    value={editData.exam}
+    onChange={(e) => setEditData({ ...editData, exam: e.target.value })}
+    fullWidth
+  />
+  <TextField
+    label="Exam Name"
+    value={editData.examName}
+    onChange={(e) => setEditData({ ...editData, examName: e.target.value })}
+    fullWidth
+  />
+  <TextField
+    label="Test Name"
+    value={editData.testName}
+    onChange={(e) => setEditData({ ...editData, testName: e.target.value })}
+    fullWidth
+  />
+  <TextField
+    label="Type"
+    value={editData.type}
+    onChange={(e) => setEditData({ ...editData, type: e.target.value })}
+    fullWidth
+  />
+  <TextField
+    label="Date"
+    type="date"
+    value={editData.date}
+    onChange={(e) => setEditData({ ...editData, date: e.target.value })}
+    fullWidth
+    InputLabelProps={{
+      shrink: true,
+    }}
+  />
+  <TextField
+    label="Paper Code"
+    value={editData.paper_code}
+    onChange={(e) => setEditData({ ...editData, paper_code: e.target.value })}
+    fullWidth
+  />
+  <TextField
+    label="Title"
+    value={editData.title}
+    onChange={(e) => setEditData({ ...editData, title: e.target.value })}
+    fullWidth
+  />
+<TextField
+  label="Paragraph"
+  value={editData.paragraph}
+  onChange={(e) => setEditData({ ...editData, paragraph: e.target.value })}
+  fullWidth
+  multiline
+  rows={4} /* Adjust the number of rows to control the height */
+  variant="outlined" /* Use 'outlined' for better visibility */
+/>
+  <TextField
+    label="Time"
+    value={editData.time}
+    onChange={(e) => setEditData({ ...editData, time: e.target.value })}
+    fullWidth
+  />
+
+  <Button type="submit" variant="contained" color="primary" className="modal-submit">Update</Button>
+  <Button variant="contained" color="secondary" className="modal-delete" onClick={handleDelete}>Delete</Button>
+</form>
+
       </Modal>
     </>
   );

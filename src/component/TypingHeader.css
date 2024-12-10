@@ -75,12 +75,15 @@
 /* Navigation Menu */
 .typing-nav-menu {
   position: relative;
-  width: 26%;
-  display: flex;
+  width: 34%;
+  display: flex
+;
   align-items: center;
   justify-content: space-between;
   /* border: solid; */
-  margin-right: 44rem;
+  margin-right: 37rem;
+
+
 
 
 }

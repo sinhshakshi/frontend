@@ -6,7 +6,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #f9f9f9;
+ 
 }
 .add-ebook-form{
   text-align: center;
@@ -33,7 +33,7 @@
 
 .typing-paragraph-textarea {
   resize: vertical;
-  height: 100px;
+  height: 25rem;
 }
 
 .typing-paragraph-button {

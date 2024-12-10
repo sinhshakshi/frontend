@@ -47,6 +47,12 @@ const SidebarEbook = ({ setComponent }) => {
               </button>
               <button
                 className="sidebar-ebook__link"
+                onClick={() => setComponent("ManageStatusTypingParagraph")}
+              >
+               Edit Typing Status
+              </button>
+              <button
+                className="sidebar-ebook__link"
                 onClick={() => setComponent("ExamForm")}
               >
                 Add exam image

@@ -11,6 +11,7 @@
       var(--c) center/100% 10px,
       var(--c) center/10px 100%;
     z-index: 9999; /* Ensure the spinner appears on top of everything */
+    
   }
   
   .loader:before {
@@ -24,6 +25,7 @@
       var(--c) 100% 100%;
     background-size: 15.5px 15.5px;
     animation: l16 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+   
   }
   
   @keyframes l16 {

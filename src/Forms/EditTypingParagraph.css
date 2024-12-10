@@ -40,7 +40,7 @@
   position: relative;
   max-width: 90%;
   width: 72%;
-  margin: 0 auto;
+  margin: 3rem auto;
   background: white;
   border-radius: 8px;
   padding: 20px;
@@ -94,7 +94,7 @@
 .modal-form-for-editing-typing-paragraph textarea {
   font-size: 14px;
   padding: 8px;
-  margin-bottom: 15px;
+ 
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -128,4 +128,10 @@
 .css-1cprn2g-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root {
 
   width: 150%;
+}
+
+
+.css-1o0kqxp-MuiInputBase-root-MuiOutlinedInput-root {
+
+  margin-bottom: 2rem!important;
 }

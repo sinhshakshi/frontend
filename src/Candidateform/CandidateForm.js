@@ -21,31 +21,31 @@ const CandidateForm = () => {
   const questions = [
     {
         id: 'ques1',
-        text: 'How was your experience with the exam support provided including usefulness of the mock test, access to exam related information, helpline support, etc?'
+        text: 'How was your experience with the support provided, including the usefulness of the mock typing tests, access to test-related instructions, and helpdesk support?'
     },
     {
         id: 'ques2',
-        text: 'How was your experience in giving a digital exam on aspects such as navigating on the candidate console, ease of using the candidate console, etc?'
+        text: 'How was your experience navigating the typing test interface, including ease of use and accessibility of the typing portal?'
     },
     {
         id: 'ques3',
-        text: 'Ease of Locating the Test Center.'
+        text: 'How easy was it to access and locate the typing test portal on your system?'
     },
     {
         id: 'ques4',
-        text: 'Ease of finding your designated exam seat through clear notice board instructions, directional arrows, staff guidance, etc.'
+        text: 'How clear were the instructions provided on the screen to begin the typing test, including guidance on starting and submitting the test?'
     },
     {
         id: 'ques5',
-        text: 'What was your experience with the equipment such as computers, headphones, etc.'
+        text: 'How satisfied were you with the test environment provided by the platform (e.g., speed, reliability, absence of technical glitches)?'
     },
     {
         id: 'ques6',
-        text: 'How was your experience with the behavior of the exam staff?'
+        text: 'How was your experience with the responsiveness and functionality of the typing input area (e.g., text editor, real-time character count, etc.)?'
     },
     {
         id: 'ques7',
-        text: 'Overall Experience'
+        text: 'Overall, how would you rate your experience of taking the typing test on this platform?'
     }
   ];
 
@@ -168,83 +168,7 @@ const CandidateForm = () => {
         {/* Left side - larger width */}
         <div className="instruction-left">
           <div className="sky-blue-color">Instructions</div>
-          {/* <form onSubmit={handleFeedbackSubmit} className="instructions-para">
-            <div id="feedback-details-section">
-              <span id="feedback-intro-text">
-                Dear <span id="candidate-name">{userDetails.fullName}</span>,
-                <br /><br />
-                We solicit your valuable feedback to understand your views and your experience on the digital examination.
-                <br />
-                Your feedback will enable us to improve the overall candidate experience.
-                <br /><br />
-                For each question listed below, we request you to specify the performance rating as per the scale below.
-              </span>
-              <div className="rating-section">
-                <div className="rating-option exceed-option">
-                  <span className="rating-circle green">4</span>
-                  <span className="rating-label">Exceeded expectations</span>
-                </div>
-                <div className="rating-option met-option">
-                  <span className="rating-circle yellow">3</span>
-                  <span className="rating-label">Met expectations</span>
-                </div>
-                <div className="rating-option improve-option">
-                  <span className="rating-circle blue">2</span>
-                  <span className="rating-label">Improvement needed</span>
-                </div>
-                <div className="rating-option failed-option">
-                  <span className="rating-circle red">1</span>
-                  <span className="rating-label">Failed to meet expectations</span>
-                </div>
-              </div>
 
-              <table className="feedback-table" id="feedback-questions-table">
-                <thead>
-                  <tr>
-                    <th className="center-text" id="table-header-serial">S.No</th>
-                    <th style={{ width: '1%' }}></th>
-                    <th id="table-header-questions">Questions</th>
-                    <th id="table-header-response">Response</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {questions.map((question, index) => (
-                    <tr key={question.id}>
-                      <td className="center-text bold-text">{index + 1}.</td>
-                      <td></td>
-                      <td id={`question-${question.id}`}>{question.text}</td>
-                      <td>
-                        <table className="response-options-table">
-                          <tbody>
-                            <tr>
-                              <td className="bold-text">4</td>
-                              <td className="bold-text">3</td>
-                              <td className="bold-text">2</td>
-                              <td className="bold-text">1</td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <input type="radio" name={question.id} value="4-Exceeded expectations" onChange={() => handleResponseChange(question.id, '4-Exceeded expectations')} checked={responses[question.id] === '4-Exceeded expectations'} />
-                              </td>
-                              <td>
-                                <input type="radio" name={question.id} value="3-Met expectations" onChange={() => handleResponseChange(question.id, '3-Met expectations')} checked={responses[question.id] === '3-Met expectations'} />
-                              </td>
-                              <td>
-                                <input type="radio" name={question.id} value="2-Improvement needed" onChange={() => handleResponseChange(question.id, '2-Improvement needed')} checked={responses[question.id] === '2-Improvement needed'} />
-                              </td>
-                              <td>
-                                <input type="radio" name={question.id} value="1-Failed to meet expectations" onChange={() => handleResponseChange(question.id, '1-Failed to meet expectations')} checked={responses[question.id] === '1-Failed to meet expectations'} />
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </form> */}
                     <form onSubmit={handleFeedbackSubmit} className="instructions-para">
             <div id="feedback-details-section">
               <span id="feedback-intro-text">
@@ -334,7 +258,7 @@ const CandidateForm = () => {
                   <tr>
                     <td className="center-text bold-text">{questions.length + 1}.</td>
                     <td></td>
-                    <td id={`question-ques37`}>Overall experience with the digital typing test:</td>
+                    <td id={`question-ques37`}>Overall experience with the typing test:</td>
                     <td>
                       <textarea 
                         id="overallFeedbackTextArea" 

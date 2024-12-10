@@ -134,7 +134,7 @@ gap: 10px;
 .myexamnameimg {
   height: 74%;
 
-
+  border-radius: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -160,7 +160,7 @@ cursor: pointer;
 }
 .exam-card:hover {
   transform: scale(1.05); /* Slightly enlarge the card on hover */
-  background-color: #f8f9fa; /* Lighter background on hover */
+  background-color: #fff; /* Lighter background on hover */
 }
 
 .exam-card img {
@@ -175,22 +175,24 @@ cursor: pointer;
   margin: 0;
   
   font-weight: 600; /* Bold exam name */
-  font-size: 1rem;
+  font-size: 12px;
   color: #333;
 }
 .examname{
-  margin-left: 8%!important;
+  margin-left: 7% !important;
 }
 
 .exam-cards-para{
-  width: 33%;
+  width: 127%;
+
   /* margin-left: 10px; */
   display: flex;
-  justify-content: space-between;
 }
 .exam-count{
   margin-top: 5px!important;
-  font-size: 14px!important;
+  font-size: 11px !important;
+
+
   font-weight: normal!important;
   color: #555!important;
 
@@ -368,8 +370,7 @@ cursor: pointer;
 }
 
 .header-highlight {
-  font-family: 'Arial', sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
   border-radius: 8px;
   display: inline-block;
   padding: 10px 20px;
