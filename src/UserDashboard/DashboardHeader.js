@@ -40,7 +40,7 @@ const DashboardHeader = () => {
         // Clear cookies after successful logout
         removeCookie('session_id');
         removeCookie('SSIDCE');
-        removeCookie('userDetails');
+        removeCookie('SSDSD');
         // navigate("/");
         window.location.href = '/';
         // Optional: Redirect or perform any other necessary actions after successful logout

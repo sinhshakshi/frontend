@@ -53,7 +53,9 @@ const Settings = () => {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/change-password`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`, // Add Authorization header
         },
         body: JSON.stringify({ 
           email_id: cookies.SSIDCE, 

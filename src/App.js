@@ -32,6 +32,8 @@ import ContactUs from './ContactUs/ContactUs';
 import ForgetPassword from "./Password/ForgetPassword";
 import ResetPassword from "./Password/ResetPassword";
 import ExamResult from "./Exam Result/ExamResult";
+import InfoPage from "./Typinginfo/InfoPage";
+import { useCookies } from 'react-cookie';
 
 const App = () => {
 
@@ -83,10 +85,56 @@ const App = () => {
   //   };
   // }, []);
 
+  const [cookies] = useCookies(['SSIDCE', 'session_id']); // Access the SSIDCE and session_id cookies
+
+
+
+   console.log(cookies.SSIDCE)
+  useEffect(() => {
+    const checkSubscription = async () => {
+      const email = cookies.SSIDCE; // Extract SSIDCE directly from cookies
+      if (!email) {
+        console.error("SSIDCE cookie is missing.");
+        return;
+      }
+
+      try {
+        // Send a POST request to the backend
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/check-subscription`, {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${cookies.session_id}` // Include all cookies as JSON in the headers
+          },
+          body: JSON.stringify({ email }), // Include SSIDCE (email) in the body
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to check subscription');
+        }
+
+        const data = await response.json();
+
+        if (data.message === 'Subscription expired and removed.') {
+          console.log('Your subscription has expired.');
+        } else if (data.message === 'Subscription is active.') {
+          console.log('Subscription details:', data.data);
+        }
+      } catch (error) {
+        console.error('Error checking subscription:', error);
+      }
+    };
+
+    // Call the function when the component mounts
+    checkSubscription();
+  }, [cookies]);
+
   return (
     <AuthProvider> 
     <Router>
       <Routes>
+      <Route path='/course-page/:paramLink' element={<InfoPage />} />
       <Route path='/typing-test-dest-results' element={<ExamResult />} /> 
       <Route path='/help' element={<ContactUs />} />  
       <Route path='/acceptable-use-policy' element={<AcceptableUsePolicy />} />  

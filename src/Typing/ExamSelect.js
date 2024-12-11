@@ -253,7 +253,7 @@ const ExamSelect = () => {
                     className="paragraph-item"
                     onClick={() => handleParagraphClick(para)}
                   >
-                    <p>Paper Code: {para.paper_code}</p>
+                    <p>{para.paper_code}</p>
                   </div>
                 );
               })

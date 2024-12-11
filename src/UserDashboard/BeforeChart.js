@@ -190,7 +190,13 @@ const BeforeChart = () => {
 
   const fetchSpeedData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.SSIDCE}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.SSIDCE}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`,
+        },
+      });
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setSpeedData(data);
@@ -205,7 +211,13 @@ const BeforeChart = () => {
 
   const fetchSubscriptionData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/access-typing/${cookies.SSIDCE}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/access-typing/${cookies.SSIDCE}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`,
+        },
+      });
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setSubscriptionPlan(data.selectedPlan || 'No Plan');
@@ -217,7 +229,13 @@ const BeforeChart = () => {
 
   const fetchEmailCount = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing-performance/count/${cookies.SSIDCE}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing-performance/count/${cookies.SSIDCE}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`,
+        },
+      });
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setEmailCount(data.count);
@@ -228,7 +246,13 @@ const BeforeChart = () => {
 
   const fetchSubscriptionInfo = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/subscription-info/${cookies.SSIDCE}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/subscription-info/${cookies.SSIDCE}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`,
+        },
+      });
       if (!response.ok) throw new Error('Network response was not ok');
       const data = await response.json();
       setSubscriptionInfo(data);

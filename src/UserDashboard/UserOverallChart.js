@@ -54,7 +54,13 @@ const UserOverallChart = () => {
   
   const fetchSpeedData = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.SSIDCE}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/speed-data/${cookies.SSIDCE}`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`,
+        },
+      });
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

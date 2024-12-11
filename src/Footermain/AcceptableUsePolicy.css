@@ -1,13 +1,15 @@
 /* Styles for the Acceptable Use Policy container */
 .acceptable-use-policy-container {
-    max-width: 800px; /* Limit the width of the container */
-    margin: 40px auto; /* Center the container with auto margins */
-    padding: 30px; /* Add padding around the content */
-    background: #f9f9f9; /* Light background for readability */
-    border-radius: 12px; /* Rounded corners */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    font-family: 'Arial', sans-serif; /* Clean font */
-    color: #333; /* Dark text color */
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  /* background: #f9f9f9; */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin-top: 2%;
+  margin-bottom: 2%;
   }
   
   .acceptable-use-policy-container h1 {

@@ -7,6 +7,7 @@ import SidebarDashboard from './SidebarDashboard';
 import UserOverallChart from './UserOverallChart'; // Default component
 import Profile from '../User/Profile'; 
 import Settings from '../User/Settings'; 
+import Invoice from '../User/Invoice'; 
 // import OtherComponent from './OtherComponent'; 
 import './DashboardContainer.css'; // Custom CSS
 import DashboardHeader from './DashboardHeader';
@@ -69,6 +70,8 @@ const DashboardContainer = () => {
         return <Profile />;
         case 'Settings':
           return <Settings />;
+          case 'Invoice':
+            return <Invoice />;
       //   case 'OtherComponent':
       //     return <OtherComponent />;
       default:

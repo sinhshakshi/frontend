@@ -1,13 +1,15 @@
 /* Styles for the Privacy Policy container */
 .privacy-policy-container {
-    max-width: 800px; /* Limit the width of the container */
-    margin: 40px auto; /* Center the container with auto margins */
-    padding: 30px; /* Add padding around the content */
-    background: linear-gradient(to bottom right, #f8f9fa, #e2e6ea); /* Light gradient background */
-    border-radius: 12px; /* Rounded corners for a softer look */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-    font-family: 'Arial', sans-serif; /* Use a clean, modern font */
-    color: #333; /* Dark color for text for good readability */
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  /* background: #f9f9f9; */
+  /* border-radius: 12px; */
+  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin-top: 2%;
+  margin-bottom: 2%;
   }
   
   .privacy-policy-container h1 {

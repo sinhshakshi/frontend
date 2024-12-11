@@ -11,7 +11,13 @@ const Profile = () => {
   const [cookies] = useCookies(['session_id, SSIDCE']);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/users/profile/${cookies.SSIDCE}`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/users/profile/${cookies.SSIDCE}`, {
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json",
+      "Authorization": `Bearer ${cookies.session_id}`, // Add Authorization header
+    },
+  })
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');

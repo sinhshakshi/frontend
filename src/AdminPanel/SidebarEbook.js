@@ -69,6 +69,13 @@ const SidebarEbook = ({ setComponent }) => {
               >
                 Add price plans
               </button>
+
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("TypingInfo")}
+              >
+                Add typing info
+              </button>
             </div>
           )}
         </div>

@@ -1,0 +1,192 @@
+/* Container and general styles */
+.info-container {
+    max-width: 90%;
+    margin: 5% auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .info-back-button {
+    display: flex
+;
+    margin-bottom: 20px;
+    background: none;
+    border: none;
+    color: purple;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 98%;
+    align-items: center;
+    width: 9%;
+    justify-content: space-between;
+  }
+  
+  .info-back-button:hover {
+    text-decoration: underline;
+  }
+  
+  .info-title {
+    text-align: left;
+    font-size: 153%;
+    margin-bottom: 2%;
+    color: #333;
+    font-weight: 100;
+    margin-top: 0px;
+  }
+  
+  /* Layout for image and introduction */
+  .info-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .info-image {
+    width: 7%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    flex-shrink: 0;
+    padding: 1%;
+
+  }
+  
+  .info-introduction {
+    flex: 1 ;
+    line-height: 1.7;
+    margin-top: 0px;
+    font-family: system-ui;
+    font-size: 90%;
+    margin-bottom: 0px;
+  }
+  
+  /* Meta tags */
+  .info-meta-tags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .info-meta-tag {
+    background-color: #d9b3d98f;
+    color: black;
+    font-family: system-ui;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 72%;
+    white-space: nowrap;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+/* Container for YouTube videos */
+.info-video {
+    margin-top: 20px;
+  }
+  
+  .video-grid {
+    display: flex
+;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: left;
+  }
+  
+  .video-item {
+    flex: 1 1 calc(50% - 20px); /* Two videos per row */
+    max-width: 390px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    /* Rounded corners */
+    overflow: hidden; /* Prevent iframe overflow */
+  }
+  
+  .info-iframe {
+    width: 100%;
+    height: 280px; /* Adjust height proportionally */
+  }
+  
+  .plans-display-info{
+    display: flex
+;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 41px auto;
+  
+  }
+
+  .small-plan-card-info {
+    border-radius: 12px;
+    padding: 12px;
+    padding-bottom: 23px;
+    margin: 21px;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    /* background: #00bcd408; */
+    font-family: sans-serif;
+    width: calc(29% - 25px);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+
+
+
+
+
+
+
+  /* Responsive Design */
+/* Responsive Design for Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .info-content {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center;
+    }
+    .small-plan-card-info {
+        width: calc(50% - 30px); /* 2 cards per row on smaller screens */
+    }
+  
+    .info-image {
+      width: 20%; /* Increase image size for better visibility on tablets */
+      margin-bottom: 20px; /* Add space between image and text */
+    }
+  
+    .info-introduction {
+      text-align: center; /* Center-align text for smaller screens */
+    }
+  
+    .info-meta-tags {
+      justify-content: center; /* Center meta tags */
+    }
+  }
+  
+  /* Responsive Design for Mobile Devices (max-width: 480px) */
+  @media (max-width: 480px) {
+    .info-title {
+      font-size: 1.2rem; /* Reduce title size for mobile screens */
+      text-align: center; /* Center-align title on mobile */
+    }
+    .small-plan-card-info {
+        width: calc(100% - 30px); /* 2 cards per row on smaller screens */
+    }
+  
+    .info-image {
+      width: 30%; /* Adjust image size for mobile */
+    }
+  
+    .info-meta-tag {
+      font-size: 0.7rem; /* Reduce meta tag size for mobile screens */
+      padding: 4px 6px; /* Adjust padding for smaller screens */
+    }
+  
+    .info-introduction {
+      font-size: 80%; /* Adjust font size for better readability */
+    }
+  
+    .info-iframe {
+      height: 200px; /* Reduce iframe height for smaller screens */
+    }
+  }
+  
+  

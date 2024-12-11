@@ -15,8 +15,9 @@ const HomePage = () => {
       <TypingHeader />
       <Banner />
       <AfterBanner />
+      <ExamList/>
       <HomePageDescription/>
-    
+ 
       <BrowseExam/>
       <MainFooter/>
      

@@ -240,7 +240,7 @@ const ExamResult = () => {
     <>
       <TypingHeader />
       <div className="exam-result-container">
-        <h2>Today Live Typing Test Results</h2>
+        <h2 className='myhead'>Today Live Typing Test Results</h2>
         <nav className="horizontal-nav">
           {Object.keys(examDropdownData).map((exam, index) => (
             <div className="horizontal-nav-item" key={index}>
@@ -277,7 +277,7 @@ const ExamResult = () => {
           ) : selectedExamName && !selectedPaperCode ? (
             <p>No results available for the selected exam name.</p>
           ) : selectedPaperCode && filteredResults.length === 0 ? (
-            <p>No results found for this paper code.</p>
+            <p>No results found for this exam.</p>
           ) : selectedPaperCode && filteredResults.length > 0 ? (
             <table className="result-table">
               <thead>
