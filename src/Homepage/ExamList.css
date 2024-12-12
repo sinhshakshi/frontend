@@ -8,7 +8,7 @@
 .exam-list-grid-examlist {
   display: grid
   ;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
       gap: 37px;
       padding: 20px;
       justify-content: center;

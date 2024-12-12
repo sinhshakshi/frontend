@@ -8,8 +8,8 @@ const ExamList = () => {
 
   // Static names for redirection and display
   const staticNames = {
-    "SSC": {
-      displayName: "SSC CHSL 2024 Dest Typing skill test (250+ test)",
+    "SSC CHSL": {
+      displayName: "SSC CHSL 2024 Dest Typing skill test",
       redirectName: "ssc-chsl-2024-dest-typing-test-course",
     },
     "DSSSB": {
@@ -17,8 +17,8 @@ const ExamList = () => {
       redirectName: "dsssb-jja-spa-pa-english-typing-tests",
     },
     "Delhi Police": {
-      displayName: "Delhi Police Typing Course",
-      redirectName: "delhi-police-typing-course",
+      displayName: "Delhi Police Typing Test",
+      redirectName: "delhi-police-typing-test",
     },
     "Delhi High Court": {
       displayName: "Delhi High Court PA SPA Typing Test",
@@ -28,8 +28,30 @@ const ExamList = () => {
       displayName: "DRDO Assistant Typing Course",
       redirectName: "drdo-assistant-typing-course",
     },
-    // Add other mappings as needed
+    "EPFO": {
+      displayName: "EPFO Typing Skill Tests",
+      redirectName: "epfo-typing-skill-tests",
+    },
+
+    "BSF": {
+      displayName: "BSF (HCM) Typing Skill Tests",
+      redirectName: "bsf-hcm-typing-skill-tests",
+    },
+    "SSC": {
+      displayName: "SSC CGL 2024 Dest Typing skill test",
+      redirectName: "ssc-cgl-2024-dest-typing-test-course",
+    },
+    "Supreme Court": {
+      displayName: "Supreme Court JCA Typing Test",
+      redirectName: "supreme-court-jca-typing-test",
+    },
+    "RRB": {
+      displayName: "RRB NTPC / GDCE typing test (Railway typing)",
+      redirectName: "rrb-ntpc-typing-test",
+    },
   };
+  
+  
 
   // Fetch exam data from the API
   useEffect(() => {

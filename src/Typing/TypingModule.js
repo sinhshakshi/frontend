@@ -290,7 +290,7 @@ const TypingModule = () => {
         //   `/typingperformance/${accuracy}/${wrongPercentage}/${correctChars}/${netSpeed}/${testcode}/${exam}/UR`
         // );
         navigate(
-          `/${correctChars}/${netSpeed}/${testcode}/${accuracy}/${exam}/${wrongPercentage}/${testname}/form`
+          `/${testcode}/${exam}/${testname}/feedback`
         );
       } else {
         console.error("Error submitting typing performance");

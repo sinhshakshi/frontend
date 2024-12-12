@@ -8,7 +8,7 @@ import pic3 from "../i/NewCandidateImage.jpg";
 import { useAuth } from '../AuthContext/AuthContext';
 
 const CandidateForm = () => {
-  const { accuracy, wrongper, actualdep, speed, testcode, exam, testname } = useParams(); // Added exam parameter
+  const {  testcode, exam, testname } = useParams(); // Added exam parameter
  console.log(testname)
   const [isChecked, setIsChecked] = useState(false);
   const [cookies] = useCookies(['session_id']);
@@ -137,7 +137,7 @@ const CandidateForm = () => {
 
         if (response.ok) {
             alert("Feedback submitted successfully!");
-            navigate(`/${actualdep}/${speed}/${testcode}/${accuracy}/${exam}/${wrongper}/result`); // Navigate to the specified route
+            navigate(`/${testcode}/${exam}/${testname}/result`); // Navigate to the specified route
         } else {
             alert("Failed to submit feedback. Please try again.");
         }

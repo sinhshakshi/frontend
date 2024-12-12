@@ -427,11 +427,11 @@ const PaymentComponent = () => {
           </div>
         </div>
       </div>
-      <div className="scrolling-message">
+      {/* <div className="scrolling-message">
   <span>
     Live Test Schedule: Morning Session 6 AM TO 7 AM And Evening Session 7 PM TO 8 PM - Special For 2024 Typing Test
   </span>
-</div>
+</div> */}
       <div className='check-sub'>
         <div className='header-for-sub'>Select an option and pay to continue.</div>
         <div className="payment-component">

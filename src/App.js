@@ -171,9 +171,9 @@ const App = () => {
 
         <Route path='/:testcode/:exam/:testname/typing' element={<TypingModule />} />
         
-        <Route path='/:actualdep/:speed/:testcode/:accuracy/:exam/:wrongper/:testname/form' element={<CandidateForm />} />                
+        <Route path='/:testcode/:exam/:testname/feedback' element={<CandidateForm />} />                
        
-        <Route path='/:actualdep/:speed/:testcode/:accuracy/:exam/:wrongper/result' element={<TypingPerformance />} />  
+        <Route path='/:testcode/:exam/:testname/result' element={<TypingPerformance />} />  
         <Route path='/typingperformancetest/:accuracy/:wrongper/:actualdep/:speed/:testcode/:exam/:category' element={<TypingPerformanceTest />} /> 
         {/* Add other routes here */}
       </Routes>

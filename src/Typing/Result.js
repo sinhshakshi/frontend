@@ -15,13 +15,20 @@ import { Pie } from 'react-chartjs-2'; // Import Pie from react-chartjs-2
 ChartJS.register(ArcElement, Tooltip, Legend, ...registerables); // Register necessary components
 
 const TypingPerformance = () => { 
-    const { accuracy, wrongper, actualdep, speed, testcode, exam } = useParams();
+    // const { accuracy, wrongper, actualdep, speed, testcode, exam, testname } = useParams();
+    const {   testcode, exam, testname } = useParams();
     const category ='UR';
     const [paragraph, setParagraph] = useState('');
         const [Originalparagraph, setoriginalparagraph] = useState('');
     const [wrongdep, setWrongdep] = useState('');
     const [grosspeed, setGrossSpeed] = useState('');
     const [wpm, setWpm] = useState('');
+
+    const [accuracy, setAccuracy] = useState(0);
+    const [wrongper, setWrongPer] = useState(0);
+    const [actualdep, setActualDep] = useState(0);
+    const [speed, setSpeed] = useState(0);
+
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const [correctedword, setCorrectedword] = useState(0);
@@ -95,8 +102,8 @@ const TypingPerformance = () => {
                         if (productResponse.ok) {
                             const { access } = await productResponse.json();
                             if (access === "access") {
-                                let dt = { 'paper_code': testcode, 'email_id': emailId, 'exam': exam, 'category': 'UR' };
-                                // console.log("Request data:", dt);
+                                let dt = { 'paper_code': testcode, 'email_id': emailId, 'exam': exam, 'category': 'UR', 'testname':testname };
+                                console.log("Request data:", dt);
                                 let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/typingPerformanceStatusTest`, {
                                     method: 'POST',
                                     headers: {
@@ -111,7 +118,7 @@ const TypingPerformance = () => {
                                 
                                 if (state_res.ok) {
                                     state_res = await state_res.json();
-                                    // console.log("Response Data:", state_res);
+                                    console.log("Response Data:", state_res);
                                     setParagraph(parse(state_res.paragraph));
                                     setoriginalparagraph(state_res.oldparagraph);
                                     setGrossSpeed(state_res.grossspeed);
@@ -120,6 +127,10 @@ const TypingPerformance = () => {
                                     setCorrectedword(state_res.correctedword);
                                     setIncorrectedword(state_res.Incorrectedword);
                                     settotaltyped(state_res.totaltypedword)
+                                    setSpeed(state_res.speed)
+                                    setAccuracy(state_res.accuracy)
+                                    setWrongPer(state_res.wrong)
+                                    
                                     const errorValue = state_res.error < 0 ? 0 : state_res.error;
                                     setError(errorValue);
                                 } else {
@@ -207,11 +218,11 @@ const TypingPerformance = () => {
                     <td>Wrong Percentage</td>
                     <td>{wrongper}%</td>
                 </tr>
-                <tr>
+                 {/* <tr>
                     <td>Missing words</td>
                     <td>{wrongper}%</td>
-                </tr>
-                <tr>
+                </tr> */}
+                <tr> 
                     <td>Test Result</td>
                     <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                         SSC-CGL22: More Try to Pass Under Error @5%, @20%, @25% or @30%
