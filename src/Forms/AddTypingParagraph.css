@@ -8,6 +8,7 @@
   border-radius: 10px;
  
 }
+
 .add-ebook-form{
   text-align: center;
 }
@@ -62,4 +63,8 @@
 .add-ebook-form-add{
   margin-left: 7%;
   padding-right: 9%;
+}
+
+.css-1eiam5b-MuiInputBase-input-MuiOutlinedInput-input{
+  height: 100%;
 }

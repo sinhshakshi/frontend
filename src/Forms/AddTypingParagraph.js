@@ -265,10 +265,10 @@ const AddTypingParagraph = () => {
     <>
       <ToastContainer />
       <h1 className="add-ebook-form">Add Typing Content</h1>
-      <form className="add-ebook-form-add" onSubmit={handleSubmit} >
+      <form className="add-ebook-form-add" onSubmit={handleSubmit}>
         <FormControl className="typing-paragraph-input" fullWidth margin="normal">
           <InputLabel id="exam-label">Exam</InputLabel>
-          <Select 
+          <Select
             labelId="exam-label"
             id="exam"
             name="exam"
@@ -290,7 +290,7 @@ const AddTypingParagraph = () => {
         {formData.exam && (
           <FormControl className="typing-paragraph-input" fullWidth margin="normal">
             <InputLabel id="examName-label">Exam Name</InputLabel>
-            <Select 
+            <Select
               labelId="examName-label"
               id="examName"
               name="examName"
@@ -311,7 +311,7 @@ const AddTypingParagraph = () => {
         )}
 
         {formData.examName && (
-          <FormControl  className="typing-paragraph-input" fullWidth margin="normal">
+          <FormControl className="typing-paragraph-input" fullWidth margin="normal">
             <InputLabel id="paper_code-label">Paper Code</InputLabel>
             <Select
               labelId="paper_code-label"
@@ -333,86 +333,96 @@ const AddTypingParagraph = () => {
           </FormControl>
         )}
 
-        <div className="typing-paragraph-form-group">
-          <label className="typing-paragraph-label" htmlFor="testName">
-            Test Name
-          </label>
-          <input
-            id="testName"
-            className="typing-paragraph-input"
-            type="text"
-            name="testName"
-            value={formData.testName}
+        <TextField
+          fullWidth
+          margin="normal"
+          id="testName"
+          label="Test Name"
+          name="testName"
+          value={formData.testName}
+          onChange={handleChange}
+          required
+        />
+
+        <TextField
+          fullWidth
+          margin="normal"
+          id="title"
+          label="Title"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          required
+        />
+
+        <TextField
+          fullWidth
+          margin="normal"
+          id="date"
+          label="Date"
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          InputLabelProps={{
+            shrink: true,
+          }}
+          required
+        />
+
+        <TextField
+          fullWidth
+          margin="normal"
+          id="time"
+          label="Time"
+          type="number"
+          name="time"
+          value={formData.time}
+          onChange={handleChange}
+          required
+        />
+
+        <FormControl className="typing-paragraph-input" fullWidth margin="normal">
+          <InputLabel id="type-label">Type</InputLabel>
+          <Select
+            labelId="type-label"
+            id="type"
+            name="type"
+            value={formData.type}
             onChange={handleChange}
             required
-          />
-        </div>
+          >
+            <MenuItem value="">
+              <em>Select Type</em>
+            </MenuItem>
+            <MenuItem value="Previous">Previous</MenuItem>
+            <MenuItem value="New">New</MenuItem>
+          </Select>
+        </FormControl>
 
-        <div className="typing-paragraph-form-group">
-          <label className="typing-paragraph-label" htmlFor="title">
-            Title
-          </label>
-          <input
-            id="title"
-            className="typing-paragraph-input"
-            type="text"
-            name="title"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        <textarea
+  id="paragraph"
+  className="typing-paragraph-textarea"
+  name="paragraph" // Corrected 'name' property
+  value={formData.paragraph} // Accessing 'paragraph' from formData
+  onChange={handleChange} // Change handler remains same
+  required
+/>
 
-        <div className="typing-paragraph-form-group">
-          <label className="typing-paragraph-label" htmlFor="date">
-            Date
-          </label>
-          <input
-            id="date"
-            className="typing-paragraph-input"
-            type="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-            required
-          />
-        </div>
 
-        <div className="typing-paragraph-form-group">
-          <label className="typing-paragraph-label" htmlFor="time">
-            Time
-          </label>
-          <input
-            id="time"
-            className="typing-paragraph-input"
-            type="number"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="typing-paragraph-form-group">
-          <label className="typing-paragraph-label" htmlFor="paragraph">
-            Paragraph
-          </label>
-          <textarea
-            id="paragraph"
-            className="typing-paragraph-textarea"
-            name="paragraph"
-            value={formData.paragraph}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <button type="submit" className="typing-paragraph-button">
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ marginTop: 2, backgroundColor: '#6a11cb', '&:hover': { backgroundColor: '#2575fc' } }}
+        >
           Add Typing Paragraph
-        </button>
+        </Button>
       </form>
     </>
   );
 };
+
+
 
 export default AddTypingParagraph;

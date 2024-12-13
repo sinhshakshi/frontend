@@ -116,6 +116,25 @@ const TypingTestSelector = () => {
     checkAccessAndFetchParagraphs();
   }, [cookies.session_id, navigate, paperCode]);
 
+
+
+  const requestFullScreen = () => {
+    const element = document.documentElement; // Fullscreen the entire document
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome and Safari
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE
+      element.msRequestFullscreen();
+    }
+  };
+
+
+
+
+
   const handleStartTest = () => {
     if (!selectedMonth || !selectedTestName) {
       Swal.fire({
@@ -126,8 +145,24 @@ const TypingTestSelector = () => {
       return;
     }
     console.log(`Starting test for ${selectedMonth} with paper code: ${selectedTestName}`);
+    
+    requestFullScreen();
     navigate(`/instruction/${paperCode}/${examName}/${selectedTestName}`); // Navigate to the test page
   };
+    // const width = window.innerWidth;
+    // const height = window.innerHeight;
+  
+   
+  // Open the Typing Test in a new window with full-screen properties
+//   const newWindow = window.open(
+//     `/instruction/${paperCode}/${examName}/${selectedTestName}`,
+//     '_blank', 
+//     `width=${width},height=${height},top=0,left=0,scrollbars=yes,resizable=no`
+//   );
+
+//   // Store the reference to the new window
+//   window.newWindowRef = newWindow;
+// 
 
   // Filter paragraphs based on the selected month
   const filteredTests = paragraphs.filter(paragraph => {

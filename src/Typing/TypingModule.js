@@ -28,53 +28,54 @@ const TypingModule = () => {
   const { userDetails, isLoggedIn } = useAuth();
 
 
-  useEffect(() => {
-    // Function to prevent right-click
-    const disableRightClick = (event) => {
-      event.preventDefault();
-    };
-
-    // Function to prevent cut, copy, and paste
-    const disableCutCopyPaste = (event) => {
-      if (event.ctrlKey || event.metaKey) {
-        // Allow Ctrl or Command key
-        return;
-      }
-
-      event.preventDefault();
-    };
-
+  // useEffect(() => {
+  //   // Function to prevent right-click
+  //   const disableRightClick = (event) => {
+  //     event.preventDefault();
+  //   };
   
-    const disableKeyCombinations = (event) => {
-      if (
-        (event.ctrlKey && event.shiftKey && event.code === "KeyI") ||
-        (event.ctrlKey && event.shiftKey && event.code === "KeyC") ||
-        (event.ctrlKey && event.shiftKey && event.code === "KeyJ") ||
-        (event.ctrlKey && event.shiftKey && event.code === "KeyS") ||
-        (event.keyCode === 121 && event.shiftKey === true) ||
-        (event.ctrlKey && event.code === "KeyU") ||
-        (event.ctrlKey && event.code === "KeyP") // Add Ctrl+P check
-      ) {
-        event.preventDefault();
-      }
-    };
-
-    // Add event listeners when the component mounts
-    document.addEventListener("contextmenu", disableRightClick);
-    document.addEventListener("cut", disableCutCopyPaste);
-    document.addEventListener("copy", disableCutCopyPaste);
-    document.addEventListener("paste", disableCutCopyPaste);
-    document.addEventListener("keydown", disableKeyCombinations);
-
-    // Remove event listeners when the component unmounts
-    return () => {
-      document.removeEventListener("contextmenu", disableRightClick);
-      document.removeEventListener("cut", disableCutCopyPaste);
-      document.removeEventListener("copy", disableCutCopyPaste);
-      document.removeEventListener("paste", disableCutCopyPaste);
-      document.removeEventListener("keydown", disableKeyCombinations);
-    };
-  }, []);
+  //   // Function to prevent cut, copy, and paste
+  //   const disableCutCopyPaste = (event) => {
+  //     if (event.ctrlKey || event.metaKey) {
+  //       // Allow Ctrl or Command key
+  //       return;
+  //     }
+  
+  //     event.preventDefault();
+  //   };
+  
+  //   const disableKeyCombinations = (event) => {
+  //     if (
+  //       (event.ctrlKey && event.shiftKey && event.code === "KeyI") ||
+  //       (event.ctrlKey && event.shiftKey && event.code === "KeyC") ||
+  //       (event.ctrlKey && event.shiftKey && event.code === "KeyJ") ||
+  //       (event.ctrlKey && event.shiftKey && event.code === "KeyS") ||
+  //       (event.keyCode === 121 && event.shiftKey === true) ||
+  //       (event.ctrlKey && event.code === "KeyU") ||
+  //       (event.ctrlKey && event.code === "KeyP") || // Add Ctrl+P check
+  //       event.key === "Escape" // Prevent Escape key
+  //     ) {
+  //       event.preventDefault();
+  //     }
+  //   };
+  
+  //   // Add event listeners when the component mounts
+  //   document.addEventListener("contextmenu", disableRightClick);
+  //   document.addEventListener("cut", disableCutCopyPaste);
+  //   document.addEventListener("copy", disableCutCopyPaste);
+  //   document.addEventListener("paste", disableCutCopyPaste);
+  //   document.addEventListener("keydown", disableKeyCombinations);
+  
+  //   // Remove event listeners when the component unmounts
+  //   return () => {
+  //     document.removeEventListener("contextmenu", disableRightClick);
+  //     document.removeEventListener("cut", disableCutCopyPaste);
+  //     document.removeEventListener("copy", disableCutCopyPaste);
+  //     document.removeEventListener("paste", disableCutCopyPaste);
+  //     document.removeEventListener("keydown", disableKeyCombinations);
+  //   };
+  // }, []);
+  
 
 
   const fetchParagraph = async () => {
@@ -289,6 +290,8 @@ const TypingModule = () => {
         // navigate(
         //   `/typingperformance/${accuracy}/${wrongPercentage}/${correctChars}/${netSpeed}/${testcode}/${exam}/UR`
         // );
+
+
         navigate(
           `/${testcode}/${exam}/${testname}/feedback`
         );
@@ -436,12 +439,7 @@ const TypingModule = () => {
           Keyboard Layout: QWERTY
         </span>
         <div
-          style={{
-            width: "99.8%",
-            height: "343.719px",
-            textAlign: "left",
-            float: "left",
-          }}
+        
           className="unique-left-container"
         >
           {/* <br /> */}

@@ -16,7 +16,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 97%;
+
 }
 
 .admin-header__left {
@@ -54,6 +55,7 @@
   margin-left: 20px;
   font-size: 16px;
   cursor: pointer;
+  background-color: #343a40;
 }
 
 .admin-header__link:hover, .admin-header__profile:hover, .admin-header__link button:hover {
