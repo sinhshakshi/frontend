@@ -228,7 +228,7 @@ const BuyTyping = ({
 
   const checkAccess = async () => {
     const session_id = cookies.session_id;
-    console.log("Session ID:", session_id);
+    console.log("Session ID:", subscriptionDates);
 
     if (!session_id) {
       Swal.fire({

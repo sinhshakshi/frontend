@@ -22,8 +22,8 @@ const Paymentmodalbutton = ({
 
   const numericOrderAmount = parseFloat(String(orderAmount).replace(/[^0-9.]/g, ""));
 
-
-console.log(numericOrderAmount)
+console.log(startDate)
+console.log(expiryDate)
   
   const doPayment = async (orderId, amount) => {
     const options = {
