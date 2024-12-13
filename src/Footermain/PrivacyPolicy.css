@@ -1,11 +1,9 @@
-/* Styles for the Privacy Policy container */
+
 .privacy-policy-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
-  /* background: #f9f9f9; */
-  /* border-radius: 12px; */
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+
   font-family: 'Arial', sans-serif;
   color: #333;
   margin-top: 2%;
@@ -13,68 +11,68 @@
   }
   
   .privacy-policy-container h1 {
-    font-size: 2em; /* Size for the main heading */
-    color: #5b5c97; /* Dark blue color for the heading */
-    margin-bottom: 20px; /* Space below the heading */
-    border-bottom: 3px solid #5b5c97; /* Bottom border for emphasis */
-    padding-bottom: 10px; /* Padding below the heading */
+    font-size: 2em; 
+    color: #5b5c97;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #5b5c97; 
+    padding-bottom: 10px;
   }
   
   .privacy-policy-container h2 {
-    font-size: 1.6em; /* Size for subheadings */
-    color: #5b5c97; /* Dark blue color for subheadings */
-    margin-top: 25px; /* Space above subheadings */
-    margin-bottom: 10px; /* Space below subheadings */
+    font-size: 1.6em; 
+    color: #5b5c97; 
+    margin-top: 25px;
+    margin-bottom: 10px; 
   }
   
   .privacy-policy-container p {
-    font-size: 0.95em; /* Slightly smaller font size for paragraphs */
-    line-height: 1.7; /* Increased line height for improved readability */
-    margin-bottom: 15px; /* Space below paragraphs */
-    color: #555; /* Medium gray color for body text */
+    font-size: 0.95em;
+    line-height: 1.7; 
+    margin-bottom: 15px; 
+    color: #555; 
   }
   
   .privacy-policy-container ul {
-    margin-left: 20px; /* Indent unordered lists */
-    margin-bottom: 15px; /* Space below lists */
+    margin-left: 20px;
+    margin-bottom: 15px; 
   }
   
   .privacy-policy-container li {
-    font-size: 0.95em; /* Smaller font size for list items */
-    line-height: 1.7; /* Increase line height for readability */
-    color: #555; /* Medium gray color for list items */
-    position: relative; /* Positioning for custom bullet */
+    font-size: 0.95em; 
+    line-height: 1.7; 
+    color: #555; 
+    position: relative; 
   }
   
   .privacy-policy-container li::marker {
-    color: #5b5c97; /* Custom color for list item markers */
-    font-weight: bold; /* Make bullet points bold */
+    color: #5b5c97; 
+    font-weight: bold; 
   }
   
-  /* Style for links */
+  
   .privacy-policy-container a {
-    color: #007bff; /* Bootstrap primary color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth transition for hover */
+    color: #007bff; 
+    text-decoration: none;
+    transition: color 0.3s ease; 
   }
   
   .privacy-policy-container a:hover {
-    color: #0056b3; /* Darker shade on hover */
-    text-decoration: underline; /* Underline on hover for links */
+    color: #0056b3; 
+    text-decoration: underline; 
   }
   
-  /* Responsive design for smaller screens */
+
   @media (max-width: 600px) {
     .privacy-policy-container {
-      padding: 20px; /* Adjust padding for smaller screens */
+      padding: 20px; 
     }
   
     .privacy-policy-container h1 {
-      font-size: 1.8em; /* Adjust heading size for small screens */
+      font-size: 1.8em; 
     }
   
     .privacy-policy-container h2 {
-      font-size: 1.4em; /* Adjust subheading size for small screens */
+      font-size: 1.4em; 
     }
   }
   

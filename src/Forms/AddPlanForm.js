@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./AddPlanForm.css";
+import { TextField, Button, Box, Typography } from '@mui/material';
 
 const AddPlanForm = () => {
   const [name, setName] = useState('');
@@ -10,14 +10,12 @@ const AddPlanForm = () => {
 
   // Function to calculate price drop and savings
   const calculatePrices = () => {
-    // Ensure oldAmount and priceDrop are numeric without '₹'
     const old = parseFloat(oldAmount || 0);
     const drop = parseFloat(priceDrop || 0);
 
     const total = old - drop; // Calculate the total amount after applying the price drop
     const saved = old - total; // Savings is the difference between old and total
 
-    // Convert values to strings with ₹ symbol
     setTotalAmount(`₹${total.toFixed(2)}`);
     setSavings(`₹${saved.toFixed(2)}`);
   };
@@ -26,13 +24,12 @@ const AddPlanForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Only the name should be stored directly, other values are calculated
     const newPlan = {
       name,
-      priceDrop, // Price drop without ₹ symbol
-      savings,   // Savings with ₹ symbol (calculated)
-      oldAmount, // Old amount without ₹ symbol
-      totalAmount, // Total amount with ₹ symbol (calculated)
+      priceDrop,
+      savings,
+      oldAmount,
+      totalAmount,
     };
 
     try {
@@ -41,7 +38,7 @@ const AddPlanForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newPlan)
+        body: JSON.stringify(newPlan),
       });
 
       if (response.ok) {
@@ -61,7 +58,6 @@ const AddPlanForm = () => {
     }
   };
 
-  // Effect to calculate prices whenever oldAmount or priceDrop changes
   useEffect(() => {
     if (oldAmount && priceDrop) {
       calculatePrices();
@@ -69,56 +65,105 @@ const AddPlanForm = () => {
   }, [oldAmount, priceDrop]);
 
   return (
-    <div className="add-plan-form">
-      <h2>Add New Subscription Plan</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Plan Name:</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Old Amount (₹):</label>
-          <input
-            type="number"
-            value={oldAmount}
-            onChange={(e) => setOldAmount(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Price Drop (₹):</label>
-          <input
-            type="number"
-            value={priceDrop}
-            onChange={(e) => setPriceDrop(e.target.value)}
-            required
-          />
-        </div>
-        
-        <div>
-          <label>Total Amount (₹):</label>
-          <input
-            type="text"
-            value={totalAmount}
-            disabled // Disabled since it's automatically calculated
-          />
-        </div>
-        <div>
-          <label>Savings (₹):</label>
-          <input
-            type="text"
-            value={savings}
-            disabled // Disabled since it's automatically calculated
-          />
-        </div>
-        <button type="submit">Add Plan</button>
-      </form>
-    </div>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      
+    >
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          width: '100%',
+          maxWidth: 500,
+          backgroundColor: '#ffffff',
+          padding: 4,
+          borderRadius: 2,
+          boxShadow: 3,
+        }}
+      >
+        <Typography
+          variant="h5"
+          textAlign="center"
+          marginBottom={2}
+          sx={{ color: '#4a4a4a', fontWeight: 'bold' }}
+        >
+          Add New Subscription Plan
+        </Typography>
+
+        <TextField
+          fullWidth
+          label="Plan Name"
+          variant="outlined"
+          margin="normal"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="Old Amount (₹)"
+          type="number"
+          variant="outlined"
+          margin="normal"
+          value={oldAmount}
+          onChange={(e) => setOldAmount(e.target.value)}
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="Price Drop (₹)"
+          type="number"
+          variant="outlined"
+          margin="normal"
+          value={priceDrop}
+          onChange={(e) => setPriceDrop(e.target.value)}
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="Total Amount (₹)"
+          variant="outlined"
+          margin="normal"
+          value={totalAmount}
+          InputProps={{
+            readOnly: true,
+          }}
+        />
+
+        <TextField
+          fullWidth
+          label="Savings (₹)"
+          variant="outlined"
+          margin="normal"
+          value={savings}
+          InputProps={{
+            readOnly: true,
+          }}
+        />
+
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{
+            marginTop: 3,
+            padding: 1,
+            backgroundColor: '#6a11cb',
+            '&:hover': {
+              backgroundColor: '#2575fc',
+            },
+          }}
+        >
+          Add Plan
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

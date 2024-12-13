@@ -44,11 +44,7 @@
   margin-bottom: 10px;
 }
 
-.category-item {
-  /* padding: 22px;
-  cursor: pointer;
-  transition: background-color 0.3s; */
-}
+
 
 .div-exam-name-image:hover {
   background-color: #e9ecef;
@@ -125,8 +121,7 @@ gap: 10px;
   gap: 30px;
   flex-direction: column;
   width: 93%;
-  /* height: 30%; */
-  /* border: solid; */
+
   height: 33rem;
   padding: 21px;
 
@@ -185,7 +180,6 @@ cursor: pointer;
 .exam-cards-para{
   width: 127%;
 
-  /* margin-left: 10px; */
   display: flex;
 }
 .exam-count{
@@ -231,9 +225,7 @@ cursor: pointer;
   margin-bottom: 0;
   padding: 10px;
 }
-.search-tag-exam{
 
-}
 .search-input {
   flex: 1 1;
   border: none;
@@ -266,9 +258,7 @@ cursor: pointer;
   background-color: white;
 }
 
-.search-button:hover {
-   /* Darker color on hover */
-}
+
 
 .search-button svg {
      font-size: 17px;

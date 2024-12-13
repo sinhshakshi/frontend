@@ -141,7 +141,7 @@
     border-radius: 2px;
   }
   
-  /* Responsive adjustments */
+ 
   @media (max-width: 768px) {
     .video-section {
       padding: 30px 15px;
@@ -198,7 +198,7 @@
     padding: 13px 23px;
     border: 1px solid #FFF4A3;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth hover transition */
+    transition: background-color 0.3s ease; 
 }
 
 .tut-button:hover {

@@ -18,8 +18,8 @@
 .b3a1n1n4er-c1o4l2u2mn {
   flex: 2;
   text-align: left;
-  padding: 20px; /* Increased padding for a spacious look */
-  color: #333; /* Text color for readability */
+  padding: 20px; 
+  color: #333; 
 }
 
 .signup-card {
@@ -61,34 +61,34 @@
 
 .animated-text {
   cursor: pointer;
-  display: inline-block; /* Allows for transformation */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
-  font-weight: bold; /* Make it bold for emphasis */
+  display: inline-block; 
+  transition: transform 0.3s ease;
+  font-weight: bold; 
   font-size: 20px;
 }
 
 .animated-text:hover {
-  transform: scale(1.1); /* Scale up on hover */
-  color: #ffb400; /* Change color on hover for emphasis */
+  transform: scale(1.1); 
+  color: #ffb400; 
 }
 
-/* Additional styles for better appearance */
+
 .b3a1n1n4er-c1o4l2u2mn h2 {
-  font-size: 2rem; /* Size for emphasis */
-  font-weight: 600; /* Semi-bold */
-  color: #2c3e50; /* Darker shade for elegance */
-  margin-bottom: 15px; /* Space below the heading */
-  font-family: 'Georgia', serif; /* Serif for elegance */
+  font-size: 2rem; 
+  font-weight: 600; 
+  color: #2c3e50; 
+  margin-bottom: 15px; 
+  font-family: 'Georgia', serif; 
 }
 
 .b3a1n1n4er-c1o4l2u2mn p {
-  font-size: 1.1rem; /* Slightly larger for readability */
-  color: #555; /* Soft gray for contrast */
-  margin-bottom: 20px; /* Space below the paragraph */
-  font-family: 'Georgia', serif; /* Consistent serif font */
-  line-height: 1.6; /* Increased line height for better readability */
-  padding-left: 10px; /* Indentation for a refined look */
-  border-left: 3px solid #ffb400; /* Decorative left border for emphasis */
+  font-size: 1.1rem; 
+  color: #555;
+  margin-bottom: 20px; 
+  font-family: 'Georgia', serif; 
+  line-height: 1.6; 
+  padding-left: 10px; 
+  border-left: 3px solid #ffb400;
 }
 
 .a5d2d6t-t2e3s4t-btn {
@@ -96,85 +96,85 @@
   padding: 12px 30px;
   cursor: pointer;
   font-size: 1rem;
-  background-color: #6f42c1; /* Dark purple */
-  border-color: #6f42c1; /* Dark purple border */
+  background-color: #6f42c1; 
+  border-color: #6f42c1; 
   font-weight: bold;
-  color: #fff; /* Text color */
-  border-radius: 5px; /* Rounded corners */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transformation and background color */
-  position: relative; /* For positioning the pseudo-element */
-  overflow: hidden; /* To hide any overflow */
+  color: #fff; 
+  border-radius: 5px; 
+  transition: transform 0.3s ease, background-color 0.3s ease; 
+  position: relative; 
+  overflow: hidden; 
 }
 
 .a5d2d6t-t2e3s4t-btn:hover {
-  background-color: #5a2d99; /* Darker purple on hover */
-  border-color: #5a2d99; /* Darker border on hover */
-  transform: scale(1.05) translateX(5px); /* Grow and shift to the right on hover */
+  background-color: #5a2d99; 
+  border-color: #5a2d99; 
+  transform: scale(1.05) translateX(5px); 
 }
 
 .a5d2d6t-t2e3s4t-btn:active {
-  transform: scale(0.95); /* Slightly shrink on click */
+  transform: scale(0.95); 
 }
 
 .g2i3f1-container {
-  flex: 1; /* Adjust to take available space */
+  flex: 1; 
   display: flex;
-  align-items: center; /* Center the GIF vertically */
-  justify-content: center; /* Center the GIF horizontally */
+  align-items: center; 
+  justify-content: center; 
 }
 
 .b2a2n6er-g5i2f1 {
-  max-width: 100%; /* Make sure it scales responsively */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; 
+  height: auto; 
 }
 
-/* Tablet and Mobile Responsiveness */
+
 @media (max-width: 992px) {
   .b2a8n2n3er-c1o2n1t3ent {
-    flex-direction: column; /* Stack elements on smaller screens */
-    align-items: center; /* Center align items */
-    padding: 0 15px; /* Add some padding on the sides */
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0 15px; 
   }
 
   .b3a1n1n4er-c1o4l2u2mn {
-    width: 100%; /* Full width on small screens */
-    padding: 15px; /* Reduced padding on smaller screens */
-    text-align: center; /* Center text on smaller screens */
+    width: 100%; 
+    padding: 15px; 
+    text-align: center; 
   }
 
   .signup-card {
-    width: 100%; /* Full width for the signup card */
-    margin-top: 20px; /* Space between elements */
+    width: 100%; 
+    margin-top: 20px; 
   }
 
   .b3a1n1n4er-c1o4l2u2mn h2 {
-    font-size: 1.8rem; /* Slightly smaller heading */
+    font-size: 1.8rem; 
   }
 
   .b3a1n1n4er-c1o4l2u2mn p {
-    font-size: 1rem; /* Smaller paragraph font */
+    font-size: 1rem; 
   }
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 768px) {
   .b2a8n2n3er-c1o2n1t3ent {
-    flex-direction: column; /* Stack the content vertically */
-    padding: 0 10px; /* Adjust padding */
+    flex-direction: column; 
+    padding: 0 10px; 
   }
 
   .b3a1n1n4er-c1o4l2u2mn,
   .signup-card {
-    width: 100%; /* Full width for mobile devices */
+    width: 100%; 
   }
 }
 
 @media (max-width: 480px) {
   .signup-card {
-    padding: 15px; /* Adjust padding */
+    padding: 15px; 
   }
 
   .signup-card h3 {
-    font-size: 1rem; /* Smaller heading size */
+    font-size: 1rem; 
   }
 }

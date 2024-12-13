@@ -1,11 +1,9 @@
-/* Styles for the Acceptable Use Policy container */
+
 .acceptable-use-policy-container {
   max-width: 800px;
   margin: 40px auto;
   padding: 30px;
-  /* background: #f9f9f9; */
-  /* border-radius: 12px; */
-  /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); */
+
   font-family: 'Arial', sans-serif;
   color: #333;
   margin-top: 2%;
@@ -13,38 +11,38 @@
   }
   
   .acceptable-use-policy-container h1 {
-    font-size: 2em; /* Main heading size */
-    color: #3a3a3a; /* Dark color for main heading */
-    margin-bottom: 20px; /* Space below heading */
+    font-size: 2em;
+    color: #3a3a3a; 
+    margin-bottom: 20px; 
   }
   
   .acceptable-use-policy-container h2 {
-    font-size: 1.5em; /* Subheading size */
-    color: #3a3a3a; /* Dark color for subheadings */
-    margin-top: 25px; /* Space above subheadings */
-    margin-bottom: 10px; /* Space below subheadings */
+    font-size: 1.5em; 
+    color: #3a3a3a; 
+    margin-top: 25px; 
+    margin-bottom: 10px; 
   }
   
   .acceptable-use-policy-container p {
-    font-size: 0.95em; /* Smaller font size for paragraphs */
-    line-height: 1.6; /* Line height for readability */
-    margin-bottom: 15px; /* Space below paragraphs */
+    font-size: 0.95em; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
   }
   
   .acceptable-use-policy-container ul {
-    margin-left: 20px; /* Indent unordered lists */
-    margin-bottom: 15px; /* Space below lists */
+    margin-left: 20px; 
+    margin-bottom: 15px;
   }
   
   .acceptable-use-policy-container li {
-    font-size: 0.95em; /* Smaller font size for list items */
-    line-height: 1.6; /* Line height for readability */
-    color: #555; /* Medium gray for list items */
+    font-size: 0.95em; 
+    line-height: 1.6; 
+    color: #555;
   }
   
   .last-revised {
-    font-style: italic; /* Italic style for last revised text */
-    text-align: right; /* Align to the right */
-    margin-top: 30px; /* Space above the last revised section */
+    font-style: italic; 
+    text-align: right; 
+    margin-top: 30px; 
   }
   

@@ -31,7 +31,7 @@ const AdminHeader = ({ toggleSidebar, sidebarVisible }) => {
 
         const result = await response.json();
         if (result.message !== 'Access granted') {
-          navigate('/admintype-for-login');
+          navigate('/operator-login');
         } else {
           fetchAdminData(tokenAdmin);
         }
@@ -41,7 +41,7 @@ const AdminHeader = ({ toggleSidebar, sidebarVisible }) => {
           title: 'Access Denied',
           text: 'You do not have permission to access this page.',
         });
-        navigate('/admintype-for-login');
+        navigate('/operator-login');
       }
     };
 
@@ -92,7 +92,7 @@ const AdminHeader = ({ toggleSidebar, sidebarVisible }) => {
         title: 'Logout Successful',
         text: 'You have been logged out successfully.',
       });
-      navigate('/admintype-for-login');
+      navigate('/operator-login');
     } catch (error) {
       console.error('Error during logout:', error);
       Swal.fire({

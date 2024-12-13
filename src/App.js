@@ -9,7 +9,7 @@ import TypingPerformance from './Typing/Result';
 import TypingPerformanceTest from './Typing/TypingPerformanceTest';
 
 import ExamSelect from './Typing/ExamSelect';
- 
+import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
 import NewTyping from './NewTyping';
 import LoginAdminTyping from './login-Admin/Login';
 import RegisterAdminTyping from './login-Admin/Register';
@@ -132,6 +132,7 @@ const App = () => {
 
   return (
     <AuthProvider> 
+       <HelmetProvider> {/* Wrap your app in HelmetProvider */}
     <Router>
       <Routes>
       <Route path='/course-page/:paramLink' element={<InfoPage />} />
@@ -149,14 +150,14 @@ const App = () => {
 
       <Route path='/' element={<HomePage />} />  
       <Route path="/hometyping" element={<HomePage />} />
-      <Route path="/admin_dashboard" element={<AdminTyping />} />
+      <Route path="/operator" element={<AdminTyping />} />
       <Route path='/user-dashboard' element={<DashboardContainer />} /> 
       <Route
-                        path="/admintype-for-register"
+                        path="/operator-register"
                         element={<RegisterAdminTyping />}
                       />
                       <Route
-                        path="/admintype-for-login"
+                        path="/operator-login"
                         element={<LoginAdminTyping />}
                       />
 
@@ -178,6 +179,7 @@ const App = () => {
         {/* Add other routes here */}
       </Routes>
     </Router>
+    </HelmetProvider>
     </AuthProvider> 
   );
 };

@@ -16,20 +16,20 @@
 
 .exam-card-examlist {
   cursor: pointer;
-  border: 1px solid #e0e0e0; /* Subtle border for each card */
-  border-top-right-radius: 10px; /* Rounded corner for the top-right */
-  border-bottom-right-radius: 10px; /* Rounded corner for the bottom-right */
+  border: 1px solid #e0e0e0; 
+  border-top-right-radius: 10px; 
+  border-bottom-right-radius: 10px; 
   padding: 20px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Adds a light shadow effect */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Faster and smoother */
-  background: #fff; /* White background for cards */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  background: #fff;
   text-align: center;
 }
 
 .exam-card-examlist:hover {
-  transform: translateY(-5px); /* Higher upward lift for a more dramatic effect */
-  border-left: 4px solid purple; /* Adds purple border on the left */
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow effect */
+  transform: translateY(-5px); 
+  border-left: 4px solid purple;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25); 
 }
 
 .exam-image-examlist {

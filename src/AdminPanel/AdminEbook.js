@@ -45,7 +45,7 @@ const AdminTyping = () => {
 
         const result = await response.json();
         if (result.message !== "Access granted") {
-          navigate("/login-admin-ebook");
+          navigate("/operator-login");
         }
       } catch (error) {
         Swal.fire({
@@ -53,7 +53,7 @@ const AdminTyping = () => {
           title: "Access Denied",
           text: "You do not have permission to access this page.",
         });
-        navigate("/login-admin-ebook");
+        navigate("/operator-login");
       }
     };
 

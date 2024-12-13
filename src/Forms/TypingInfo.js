@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Swal from "sweetalert2"; // Import SweetAlert2
-import "./TypingInfo.css"; // Import CSS file
+import Swal from "sweetalert2";
+import { TextField, Button, Box, Typography } from "@mui/material";
 
 const TypingInfo = () => {
   const [formData, setFormData] = useState({
@@ -13,13 +13,17 @@ const TypingInfo = () => {
     youtubeVideoLink: "",
   });
 
+  const [imageName, setImageName] = useState(""); // State for showing uploaded image name
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleFileChange = (e) => {
-    setFormData({ ...formData, image: e.target.files[0] });
+    const file = e.target.files[0];
+    setFormData({ ...formData, image: file });
+    setImageName(file ? file.name : ""); // Update the image name state
   };
 
   const handleSubmit = async (e) => {
@@ -36,14 +40,12 @@ const TypingInfo = () => {
       });
       const result = await response.json();
       if (response.ok) {
-        // Show success alert
         Swal.fire({
           icon: "success",
           title: "Success",
           text: "Data saved successfully!",
         });
 
-        // Clear form inputs
         setFormData({
           metaTag: "",
           examName: "",
@@ -54,8 +56,8 @@ const TypingInfo = () => {
           youtubeVideoLink: "",
         });
 
-        // Clear file input
-        document.querySelector('input[type="file"]').value = "";
+        setImageName(""); // Clear the image name
+        document.querySelector('input[type="file"]').value = ""; // Clear file input
       } else {
         Swal.fire({
           icon: "error",
@@ -74,88 +76,139 @@ const TypingInfo = () => {
   };
 
   return (
-    <div className="typingInfo-container">
-      <h2 className="typingInfo-title">Typing Info Form</h2>
-      <form className="typingInfo-form" onSubmit={handleSubmit}>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">Meta Tag:</label>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          width: "100%",
+          maxWidth: 600,
+          backgroundColor: "#ffffff",
+          padding: 4,
+          borderRadius: 2,
+          boxShadow: 3,
+        }}
+      >
+        <Typography
+          variant="h5"
+          textAlign="center"
+          marginBottom={3}
+          sx={{ fontWeight: "bold", color: "#4a4a4a" }}
+        >
+          Typing Info Form
+        </Typography>
+
+        <TextField
+          fullWidth
+          label="Meta Tag"
+          name="metaTag"
+          value={formData.metaTag}
+          onChange={handleChange}
+          margin="normal"
+          variant="outlined"
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="Exam Name"
+          name="examName"
+          value={formData.examName}
+          onChange={handleChange}
+          margin="normal"
+          variant="outlined"
+          required
+        />
+
+        <Button
+          variant="contained"
+          component="label"
+          sx={{ marginY: 2, backgroundColor: "#6a11cb", "&:hover": { backgroundColor: "#2575fc" } }}
+        >
+          Upload Image
           <input
-            className="typingInfo-input"
-            type="text"
-            name="metaTag"
-            value={formData.metaTag}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">Exam Name:</label>
-          <input
-            className="typingInfo-input"
-            type="text"
-            name="examName"
-            value={formData.examName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">Image:</label>
-          <input
-            className="typingInfo-input"
             type="file"
+            hidden
             name="image"
             onChange={handleFileChange}
             required
           />
-        </div>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">Introduction:</label>
-          <textarea
-            className="typingInfo-textarea"
-            name="introduction"
-            value={formData.introduction}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">Param Link:</label>
-          <input
-            className="typingInfo-input"
-            type="text"
-            name="paramLink"
-            value={formData.paramLink}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">Category:</label>
-          <input
-            className="typingInfo-input"
-            type="text"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="typingInfo-field">
-          <label className="typingInfo-label">YouTube Video Link:</label>
-          <input
-            className="typingInfo-input"
-            type="text"
-            name="youtubeVideoLink"
-            value={formData.youtubeVideoLink}
-            onChange={handleChange}
-          />
-        </div>
-        <button className="typingInfo-button" type="submit">
+        </Button>
+
+        {imageName && (
+          <Typography
+            variant="body2"
+            sx={{ marginBottom: 2, color: "#4a4a4a" }}
+          >
+            Uploaded File: <strong>{imageName}</strong>
+          </Typography>
+        )}
+
+        <TextField
+          fullWidth
+          label="Introduction"
+          name="introduction"
+          value={formData.introduction}
+          onChange={handleChange}
+          margin="normal"
+          variant="outlined"
+          multiline
+          rows={4}
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="Param Link"
+          name="paramLink"
+          value={formData.paramLink}
+          onChange={handleChange}
+          margin="normal"
+          variant="outlined"
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="Category"
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+          margin="normal"
+          variant="outlined"
+          required
+        />
+
+        <TextField
+          fullWidth
+          label="YouTube Video Link"
+          name="youtubeVideoLink"
+          value={formData.youtubeVideoLink}
+          onChange={handleChange}
+          margin="normal"
+          variant="outlined"
+        />
+
+        <Button
+          fullWidth
+          type="submit"
+          variant="contained"
+          sx={{
+            marginTop: 3,
+            padding: 1,
+            backgroundColor: "#6a11cb",
+            "&:hover": { backgroundColor: "#2575fc" },
+          }}
+        >
           Submit
-        </button>
-      </form>
-    </div>
+        </Button>
+      </Box>
+    </Box>
   );
 };
 

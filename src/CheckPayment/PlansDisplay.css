@@ -4,7 +4,7 @@
     justify-content: space-around;
     margin: 79px auto;
     width: 92%;
-    
+
 }
 
 .small-plan-card {
@@ -14,8 +14,8 @@
     margin: 21px;
 
     position: relative;
-    border-bottom:  1px solid #ccc;
-    /* background: #00bcd408; */
+    border-bottom: 1px solid #ccc;
+
     font-family: sans-serif;
     width: calc(30% - 25px);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -68,7 +68,7 @@
     justify-content: space-between;
     margin-top: 12px;
     font-size: 14px;
-    color: #4caf50; /* Green for savings */
+    color: #4caf50;
     padding-left: 8px;
     padding-right: 10px;
 }
@@ -88,18 +88,19 @@
     margin: 0;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
     .small-plan-card {
-        width: calc(50% - 30px); /* 2 cards per row on smaller screens */
+        width: calc(50% - 30px);
     }
 }
 
 @media (max-width: 480px) {
     .small-plan-card {
-        width: calc(100% - 30px); /* 1 card per row on very small screens */
+        width: calc(100% - 30px);
     }
 }
+
 .proceed-but-now {
     width: 100%;
     padding: 13px;
@@ -126,7 +127,7 @@
     border-radius: 60px;
     padding: 12px;
     text-align: center;
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); */
+
     margin-bottom: 35px;
     margin-top: 12px;
 }
@@ -142,16 +143,19 @@
     margin-top: 0px;
 }
 
-/* Keyframes for animation */
+
 @keyframes flare {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
-                     0 0 20px rgba(255, 255, 255, 0.4),
-                     0 0 30px rgba(255, 255, 255, 0.2);
+            0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.2);
     }
+
     50% {
         text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
-                     0 0 30px rgba(255, 255, 255, 0.7),
-                     0 0 40px rgba(255, 255, 255, 0.5);
+            0 0 30px rgba(255, 255, 255, 0.7),
+            0 0 40px rgba(255, 255, 255, 0.5);
     }
 }

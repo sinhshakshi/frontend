@@ -1,4 +1,4 @@
-/* Container for the Edit Typing Paragraph Component */
+
 .container-for-edit-typing-paragraph {
   max-width: 99%;
   margin: 0 auto;
@@ -21,12 +21,12 @@
   margin-bottom: 20px;
 }
 
-/* Styling for individual filter select elements */
+
 .filter-select {
-  width: 250px; /* Adjust as per your design needs */
+  width: 250px; 
 }
 
-/* Styling for the Date Picker */
+
 .filter-date-picker {
   width: 250px;
 }
@@ -35,7 +35,7 @@
   margin-top: 15px !important;
 }
 
-/* Modal Styles */
+
 .modal-container-for-editing-typing-paragraph {
   position: relative;
   max-width: 90%;

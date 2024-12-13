@@ -32,7 +32,7 @@
     margin-bottom: 20px;
 }
 .browse-button {
-    background-color: #8a2be2; /* Purple color */
+    background-color: #8a2be2; 
     color: #fff;
     font-size: 18px;
     padding: 10px 20px;
@@ -44,7 +44,7 @@
 }
 
 .browse-button:hover {
-    background-color: #6a1bb8; /* Darker shade of purple for hover */
+    background-color: #6a1bb8; 
 }
 
 

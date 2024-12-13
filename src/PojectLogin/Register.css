@@ -168,10 +168,7 @@ cursor: pointer;
   color: #eeeeee;
 }
 
-/* .terms input {
-  margin-right: 10px;
-  appearance: auto;
-} */
+
 
 
 /* Terms Checkbox Styling */
@@ -208,19 +205,12 @@ cursor: pointer;
     font-weight: bold;
   }
   
-  /* Hover Effect */
+ 
   .terms input[type="checkbox"]:hover {
-    border-color: #e6e6e6; /* Slightly lighter border on hover */
+    border-color: #e6e6e6; 
   }
   
 
-
-
-
-
-
-
-/* Sign Up Button */
 .register-btn {
     width: 50%;
     background: white;
@@ -247,14 +237,14 @@ cursor: pointer;
   }
   
   .register-btn:hover {
-    /* Slightly darker on hover */
-    transform: translateY(-3px) scale(1.03); /* Slight zoom effect */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+ 
+    transform: translateY(-3px) scale(1.03); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
   }
   
   .register-btn:active {
-    transform: translateY(0); /* Neutralize hover effect */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduced shadow for "pressed" state */
+    transform: translateY(0); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
   }
   
   
@@ -289,10 +279,10 @@ cursor: pointer;
 
 .register-form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    gap: 1rem; /* Space between fields */
+    grid-template-columns: 1fr 1fr; 
+    gap: 1rem;
   }
   
   .register-test-input-groups {
-    width: 100%; /* Ensure each input group takes full space in its column */
+    width: 100%; 
   }

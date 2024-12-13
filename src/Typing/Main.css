@@ -1,9 +1,9 @@
 .xyte {
-    /* background-color: rgb(45, 112, 182); */
+  
 
     position: relative;
 
-    /* background: #3b5998; */
+
 
     background: #2d70b6;
     border-bottom: 1px solid #7691A2;
@@ -40,12 +40,11 @@
     
 }
 .into{  
-    /* width: 18px; */
-    /* height: 22px; */
+
     margin-right: 7px;
     margin-top: 5px;
     float: left;
-    /* size: 21px; */
+
     font-size: 20px;   
 }
  .test-instruct {
@@ -54,7 +53,7 @@
     
     font-weight: bold;
     cursor: pointer;
-    /* float: right; */
+  
 }
 .test-instruct:hover{
     text-decoration: underline;
@@ -79,7 +78,7 @@
 }
 .left-arrao-group-2{
     color: rgb(202, 202, 202);
-    /* margin-bottom: 9px; */
+   
 }
 
 
@@ -116,8 +115,6 @@
     display: flex;
     align-items: center;
     width: 8.9%;
-
-    /* border: solid; */
     justify-content: space-between;
 }
 
@@ -150,7 +147,6 @@
     height: 20px;
     cursor: pointer;
     vertical-align: middle;
-    /* display: inline-block; */
     padding: 5px;
     padding-left: 18px;
     display: flex;
@@ -248,7 +244,7 @@
     border-bottom: 1px solid #c3c3c1;
     border-right: 1px solid #c3c3c1;
    width: 100%;
-    /* border: solid; */
+   
     height: 40px;
 }
 
@@ -257,7 +253,7 @@
     float: left;
     align-items: center;
     width: 9.3%;
-    /* border: solid; */
+   
     justify-content: space-between;
     margin-left: 2px;
 }
@@ -283,7 +279,7 @@
     border-right: 1px solid #c3c3c1;
     font-size: 0.8em;
     font-weight: bold;
-    /* color: #36ace9; */
+  
     padding: 10px;
     cursor: pointer;
     display: inline-block;
@@ -312,7 +308,7 @@
 
 .unique-left-container {
     border: 1px solid #bdbdbd;
-    /* float: left; */
+   
     font-size: 15px;
     overflow: auto;
     text-align: left;

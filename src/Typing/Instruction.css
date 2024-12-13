@@ -82,7 +82,7 @@ align-items: center;
     height: 39px;
     padding-left: 20px;
     padding-right: 20px;
-    /* text-align: center; */
+  
     vertical-align: middle;
     white-space: nowrap;
     margin-bottom: 8px;
@@ -93,16 +93,11 @@ align-items: center;
     justify-content: center;
       }
   
-      .next-and-previ{
-
-      }
 
       .nextbutton2{
         border: 1px solid #ccc;
         height: 11rem;
         display: flex;
-        /* justify-content: end; */
-        /* align-items: center; */
         flex-direction: column;
       }
 
@@ -117,10 +112,8 @@ align-items: center;
       }
       .understood1{
         padding-left: 15px;
-        /* overflow: auto; */
         max-height: 120px;
         font-size: 12px;
-        /* font-family: auto; */
         font-family: sans-serif;
       }
       .discl-check{
@@ -150,8 +143,6 @@ align-items: center;
   padding: 13px;
   display: flex;
   align-items: center;
-  /* width: 50%; */
-  /* border: solid; */
   padding-top: 27px;
 }
 
@@ -226,7 +217,7 @@ align-items: center;
   font-size: 1.2rem;
 }
   .instruction-right {
-    flex: 1; /* Smaller width */
+    flex: 1; 
     padding: 10px;
     padding-top: 20px;
   }
