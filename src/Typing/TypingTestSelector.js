@@ -146,7 +146,7 @@ const TypingTestSelector = () => {
     }
     console.log(`Starting test for ${selectedMonth} with paper code: ${selectedTestName}`);
     
-    requestFullScreen();
+    // requestFullScreen();
     navigate(`/instruction/${paperCode}/${examName}/${selectedTestName}`); // Navigate to the test page
   };
     // const width = window.innerWidth;
