@@ -209,22 +209,21 @@ import { useCookies } from 'react-cookie';
 
 const PlansDisplay = () => {
   const [plans, setPlans] = useState([]);
-  const [selectedPlan, setSelectedPlan] = useState(null);
   const [hasAccess, setHasAccess] = useState(false);
   const navigate = useNavigate();
   const { userDetails, isLoggedIn } = useAuth();
   const [cookies] = useCookies(['session_id']);
-  
+
   useEffect(() => {
     const fetchPlans = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getPlans`, {
-          method: 'GET',  // The HTTP method (GET is typically used for fetching data)
+          method: 'GET',
         });
 
         if (response.ok) {
           const data = await response.json();
-          setPlans(data);  // Store the fetched data in the plans state
+          setPlans(data);
         } else {
           console.error('Failed to fetch plans, received non-200 response:', response);
         }
@@ -232,7 +231,7 @@ const PlansDisplay = () => {
         console.error('Failed to fetch plans:', error);
       }
     };
-  
+
     fetchPlans();
   }, []);
 
@@ -243,10 +242,9 @@ const PlansDisplay = () => {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",
-            "Accept": "application/json",
             "Authorization": `Bearer ${cookies.session_id}`,
           },
-          body: JSON.stringify({ product_id: '999' }) // Use dynamic product ID if necessary
+          body: JSON.stringify({ product_id: '999' }),
         });
 
         if (response.ok) {
@@ -261,38 +259,20 @@ const PlansDisplay = () => {
     if (isLoggedIn) checkProductAccess();
   }, [isLoggedIn, cookies.session_id]);
 
-  // Function to calculate start and expiry date
+  // Calculate subscription dates dynamically
   const calculateSubscriptionDates = (planName) => {
     const startDate = new Date();
-    let expiryDate = new Date(startDate); // Create a new Date object for expiryDate
+    let expiryDate = new Date(startDate);
 
-    switch (planName) {
-      case '30 Days':
-        expiryDate.setDate(startDate.getDate() + 30);
-        break;
-      case '25 Days':
-        expiryDate.setDate(startDate.getDate() + 25);
-        break;
-      case '3 Days':
-        expiryDate.setDate(startDate.getDate() + 3); // Add 3 days for this plan
-        break;
-      case '90 Days':
-        expiryDate.setDate(startDate.getDate() + 90);
-        break;
-      case '180 Days':
-        expiryDate.setDate(startDate.getDate() + 180);
-        break;
-      case '365 Days':
-        expiryDate.setDate(startDate.getDate() + 365);
-        break;
-      default:
-        break;
-    }
+    // Extract days from plan name (e.g., "30 Days")
+    const daysMatch = planName.match(/\d+/); // Extract numbers from plan name
+    const days = daysMatch ? parseInt(daysMatch[0], 10) : 0; // Parse the days or default to 0
 
-    // Return formatted date strings (using ISO format to avoid time issues)
+    expiryDate.setDate(startDate.getDate() + days); // Add days to the start date
+
     return {
-      startDate: startDate.toISOString().split('T')[0],  // Ensure format YYYY-MM-DD
-      expiryDate: expiryDate.toISOString().split('T')[0],  // Ensure format YYYY-MM-DD
+      startDate: startDate.toISOString().split('T')[0],
+      expiryDate: expiryDate.toISOString().split('T')[0],
     };
   };
 
@@ -301,7 +281,7 @@ const PlansDisplay = () => {
       title: 'Please log in to proceed',
       text: 'You need to be logged in to complete the payment.',
       icon: 'info',
-      confirmButtonText: 'Login'
+      confirmButtonText: 'Login',
     }).then((result) => {
       if (result.isConfirmed) {
         navigate('/login');
@@ -314,7 +294,7 @@ const PlansDisplay = () => {
       title: 'Already Subscribed',
       text: 'You already have a subscription for the typing test. Go to your dashboard to view your plan.',
       icon: 'info',
-      confirmButtonText: 'Go to Dashboard'
+      confirmButtonText: 'Go to Dashboard',
     }).then((result) => {
       if (result.isConfirmed) {
         navigate('/user-dashboard');
@@ -322,69 +302,66 @@ const PlansDisplay = () => {
     });
   };
 
-  const handlePlanSelect = (planName) => {
-    setSelectedPlan(planName); // Set the selected plan to calculate correct dates
-  };
-
-  // Calculate subscription dates based on the selected plan
-  const subscriptionDates = selectedPlan ? calculateSubscriptionDates(selectedPlan) : { startDate: '', expiryDate: '' };
-// console.log(subscriptionDates)
   return (
     <>
       <Header />
       <div className="plans-display">
-        {plans.map((plan, index) => (
-          <div className="small-plan-card" key={index} onClick={() => handlePlanSelect(plan.name)}>
-            <div className="small-plan-header">
-              <h3 className="small-details-title">TCS & NTA Typing Test Interface</h3>
-            </div>
-            <div className="plan-card">
-              <div className="recommended-badge">Recommended</div>
-              <div className="small-plan-info">
-                <span className="small-plan-name">{plan.name}</span>
-                <p className="small-plan-price">₹{plan.oldAmount}</p>
-              </div>
-              <div className="small-price-info">
-                <span className="small-price-drop">Price drop: ₹{plan.priceDrop}</span>
-                <span className="small-extra-discount">{plan.totalAmount}</span>
-              </div>
-            </div>
-            <div className="small-savings">
-              <span className="savings">Your Total Savings:</span>
-              <span className="savings">{plan.savings}</span>
-            </div>
-            <div className="small-amount">
-              <p>Amount to be paid:</p>
-              <span>{plan.totalAmount}</span>
-            </div>
+        {plans.map((plan, index) => {
+          const { startDate, expiryDate } = calculateSubscriptionDates(plan.name); // Calculate dates dynamically
 
-            {isLoggedIn ? (
-              hasAccess ? (
-                <button className="proceed-but-now" onClick={handleAccessGranted}>
-                  Already Subscribed
-                </button>
+          return (
+            <div className="small-plan-card" key={index}>
+              <div className="small-plan-header">
+                <h3 className="small-details-title">TCS & NTA Typing Test Interface</h3>
+              </div>
+              <div className="plan-card">
+                <div className="recommended-badge">Recommended</div>
+                <div className="small-plan-info">
+                  <span className="small-plan-name">{plan.name}</span>
+                  <p className="small-plan-price">₹{plan.oldAmount}</p>
+                </div>
+                <div className="small-price-info">
+                  <span className="small-price-drop">Price drop: ₹{plan.priceDrop}</span>
+                  <span className="small-extra-discount">{plan.totalAmount}</span>
+                </div>
+              </div>
+              <div className="small-savings">
+                <span className="savings">Your Total Savings:</span>
+                <span className="savings">{plan.savings}</span>
+              </div>
+              <div className="small-amount">
+                <p>Amount to be paid:</p>
+                <span>{plan.totalAmount}</span>
+              </div>
+
+              {isLoggedIn ? (
+                hasAccess ? (
+                  <button className="proceed-but-now" onClick={handleAccessGranted}>
+                    Already Subscribed
+                  </button>
+                ) : (
+                  <Paymentmodalbutton
+                    email={userDetails.email_id}
+                    fullName={userDetails.fullName}
+                    mobile={userDetails.mobile_number}
+                    selectedPlan={plan.name}
+                    userId={userDetails.id}
+                    startDate={startDate} // Pass calculated startDate
+                    expiryDate={expiryDate} // Pass calculated expiryDate
+                    orderAmount={plan.totalAmount}
+                  />
+                )
               ) : (
-                <Paymentmodalbutton
-                  email={userDetails.email_id}
-                  fullName={userDetails.fullName}
-                  mobile={userDetails.mobile_number}
-                  selectedPlan={plan.name}
-                  userId={userDetails.id}
-                  startDate={subscriptionDates.startDate}
-                  expiryDate={subscriptionDates.expiryDate}
-                  orderAmount={plan.totalAmount}
-                />
-              )
-            ) : (
-              <button className="proceed-but-now" onClick={handleProceedToLogin}>
-                Proceed to Payment
-              </button>
-            )}
-            <div className="secure-transaction">
-              <span className="lock-icon">🔒</span> Secure Transaction
+                <button className="proceed-but-now" onClick={handleProceedToLogin}>
+                  Proceed to Payment
+                </button>
+              )}
+              <div className="secure-transaction">
+                <span className="lock-icon">🔒</span> Secure Transaction
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <MainFooter />
     </>
@@ -392,3 +369,5 @@ const PlansDisplay = () => {
 };
 
 export default PlansDisplay;
+
+
