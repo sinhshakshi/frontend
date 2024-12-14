@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Invoice.css';
 import { useCookies } from 'react-cookie';
+import pic from '../i/exambook.png';
 
 const Invoice = () => {
   const [cookies] = useCookies(['session_id', 'SSIDCE']);
@@ -51,8 +52,8 @@ const Invoice = () => {
     <div className="invoice-container">
       <header className="invoice-header">
         <div className="invoice-logo">
-          <h1>Z Company</h1>
-          <p>148 Northern Street, New York</p>
+        <img src={pic} alt="Moonstream Logo" className="invoice-logo-pic" />
+          {/* <p>148 Northern Street, New York</p> */}
         </div>
         <div className="invoice-info">
           <h2>INVOICE</h2>
@@ -66,7 +67,16 @@ const Invoice = () => {
           <p>{invoiceData.emailId}</p>
         </div>
         <div>
-          <p><strong>Invoice Date:</strong> {new Date().toLocaleDateString()}</p>
+        <p>
+  <strong>Invoice Date:</strong>{" "}
+  {(() => {
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2, '0'); // Ensure two digits
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is zero-based
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
+  })()}
+</p>
           <p><strong>Subscription Plan:</strong> {invoiceData.selectedPlan}</p>
         </div>
       </div>

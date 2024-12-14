@@ -59,6 +59,9 @@
     text-align: right;
     margin-top: 20px;
   }
+  .invoice-logo-pic{
+    width: 13%;
+  }
   
   .summary-item {
     display: flex;

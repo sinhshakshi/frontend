@@ -51,6 +51,14 @@ const SidebarDashboard = ({ onMenuClick }) => {
   return (
     <div className="sidebar-dashboard-container">  {/* Updated class */}
       <ul className="sidebar-menu">
+      <Link to="/" style={{ textDecoration: 'none' }}> {/* Navigation to Home */}
+          <li 
+            className={activeMenu === 'Home' ? 'sidebar-item active' : 'sidebar-item'} 
+            onClick={() => handleMenuClick('Home')}
+          >
+            <FaHome className="icon" /> Home
+          </li>
+        </Link>
         <li 
           className={activeMenu === 'UserOverallChart' ? 'sidebar-item active' : 'sidebar-item'} 
           onClick={() => handleMenuClick('UserOverallChart')}
@@ -69,14 +77,7 @@ const SidebarDashboard = ({ onMenuClick }) => {
         >
           <FaCog className="icon" /> Settings
         </li>
-        <Link to="/" style={{ textDecoration: 'none' }}> {/* Navigation to Home */}
-          <li 
-            className={activeMenu === 'Home' ? 'sidebar-item active' : 'sidebar-item'} 
-            onClick={() => handleMenuClick('Home')}
-          >
-            <FaHome className="icon" /> Home
-          </li>
-        </Link>
+
         <li 
             className={activeMenu === 'Invoice' ? 'sidebar-item active' : 'sidebar-item'} 
             onClick={() => handleMenuClick('Invoice')}
