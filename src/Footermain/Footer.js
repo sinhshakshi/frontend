@@ -10,7 +10,7 @@ const MainFooter = () => {
                     <img src={logo} alt="Company Logo" className="mainfooter-logo" />
                     {/* <h3>Testdesk Edu Solutions Pvt. Ltd.</h3>
                     <p>2nd Floor, Plot No. 4, Minarch Tower, Sector-44, Gurgaon, Haryana, India, 122003</p> */}
-                    <p>Email: support@testdesk.com</p>
+                    <p>Email: testdesktyping@gmail.com</p>
                     {/* <p>Toll Free: 1800 203 0577</p>
                     <p>Office Hours: 10 AM to 7 PM (all 7 days)</p> */}
                 </div>

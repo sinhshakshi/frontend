@@ -223,6 +223,9 @@
 // export default PaymentComponent;
 
 
+
+
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
@@ -459,7 +462,7 @@ const PaymentComponent = () => {
                 orderAmount={orderAmount}  // This is now an integer
                 buttonText="Pay Now"
                 className="pay-button"
-                subscriptionDates={subscriptionDates}
+               
                 examName={examName}
                 paperCode={paperCode}
                 exam={exam}

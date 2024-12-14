@@ -346,8 +346,7 @@ const PlansDisplay = () => {
                     mobile={userDetails.mobile_number}
                     selectedPlan={plan.name}
                     userId={userDetails.id}
-                    startDate={startDate} // Pass calculated startDate
-                    expiryDate={expiryDate} // Pass calculated expiryDate
+
                     orderAmount={plan.totalAmount}
                   />
                 )

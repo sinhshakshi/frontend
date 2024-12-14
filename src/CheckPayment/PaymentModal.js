@@ -398,8 +398,7 @@ const PaymentModal = ({ closeModal }) => {
                 mobile={mobile}
                 selectedPlan={selectedPlan}
                 userId={userDetails.id}
-                startDate={subscriptionDates.startDate}
-                expiryDate={subscriptionDates.expiryDate}
+               
                 orderAmount={plans.length > 0 && plans.find(plan => plan.name === selectedPlan).totalAmount}
               />
             ) : (

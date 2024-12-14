@@ -9,8 +9,6 @@ const Paymentmodalbutton = ({
   fullName,
   mobile,
   selectedPlan,
-  startDate,
-  expiryDate,
   userId,
   orderAmount,
   buttonText = "Buy This Plan",
@@ -22,8 +20,7 @@ const Paymentmodalbutton = ({
 
   const numericOrderAmount = parseFloat(String(orderAmount).replace(/[^0-9.]/g, ""));
 
-console.log(startDate)
-console.log(expiryDate)
+
   
   const doPayment = async (orderId, amount) => {
     const options = {
@@ -87,32 +84,6 @@ console.log(expiryDate)
   };
 
 
-//   const doPayment = async (orderId, amount) => {
-//     const options = {
-//         key: process.env.REACT_APP_RAZORPAY_KEY_ID,
-//         amount: amount * 100, // Amount in paise
-//         currency: "INR",
-//         order_id: orderId,
-//         name: "TestDesk",
-//         description: `Payment for ${selectedPlan}`,
-//         handler: function () {
-//             // Inform the user that payment is being processed
-//             Swal.fire("Payment Successful!", "Processing your payment confirmation...", "success");
-//             window.location.href = "https://testdesk.in/payment-success"; // Redirect to a confirmation page
-//         },
-//         prefill: {
-//             name: fullName,
-//             email: email,
-//             contact: mobile,
-//         },
-//         theme: {
-//             color: "#3399cc",
-//         },
-//     };
-
-//     const razorpay = new window.Razorpay(options);
-//     razorpay.open();
-// };
 
   const payMe = async () => {
     if (isProcessing) return;
@@ -128,15 +99,6 @@ console.log(expiryDate)
       return;
     }
 
-    if (!startDate || !expiryDate) {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Subscription dates are missing.",
-      });
-      setIsProcessing(false);
-      return;
-    }
 
     if (!orderAmount) {
       Swal.fire({
@@ -154,10 +116,12 @@ console.log(expiryDate)
       userMobileNo: mobile,
       userId,
       orderAmount: numericOrderAmount,
-      subscriptionStartDate: startDate,
-      subscriptionExpiryDate: expiryDate,
+      // subscriptionStartDate: startDate,
+      // subscriptionExpiryDate: expiryDate,
       selectedPlan,
     };
+
+    console.log(data)
 
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing_payment`, {
