@@ -12,7 +12,7 @@ import ExamSelect from './Typing/ExamSelect';
 import { HelmetProvider } from "react-helmet-async"; // Import HelmetProvider
 import NewTyping from './NewTyping';
 import LoginAdminTyping from './login-Admin/Login';
-import RegisterAdminTyping from './login-Admin/Register';
+
 import AdminTyping from './AdminPanel/AdminEbook';
 import HomePage from './Homepage/HomePage';
 import Register from './PojectLogin/Register';
@@ -131,6 +131,7 @@ const App = () => {
   }, [cookies]);
 
   return (
+ 
     <AuthProvider> 
        <HelmetProvider> {/* Wrap your app in HelmetProvider */}
     <Router>
@@ -152,10 +153,7 @@ const App = () => {
       <Route path="/hometyping" element={<HomePage />} />
       <Route path="/operator" element={<AdminTyping />} />
       <Route path='/user-dashboard' element={<DashboardContainer />} /> 
-      <Route
-                        path="/operator-register"
-                        element={<RegisterAdminTyping />}
-                      />
+
                       <Route
                         path="/operator-login"
                         element={<LoginAdminTyping />}
@@ -181,6 +179,7 @@ const App = () => {
     </Router>
     </HelmetProvider>
     </AuthProvider> 
+  
   );
 };
 

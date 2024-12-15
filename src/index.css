@@ -4,6 +4,33 @@ body {
  font-family: 'Open Sans', sans-serif!important;
   -moz-osx-font-smoothing: grayscale;
 }
+body::-webkit-scrollbar {
+  width: 12px !important; /* Width of the scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f0f0f0 !important; /* Background of the scrollbar track */
+  border-radius: 6px !important; /* Rounded corners */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #61dafb, #282c34) !important; /* Gradient for the scrollbar */
+  border-radius: 6px !important; /* Rounded scrollbar thumb */
+  border: 3px solid #f0f0f0 !important; /* Space around the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #61dafb, #1e90ff) !important; /* Highlight effect on hover */
+}
+
+body {
+  scrollbar-width: thin !important; /* For Firefox */
+  scrollbar-color: linear-gradient(45deg, #61dafb, #282c34) #f0f0f0 !important; /* For Firefox */
+  overflow-y: scroll !important; /* Ensure scrolling */
+}
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
