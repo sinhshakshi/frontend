@@ -164,7 +164,7 @@ const InfoPage = () => {
           property="og:description"
           content={`Get ready for ${examName.trim()} Typing Test. Prepare with TestDesk's courses, tips, and practice materials.`}
         />
-        <meta property="og:image" content={`${process.env.REACT_APP_API_URL}/${image}`} />
+        <meta property="og:image" content="https://testdesk.in/logo.png" />
         <meta property="og:url" content={`https://testdesk.in/course-page/${paramLink}`} />
       </Helmet>
     <div className="info-container">

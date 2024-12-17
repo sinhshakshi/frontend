@@ -6,6 +6,7 @@ import './TypingHeader.css';
 import logo from "../i/newlogo.gif";
 import { useCookies } from "react-cookie";
 import Loading from '../Loading';
+import { Helmet } from 'react-helmet-async';
 
 const TypingHeader = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -133,6 +134,29 @@ const TypingHeader = () => {
 
   return (
     <>
+          <Helmet>
+        <title>Testdesk - Typing Test Portal</title>
+        <meta 
+          name="description" 
+          content="Testdesk offers specialized typing tests for government exams such as SSC CGL, CHSL, RRB, EPFO, and more. Improve your typing skills now!" 
+        />
+        <meta 
+          name="keywords" 
+          content="typing test, SSC CGL, SSC CHSL, RRB Typing, EPFO Typing, improve typing speed, typing test portal" 
+        />
+        <meta property="og:title" content="Testdesk - Typing Test Portal" />
+        <meta 
+          property="og:description" 
+          content="Testdesk offers specialized typing tests for government exams such as SSC CGL, CHSL, RRB, EPFO, and more. Improve your typing skills now!" 
+        />
+        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:url" content="https://testdesk.in" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Testdesk - Typing Test Portal" />
+        <meta name="twitter:description" content="Testdesk offers specialized typing tests for government exams such as SSC CGL, CHSL, RRB, EPFO, and more. Improve your typing skills now!" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+      </Helmet>
     <header className="typing-header-container">
       <div className="typing-header-content">
         <div className="typing-brand" onClick={home}>

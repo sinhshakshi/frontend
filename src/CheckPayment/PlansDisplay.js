@@ -109,10 +109,8 @@ const PlansDisplay = () => {
 
   return (
     <>
-      <Header />
-
-      <Helmet>
-        <title>Typing Test Plans - Improve Speed with TestDesk</title>
+          <Helmet>
+        <title>TestDesk Typing Test Plans - Improve Typing Speed</title>
         <meta
           name="description"
           content="Choose the best typing test to improve your typing speed for exams like SSC, CGL, CHSL, DSSSB, and more with TestDesk."
@@ -126,6 +124,9 @@ const PlansDisplay = () => {
         <meta property="og:image" content="https://testdesk.in/logo.png" />
         <meta property="og:url" content="https://testdesk.in/ssc-typing-test/buy-now" />
       </Helmet>
+      <Header />
+
+      
 
       <div className="plans-display">
         {plans.map((plan, index) => {

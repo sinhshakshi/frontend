@@ -1,10 +1,9 @@
 
-
-
 import React, { useState, useEffect } from 'react';
 import './ExamResult.css';
 import TypingHeader from '../component/Header';
 import MainFooter from '../Footermain/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const ExamResult = () => {
   const [examDropdownData, setExamDropdownData] = useState({});
@@ -102,6 +101,30 @@ const ExamResult = () => {
   return (
     <>
       <TypingHeader />
+      <Helmet>
+        <title>Exam Results - Testdesk</title>
+        <meta 
+          name="description" 
+          content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." 
+        />
+        <meta 
+          name="keywords" 
+          content="typing test results, exam results, SSC CGL typing, RRB NTPC typing, typing practice, typing speed results, online typing test" 
+        />
+        <meta property="og:title" content="Exam Results - Testdesk" />
+        <meta 
+          property="og:description" 
+          content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." 
+        />
+        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:url" content="https://testdesk.in/exam-result" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Exam Results - Testdesk" />
+        <meta name="twitter:description" content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+      </Helmet>
+
       <div className="exam-result-container">
         <h2 className='myhead'>Today Live Typing Test Results</h2>
         <nav className="horizontal-nav">

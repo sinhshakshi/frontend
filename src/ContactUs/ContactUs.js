@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './ContactUs.css'; // Ensure to create a CSS file for styling
 import MainFooter from '../Footermain/Footer';
 import TypingHeader from '../component/Header';
+import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 
 const ContactUs = () => {
   const [fullName, setFullName] = useState('');
@@ -50,6 +51,30 @@ const ContactUs = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us - Testdesk</title>
+        <meta 
+          name="description" 
+          content="Get in touch with Testdesk for any inquiries or support. We're here to help with your typing test needs!" 
+        />
+        <meta 
+          name="keywords" 
+          content="contact us, support, typing tests, SSC typing, CGL typing, help, Testdesk" 
+        />
+        <meta property="og:title" content="Contact Us - Testdesk" />
+        <meta 
+          property="og:description" 
+          content="Get in touch with Testdesk for any inquiries or support. We're here to help with your typing test needs!" 
+        />
+        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:url" content="https://testdesk.in/contact-us" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us - Testdesk" />
+        <meta name="twitter:description" content="Get in touch with Testdesk for any inquiries or support. We're here to help with your typing test needs!" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+      </Helmet>
+
       <TypingHeader />
       <div className="contactus-container">
         <h1 className="contactus-title">Contact Us</h1>
@@ -70,7 +95,6 @@ const ContactUs = () => {
             <p>Chat with a member of our in-house team.</p>
             <a href="/chat" className="contactus-link">Start Chat</a>
           </div> */}
-   
         </div>
 
         <form className="contactus-form" onSubmit={handleSubmit}>

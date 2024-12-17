@@ -18,6 +18,7 @@ const HomePage = () => {
 
   return (
     <>
+      
       {/* Helmet for SEO */}
       <Helmet>
         <title>TestDesk - Improve Typing Speed for SSC, CGL, DSSSB & More</title>
@@ -38,7 +39,7 @@ const HomePage = () => {
           property="og:description"
           content="Join TestDesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
-        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:image" content="https://testdesk.in/logo.png"  />
         <meta property="og:url" content="https://testdesk.in" />
         <meta property="og:type" content="website" />
 
