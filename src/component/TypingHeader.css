@@ -58,13 +58,13 @@
 
 .typing-nav-menu {
   position: relative;
-  width: 34%;
+  width: 47%;
   display: flex
 ;
   align-items: center;
   justify-content: space-between;
-
-  margin-right: 37rem;
+  /* margin-right: 34rem; */
+  margin-right: 28%;
 
 
 
@@ -111,7 +111,7 @@
 
 .typing-dropdown-menu.show {
   max-height: 300px;
-
+  overflow: auto;
   transform: translateX(0%) translateY(5px) scale(1); 
 }
 
@@ -381,5 +381,152 @@
   }
   .mobile-menu a:hover {
     color: #ffdd57; /* Highlight on hover */
+  }
+}
+@media (max-width: 1200px) {
+  .typing-nav-menu {
+    position: relative;
+    width: 54%;
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-right: 34rem; */
+    margin-right: 15%;
+}
+}
+
+
+@media (max-width: 1024px) {
+  .typing-nav-menu {
+    /* gap: 0%; */
+    margin-right: 19%;
+    width: 51%;
+}
+
+  .typing-brand-logo {
+    height: 40px; /* Slightly reduce logo size */
+  }
+
+  .typing-auth-buttons {
+    gap: 0.5rem; /* Adjust button spacing */
+  }
+
+  .typing-nav-item {
+    font-size: 16px; /* Reduce font size slightly */
+  }
+}
+
+@media (max-width: 992px) {
+  .typing-nav-menu {
+    flex-grow: 1;
+    justify-content: space-around; /* Better alignment for smaller tablets */
+    margin-right: 2rem; /* Adjust margin */
+  }
+
+  .typing-login-btn,
+  .typing-signup-btn {
+    padding: 8px 16px; /* Adjust button padding */
+    font-size: 14px; /* Reduce font size for buttons */
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger menu for small devices */
+  }
+
+  .typing-header-container {
+    padding: 8px 16px; /* Adjust header padding */
+  }
+
+  .typing-nav-menu {
+    display: none; /* Hide navigation menu */
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%; /* Reduce mobile menu width */
+    height: 100%;
+    background-color: #495057;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    animation: slideOut 0.3s forwards;
+    z-index: 7;
+  }
+
+  .mobile-menu.show {
+    animation: slideIn 0.3s forwards;
+  }
+}
+
+@media (max-width: 576px) {
+  .typing-brand-logo {
+    height: 36px; /* Further reduce logo size */
+  }
+
+  .typing-header-container {
+    flex-wrap: wrap;
+    padding: 10px; /* Adjust header padding */
+  }
+
+  .typing-auth-buttons {
+    margin: 0 auto; /* Center align buttons */
+    gap: 0.25rem; /* Reduce spacing between buttons */
+  }
+
+  .typing-login-btn,
+  .typing-signup-btn {
+    font-size: 12px; /* Reduce button font size */
+    padding: 6px 12px; /* Adjust padding */
+  }
+
+  .mobile-menu {
+    width: 80%; /* Adjust width for smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-nav-menu {
+    display: none; /* Ensure nav menu stays hidden */
+  }
+
+  .typing-login-btn,
+  .typing-signup-btn {
+    width: 100%; /* Make buttons full-width */
+    text-align: center;
+  }
+
+  .mobile-menu {
+    font-size: 14px; /* Adjust font size for links */
+    padding: 15px; /* Reduce padding */
+  }
+
+  .mobile-menu a {
+    font-size: 14px; /* Reduce font size for smaller links */
+    margin: 10px 0; /* Adjust spacing between links */
+  }
+}
+
+@media (max-width: 360px) {
+  .typing-header-container {
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  .typing-auth-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .typing-brand-logo {
+    margin: 0 auto; /* Center logo */
+  }
+
+  .mobile-menu {
+    font-size: 12px; /* Further reduce font size */
   }
 }

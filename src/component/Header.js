@@ -105,6 +105,9 @@ const TypingHeader = () => {
   const handleDashboardClick = () => {
     navigate('/user-dashboard');
   };
+  const handleHomeClick = () => {
+    navigate('/');
+  };
 
   // Close search pop-up on outside click
   useEffect(() => {
@@ -142,12 +145,32 @@ const TypingHeader = () => {
         </div>
 
         <div className="typing-nav-menu">
+        <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
           <div className="typing-nav-item" onClick={toggleDropdown}>
             Typing Test Links
             <div className={`typing-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
-              <div className="typing-dropdown-item" onClick={examclick}>SSC Typing Test</div>
-              <div className="typing-dropdown-item" onClick={examclick}>Railways Typing Test</div>
-            </div>
+  <div className="typing-dropdown-item" onClick={examclick}>SSC Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>DSSSB Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Delhi Police Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Delhi High Court Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Railways Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>DRDO Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>EPFO Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>BSF Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Supreme Court Typing Test</div>
+</div>
+<div className={`typing-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+  <div className="typing-dropdown-item" onClick={examclick}>SSC Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>DSSSB Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Delhi Police Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Delhi High Court Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Railways Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>DRDO Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>EPFO Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>BSF Typing Test</div>
+  <div className="typing-dropdown-item" onClick={examclick}>Supreme Court Typing Test</div>
+</div>
+
           </div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
@@ -178,6 +201,7 @@ const TypingHeader = () => {
       {/* Mobile menu */}
       {isMenuOpen && (
         <div className={`mobile-menu ${isMenuOpen ? "show" : ""}`}>
+          <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
           <div className="typing-nav-item" onClick={toggleDropdown}>Typing Test Links</div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
