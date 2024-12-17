@@ -163,6 +163,8 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Typing />} />
         <Route path="/add-typing-paragraph" element={<AddTypingParagraph />} />
+
+        
         <Route path="/choose-exam" element={<ExamSelect />} />  
         <Route path="/exam/:exam/:examName/:paperCode/payment" element={<PaymentComponent />} />
         <Route path="/exam/:exam/:examName/:paperCode/testselect" element={<TypingTestSelector />} />

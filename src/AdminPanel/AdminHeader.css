@@ -47,6 +47,7 @@
 .admin-header__nav {
   display: flex;
   align-items: center;
+  margin-right: 37px;
 }
 
 .admin-header__link, .admin-header__profile, .admin-header__link button {

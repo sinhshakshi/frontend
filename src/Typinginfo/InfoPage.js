@@ -7,6 +7,7 @@ import Paymentmodalbutton from '../CheckPayment/PaymentModalButton';
 import Swal from 'sweetalert2';
 import { useAuth } from "../AuthContext/AuthContext";
 import { useCookies } from 'react-cookie';
+import { Helmet } from "react-helmet-async"; // Import Helmet
 import MainFooter from "../Footermain/Footer";
 
 const InfoPage = () => {
@@ -150,6 +151,22 @@ const InfoPage = () => {
   return (
     <>
     <TypingHeader/>
+
+    <Helmet>
+        <title>{examName.trim()} - Typing Test Preparation</title>
+        <meta
+          name="description"
+          content={`Prepare for ${examName.trim()} with TestDesk. Learn typing skills and practice with real-world examples to improve speed and accuracy.`}
+        />
+        <meta name="keywords" content={metaTag} />
+        <meta property="og:title" content={`${examName.trim()} Typing Test`} />
+        <meta
+          property="og:description"
+          content={`Get ready for ${examName.trim()} Typing Test. Prepare with TestDesk's courses, tips, and practice materials.`}
+        />
+        <meta property="og:image" content={`${process.env.REACT_APP_API_URL}/${image}`} />
+        <meta property="og:url" content={`https://testdesk.in/course-page/${paramLink}`} />
+      </Helmet>
     <div className="info-container">
     <button className="info-back-button" onClick={() => navigate(-1)}>
   <IoIosArrowDropleft size={25} /> Go Back
