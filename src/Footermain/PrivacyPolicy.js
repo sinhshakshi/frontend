@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
       </p>
       <p>
         We may use aggregated or anonymous data collected through our services for various purposes, including sharing this information 
-        with third parties. If you would like to remove your data, please reach out to us at testdesktyping@gmail.com.
+        with third parties. If you would like to remove your data, please reach out to us at support@testdesk.com.
       </p>
 
       <h2>Sharing Your Information</h2>
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
       <h2>Links to Other Websites</h2>
       <p>
         Our services may contain links to external websites. We are not liable for the privacy practices of those websites, and we recommend that you examine their privacy policies before sharing any personal information. 
-        This Policy applies only to information collected by Testdesk.in.
+        This Policy applies only to information collected by testdesktyping@gmail.com.
       </p>
 
       <h2>Disclaimer</h2>
