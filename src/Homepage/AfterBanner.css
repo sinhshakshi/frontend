@@ -213,6 +213,15 @@ font-size: 15px;
 
 
 @media (max-width: 768px) {
+  .content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 71px;
+    display: flex
+;
+    gap: 20px;
+    flex-direction: column;
+}
     .header-section h2 {
         font-size: 1.8rem; 
     }
@@ -222,7 +231,8 @@ font-size: 15px;
     }
 
     .test-item {
-        width: 100%; 
+      width: 91%;
+
     }
 
     .result-item {
@@ -231,11 +241,40 @@ font-size: 15px;
 }
 
 @media (max-width: 480px) {
+  .content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 71px;
+    display: flex
+;
+    gap: 20px;
+    flex-direction: column;
+}
     .result-item {
         flex: 1 1 100%; 
     }
+    .test-item {
+      width: 91%;
+
+    }
 }
 
+
+@media (max-width: 1024px) {
+  .content-wrapper {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 71px;
+    display: flex
+;
+    gap: 20px;
+    flex-direction: column;
+}
+    .result-item {
+        flex: 1 1 100%; 
+    }
+
+}
 
 .results-section {
     margin-top: 20px;
