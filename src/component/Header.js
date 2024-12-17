@@ -172,9 +172,10 @@ const TypingHeader = () => {
 </div>
 
           </div>
-          <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
+          
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
+          <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
         </div>
 
         <div className="typing-auth-buttons">
@@ -203,8 +204,10 @@ const TypingHeader = () => {
         <div className={`mobile-menu ${isMenuOpen ? "show" : ""}`}>
           <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
           <div className="typing-nav-item" onClick={toggleDropdown}>Typing Test Links</div>
-          <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
+
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
+          <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
+          <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
           {/* <div className="typing-nav-item" onClick={toggleSearch}>Search</div> */}
           {/* <div className="close-button" onClick={toggleMenu}>❌</div> */}
         </div>
