@@ -71,7 +71,7 @@ const TypingHeader = () => {
   };
 
   const handleBuyNowClick = () => {
-    navigate('/buy-now');
+    navigate('/ssc-typing-test/buy-now');
   };
 
   const handleSearchInputChange = (event) => {

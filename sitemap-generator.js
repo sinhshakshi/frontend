@@ -53,7 +53,7 @@ const staticRoutes = [
   "/terms-of-service",
   "/typing-test-dest-results",
   "/help",
-  "/buy-now",
+  "/ssc-typing-test/buy-now",
   "/choose-exam",
 ];
 

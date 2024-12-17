@@ -146,7 +146,7 @@ const App = () => {
       <Route path="/forget-password" element={<ForgetPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
 
-      <Route path='/buy-now' element={<PlansDisplay />} />  
+      <Route path='/ssc-typing-test/buy-now' element={<PlansDisplay />} />  
       <Route path='/pay' element={<PaymentModal />} />  
 
       <Route path='/' element={<HomePage />} />  
@@ -164,7 +164,7 @@ const App = () => {
         <Route path="/login" element={<Typing />} />
         <Route path="/add-typing-paragraph" element={<AddTypingParagraph />} />
 
-        
+
         <Route path="/choose-exam" element={<ExamSelect />} />  
         <Route path="/exam/:exam/:examName/:paperCode/payment" element={<PaymentComponent />} />
         <Route path="/exam/:exam/:examName/:paperCode/testselect" element={<TypingTestSelector />} />
