@@ -110,13 +110,13 @@ const PlansDisplay = () => {
   return (
     <>
           <Helmet>
-        <title>TestDesk Typing Test Plans - Improve Typing Speed</title>
+        <title>Testdesk Typing Test Plans - Improve Typing Speed</title>
         <meta
           name="description"
-          content="Choose the best typing test to improve your typing speed for exams like SSC, CGL, CHSL, DSSSB, and more with TestDesk."
+          content="Choose the best typing test to improve your typing speed for exams like SSC, CGL, CHSL, DSSSB, and more with Testdesk."
         />
         <meta name="keywords" content="typing test plans, typing speed, improve typing, typing practice, SSC, CGL, DSSSB" />
-        <meta property="og:title" content="TestDesk Typing Test Plans" />
+        <meta property="og:title" content="Testdesk Typing Test Plans" />
         <meta
           property="og:description"
           content="Choose the best typing test to improve your speed for exams like SSC, CGL, DSSSB, and more."

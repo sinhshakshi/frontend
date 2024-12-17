@@ -8,16 +8,16 @@ const AcceptableUsePolicy = () => {
   return (
     <>
       <Helmet>
-        <title>Acceptable Use Policy - TestDesk</title>
+        <title>Acceptable Use Policy - Testdesk</title>
         <meta 
           name="description" 
-          content="Read TestDesk's Acceptable Use Policy for guidelines on acceptable user content, prohibited activities, and more. Ensure compliance with our terms of service." 
+          content="Read Testdesk's Acceptable Use Policy for guidelines on acceptable user content, prohibited activities, and more. Ensure compliance with our terms of service." 
         />
-        <meta name="keywords" content="acceptable use policy, TestDesk, user guidelines, prohibited activities, terms of service" />
-        <meta property="og:title" content="Acceptable Use Policy - TestDesk" />
+        <meta name="keywords" content="acceptable use policy, Testdesk, user guidelines, prohibited activities, terms of service" />
+        <meta property="og:title" content="Acceptable Use Policy - Testdesk" />
         <meta 
           property="og:description" 
-          content="Read TestDesk's Acceptable Use Policy for guidelines on acceptable user content, prohibited activities, and more. Ensure compliance with our terms of service." 
+          content="Read Testdesk's Acceptable Use Policy for guidelines on acceptable user content, prohibited activities, and more. Ensure compliance with our terms of service." 
         />
         <meta property="og:url" content="https://testdesk.in/acceptable-use-policy" />
         <meta property="og:type" content="website" />

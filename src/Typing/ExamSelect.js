@@ -1,6 +1,5 @@
 
-
-
+// Import Helmet
 import React, { useState, useEffect } from 'react';
 import './ExamSelect.css';
 import { useNavigate } from 'react-router-dom';
@@ -8,6 +7,7 @@ import TypingHeader from '../component/Header';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { useCookies } from 'react-cookie';
 import pic1 from '../i/sscLogo.webp';
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { MdKeyboardArrowRight } from "react-icons/md";
 import MainFooter from '../Footermain/Footer';
 
@@ -173,7 +173,48 @@ const ExamSelect = () => {
 
   return (
     <>
+     
+
+      <Helmet>
+        <title>Exam Selection - Prepare for SSC, CGL, DSSSB Typing Tests | Testdesk</title>
+        <meta
+          name="description"
+          content="Select from a variety of typing exams such as SSC CHSL, CGL, DSSSB, EPFO, and RRB. Start your typing test preparation journey with Testdesk today!"
+        />
+        <meta
+          name="keywords"
+          content="typing exams, SSC typing, CGL typing, DSSSB typing, EPFO typing, typing test preparation, Testdesk exams"
+        />
+        <meta name="author" content="Testdesk" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Open Graph Meta Tags for Social Sharing */}
+        <meta property="og:title" content="Exam Selection - Prepare for SSC, CGL, DSSSB Typing Tests | Testdesk" />
+        <meta
+          property="og:description"
+          content="Prepare for typing exams with Testdesk. Practice for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Start your typing journey now!"
+        />
+        <meta property="og:image" content="https://testdesk.in/exams-image.png" />
+        <meta property="og:url" content="https://testdesk.in/exam-select" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card for Social Sharing */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Exam Selection - Prepare for SSC, CGL, DSSSB Typing Tests | Testdesk" />
+        <meta
+          name="twitter:description"
+          content="Prepare for typing exams with Testdesk. Practice for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Start your typing journey now!"
+        />
+        <meta name="twitter:image" content="https://testdesk.in/exams-image.png" />
+
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://testdesk.in/exam-select" />
+      </Helmet>
+
       <TypingHeader />
+
+
+
       <div className='container-exam-selection'>
         <div className='heading-exam-select'>
           <h2>Explore all exams</h2>

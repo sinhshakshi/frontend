@@ -12,7 +12,7 @@ const PrivacyPolicy = () => {
 
       <h2>General</h2>
       <p>
-        By accessing or using our services at Testdesk.com, you agree to the terms outlined in this Privacy Policy (the "Policy"). 
+        By accessing or using our services at Testdesk.in, you agree to the terms outlined in this Privacy Policy (the "Policy"). 
         Any terms not defined here have the meanings specified in our Terms and Conditions. 
         We retain the authority to change this Policy at any moment.
         Changes will be communicated through a notice on our website, which will remain visible for a minimum of 7 days following the update. 
@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
       </p>
       <p>
         We may use aggregated or anonymous data collected through our services for various purposes, including sharing this information 
-        with third parties. If you would like to remove your data, please reach out to us at support@testdesk.com.
+        with third parties. If you would like to remove your data, please reach out to us at testdesktyping@gmail.com.
       </p>
 
       <h2>Sharing Your Information</h2>
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
       <h2>Links to Other Websites</h2>
       <p>
         Our services may contain links to external websites. We are not liable for the privacy practices of those websites, and we recommend that you examine their privacy policies before sharing any personal information. 
-        This Policy applies only to information collected by Testdesk.com.
+        This Policy applies only to information collected by Testdesk.in.
       </p>
 
       <h2>Disclaimer</h2>

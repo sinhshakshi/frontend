@@ -156,13 +156,13 @@ const InfoPage = () => {
         <title>{examName.trim()} - Typing Test Preparation</title>
         <meta
           name="description"
-          content={`Prepare for ${examName.trim()} with TestDesk. Learn typing skills and practice with real-world examples to improve speed and accuracy.`}
+          content={`Prepare for ${examName.trim()} with Testdesk. Learn typing skills and practice with real-world examples to improve speed and accuracy.`}
         />
         <meta name="keywords" content={metaTag} />
         <meta property="og:title" content={`${examName.trim()} Typing Test`} />
         <meta
           property="og:description"
-          content={`Get ready for ${examName.trim()} Typing Test. Prepare with TestDesk's courses, tips, and practice materials.`}
+          content={`Get ready for ${examName.trim()} Typing Test. Prepare with Testdesk's courses, tips, and practice materials.`}
         />
         <meta property="og:image" content="https://testdesk.in/logo.png" />
         <meta property="og:url" content={`https://testdesk.in/course-page/${paramLink}`} />

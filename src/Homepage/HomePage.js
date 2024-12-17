@@ -21,23 +21,23 @@ const HomePage = () => {
       
       {/* Helmet for SEO */}
       <Helmet>
-        <title>TestDesk - Improve Typing Speed for SSC, CGL, DSSSB & More</title>
+        <title>Testdesk - Improve Typing Speed for SSC, CGL, DSSSB & More</title>
         <meta
           name="description"
-          content="TestDesk helps you improve typing speed and accuracy with practice tests for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Join now for government exam preparation!"
+          content="Testdesk helps you improve typing speed and accuracy with practice tests for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Join now for government exam preparation!"
         />
         <meta
           name="keywords"
           content="typing test, typing speed, improve typing, SSC CHSL typing, CGL typing, DSSSB typing, EPFO typing, RRB typing test"
         />
-        <meta name="author" content="TestDesk" />
+        <meta name="author" content="Testdesk" />
         <meta name="robots" content="index, follow" />
 
         {/* Open Graph Meta Tags for Social Sharing */}
-        <meta property="og:title" content="TestDesk - Improve Typing Speed for SSC, CGL, DSSSB & More" />
+        <meta property="og:title" content="Testdesk - Improve Typing Speed for SSC, CGL, DSSSB & More" />
         <meta
           property="og:description"
-          content="Join TestDesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
+          content="Join Testdesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
         <meta property="og:image" content="https://testdesk.in/logo.png"  />
         <meta property="og:url" content="https://testdesk.in" />
@@ -45,10 +45,10 @@ const HomePage = () => {
 
         {/* Twitter Card for Social Sharing */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="TestDesk - Improve Typing Speed for SSC, CGL, DSSSB & More" />
+        <meta name="twitter:title" content="Testdesk - Improve Typing Speed for SSC, CGL, DSSSB & More" />
         <meta
           name="twitter:description"
-          content="Join TestDesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
+          content="Join Testdesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
         <meta name="twitter:image" content="https://testdesk.in/logo.png" />
 
