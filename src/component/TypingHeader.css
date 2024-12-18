@@ -221,26 +221,7 @@
 }
 
 
-@media (max-width: 768px) {
-  .typing-nav-menu {
-    flex-direction: column;
-    gap: 1rem;
-  }
 
-  .typing-dropdown-menu {
-    width: 100%;
-  }
-
-  .typing-auth-buttons {
-    flex-direction: row;
-    gap: 1rem;
-  }
-  .typing-header-container{
-    width: 96%;
-
-
-  }
-}
 
 
 
@@ -328,6 +309,34 @@
   display: none; /* Initially hidden */
   cursor: pointer;
 }
+
+
+
+
+@media (max-width: 768px) {
+  .typing-nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .typing-dropdown-menu {
+    width: 100%;
+  }
+
+  .typing-auth-buttons {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .typing-header-container{
+    width: 96%;
+
+
+  }
+}
+
+
+
+
 
 @media (max-width: 768px) {
   .hamburger {
@@ -505,7 +514,7 @@
   .typing-login-btn,
   .typing-signup-btn {
     font-size: 12px; /* Reduce button font size */
-    padding: 6px 12px; /* Adjust padding */
+    padding: 11px 12px;
   }
 
   .mobile-menu {
@@ -520,7 +529,7 @@
 
   .typing-login-btn,
   .typing-signup-btn {
-    width: 100%; /* Make buttons full-width */
+   
     text-align: center;
   }
 
