@@ -339,6 +339,11 @@
 
 
 @media (max-width: 768px) {
+  .typing-brand-logo {
+    height: 44px;
+    width: auto;
+    margin-left: 0px;
+}
   .hamburger {
     display: block; /* Show hamburger menu on smaller screens */
     font-size: 24px; /* Adjust size */
@@ -550,7 +555,7 @@
   }
 
   .typing-auth-buttons {
-    flex-direction: column;
+   
     gap: 0.5rem;
   }
 
