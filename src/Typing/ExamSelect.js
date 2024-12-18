@@ -194,7 +194,7 @@ const ExamSelect = () => {
           property="og:description"
           content="Prepare for typing exams with Testdesk. Practice for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Start your typing journey now!"
         />
-        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:image" content="https://testdesk.in/logo.png?v=1" />
         <meta property="og:url" content="https://testdesk.in/choose-exam" />
         <meta property="og:type" content="website" />
 
@@ -205,7 +205,7 @@ const ExamSelect = () => {
           name="twitter:description"
           content="Prepare for typing exams with Testdesk. Practice for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Start your typing journey now!"
         />
-        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://testdesk.in/choose-exam" />

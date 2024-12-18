@@ -39,7 +39,7 @@ const HomePage = () => {
           property="og:description"
           content="Join Testdesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
-        <meta property="og:image" content="https://testdesk.in/logo.png"  />
+     <meta property="og:image" content="https://testdesk.in/logo.png?v=1" />
         <meta property="og:url" content="https://testdesk.in" />
         <meta property="og:type" content="website" />
 
@@ -50,7 +50,7 @@ const HomePage = () => {
           name="twitter:description"
           content="Join Testdesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
-        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://testdesk.in" />

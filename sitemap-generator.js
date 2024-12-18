@@ -5,7 +5,7 @@ const baseUrl = "https://testdesk.in"; // Replace with your domain
 // Static Names with Redirect Names
 const staticNames = {
   "SSC CHSL": {
-    displayName: "SSC CHSL 2024 Dest Typing test",
+    displayName: "SSC CHSL Typing test",
     redirectName: "ssc-chsl-typing-test",
   },
   "DSSSB": {
@@ -25,15 +25,15 @@ const staticNames = {
     redirectName: "drdo-assistant-typing-course",
   },
   "EPFO": {
-    displayName: "EPFO Typing Skill Tests",
+    displayName: "EPFO Typing Tests",
     redirectName: "epfo-typing-skill-tests",
   },
   "BSF": {
-    displayName: "BSF (HCM) Typing Skill Tests",
+    displayName: "BSF (HCM) Typing Tests",
     redirectName: "bsf-hcm-typing-skill-tests",
   },
   "SSC": {
-    displayName: "SSC CGL 2024 Dest Typing test",
+    displayName: "SSC CGL Typing test",
     redirectName: "ssc-cgl-typing-test",
   },
   "Supreme Court": {

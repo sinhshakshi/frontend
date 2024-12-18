@@ -164,8 +164,9 @@ const InfoPage = () => {
           property="og:description"
           content={`Get ready for ${examName.trim()} Typing Test. Prepare with Testdesk's courses, tips, and practice materials.`}
         />
-           <meta property="og:image" content="https://testdesk.in/logo.png" />
+           <meta property="og:image" content="https://testdesk.in/logo.png?v=1" />
         <meta property="og:url" content={`https://testdesk.in/course-page/${paramLink}`} />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
       </Helmet>
     <div className="info-container">
     <button className="info-back-button" onClick={() => navigate(-1)}>

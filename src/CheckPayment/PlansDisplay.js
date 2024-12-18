@@ -121,7 +121,7 @@ const PlansDisplay = () => {
           property="og:description"
           content="Choose the best typing test to improve your speed for exams like SSC, CGL, DSSSB, and more."
         />
-        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:image" content="https://testdesk.in/logo.png?v=1"  />
         <meta property="og:url" content="https://testdesk.in/ssc-typing-test/buy-now" />
       </Helmet>
       <Header />

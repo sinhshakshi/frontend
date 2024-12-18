@@ -116,13 +116,13 @@ const ExamResult = () => {
           property="og:description" 
           content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." 
         />
-        <meta property="og:image" content="https://testdesk.in/logo.png" />
+<meta property="og:image" content="https://testdesk.in/logo.png?v=1" />
         <meta property="og:url" content="https://testdesk.in/exam-result" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Exam Results - Testdesk" />
         <meta name="twitter:description" content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." />
-        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1" />
       </Helmet>
 
       <div className="exam-result-container">
