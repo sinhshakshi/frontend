@@ -524,7 +524,8 @@
   }
 
   .mobile-menu {
-    width: 80%; /* Adjust width for smaller devices */
+    width: 40%;
+    /* Adjust width for smaller devices */
   }
 }
 
