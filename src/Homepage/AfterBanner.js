@@ -91,7 +91,7 @@ fetchLiveResults();
   // Check access to a specific product
   const checkProductAccess = async (para) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTypingProduct`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/code-234`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -125,7 +125,7 @@ fetchLiveResults();
 
   const handleUnlock = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTypingProduct`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/code-234`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

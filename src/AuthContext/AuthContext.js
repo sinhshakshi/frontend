@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/api/checkAccessTyping-portal`,
+          `${process.env.REACT_APP_API_URL}/api/Typing-portal`,
           {
             method: "POST",
             headers: {

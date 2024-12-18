@@ -32,7 +32,7 @@ const DashboardContainer = () => {
   const checkAccess = async () => {
     if (cookies.session_id) {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/code-123`, {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",

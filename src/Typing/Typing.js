@@ -67,34 +67,7 @@ const Typing = () => {
     setShowModal(false);
   };
 
-  const handlePurchase = async () => {
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/purchase-typing`, {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.session_id}`
-        },
-        body: JSON.stringify({ product_id: 'dummy-product-id' }) // Replace with actual product ID
-      });
-  
-      const data = await response.json();
-  
-      // console.log('Response status:', response.status);
-      // console.log('Response data:', data);
-  
-      if (response.ok) {
-        handleClose();
-        navigate(`/`);
-      } else {
-        alert(data.message || 'Unknown error occurred');
-      }
-    } catch (error) {
-      console.error('Fetch error:', error);
-      alert('An error occurred while making the purchase.');
-    }
-  };
+
 
   
   const userSubmit = async (event) => {
@@ -170,7 +143,7 @@ const Typing = () => {
     const checkAccess = async () => {
       if (cookies.session_id) {
         try {
-          const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
+          const response = await fetch(`${process.env.REACT_APP_API_URL}/api/code-123`, {
             method: 'POST',
             headers: {
               "Content-Type": "application/json",

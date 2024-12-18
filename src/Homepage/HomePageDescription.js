@@ -25,7 +25,7 @@ const HomePageDescription = () => {
 
   const checkProductAccess = async () => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTypingProduct`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/code-234`, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",

@@ -130,6 +130,15 @@ const App = () => {
     checkSubscription();
   }, [cookies]);
 
+
+
+  if (process.env.NODE_ENV === "production") {
+    console.log = () => {}; // Suppress console.log
+    console.error = () => {}; // Suppress console.error
+    console.warn = () => {}; // Suppress console.warn
+  }
+  
+
   return (
  
     <AuthProvider> 

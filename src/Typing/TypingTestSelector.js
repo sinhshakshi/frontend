@@ -38,7 +38,7 @@ const TypingTestSelector = () => {
       }
 
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTyping`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/code-123`, {
           method: 'POST',
           headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const TypingTestSelector = () => {
         if (response.ok) {
           const { access } = await response.json();
           if (access === "access") {
-            const productResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/checkAccessTypingProduct`, {
+            const productResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/code-234`, {
               method: 'POST',
               headers: {
                 "Content-Type": "application/json",
