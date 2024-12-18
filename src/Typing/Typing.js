@@ -24,7 +24,7 @@ const Typing = () => {
   const keyboard = useRef(); // Create a reference for the keyboard
 
 
-console.log(process.env.REACT_APP_API_URL); 
+// console.log(process.env.REACT_APP_API_URL); 
 
   useEffect(() => {
     // Cleanup function to avoid memory leaks
@@ -81,8 +81,8 @@ console.log(process.env.REACT_APP_API_URL);
   
       const data = await response.json();
   
-      console.log('Response status:', response.status);
-      console.log('Response data:', data);
+      // console.log('Response status:', response.status);
+      // console.log('Response data:', data);
   
       if (response.ok) {
         handleClose();
@@ -161,7 +161,7 @@ console.log(process.env.REACT_APP_API_URL);
   
   
   const selIndexLang = (lang) => {
-    console.log(`Language selected: ${lang}`);
+    // console.log(`Language selected: ${lang}`);
   };
 
 
@@ -212,14 +212,14 @@ console.log(process.env.REACT_APP_API_URL);
           console.error("Error fetching access:", error);
         }
       } else {
-        console.log("session_id not found in cookies");
+        // console.log("session_id not found in cookies");
       }
     };
   
     if (cookies.session_id) {
       checkAccess();
     } else {
-      console.log("Waiting for session_id to be set in cookies");
+      // console.log("Waiting for session_id to be set in cookies");
     }
   }, [cookies.session_id]);
   

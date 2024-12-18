@@ -115,7 +115,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     try {
       clearCookies(); // Clear cookies and reset state
-      console.log("Logged out successfully");
+      // console.log("Logged out successfully");
     } catch (error) {
       console.error("Logout failed:", error);
     }

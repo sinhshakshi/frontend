@@ -300,7 +300,7 @@ return (
         <DayPicker
           month={new Date(selectedYear, selectedMonth)} // Show the selected month
           onDayClick={day => {
-            console.log(`Selected Day: ${format(day, 'dd MMMM yyyy')}`);
+            // console.log(`Selected Day: ${format(day, 'dd MMMM yyyy')}`);
           }}
         />
       </div>

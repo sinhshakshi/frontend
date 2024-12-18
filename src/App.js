@@ -89,7 +89,7 @@ const App = () => {
 
 
 
-   console.log(cookies.SSIDCE)
+  //  console.log(cookies.SSIDCE)
   useEffect(() => {
     const checkSubscription = async () => {
       const email = cookies.SSIDCE; // Extract SSIDCE directly from cookies
@@ -117,9 +117,9 @@ const App = () => {
         const data = await response.json();
 
         if (data.message === 'Subscription expired and removed.') {
-          console.log('Your subscription has expired.');
+          // console.log('Your subscription has expired.');
         } else if (data.message === 'Subscription is active.') {
-          console.log('Subscription details:', data.data);
+          // console.log('Subscription details:', data.data);
         }
       } catch (error) {
         console.error('Error checking subscription:', error);

@@ -80,7 +80,7 @@ const TypingModule = () => {
 
   const fetchParagraph = async () => {
     let dt = { paper_code: testcode, examName: exam, testName: testname };
-    console.log(dt);
+    // console.log(dt);
     let state_res = await fetch(
       `${process.env.REACT_APP_API_URL}/api/typingParagraph-get`,
       {
@@ -184,7 +184,7 @@ const TypingModule = () => {
     // Update the state with the cleaned input
     setMessage(input);
 
-    console.log("User input:", input);
+    // console.log("User input:", input);
   };
 
   const rmTimeFun = (rTm) => {
@@ -250,9 +250,9 @@ const TypingModule = () => {
       const accuracy = ((correctChars / totalDepressions) * 100).toFixed(2);
       const wrongPercentage = (100 - accuracy).toFixed(2);
   
-      console.log(`Total correct depressions: ${correctChars}`);
-      console.log(`Total wrong depressions: ${wrongChars}`);
-      console.log(`Accuracy: ${accuracy}%, Wrong percentage: ${wrongPercentage}%`);
+      // console.log(`Total correct depressions: ${correctChars}`);
+      // console.log(`Total wrong depressions: ${wrongChars}`);
+      // console.log(`Accuracy: ${accuracy}%, Wrong percentage: ${wrongPercentage}%`);
   
       // Prepare the result object
       const typing_performance_result = {
@@ -286,7 +286,7 @@ const TypingModule = () => {
   
       if (response.ok) {
         const result = await response.json();
-        console.log("Submission successful:", result);
+        // console.log("Submission successful:", result);
         // navigate(
         //   `/typingperformance/${accuracy}/${wrongPercentage}/${correctChars}/${netSpeed}/${testcode}/${exam}/UR`
         // );

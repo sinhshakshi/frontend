@@ -121,7 +121,7 @@ const Paymentmodalbutton = ({
       selectedPlan,
     };
 
-    console.log(data)
+    // console.log(data)
 
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing_payment`, {

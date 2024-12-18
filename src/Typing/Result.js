@@ -103,7 +103,7 @@ const TypingPerformance = () => {
                             const { access } = await productResponse.json();
                             if (access === "access") {
                                 let dt = { 'paper_code': testcode, 'email_id': emailId, 'exam': exam, 'category': 'UR', 'testname':testname };
-                                console.log("Request data:", dt);
+                                // console.log("Request data:", dt);
                                 let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/typingPerformanceStatusTest`, {
                                     method: 'POST',
                                     headers: {
@@ -118,7 +118,7 @@ const TypingPerformance = () => {
                                 
                                 if (state_res.ok) {
                                     state_res = await state_res.json();
-                                    console.log("Response Data:", state_res);
+                                    // console.log("Response Data:", state_res);
                                     setParagraph(parse(state_res.paragraph));
                                     setoriginalparagraph(state_res.oldparagraph);
                                     setGrossSpeed(state_res.grossspeed);

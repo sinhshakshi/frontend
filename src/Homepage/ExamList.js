@@ -59,7 +59,7 @@ const ExamList = () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/examImages`);
         const data = await response.json();
-        console.log("Fetched exams data:", data); // Log to confirm data structure
+        // console.log("Fetched exams data:", data); // Log to confirm data structure
         setExams(data); // Set the fetched exams
       } catch (error) {
         console.error("Error fetching exams data:", error);
@@ -84,7 +84,7 @@ const ExamList = () => {
       <div className="exam-list-grid-examlist">
         {exams.map((exam, index) => {
           // Log each exam and static mapping to debug
-          console.log("Exam govName:", exam.govName, "Static Data:", staticNames[exam.govName]);
+          // console.log("Exam govName:", exam.govName, "Static Data:", staticNames[exam.govName]);
 
           const staticData = staticNames[exam.govName];
           if (!staticData) return null; // Skip rendering if no mapping is found

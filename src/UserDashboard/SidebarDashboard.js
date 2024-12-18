@@ -29,7 +29,7 @@ const SidebarDashboard = ({ onMenuClick }) => {
 
       if (response.ok) {
         const data = await response.json();
-        console.log(data.message); // Optional: Show success message
+        // console.log(data.message); // Optional: Show success message
          // Redirect to home page after successful logout
      
         // Clear cookies after successful logout

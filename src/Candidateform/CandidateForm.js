@@ -9,7 +9,7 @@ import { useAuth } from '../AuthContext/AuthContext';
 
 const CandidateForm = () => {
   const {  testcode, exam, testname } = useParams(); // Added exam parameter
- console.log(testname)
+//  console.log(testname)
   const [isChecked, setIsChecked] = useState(false);
   const [cookies] = useCookies(['session_id']);
   const navigate = useNavigate();

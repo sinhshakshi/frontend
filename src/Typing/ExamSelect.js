@@ -25,8 +25,8 @@ const ExamSelect = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  console.log("all data", allTypingData);
-  console.log("selectedExamCategory", selectedExamCategory);
+  // console.log("all data", allTypingData);
+  // console.log("selectedExamCategory", selectedExamCategory);
 
   // Fetch exams and their corresponding images
   useEffect(() => {

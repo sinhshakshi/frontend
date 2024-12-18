@@ -144,7 +144,7 @@ const TypingTestSelector = () => {
       });
       return;
     }
-    console.log(`Starting test for ${selectedMonth} with paper code: ${selectedTestName}`);
+    // console.log(`Starting test for ${selectedMonth} with paper code: ${selectedTestName}`);
     
     requestFullScreen();
     navigate(`/instruction/${paperCode}/${examName}/${selectedTestName}`); // Navigate to the test page

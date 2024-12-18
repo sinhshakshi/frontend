@@ -52,11 +52,11 @@ const BuyTyping = ({
         },
       });
 
-      console.log("Access check response:", response);
+      // console.log("Access check response:", response);
 
       if (response.ok) {
         const { access } = await response.json();
-        console.log("Access status:", access);
+        // console.log("Access status:", access);
         setHasAccess(access === "access");
       } else {
         Swal.fire({
@@ -76,7 +76,7 @@ const BuyTyping = ({
   };
 
   const doPayment = async (orderId, amount) => {
-    console.log("Initiating payment for Order ID:", orderId, "Amount:", amount);
+    // console.log("Initiating payment for Order ID:", orderId, "Amount:", amount);
 
     const options = {
       key: process.env.REACT_APP_RAZORPAY_KEY_ID,
@@ -87,7 +87,7 @@ const BuyTyping = ({
       description: `Payment for ${examName}`,
       handler: async function (response) {
         // Payment successful
-        console.log("Payment successful response:", response);
+        // console.log("Payment successful response:", response);
         Swal.fire("Payment Successful!", "Thank you for your purchase!", "success");
 
         // Make a call to the backend API to check payment status
@@ -107,13 +107,13 @@ const BuyTyping = ({
           });
 
           const jsonResponse = await validateResponse.json();
-          console.log("Validation response:", jsonResponse);
+          // console.log("Validation response:", jsonResponse);
 
           // Display message based on validation response
           if (jsonResponse.success) {
             // Redirect after successful payment
             window.location.href = jsonResponse.redirectUrl; 
-            console.log("Redirect URL:", jsonResponse.redirectUrl);
+            // console.log("Redirect URL:", jsonResponse.redirectUrl);
           } else {
             window.location.href = jsonResponse.redirectUrl;
           }
@@ -138,7 +138,7 @@ const BuyTyping = ({
   const payMe = async () => {
     if (isProcessing) return;
     setIsProcessing(true);
-    console.log("Processing payment...");
+    // console.log("Processing payment...");
 
     if (!hasAccess) {
         Swal.fire({
@@ -163,7 +163,7 @@ const BuyTyping = ({
         selectedPlan,
     };
 
-    console.log("Payment data:", data);
+    // console.log("Payment data:", data);
 
     try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing_payment`, {
@@ -174,11 +174,11 @@ const BuyTyping = ({
             body: JSON.stringify(data),
         });
 
-        console.log("Payment order creation response:", response);
+        // console.log("Payment order creation response:", response);
 
         if (response.ok) {
             const { razorpay_order_id, orderDetails } = await response.json();
-            console.log("Razorpay order details:", razorpay_order_id, orderDetails);
+            // console.log("Razorpay order details:", razorpay_order_id, orderDetails);
             doPayment(razorpay_order_id, orderAmount);
         } else {
             Swal.fire({
