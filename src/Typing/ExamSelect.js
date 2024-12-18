@@ -194,8 +194,8 @@ const ExamSelect = () => {
           property="og:description"
           content="Prepare for typing exams with Testdesk. Practice for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Start your typing journey now!"
         />
-        <meta property="og:image" content="https://testdesk.in/exams-image.png" />
-        <meta property="og:url" content="https://testdesk.in/exam-select" />
+        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:url" content="https://testdesk.in/choose-exam" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card for Social Sharing */}
@@ -205,10 +205,10 @@ const ExamSelect = () => {
           name="twitter:description"
           content="Prepare for typing exams with Testdesk. Practice for SSC CHSL, CGL, DSSSB, EPFO, RRB, and more. Start your typing journey now!"
         />
-        <meta name="twitter:image" content="https://testdesk.in/exams-image.png" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://testdesk.in/exam-select" />
+        <link rel="canonical" href="https://testdesk.in/choose-exam" />
       </Helmet>
 
       <TypingHeader />
@@ -217,7 +217,7 @@ const ExamSelect = () => {
 
       <div className='container-exam-selection'>
         <div className='heading-exam-select'>
-          <h2>Explore all exams</h2>
+          <h2>Explore all typing test</h2>
           <p>Get exam-ready with structured typing practice, skill-building exercises, and real-time feedback.</p>
         </div>
         <div className="layout-section-exam">
