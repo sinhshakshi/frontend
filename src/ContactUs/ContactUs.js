@@ -66,13 +66,13 @@ const ContactUs = () => {
           property="og:description" 
           content="Get in touch with Testdesk for any inquiries or support. We're here to help with your typing test needs!" 
         />
-        <meta property="og:image" content="https://testdesk.in/logo.png" />
+        <meta property="og:image" content="https://testdesk.in/logo.png?v=1"  />
         <meta property="og:url" content="https://testdesk.in/contact-us" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Us - Testdesk" />
         <meta name="twitter:description" content="Get in touch with Testdesk for any inquiries or support. We're here to help with your typing test needs!" />
-        <meta name="twitter:image" content="https://testdesk.in/logo.png" />
+        <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
       </Helmet>
 
       <TypingHeader />
