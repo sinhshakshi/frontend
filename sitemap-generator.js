@@ -49,10 +49,7 @@ const staticNames = {
 // Static Routes
 const staticRoutes = [
   "/", // Home Page
-  "/privacy-policy",
-  "/terms-of-service",
   "/typing-test-dest-results",
-  "/help",
   "/ssc-typing-test/buy-now",
   "/choose-exam",
 ];
