@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
-
+Allow: /logo.png
 Sitemap: https://testdesk.in/sitemap.xml
