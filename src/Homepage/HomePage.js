@@ -54,6 +54,22 @@ const HomePage = () => {
 
         {/* Canonical URL */}
         <link rel="canonical" href="https://testdesk.in" />
+        <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Testdesk",
+        "url": "https://testdesk.in",
+        "logo": "https://testdesk.in/logo.png",
+        "description": "Testdesk helps you improve typing speed with tests for SSC, CGL, DSSSB, EPFO, and RRB.",
+        "sameAs": [
+          "https://www.facebook.com/testdesk",
+          "https://twitter.com/testdesk"
+        ]
+      }
+    `}
+  </script>
       </Helmet>
 
       {/* Components */}
