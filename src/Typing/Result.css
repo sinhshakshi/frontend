@@ -154,22 +154,22 @@
 }
 
 .wrongword {
-    color: rgb(11, 87, 11)!important;
-    background-color: #e6ffe6!important;  /* Incorrect words typed by the user are shown in green */
+    color: rgb(7 61 7) !important;
+    background-color: #bafdba !important;
 }
 
 .recommendedword {
-    color: #a90f0f!important;
-    background-color: #ffd1d1!important;    /* The correct words for incorrectly typed ones are shown in red */
+    color: rgb(94, 5, 94)!important;
+    background-color: #dac0e5!important;    /* The correct words for incorrectly typed ones are shown in red */
 }
 
 .missingword {
-    color: #a90f0f!important;
-    background-color: #ffd1d1!important;    /* Words missing from the user's input are shown in red */
+    color: rgb(94, 5, 94)!important;
+    background-color: #dac0e5!important;    /* Words missing from the user's input are shown in red */
 }
 .extraword{
-    color: #a90f0f!important;
-    background-color: #ffd1d1!important;
+    color: rgb(94, 5, 94)!important;
+    background-color: #dac0e5!important;
 }
 
 .butndash{

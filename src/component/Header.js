@@ -99,6 +99,12 @@ const TypingHeader = () => {
   const examclick = () => {
     navigate('/choose-exam');
   };
+
+  const toggleDropdownmobile = () => {
+    navigate('/choose-exam');
+  };
+
+
   const handleresultClick = () => {
     navigate('/typing-test-dest-results');
   };
@@ -203,7 +209,7 @@ const TypingHeader = () => {
       {isMenuOpen && (
         <div className={`mobile-menu ${isMenuOpen ? "show" : ""}`}>
           <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
-          <div className="typing-nav-item" onClick={toggleDropdown}>Typing Test Links</div>
+          <div className="typing-nav-item" onClick={toggleDropdownmobile}>Typing Test Links</div>
 
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>

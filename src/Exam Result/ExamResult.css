@@ -28,7 +28,7 @@
   background-color: transparent;
   border: none;
   font-size: 16px;
-  color: #6a5acd;
+  color: #4c0070;
   font-weight: 600;
   cursor: pointer;
   padding: 12px 20px;
@@ -37,7 +37,7 @@
 }
 
 .nav-btn:hover {
-  background-color: #6a5acd; 
+  background-color: #4c0070; 
   color: white;
 }
 
@@ -63,7 +63,7 @@
 .dropdown-item {
   padding: 10px 15px;
   font-size: 14px;
-  color: #6a5acd;
+  color: #4c0070;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   text-align: left;
@@ -71,11 +71,11 @@
 }
 
 .dropdown-item:hover {
-  background-color: #6a5acd; 
+  background-color: #9b59b6; 
   color: white;
 }
 
-h2 {
+.exam-result-container h2 {
   font-size: 24px;
   margin-bottom: 15px;
   color: #4b0082; 

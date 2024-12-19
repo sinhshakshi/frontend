@@ -243,13 +243,13 @@ const TypingPerformance = () => {
     <strong style={{ color: 'black' }}>
         Mistakes like 
     </strong>
-    <strong style={{ color: 'red' }}> "with" </strong>
+    <strong style={{ color: 'purple' }}> "with" </strong>
     <strong style={{ color: 'black' }}> typed as </strong>
     <strong style={{ color: 'green' }}> "wih" </strong>
     <strong style={{ color: 'black' }}> and missed words are highlighted in </strong>
-    <strong style={{ color: 'red' }}>red</strong>.
+    <strong style={{ color: 'purple' }}>purple</strong>.
     <strong style={{ color: 'black' }}> Omitted words or lines also appear in </strong>
-    <strong style={{ color: 'red' }}>red</strong>.
+    <strong style={{ color: 'purple' }}>purple</strong>.
     <strong style={{ color: 'black' }}> Extra or incorrect entries, such as additional words or substitutions, are shown in </strong>
     <strong style={{ color: 'green' }}>green</strong>.
 </div>

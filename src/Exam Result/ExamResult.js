@@ -20,6 +20,8 @@ const ExamResult = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  
   useEffect(() => {
     const fetchExams = async () => {
       try {
@@ -161,9 +163,9 @@ const ExamResult = () => {
           {loading ? (
             <div className="loader">Loading...</div>
           ) : selectedExamName && !selectedPaperCode ? (
-            <p>No results available for the selected exam name.</p>
+            <p className="no-results-message">No results available for the selected exam name.</p>
           ) : selectedPaperCode && filteredResults.length === 0 ? (
-            <p>No results found for this exam.</p>
+            <p className="no-results-message">No results found for this exam.</p>
           ) : selectedPaperCode && filteredResults.length > 0 ? (
             <table className="result-table">
               <thead>
@@ -188,7 +190,7 @@ const ExamResult = () => {
               </tbody>
             </table>
           ) : (
-            <p>Select an exam and exam name to see results.</p>
+            <p  className="select-exam-message">Select an exam and exam name to see results.</p>
           )}
         </div>
       </div>

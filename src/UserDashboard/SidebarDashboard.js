@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { FaTachometerAlt, FaUser, FaHome, FaCog, FaSignOutAlt,FaFileInvoice } from 'react-icons/fa'; // Importing icons
 import './SidebarDashboard.css';
+import { TbReport } from "react-icons/tb";
 import { Link } from 'react-router-dom'; // Import Link
 import { useCookies } from 'react-cookie'; // Import useCookies for cookie management
 
@@ -65,6 +66,15 @@ const SidebarDashboard = ({ onMenuClick }) => {
         >
           <FaTachometerAlt className="icon" /> Typing Speed Chart
         </li>
+
+        <li 
+          className={activeMenu === 'UserResults' ? 'sidebar-item active' : 'sidebar-item'} 
+          onClick={() => handleMenuClick('UserResults')}
+        >
+          <TbReport className="icon" /> Your Typing Results
+        </li>
+
+
         <li 
           className={activeMenu === 'Profile' ? 'sidebar-item active' : 'sidebar-item'} 
           onClick={() => handleMenuClick('Profile')}

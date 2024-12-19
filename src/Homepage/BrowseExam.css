@@ -8,9 +8,11 @@
 
 
 .title-for {
-    font-size: 38px;
-    font-weight: bolder;
-    margin-top: 53px;
+    font-size: 180%;
+
+    margin-bottom: 1.95rem;
+    color: #2c3e50;
+   
 }
 
 
