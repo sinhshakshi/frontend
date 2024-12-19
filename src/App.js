@@ -141,7 +141,7 @@ const App = () => {
        <HelmetProvider> {/* Wrap your app in HelmetProvider */}
     <Router>
       <Routes>
-      <Route path='/register-admin' element={<RegisterAdminTyping />} />
+     
       <Route path='/course-page/:paramLink' element={<InfoPage />} />
       <Route path='/typing-test-dest-results' element={<ExamResult />} /> 
       <Route path='/help' element={<ContactUs />} />  
