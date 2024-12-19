@@ -23,7 +23,7 @@ const ExamResult = () => {
   useEffect(() => {
     const fetchExams = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-papercode-for-result`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-user-for-result`);
         if (!response.ok) {
           throw new Error('Failed to fetch exams');
         }
@@ -68,7 +68,7 @@ const ExamResult = () => {
   const fetchResults = async (paper_code) => {
     setLoading(true);
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getResultsByPaperCode`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paper_code }),
