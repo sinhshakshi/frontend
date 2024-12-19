@@ -1,7 +1,7 @@
 .plans-display {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+   
     margin: 79px auto;
     width: 92%;
 
