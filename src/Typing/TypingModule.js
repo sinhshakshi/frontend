@@ -54,6 +54,7 @@ const TypingModule = () => {
   //       (event.ctrlKey && event.code === "KeyU") ||
   //       (event.ctrlKey && event.code === "KeyP") || // Add Ctrl+P check
   //       event.key === "Escape" // Prevent Escape key
+  //       (event.code === "F12")  
   //     ) {
   //       event.preventDefault();
   //     }

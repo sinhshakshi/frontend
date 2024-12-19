@@ -37,47 +37,48 @@ import { useCookies } from 'react-cookie';
 
 const App = () => {
 
-  // useEffect(() => {
-  //   // Disable right-click
-  //   const disableRightClick = (event) => {
-  //     event.preventDefault();
-  //   };
+  useEffect(() => {
+    // Disable right-click
+    const disableRightClick = (event) => {
+      event.preventDefault();
+    };
   
-  //   // Disable specific key combinations
-  //   const disableKeyCombinations = (event) => {
-  //     if (
-  //       (event.ctrlKey && event.shiftKey && event.code === "KeyI") || // Ctrl+Shift+I
-  //       (event.ctrlKey && event.shiftKey && event.code === "KeyJ") || // Ctrl+Shift+J
-  //       (event.ctrlKey && event.shiftKey && event.code === "KeyC") || // Ctrl+Shift+C
-  //       (event.ctrlKey && event.code === "KeyU") ||                  // Ctrl+U
-  //       (event.ctrlKey && event.code === "KeyP") ||                  // Ctrl+P
-  //       (event.keyCode === 123)                                     // F12
-  //     ) {
-  //       event.preventDefault();
-  //     }
-  //   };
+    // Disable specific key combinations
+    const disableKeyCombinations = (event) => {
+      if (
+        (event.ctrlKey && event.shiftKey && event.code === "KeyI") || // Ctrl+Shift+I
+        (event.ctrlKey && event.shiftKey && event.code === "KeyJ") || // Ctrl+Shift+J
+        (event.ctrlKey && event.shiftKey && event.code === "KeyC") || // Ctrl+Shift+C
+        (event.ctrlKey && event.code === "KeyU") ||                  // Ctrl+U
+        (event.ctrlKey && event.code === "KeyP") ||                  // Ctrl+P
+        (event.code === "F12")                                       // F12
+      ) {
+        event.preventDefault();
+      }
+    };
   
-  //   // Disable cut, copy, paste
-  //   const disableCutCopyPaste = (event) => {
-  //     event.preventDefault();
-  //   };
+    // Disable cut, copy, paste
+    const disableCutCopyPaste = (event) => {
+      event.preventDefault();
+    };
   
-  //   // Add event listeners
-  //   document.addEventListener("contextmenu", disableRightClick); // Disable right-click
-  //   document.addEventListener("keydown", disableKeyCombinations); // Disable key combinations
-  //   document.addEventListener("cut", disableCutCopyPaste); // Disable cut
-  //   document.addEventListener("copy", disableCutCopyPaste); // Disable copy
-  //   document.addEventListener("paste", disableCutCopyPaste); // Disable paste
+    // Add event listeners
+    document.addEventListener("contextmenu", disableRightClick); // Disable right-click
+    document.addEventListener("keydown", disableKeyCombinations); // Disable key combinations
+    document.addEventListener("cut", disableCutCopyPaste); // Disable cut
+    document.addEventListener("copy", disableCutCopyPaste); // Disable copy
+    document.addEventListener("paste", disableCutCopyPaste); // Disable paste
   
-  //   // Cleanup event listeners on component unmount
-  //   return () => {
-  //     document.removeEventListener("contextmenu", disableRightClick);
-  //     document.removeEventListener("keydown", disableKeyCombinations);
-  //     document.removeEventListener("cut", disableCutCopyPaste);
-  //     document.removeEventListener("copy", disableCutCopyPaste);
-  //     document.removeEventListener("paste", disableCutCopyPaste);
-  //   };
-  // }, []);
+    // Cleanup event listeners on component unmount
+    return () => {
+      document.removeEventListener("contextmenu", disableRightClick);
+      document.removeEventListener("keydown", disableKeyCombinations);
+      document.removeEventListener("cut", disableCutCopyPaste);
+      document.removeEventListener("copy", disableCutCopyPaste);
+      document.removeEventListener("paste", disableCutCopyPaste);
+    };
+  }, []);
+  
   
 
   const [cookies] = useCookies(['SSIDCE', 'session_id']); // Access the SSIDCE and session_id cookies
