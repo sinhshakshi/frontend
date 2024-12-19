@@ -5,6 +5,7 @@ import './ExamSelect.css';
 import { useNavigate } from 'react-router-dom';
 import TypingHeader from '../component/Header';
 import { FaSearch, FaTimes } from 'react-icons/fa';
+import { MdKeyboard } from "react-icons/md";
 import { useCookies } from 'react-cookie';
 import pic1 from '../i/sscLogo.webp';
 import { Helmet } from 'react-helmet-async'; // Import Helmet
@@ -278,9 +279,15 @@ const ExamSelect = () => {
           <button className="close-button" onClick={closeModal}>
             <FaTimes />
           </button>
-         <h2 className="exam-header header-highlight">
-             {selectedExamCategory?.exam}
-           </h2>
+         
+          <h2 className="exam-header header-highlight" style={{ marginBottom: "10px" }}>
+  {selectedExamCategory?.exam}
+</h2>
+<span className="exam-instruction-for-select">
+  Please select the code given below to open the typing test date-wise.
+</span>
+
+
            <div className="modal-content">
   {loading ? (
     <div className="loader"></div> // Display spinner while loading

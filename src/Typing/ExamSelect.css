@@ -345,6 +345,14 @@ cursor: pointer;
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+.exam-instruction-for-select {
+  font-size: 16px; /* Adjust the font size */
+  color: #333; /* Text color */
+  margin-top: 8px; /* Space above the text */
+ 
+  line-height: 1.5; /* Improves readability */
+  font-family: 'Arial', sans-serif; /* Font style */
+}
 
 
 .exam-header {
@@ -356,7 +364,7 @@ cursor: pointer;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 10px 20px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  /* transition: transform 0.3s ease, color 0.3s ease; */
 }
 
 .header-highlight {
