@@ -73,6 +73,7 @@ const ContactUs = () => {
         <meta name="twitter:title" content="Contact Us - Testdesk" />
         <meta name="twitter:description" content="Get in touch with Testdesk for any inquiries or support. We're here to help with your typing test needs!" />
         <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
+        <link rel="canonical" href="https://testdesk.in/contact-us" />
       </Helmet>
 
       <TypingHeader />

@@ -208,7 +208,7 @@ const ExamSelect = () => {
         <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
 
         {/* Canonical URL */}
-        <link rel="canonical" href="https://testdesk.in" />
+        <link rel="canonical" href="https://testdesk.in/choose-exam" />
       </Helmet>
 
       <TypingHeader />

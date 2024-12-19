@@ -125,6 +125,8 @@ const ExamResult = () => {
         <meta name="twitter:title" content="Exam Results - Testdesk" />
         <meta name="twitter:description" content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." />
         <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1" />
+        <link rel="canonical" href="https://testdesk.in/typing-test-dest-results" />
+      
       </Helmet>
 
       <div className="exam-result-container">
