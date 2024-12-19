@@ -25,10 +25,18 @@ const PlansDisplay = () => {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/getPlans`, {
           method: 'GET',
         });
-
+  
         if (response.ok) {
           const data = await response.json();
-          setPlans(data);
+  
+          // Convert totalAmount to a number for sorting
+          const sortedPlans = data.sort((a, b) => {
+            const amountA = parseFloat(a.totalAmount.replace(/[^0-9.-]+/g, '')); // Remove currency symbols and convert to number
+            const amountB = parseFloat(b.totalAmount.replace(/[^0-9.-]+/g, '')); // Remove currency symbols and convert to number
+            return amountA - amountB; // Sort by numeric value
+          });
+  
+          setPlans(sortedPlans);
         } else {
           console.error('Failed to fetch plans, received non-200 response:', response);
         }
@@ -36,9 +44,10 @@ const PlansDisplay = () => {
         console.error('Failed to fetch plans:', error);
       }
     };
-
+  
     fetchPlans();
   }, []);
+  
 
   useEffect(() => {
     const checkProductAccess = async () => {
