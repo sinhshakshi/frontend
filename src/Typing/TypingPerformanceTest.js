@@ -34,7 +34,7 @@ const TypingPerformanceTest = () => {
     useEffect(() => {
         const fetchPerformanceStatusTest = async () => {
             let dt = { paper_code: testcode, email_id: cookies.SSIDCE, exam: exam, category: category };
-            let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/typingPerformanceStatusTest`, {
+            let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/result-typing`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",

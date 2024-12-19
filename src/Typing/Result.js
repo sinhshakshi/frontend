@@ -104,7 +104,7 @@ const TypingPerformance = () => {
                             if (access === "access") {
                                 let dt = { 'paper_code': testcode, 'email_id': emailId, 'exam': exam, 'category': 'UR', 'testname':testname };
                                 // console.log("Request data:", dt);
-                                let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/typingPerformanceStatusTest`, {
+                                let state_res = await fetch(`${process.env.REACT_APP_API_URL}/api/result-typing`, {
                                     method: 'POST',
                                     headers: {
                                         "Content-Type": "application/json",

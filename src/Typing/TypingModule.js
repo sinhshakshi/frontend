@@ -274,7 +274,7 @@ const TypingModule = () => {
       };
   
       // Submit the result to the backend
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typingPerformance`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/post-user-typing-result`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
