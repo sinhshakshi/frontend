@@ -88,7 +88,7 @@ const ContactUs = () => {
           <div className="contactus-option">
             <h2>Start a New Case</h2>
             <p>Just send us your questions or concerns by starting a new case and we will give you the help you need.</p>
-            <a href="/start-case" className="contactus-link">Start Here</a>
+            
           </div>
           {/* <div className="contactus-option">
             <h2>Live Chat</h2>
