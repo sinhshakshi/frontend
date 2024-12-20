@@ -349,7 +349,7 @@ cursor: pointer;
   font-size: 16px; /* Adjust the font size */
   color: #333; /* Text color */
   margin-top: 8px; /* Space above the text */
- 
+ display: block;
   line-height: 1.5; /* Improves readability */
   font-family: 'Arial', sans-serif; /* Font style */
 }

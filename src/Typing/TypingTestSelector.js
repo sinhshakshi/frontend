@@ -267,7 +267,7 @@ useEffect(() => {
 
       <div className="scrolling-message">
   <span>
-    Live Test Schedule: Morning Session 6 AM TO 7 AM And Evening Session 7 PM TO 8 PM - Special For 2024 Typing Test
+    Live Test Schedule: Morning Session 9 AM TO 10 AM And Evening Session 7 PM TO 8 PM - Special For 2024 Typing Test
   </span>
 </div>
 
@@ -336,6 +336,13 @@ useEffect(() => {
           </button>
         </div>
       </div>
+
+      <div className="message-for-exam-select">
+      Select the months from September for all exams. For SSC CGL, select the
+      months starting from January only. Each day's test will be a live test,
+      and the results will be displayed on the <strong>Results</strong> page.
+    </div>
+
       <div id="footer">Version : 17.07.00</div>
     </>
   );

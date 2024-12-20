@@ -81,4 +81,18 @@
     }
   }
   
+  .message-for-exam-select {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .message-for-exam-select strong {
+    color: #007BFF; /* Highlight the "Results" text with a blue color */
+  }
   
