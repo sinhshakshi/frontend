@@ -462,7 +462,13 @@ const TypingModule = () => {
             </div>
           </div>
         </div>
-
+        <div className="keyboard-selector-message">
+      To set up the keyboard for Hindi typing, 
+      first go to Settings, then Time & Language, and select 
+      Language on your laptop. Install Hindi as a preferred language. 
+      After that, press <strong>Windows + Space</strong> to switch to the Hindi keyboard, 
+      but only switch when Hindi typing is required for the test.
+    </div>
         <Button className="button-submit-typing" onClick={messageSubmit}>
           Submit
         </Button>

@@ -377,6 +377,28 @@
 
 }
 
+.keyboard-selector-message {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #333;
+    position: absolute;
+    top: 21em;
+    line-height: 189%;
+    right: 1.5em;
+    border: 1px solid #cc00ff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 20%;
+  }
+  
+  .keyboard-selector-message strong {
+    color: #FF5722; /* Highlight the key combination */
+    font-weight: bold;
+  }
+  
+
+
 
 .button-submit-typing:hover {
     background-color: #3a6e9a; /* Darker background on hover */
