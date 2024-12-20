@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
       <h2>Links to Other Websites</h2>
       <p>
         Our services may contain links to external websites. We are not liable for the privacy practices of those websites, and we recommend that you examine their privacy policies before sharing any personal information. 
-        This Policy applies only to information collected by testdesktyping@gmail.com.
+        This Policy applies only to information collected by testdesktypingtest@gmail.com.
       </p>
 
       <h2>Disclaimer</h2>

@@ -87,8 +87,9 @@ const ContactUs = () => {
             <a href="/login" className="contactus-link">Log In</a>
           </div>
           <div className="contactus-option">
-            <h2>Start a New Case</h2>
-            <p>Just send us your questions or concerns by starting a new case and we will give you the help you need.</p>
+            <h2>Start a New Case </h2>
+            <p>Just send us your questions or concerns by starting a new case and we will give you the help you need. You can also reach us via email at <a href="mailto:testdesktypingtest@gmail.com">testdesktypingtest@gmail.com</a>.</p>
+
             
           </div>
           {/* <div className="contactus-option">
