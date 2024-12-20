@@ -84,7 +84,7 @@ const UserResults = () => {
   };
 
   const handleViewResult = (testname) => {
-    navigate(`/${selectedPaperCode}/${selectedExamName}/${testname}/result`);
+    navigate(`/${selectedPaperCode}/${selectedExamName}/${testname}/typing-test-result`);
   };
 
   return (

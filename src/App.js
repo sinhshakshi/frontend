@@ -34,6 +34,7 @@ import ResetPassword from "./Password/ResetPassword";
 import ExamResult from "./Exam Result/ExamResult";
 import InfoPage from "./Typinginfo/InfoPage";
 import { useCookies } from 'react-cookie';
+import TypingPerformanceDashboard from "./User/TypingPerformanceDashboard";
 
 const App = () => {
 
@@ -183,6 +184,8 @@ const App = () => {
         <Route path='/:testcode/:exam/:testname/result' element={<TypingPerformance />} />  
         <Route path='/typingperformancetest/:accuracy/:wrongper/:actualdep/:speed/:testcode/:exam/:category' element={<TypingPerformanceTest />} /> 
         {/* Add other routes here */}
+        <Route path='/:testcode/:exam/:testname/typing-test-result' element={<TypingPerformanceDashboard />} /> 
+      
       </Routes>
     </Router>
     </HelmetProvider>
