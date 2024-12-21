@@ -46,6 +46,10 @@ const TestSelection = () => {
     },
   ];
 
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
+
   useEffect(() => {
     const fetchExams = async () => {
       try {

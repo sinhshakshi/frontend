@@ -235,7 +235,9 @@ const TypingTest = () => {
       },
   };
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
     useEffect(() => {
       // Function to prevent right-click
