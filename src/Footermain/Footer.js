@@ -41,6 +41,7 @@ const MainFooter = () => {
 <li><a href="/choose-exam">Bank Clerk Typing Test</a></li>
 {/* <li><a href="/Typing-test/army">Army Typing Test</a></li> */}
 <li><a href="/choose-exam">Teacher Eligibility Typing Test</a></li>
+<li><a href="/online-free-typing-test">Free Typing Test</a></li>
 
 
 
