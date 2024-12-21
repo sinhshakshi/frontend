@@ -39,9 +39,10 @@
     border: 1px solid #ddd;
     background-color: #fff;
     /* border-radius: 8px; */
-    font-size: 19px;
+    font-size: 21px;
     line-height: 1.6;
     color: #333;
+    font-family:'Times New Roman', Times, serif;
   }
   .paragraph-box-free-test-typing p{
     margin-top: 0px;
@@ -66,7 +67,7 @@
     line-height: 1.7;
     color: #333;
     width: 98%;
-    font-family: sans-serif;
+    font-family:'Times New Roman', Times, serif;
   }
   
   .typing-box-free-test-typing textarea:focus {

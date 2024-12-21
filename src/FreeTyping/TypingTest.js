@@ -300,16 +300,32 @@ const TypingTest = () => {
 
   const calculateResults = () => {
     if (!rmTm) return;
-
+  
     const originalText = testData.paragraph.trim();
     const userInput = message.trim();
-
+  
+    const originalWords = originalText.split(/\s+/); // Split into words
+    const userWords = userInput.split(/\s+/); // Split into words
+  
+    let correctWords = 0;
+    let wrongWords = 0;
+    const totalWords = originalWords.length;
+  
+    // Compare word by word
+    originalWords.forEach((word, index) => {
+      if (userWords[index] && word === userWords[index]) {
+        correctWords++;
+      } else {
+        wrongWords++;
+      }
+    });
+  
     const diff = diffWords(originalText, userInput);
-
+  
     let correctChars = 0;
     let wrongChars = 0;
     const totalChars = originalText.length;
-
+  
     diff.forEach((part) => {
       if (!part.added && !part.removed) {
         correctChars += part.value.length;
@@ -317,24 +333,32 @@ const TypingTest = () => {
         wrongChars += part.value.length;
       }
     });
-
+  
+    const totalTypedChars = userInput.length; // Calculate total characters typed by the user
+  
     const timeParts = rmTm.split(":").map(Number);
     const totalTestSeconds = testData.time * 60;
     const timeUsed =
       totalTestSeconds - (timeParts[0] * 3600 + timeParts[1] * 60 + timeParts[2]);
-
+  
     const accuracy = ((correctChars / totalChars) * 100).toFixed(2);
-    const wpm = Math.round((userInput.split(" ").length * 60) / timeUsed);
-
+    const wpm = Math.round((correctWords * 60) / timeUsed);
+  
     setResults({
       accuracy,
       wpm,
       correctChars,
       wrongChars,
       totalChars,
+      correctWords,
+      wrongWords,
+      totalWords,
+      totalTypedChars, // Add total typed characters to results
     });
     setTyping(false);
   };
+  
+  
 
   if (!testData) return <div>Loading...</div>;
 
@@ -420,28 +444,33 @@ const TypingTest = () => {
         </tr>
       </thead>
       <tbody>
+      <tr className="free-typing-test-table">
+          <td className="free-typing-test-table">WPM</td>
+          <td className="free-typing-test-table">{results.wpm}</td>
+        </tr>
         <tr className="free-typing-test-table">
           <td className="free-typing-test-table">Accuracy</td>
           <td className="free-typing-test-table">{results.accuracy}%</td>
         </tr>
         <tr className="free-typing-test-table">
-          <td className="free-typing-test-table">WPM</td>
-          <td className="free-typing-test-table">{results.wpm}</td>
+        <td className="free-typing-test-table">Keystrokes</td>
+          <td className="free-typing-test-table">{results.totalTypedChars}</td>
         </tr>
         <tr className="free-typing-test-table">
-          <td className="free-typing-test-table">Correct Characters</td>
-          <td className="free-typing-test-table">{results.correctChars}</td>
+          <td className="free-typing-test-table">Correct Words</td>
+          <td className="free-typing-test-table">{results.correctWords}</td>
         </tr>
         <tr className="free-typing-test-table">
-          <td className="free-typing-test-table">Wrong Characters</td>
-          <td className="free-typing-test-table">{results.wrongChars}</td>
+          <td className="free-typing-test-table">Wrong Words</td>
+          <td className="free-typing-test-table">{results.wrongWords}</td>
         </tr>
-        <tr className="free-typing-test-table">
-          <td className="free-typing-test-table">Total Characters</td>
-          <td className="free-typing-test-table">{results.totalChars}</td>
-        </tr>
+
+
       </tbody>
     </table>
+
+
+
 
     {/* Additional Message Section */}
     <div className="additional-message-section-free">
