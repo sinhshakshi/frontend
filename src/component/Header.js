@@ -71,6 +71,10 @@ const TypingHeader = () => {
     navigate('/help');
   };
 
+  const handleFreeClick = () => {
+    navigate('/online-free-typing-test');
+  };
+
   const handleBuyNowClick = () => {
     navigate('/ssc-typing-test/buy-now');
   };
@@ -181,6 +185,7 @@ const TypingHeader = () => {
           
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
+          <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
         </div>
 
@@ -213,6 +218,7 @@ const TypingHeader = () => {
 
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
+          <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
           {/* <div className="typing-nav-item" onClick={toggleSearch}>Search</div> */}
           {/* <div className="close-button" onClick={toggleMenu}>❌</div> */}

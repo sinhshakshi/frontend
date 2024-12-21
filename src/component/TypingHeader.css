@@ -58,13 +58,13 @@
 
 .typing-nav-menu {
   position: relative;
-  width: 47%;
+  width: 58%;
   display: flex
 ;
   align-items: center;
   justify-content: space-between;
   /* margin-right: 34rem; */
-  margin-right: 31%;
+  margin-right: 18%;
 
 
 
@@ -424,13 +424,13 @@
 @media (max-width: 1200px) {
   .typing-nav-menu {
     position: relative;
-    width: 54%;
+    width: 60%;
     display: flex
 ;
     align-items: center;
     justify-content: space-between;
     /* margin-right: 34rem; */
-    margin-right: 15%;
+    margin-right: 13%;
 }
 }
 
@@ -469,7 +469,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
   .hamburger {
     display: block; /* Show hamburger menu for small devices */
   }

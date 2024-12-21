@@ -5,7 +5,7 @@ const baseUrl = "https://testdesk.in"; // Replace with your domain
 // Static Names with Redirect Names
 const staticNames = {
   "SSC CHSL": {
-    displayName: "SSC CHSL Typing test",
+    displayName: "SSC CHSL Typing Test",
     redirectName: "ssc-chsl-typing-test",
   },
   "DSSSB": {
@@ -33,7 +33,7 @@ const staticNames = {
     redirectName: "bsf-hcm-typing-skill-tests",
   },
   "SSC": {
-    displayName: "SSC CGL Typing test",
+    displayName: "SSC CGL Typing Test",
     redirectName: "ssc-cgl-typing-test",
   },
   "Supreme Court": {
@@ -41,7 +41,7 @@ const staticNames = {
     redirectName: "supreme-court-jca-typing-test",
   },
   "RRB": {
-    displayName: "RRB NTPC / GDCE typing test (Railway typing)",
+    displayName: "RRB NTPC / GDCE Typing Test (Railway Typing)",
     redirectName: "rrb-ntpc-typing-test",
   },
 };
@@ -52,6 +52,7 @@ const staticRoutes = [
   "/typing-test-dest-results",
   "/ssc-typing-test/buy-now",
   "/choose-exam",
+  "/online-free-typing-test",
 ];
 
 // Dynamic Routes from `staticNames`
@@ -59,12 +60,36 @@ const dynamicRoutes = Object.values(staticNames).map(
   (entry) => `/course-page/${entry.redirectName}`
 );
 
-// Combine Static and Dynamic Routes
-const allRoutes = [...staticRoutes, ...dynamicRoutes];
+// Typing Test Routes
+const categories = [
+  "ssc-cgl-typing-test-01",
+  "ssc-cgl-typing-test-02",
+  "ssc-cgl-typing-test-03",
+  "ssc-cgl-typing-test-04",
+  "ssc-cgl-typing-test-05",
+  "rrb-typing-test-01",
+  "rrb-typing-test-02",
+  "rrb-typing-test-03",
+  "rrb-typing-test-04",
+  "rrb-typing-test-05",
+  "ssc-chsl-typing-test-01",
+  "ssc-chsl-typing-test-02",
+  "ssc-chsl-typing-test-03",
+  "ssc-chsl-typing-test-04",
+  "ssc-chsl-typing-test-05",
+];
+
+const typingTestRoutes = categories.map(
+  (testId) => `/online-free-typing-test/${testId}`
+);
+
+// Combine Static, Dynamic, and Typing Test Routes
+const allRoutes = [...staticRoutes, ...dynamicRoutes, ...typingTestRoutes];
 
 // Generate XML Sitemap
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   ${allRoutes
     .map((route) => {
       return `
@@ -73,6 +98,10 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>${baseUrl}/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>`;
     })
     .join("")}

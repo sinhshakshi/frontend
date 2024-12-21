@@ -1,145 +1,305 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <url>
     <loc>https://testdesk.in/</loc>
-    <lastmod>2024-12-19T09:45:02.096Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.010Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/typing-test-dest-results</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/ssc-typing-test/buy-now</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/choose-exam</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test</loc>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/ssc-chsl-typing-test</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/dsssb-jja-spa-pa-english-typing-tests</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/delhi-police-typing-test</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/delhi-high-court-pa-spa-typing-test</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/drdo-assistant-typing-course</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/epfo-typing-skill-tests</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.014Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/bsf-hcm-typing-skill-tests</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/ssc-cgl-typing-test</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/supreme-court-jca-typing-test</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://testdesk.in/course-page/rrb-ntpc-typing-test</loc>
-    <lastmod>2024-12-19T09:45:02.112Z</lastmod>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-<image:loc>https://testdesk.in/logo.png</image:loc>
-<image:caption>Testdesk Logo</image:caption>
-</image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-cgl-typing-test-01</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-cgl-typing-test-02</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-cgl-typing-test-03</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-cgl-typing-test-04</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-cgl-typing-test-05</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/rrb-typing-test-01</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/rrb-typing-test-02</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/rrb-typing-test-03</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/rrb-typing-test-04</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/rrb-typing-test-05</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-chsl-typing-test-01</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-chsl-typing-test-02</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-chsl-typing-test-03</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-chsl-typing-test-04</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://testdesk.in/online-free-typing-test/ssc-chsl-typing-test-05</loc>
+    <lastmod>2024-12-21T17:59:54.015Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://testdesk.in/logo.png</image:loc>
+      <image:caption>Testdesk Logo</image:caption>
+    </image:image>
   </url>
 </urlset>

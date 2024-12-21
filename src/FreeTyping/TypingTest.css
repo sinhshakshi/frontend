@@ -1,0 +1,229 @@
+/* General styles for the Typing Test container */
+.typing-test-container-free-test-typing {
+    max-width: 80%;
+    margin: 82px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin: 82px auto;
+    padding: 20px;
+   
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+  }
+  
+  .header-free-test-typing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header-free-test-typing h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5a2e8a;
+  }
+  
+  .timer-free-test-typing {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .paragraph-box-free-test-typing {
+    max-height: 220px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    /* border-radius: 8px; */
+    font-size: 19px;
+    line-height: 1.6;
+    color: #333;
+  }
+  .paragraph-box-free-test-typing p{
+    margin-top: 0px;
+  }
+
+
+  
+  .typing-box-free-test-typing {
+    margin-top: 20px;
+  }
+  
+  .typing-box-free-test-typing textarea {
+    height: 220px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+ 
+    border: 1px solid #ddd;
+    background-color: #fff;
+    /* border-radius: 8px; */
+    font-size: 21px;
+    line-height: 1.7;
+    color: #333;
+    width: 98%;
+    font-family: sans-serif;
+  }
+  
+  .typing-box-free-test-typing textarea:focus {
+    border-color: #5a2e8a;
+    box-shadow: 0 0 5px rgba(90, 46, 138, 0.3);
+  }
+  
+  .buttons-free-test-typing {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .buttons-free-test-typing button {
+    padding: 17px 12px;
+
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #5a2e8a;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons-free-test-typing button:hover {
+    background-color: #431d6e;
+  }
+  
+
+  
+  .info-section-free-test-typing {
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .info-section-free-test-typing h2 {
+    color: #5a2e8a;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .info-section-free-test-typing p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 5px 0;
+  }
+  
+  .info-section-free-test-typing ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .info-section-free-test-typing li {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+
+  .results-section-free-test-typing {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+   
+    width: 80%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .results-section-free-test-typing h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .free-typing-test-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .free-typing-test-table th,
+  .free-typing-test-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .free-typing-test-table th {
+    background-color: #5a2e8a;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .free-typing-test-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .free-typing-test-table td {
+    font-size: 19px;
+  }
+  
+  .free-typing-test-table tr:hover {
+    background-color: #f0eaff;
+  }
+
+  .additional-message-section-free {
+    margin-top: 20px;
+    padding: 15px 10px;
+    border-top: 2px solid #5a2e8a; /* Adds a subtle line on top */
+    background-color: #fafafa; /* Light background for contrast */
+    text-align: center; /* Center-aligns the text */
+  }
+  
+  .message-free {
+    font-size: 1.2rem;
+    color: #333; /* Darker text for readability */
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  .progress-check-free {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text for secondary emphasis */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .buy-now-button-free {
+    display: inline-block; /* Makes the button behave like an inline element */
+    background-color: #5a2e8a; /* Main color for the button */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px; /* Adds sufficient spacing inside the button */
+    font-size: 1rem; /* Keeps the font size consistent */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effect */
+  }
+  
+  .buy-now-button-free:hover {
+    background-color: #431d6e; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+  }
+  
+  .buy-now-button-free:active {
+    transform: scale(0.98); /* Button presses inward slightly when clicked */
+  }
+  
+  .additional-message-section-free p {
+    line-height: 1.5; /* Improves text readability */
+  }
+  
+  

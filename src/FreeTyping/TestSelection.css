@@ -1,0 +1,115 @@
+.test-selection-container.free-test-select {
+    padding: 20px;
+    margin: 31px auto;
+}
+
+.free-test-select h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.categories.free-test-select {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.category-card.free-test-select {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 326px;
+    height: 226px;
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card.free-test-select:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-card.free-test-select img {
+    width: 108px;
+    height: 108px;
+    margin-bottom: 10px;
+}
+
+.category-card.free-test-select h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.category-card.free-test-select:hover h3 {
+  color: #5a2e8a;
+}
+
+.category-details.free-test-select h2 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.tests-container.free-test-select {
+  margin-top: 20px;
+}
+
+.test-row.free-test-select {
+    display: flex
+    ;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: #f9f9f9; */
+        border: 1px solid #ddd;
+        /* border-radius: 10px; */
+        padding: 15px;
+        margin-bottom: 15px;
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+        transition: box-shadow 0.3s ease;
+}
+
+.test-row.free-test-select:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.test-name.free-test-select,
+.test-duration.free-test-select,
+.test-language.free-test-select,
+.test-action.free-test-select {
+  flex: 1;
+  text-align: center;
+}
+
+.test-language.free-test-select select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.test-action.free-test-select button {
+  background-color: #5a2e8a;
+  color: #fff;
+  padding: 17px 12px;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.test-action.free-test-select button:hover {
+  background-color: #431d6e;
+}
