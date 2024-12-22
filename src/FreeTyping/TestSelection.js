@@ -94,7 +94,16 @@ const TestSelection = () => {
         />
         <meta
           name="keywords"
-          content="free typing tests, SSC free typing practice, RRB free typing test, CHSL free typing exam, online typing practice free, Testdesk typing tests"
+          content={`free typing test, typing speed, typing accuracy, SSC typing test, typing practice, 
+            SSC CGL typing test, CHSL typing test, RRB NTPC typing test, EPFO typing test, DSSSB typing test, 
+            typing test online free, typing speed booster, government exam typing test, typing accuracy practice, 
+            typing skill improvement, typing mock test, advanced typing tests, typing software for exams, 
+            free typing practice, typing tests for beginners, professional typing tests, TCS interface typing test, 
+            real typing exam simulation, typing speed and accuracy, Hindi typing test, English typing test, 
+            typing tests for SSC exams, online typing skill development, typing speed challenge, 
+            SSC skill test preparation, government typing exams, typing preparation for competitive exams, 
+            free typing resources, fast typing test practice
+          `}
         />
         <meta property="og:title" content="Free Typing Tests - Practice for SSC, RRB, CHSL | Testdesk" />
         <meta
