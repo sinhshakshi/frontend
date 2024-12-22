@@ -70,7 +70,7 @@ const MainFooter = () => {
                         <a href="#"><i className="fab fa-twitter"></i></a>
                         <a href="#"><i className="fab fa-linkedin-in"></i></a>
                         <a href="#"><i className="fab fa-instagram"></i></a>
-                        <a href="#"><i className="fab fa-youtube"></i></a>
+                        <a href="https://www.youtube.com/@Testdesktyping"><i className="fab fa-youtube"></i></a>
                         <a href="#"><i className="fab fa-quora"></i></a>
                     </div>
                 </div>
