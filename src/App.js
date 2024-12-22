@@ -37,6 +37,8 @@ import { useCookies } from 'react-cookie';
 import TypingPerformanceDashboard from "./User/TypingPerformanceDashboard";
 import TypingTestfee from "./FreeTyping/TypingTest";
 import TestSelection from "./FreeTyping/TestSelection";
+import StudentDetail from "./Forms/Students/StudentDetail";
+
 
 const App = () => {
 
@@ -144,6 +146,10 @@ const App = () => {
        <HelmetProvider> {/* Wrap your app in HelmetProvider */}
     <Router>
       <Routes>
+      <Route
+                          path="/students-for-purchase/:studentId"
+                          element={<StudentDetail />}
+                        />
       <Route path="/online-free-typing-test" element={<TestSelection />} />
       <Route path="/online-free-typing-test/:testId" element={<TypingTestfee />} />
       <Route path='/course-page/:paramLink' element={<InfoPage />} />

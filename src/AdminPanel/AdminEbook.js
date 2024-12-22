@@ -18,6 +18,7 @@ import ExamTable from "../Forms/ExamTable";
 import AddPlanForm from "../Forms/AddPlanForm";
 import ManageStatusTypingParagraph from "../Forms/ManageStatusTypingParagraph";
 import TypingInfo from "../Forms/TypingInfo";
+import StudentTable from "../Forms/Students/StudentTable";
 
 const AdminTyping = () => {
   const [activeComponent, setActiveComponent] = useState(
@@ -83,6 +84,8 @@ const AdminTyping = () => {
         return <ManageStatusTypingParagraph />;
       case "TypingInfo":
         return <TypingInfo />;
+        case "StudentTable":
+          return <StudentTable />;
       default:
         return <AddTypingParagraph />;
     }

@@ -80,6 +80,40 @@ const SidebarEbook = ({ setComponent }) => {
           )}
         </div>
         
+
+        <div className="sidebar-ebook__group">
+          <h3
+            className={`sidebar-ebook__group-title ${
+              openGroups["Student"] ? "open" : ""
+            }`}
+            onClick={() => toggleGroup("Student")}
+          >
+            Student {openGroups["Student"] ? <FaChevronUp /> : <FaChevronDown />}
+          </h3>
+          {openGroups["Student"] && (
+            <div className="sidebar-ebook__subitems">
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("StudentTable")}
+              >
+                Student Table{" "}
+              </button>
+             
+            </div>
+          )}
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
       </nav>
     </div>
   );
