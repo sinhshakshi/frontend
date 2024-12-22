@@ -241,7 +241,10 @@ const InfoPage = () => {
       </div>
 
       <div className="info-video">
-  <h3>YouTube Videos</h3>
+      <h3>YouTube Videos</h3>
+  <p className="subscribe-prompt">
+    Subscribe to the channel for more typing test tips and tutorials!
+  </p>
   <div className="video-grid">
     {youtubeVideoLink &&
       youtubeVideoLink.split(",").map((link, index) => {
@@ -251,15 +254,18 @@ const InfoPage = () => {
 
         return (
           <div key={index} className="video-item">
-            <iframe
-              className="info-iframe"
-              src={embedUrl}
-              title={`YouTube Video ${index + 1}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+          <iframe
+            className="info-iframe"
+            src={embedUrl}
+            title={`YouTube Video ${index + 1} - ${examName}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            aria-label={examName} // Adding for better accessibility
+          ></iframe>
+        </div>
+        
+      
         );
       })}
   </div>
