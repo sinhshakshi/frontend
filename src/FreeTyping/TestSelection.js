@@ -94,7 +94,7 @@ const TestSelection = () => {
         />
         <meta
           name="keywords"
-          content={`free typing test, typing speed, typing accuracy, SSC typing test, typing practice, 
+          content={`free typing test, online free typing test for ssc cgl, typing speed, typing accuracy, SSC typing test, typing practice, 
             SSC CGL typing test, CHSL typing test, RRB NTPC typing test, EPFO typing test, DSSSB typing test, 
             typing test online free, typing speed booster, government exam typing test, typing accuracy practice, 
             typing skill improvement, typing mock test, advanced typing tests, typing software for exams, 

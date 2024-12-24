@@ -320,7 +320,7 @@ const LoginAdminTyping = () => {
           color="#6a11cb"
         >
           Need an account?{" "}
-          <span
+          <span className ="for-signup"
             onClick={toSignup}
             style={{ cursor: 'pointer', color: '#2575fc', fontWeight: 'bold' }}
           >

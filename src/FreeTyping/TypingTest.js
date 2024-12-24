@@ -97,7 +97,7 @@ const TypingTest = () => {
         // SSC CHSL Typing Tests (350+ words)
         "ssc-chsl-typing-test-01": {
           name: "SSC CHSL Free Typing Test 1",
-          time: 12,
+          time: 10,
           paragraph: `The oceans, covering more than 70% of the Earth’s surface, are home to a vast array of biodiversity that supports life both underwater and on land. From coral reefs teeming with vibrant marine life to deep-sea ecosystems yet to be fully explored, ocean biodiversity is vital for ecological balance, global food security, and climate regulation. However, this invaluable resource faces numerous threats, including overfishing, pollution, and climate change.
       
       Coral reefs, often referred to as the "rainforests of the sea," are among the most threatened ecosystems. Rising sea temperatures and ocean acidification, caused by increased CO2 absorption, have led to widespread coral bleaching events. These changes disrupt the delicate balance of reef ecosystems, affecting countless marine species that depend on coral habitats for survival. Additionally, overfishing has led to a decline in key species such as tuna and sharks, creating cascading effects throughout the marine food web.
@@ -112,7 +112,7 @@ const TypingTest = () => {
         },
         "ssc-chsl-typing-test-02": {
           name: "SSC CHSL Free Typing Test 2",
-          time: 12,
+          time: 10,
           paragraph: `Quantum computing is an emerging field with the potential to revolutionize industries by solving complex problems far beyond the capabilities of classical computers. Unlike traditional computing, which relies on bits represented as 0s and 1s, quantum computing uses quantum bits or qubits. These qubits exploit the principles of superposition and entanglement, enabling them to perform multiple calculations simultaneously. This unprecedented computational power opens doors to groundbreaking applications across various domains.
       
       One of the most promising applications of quantum computing is in cryptography. Current encryption systems rely on mathematical problems that are computationally expensive for classical computers to solve. However, quantum computers can break these codes, necessitating the development of quantum-resistant encryption methods. In the field of materials science, quantum computing enables precise simulations of molecular interactions, accelerating the discovery of new materials with applications ranging from pharmaceuticals to energy storage.
@@ -125,7 +125,7 @@ const TypingTest = () => {
         },
         "ssc-chsl-typing-test-03": {
           name: "SSC CHSL Free Typing Test 3",
-          time: 12,
+          time: 10,
           paragraph: `Climate change is one of the most pressing challenges of the 21st century, with profound implications for ecosystems, economies, and societies. Addressing this global issue requires robust mitigation strategies aimed at reducing greenhouse gas emissions and promoting sustainability. 
       
       One key approach is transitioning to renewable energy sources such as solar, wind, and hydroelectric power. These alternatives significantly decrease dependence on fossil fuels, which are the primary contributors to carbon emissions. Another effective strategy is enhancing energy efficiency in industries, homes, and transportation systems. For instance, the adoption of electric vehicles (EVs) and smart grids has already demonstrated potential in reducing environmental impact.
@@ -138,7 +138,7 @@ const TypingTest = () => {
         },
         "ssc-chsl-typing-test-04": {
           name: "SSC CHSL Free Typing Test 4",
-          time: 12,
+          time: 10,
           paragraph: `Artificial Intelligence (AI) is reshaping healthcare by revolutionizing diagnosis, treatment, and patient care. By utilizing advanced algorithms, AI enables the analysis of vast datasets with precision, uncovering patterns that human observation might overlook. 
       
       For example, AI-powered systems are now capable of detecting early signs of diseases such as cancer through imaging scans, improving the accuracy of diagnoses and outcomes for patients. These tools have significantly reduced the time required for diagnosis, allowing healthcare professionals to focus on personalized care. Moreover, AI is driving innovation in drug discovery, facilitating the identification of potential new treatments at a fraction of the time and cost traditionally required. 
@@ -153,7 +153,7 @@ const TypingTest = () => {
         },
         "ssc-chsl-typing-test-05": {
           name: "SSC CHSL Free Typing Test 5",
-          time: 12,
+          time: 10,
           paragraph: `The global shift to remote work, accelerated by the COVID-19 pandemic, has fundamentally transformed how businesses operate and employees collaborate. What initially began as a necessity has now evolved into a preferred working model for many, with profound implications for productivity, work-life balance, and organizational culture. 
       
       The future of remote work lies in finding the right balance between flexibility and efficiency, supported by technological advancements and innovative management practices. One of the most significant benefits of remote work is the increased flexibility it offers employees. Without the constraints of a daily commute, workers have more time to focus on personal responsibilities, pursue hobbies, and achieve a better work-life balance.

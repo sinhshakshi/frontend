@@ -244,6 +244,7 @@ const Register = () => {
                 placeholder="Exam Shortcut"
                 value={examShortcut}
                 onChange={(e) => setExamShortcut(e.target.value)}
+                required
               />
             </div>   </div>
 
