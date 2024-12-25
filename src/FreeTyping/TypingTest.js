@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import TypingTimer from "../Typing/TypingTimer";
+import Typingfreetime from "./Typingfreetime";
 import { diffWords } from "diff";
 import "./TypingTest.css";
 import { Helmet } from "react-helmet-async";
@@ -14,19 +14,20 @@ const TypingTest = () => {
   const [typing, setTyping] = useState(false);
   const [rmTm, setRmTm] = useState(null);
   const [results, setResults] = useState(null);
+  const [timeUpModal, setTimeUpModal] = useState(false);
 
   const tests = {
     // SSC CGL Typing Tests (400+ words)
     "ssc-cgl-typing-test-01": {
         name: "SSC CGL Free Typing Test 1",
-        time: 15,
+        time: 2,
         paragraph: `Democracy, as a system of governance, traces its origins to ancient Greece, particularly in the city-state of Athens during the 5th century BCE. The Athenian model, often regarded as the first democracy, allowed citizens to participate directly in decision-making. However, this early form of governance was far from inclusive. Women, slaves, and non-citizens were excluded, limiting the number of eligible participants. Despite its shortcomings, the Athenian system laid the groundwork for future democratic models.
     
     As history progressed, the idea of democracy evolved. In 1215, the Magna Carta in England marked a significant shift towards limiting the powers of rulers and establishing certain rights for citizens. This document, though not democratic in the modern sense, planted the seeds for constitutional governance. The American Revolution in 1776 and the French Revolution in 1789 further propelled democratic ideals, emphasizing liberty, equality, and fraternity. These movements showcased the power of collective action and the importance of representing the will of the people.
     
     Modern democracies are built on principles of universal suffrage, the rule of law, and the separation of powers. Representative democracy, where citizens elect officials to make decisions on their behalf, has become the most common form. This system balances the need for broad participation with the practicalities of governance in large, complex societies. Despite these advancements, democracy faces numerous challenges in the contemporary world. Issues like voter suppression, political corruption, and the influence of money in politics threaten its integrity. Additionally, the rise of authoritarian regimes and the erosion of democratic norms in some countries highlight the fragility of this system.
     
-    Democracy’s greatest strength lies in its adaptability and resilience. By providing a framework for peaceful transitions of power and enabling citizens to voice their opinions, democracy fosters social stability and innovation. While imperfect, it remains the most effective system for ensuring individual freedoms and promoting collective welfare. As we reflect on its origins, it is essential to safeguard democratic values and address the challenges it faces to create a more inclusive and equitable future.`,
+    Democracy’s greatest strength lies in its adaptability and resilience. By providing a framework for peaceful transitions of power and enabling citizens to voice their opinions, democracy fosters social stability and innovation. While imperfect, it remains the most effective system for ensuring individual freedoms and promoting collective welfare. `,
       },
       "ssc-cgl-typing-test-02": {
         name: "SSC CGL Free Typing Test 2",
@@ -39,11 +40,7 @@ const TypingTest = () => {
     
     Economically, the Industrial Revolution spurred unprecedented growth. Mass production lowered the cost of goods, making them more accessible to the general population. Trade expanded as transportation networks, including railways and steamships, improved. However, this rapid industrialization came at a cost. Working conditions in factories were often harsh, with long hours, low wages, and unsafe environments. Child labor was prevalent, prompting calls for labor reforms.
     
-    The Industrial Revolution also had environmental consequences. The widespread use of coal and other fossil fuels led to air and water pollution, a legacy that continues to impact the planet. Deforestation and the exploitation of natural resources intensified, highlighting the environmental cost of industrial progress.
-    
-    Despite its challenges, the Industrial Revolution laid the groundwork for modern society. It ushered in an era of innovation and technological advancement, from electricity to automobiles. The lessons of this period emphasize the importance of balancing progress with social and environmental responsibility.
-    
-    The Industrial Revolution was not merely a historical event but a turning point that continues to influence our lives today. Its legacy is a testament to human ingenuity and the relentless pursuit of progress.`,
+    The Industrial Revolution also had environmental consequences. The widespread use of coal and other fossil fuels led to air and water pollution, a legacy that continues to impact the planet. Deforestation and the exploitation of natural resources intensified, highlighting the environmental cost of industrial progress. `,
       },
       "ssc-cgl-typing-test-03": {
         name: "SSC CGL Free Typing Test 3",
@@ -54,11 +51,7 @@ const TypingTest = () => {
     
     The brain is also the origin of creativity and innovation. It allows us to imagine, solve problems, and create art, music, and technology. The prefrontal cortex, responsible for executive functions like decision-making and planning, enables humans to navigate complex social and professional environments. This ability to innovate has set humans apart as a species.
     
-    Despite its capabilities, the brain remains a subject of ongoing study, with many mysteries still unsolved. Neurological disorders such as Alzheimer’s disease, Parkinson’s disease, and epilepsy highlight the vulnerability of this vital organ. Advances in neuroscience and technology, such as brain imaging and artificial intelligence, are helping researchers understand the brain's mechanisms and develop treatments for these conditions.
-    
-    One of the brain's most intriguing features is its plasticity—the ability to adapt and reorganize itself throughout life. This plasticity is particularly evident in individuals recovering from injuries or adapting to new skills. The brain’s resilience and capacity for change underscore its extraordinary potential.
-    
-    The study of the brain not only deepens our understanding of ourselves but also inspires technological advancements. From brain-computer interfaces to therapies for mental health, the exploration of this organ continues to revolutionize science and medicine. As we unlock its secrets, the brain remains a testament to the complexity and wonder of human life.`,
+    Despite its capabilities, the brain remains a subject of ongoing study, with many mysteries still unsolved. Neurological disorders such as Alzheimer’s disease, Parkinson’s disease, and epilepsy highlight the vulnerability of this vital organ. Advances in neuroscience and technology, such as brain imaging and artificial intelligence, are helping researchers understand the brain's mechanisms and develop treatments for these conditions.`,
       },
       "ssc-cgl-typing-test-04": {
         name: "SSC CGL Free Typing Test 4",
@@ -73,9 +66,7 @@ const TypingTest = () => {
     
     However, the Age of Exploration came at a significant cost. Colonization led to the exploitation of indigenous populations, the spread of diseases like smallpox, and the destruction of cultural heritage. The transatlantic slave trade, driven by the demand for labor in the colonies, remains one of the darkest legacies of this period.
     
-    Despite its controversies, the Age of Exploration expanded human knowledge. New lands, resources, and cultures were documented, transforming science and geography. The exchange of goods, crops, and ideas—known as the Columbian Exchange—profoundly altered economies and diets worldwide, introducing potatoes, maize, and tomatoes to Europe and wheat and horses to the Americas.
-    
-    The Age of Exploration was a turning point in history, ushering in globalization and laying the foundations for the modern world. While its impacts were both positive and negative, it remains a testament to human curiosity and the drive to push beyond known horizons.`,
+    Despite its controversies, the Age of Exploration expanded human knowledge.`,
       },
       "ssc-cgl-typing-test-05": {
         name: "SSC CGL Free Typing Test 5",
@@ -88,9 +79,7 @@ const TypingTest = () => {
     
     The language of Shakespeare’s works also contributes to their immortality. His inventive use of metaphors, similes, and wordplay enriches his writing, making it both poetic and profound. Phrases such as “to be or not to be” from Hamlet and “all the world’s a stage” from As You Like It have become part of everyday language. Shakespeare’s ability to weave humor, wit, and wisdom into his texts ensures their relevance across generations.
     
-    Moreover, Shakespeare’s influence extends beyond literature. His works have inspired countless adaptations in theater, film, and other art forms. Directors reinterpret his plays to address contemporary issues, showcasing their adaptability and cultural significance.
-    
-    In a rapidly changing world, Shakespeare’s works remind us of the enduring nature of human experiences. By addressing timeless questions about identity, morality, and destiny, Shakespeare invites readers and audiences to reflect on their own lives. His legacy, much like his words, is immortal, ensuring his place at the heart of English literature.`,
+    Moreover, Shakespeare’s influence extends beyond literature.`,
       },
     
 
@@ -294,24 +283,23 @@ const TypingTest = () => {
   }, [testId]);
 
   const handleInputChange = (e) => {
-    if (!typing) setTyping(true); // Start typing when the user begins
+    if (!typing) setTyping(true);
     setMessage(e.target.value);
   };
 
   const calculateResults = () => {
     if (!rmTm) return;
-  
+
     const originalText = testData.paragraph.trim();
     const userInput = message.trim();
-  
-    const originalWords = originalText.split(/\s+/); // Split into words
-    const userWords = userInput.split(/\s+/); // Split into words
-  
+
+    const originalWords = originalText.split(/\s+/);
+    const userWords = userInput.split(/\s+/);
+
     let correctWords = 0;
     let wrongWords = 0;
     const totalWords = originalWords.length;
-  
-    // Compare word by word
+
     originalWords.forEach((word, index) => {
       if (userWords[index] && word === userWords[index]) {
         correctWords++;
@@ -319,13 +307,13 @@ const TypingTest = () => {
         wrongWords++;
       }
     });
-  
+
     const diff = diffWords(originalText, userInput);
-  
+
     let correctChars = 0;
     let wrongChars = 0;
     const totalChars = originalText.length;
-  
+
     diff.forEach((part) => {
       if (!part.added && !part.removed) {
         correctChars += part.value.length;
@@ -333,17 +321,17 @@ const TypingTest = () => {
         wrongChars += part.value.length;
       }
     });
-  
-    const totalTypedChars = userInput.length; // Calculate total characters typed by the user
-  
+
+    const totalTypedChars = userInput.length;
+
     const timeParts = rmTm.split(":").map(Number);
     const totalTestSeconds = testData.time * 60;
     const timeUsed =
       totalTestSeconds - (timeParts[0] * 3600 + timeParts[1] * 60 + timeParts[2]);
-  
+
     const accuracy = ((correctChars / totalChars) * 100).toFixed(2);
-    const wpm = Math.round((correctWords * 60) / timeUsed);
-  
+    const wpm = Math.round((correctWords * 60) / (timeUsed || 1));
+
     setResults({
       accuracy,
       wpm,
@@ -353,12 +341,22 @@ const TypingTest = () => {
       correctWords,
       wrongWords,
       totalWords,
-      totalTypedChars, // Add total typed characters to results
+      totalTypedChars,
     });
     setTyping(false);
   };
-  
-  
+
+  const handleTimeUp = () => {
+    setTyping(false);
+    setMessage(""); // Clear the textarea
+    calculateResults();
+    setTimeUpModal(true); // Show the modal
+  };
+
+  const handleCloseModal = () => {
+    setTimeUpModal(false);
+  };
+
 
   if (!testData) return <div>Loading...</div>;
 
@@ -417,10 +415,11 @@ const TypingTest = () => {
         <div className="timer-free-test-typing">
           Time Left:{" "}
           {typing ? (
-            <TypingTimer
-              hoursMinSecs={{ hours: 0, minutes: testData.time, seconds: 0 }}
-              rmTimeFun={(time) => setRmTm(time)}
-            />
+              <Typingfreetime
+                hoursMinSecs={{ hours: 0, minutes: testData.time, seconds: 0 }}
+                rmTimeFun={(time) => setRmTm(time)}
+                onTimeUp={handleTimeUp}
+              />
           ) : (
             `${testData.time} m 0 s`
           )}
@@ -444,6 +443,23 @@ const TypingTest = () => {
         </div>
       </div>
       </div>
+
+
+      {timeUpModal && (
+        <div className="time-up-modal">
+          <div className="modal-content-time-up-modal">
+            <h2>Time's Up!</h2>
+            <p>Click OK and then scroll down to check your results below.</p>
+            <button onClick={handleCloseModal}>OK</button>
+          </div>
+        </div>
+      )}
+
+
+
+
+
+
       {results && (
   <div className="results-section-free-test-typing">
     <h3>Results</h3>

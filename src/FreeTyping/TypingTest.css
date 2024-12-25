@@ -227,4 +227,71 @@
     line-height: 1.5; /* Improves text readability */
   }
   
-  
+  /* Modal Background */
+.time-up-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Modal Content */
+.modal-content-time-up-modal {
+  background-color: #fff; /* White background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Modal Heading */
+.modal-content-time-up-modal h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333; /* Dark text color */
+}
+
+/* Modal Paragraph */
+.modal-content-time-up-modal p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Modal Button */
+.modal-content-time-up-modal button {
+  background-color: #431d6e; /* Blue background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content-time-up-modal button:hover {
+  background-color: #5d447a; /* Darker blue on hover */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
