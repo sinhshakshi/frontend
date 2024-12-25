@@ -20,7 +20,7 @@ const TypingTest = () => {
     // SSC CGL Typing Tests (400+ words)
     "ssc-cgl-typing-test-01": {
         name: "SSC CGL Free Typing Test 1",
-        time: 2,
+        time: 15,
         paragraph: `Democracy, as a system of governance, traces its origins to ancient Greece, particularly in the city-state of Athens during the 5th century BCE. The Athenian model, often regarded as the first democracy, allowed citizens to participate directly in decision-making. However, this early form of governance was far from inclusive. Women, slaves, and non-citizens were excluded, limiting the number of eligible participants. Despite its shortcomings, the Athenian system laid the groundwork for future democratic models.
     
     As history progressed, the idea of democracy evolved. In 1215, the Magna Carta in England marked a significant shift towards limiting the powers of rulers and establishing certain rights for citizens. This document, though not democratic in the modern sense, planted the seeds for constitutional governance. The American Revolution in 1776 and the French Revolution in 1789 further propelled democratic ideals, emphasizing liberty, equality, and fraternity. These movements showcased the power of collective action and the importance of representing the will of the people.
