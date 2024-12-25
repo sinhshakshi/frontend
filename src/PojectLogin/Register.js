@@ -8,6 +8,7 @@ import { FaUser, FaEnvelope, FaLock, FaPhone, FaCity, FaCalendarAlt } from 'reac
 import 'react-toastify/dist/ReactToastify.css';
 import './Register.css';
 import pic from '../i/exambook.png';
+import VideoModal from './VideoModal'; 
 
 const Register = () => {
   const [fullName, setFullName] = useState('');
@@ -21,6 +22,7 @@ const Register = () => {
   const [membership, setMembership] = useState('');
   const [examShortcut, setExamShortcut] = useState('');
   const [termsAccepted, setTermsAccepted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   const navigate = useNavigate();
 
@@ -71,6 +73,14 @@ const Register = () => {
   };
 
 
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const infotwo = () => {
     navigate('/');
   };
@@ -83,8 +93,9 @@ const Register = () => {
         <div className="register-left">
           {/* <h1>Testdesk</h1> */}
           <img onClick={infotwo} src={pic} alt="Moonstream Logo" className="register-logo" />
-          <p>Welcome! Please register to create your account.</p>
-          <button className="play-btn">Play</button>
+          <p>Welcome! Please register to create your account. You can also play the video below.</p>
+          
+          <button className="play-btn" onClick={openModal}>Play</button>
         </div>
 
         <div className="register-right">
@@ -272,6 +283,11 @@ const Register = () => {
         </div>
       </div>
     </div>
+    <VideoModal
+        isOpen={isModalOpen}
+        videoUrl="https://www.youtube.com/embed/q8AXmoi2C9I" // Correct embed URL format
+        closeModal={closeModal}
+      />
     </>
   );
 };
