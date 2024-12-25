@@ -33,7 +33,13 @@ const InfoPage = () => {
   
         if (response.ok) {
           const data = await response.json();
-          setPlans(data);  // Store the fetched data in the plans state
+          const sortedPlans = data.sort((a, b) => {
+            const amountA = parseFloat(a.totalAmount.replace(/[^0-9.-]+/g, '')); // Remove currency symbols and convert to number
+            const amountB = parseFloat(b.totalAmount.replace(/[^0-9.-]+/g, '')); // Remove currency symbols and convert to number
+            return amountA - amountB; // Sort by numeric value
+          });
+  
+          setPlans(sortedPlans);
         } else {
           console.error('Failed to fetch plans, received non-200 response:', response);
         }
