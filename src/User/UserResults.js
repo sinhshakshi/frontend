@@ -13,29 +13,77 @@ const UserResults = () => {
   const [cookies] = useCookies(['session_id', 'SSIDCE']);
   const navigate = useNavigate();
 
+  // useEffect(() => {
+  //   const fetchExams = async () => {
+  //     try {
+  //       console.log("Fetching exams from API...");
+  //       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-user-for-result`);
+  
+  //       if (!response.ok) {
+  //         throw new Error(`Failed to fetch exams: ${response.status} ${response.statusText}`);
+  //       }
+  
+  //       const data = await response.json();
+  //       console.log("Fetched Exams Data:", data);
+  
+  //       const dropdownData = data.reduce((acc, item) => {
+  //         if (!acc[item.exam]) acc[item.exam] = [];
+  //         if (!acc[item.exam].some((entry) => entry.examName === item.examName)) {
+  //           acc[item.exam].push({ examName: item.examName, paper_code: item.paper_code });
+  //         }
+  //         return acc;
+  //       }, {});
+  
+  //       console.log("Processed Dropdown Data:", dropdownData);
+  
+  //       setExamDropdownData(dropdownData);
+  //     } catch (error) {
+  //       console.error("Error fetching exams:", error);
+  //     }
+  //   };
+  
+  //   fetchExams();
+  // }, []);
+  
   useEffect(() => {
     const fetchExams = async () => {
       try {
+        console.log("Fetching exams from API...");
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-user-for-result`);
-        if (!response.ok) throw new Error('Failed to fetch exams');
+  
+        if (!response.ok) {
+          throw new Error(`Failed to fetch exams: ${response.status} ${response.statusText}`);
+        }
+  
         const data = await response.json();
-
+        console.log("Fetched Exams Data:", data);
+  
+        // Process dropdown data
         const dropdownData = data.reduce((acc, item) => {
+          // Determine year from the paper_code
+          const year = item.paper_code.includes('25') ? '2025' : '2024';
+          const examWithYear = `${item.examName} (${year})`;
+  
           if (!acc[item.exam]) acc[item.exam] = [];
-          if (!acc[item.exam].some((entry) => entry.examName === item.examName)) {
-            acc[item.exam].push({ examName: item.examName, paper_code: item.paper_code });
+          if (!acc[item.exam].some((entry) => entry.examName === examWithYear)) {
+            acc[item.exam].push({ examName: examWithYear, paper_code: item.paper_code });
           }
           return acc;
         }, {});
-
+  
+        console.log("Processed Dropdown Data:", dropdownData);
+  
         setExamDropdownData(dropdownData);
       } catch (error) {
-        console.error('Error fetching exams:', error);
+        console.error("Error fetching exams:", error);
       }
     };
-
+  
     fetchExams();
   }, []);
+  
+
+
 
   const handleExamNameSelect = (examName) => {
     setSelectedExamName(examName);

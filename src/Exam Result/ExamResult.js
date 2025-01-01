@@ -17,11 +17,20 @@ const ExamResult = () => {
   // Fetch exam list
 
 
+  const staticPaperCodes = {
+    "CGL": "CGL25-ENG-TYP01",
+    "JCA": "SC-JCA-TYPING-02-2025",
+    "NTPC English": "RRB-TYPING-ENG-2025",
+    "NTPC Hindi": "RRB-TYPING-HIN-2025",
+    "CHSL": "CHSL24-ENG-TYP01",
+    "JSA-LDC-PA-JJA English": "DSSSB-ENG-01",
+    "JSA-LDC-PA-JJA Hindi": "DSSSB-HIN-01",
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  
   useEffect(() => {
     const fetchExams = async () => {
       try {
@@ -29,8 +38,12 @@ const ExamResult = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch exams');
         }
+  
         const data = await response.json();
-
+  
+        // Log the fetched data to check its structure and content
+        // console.log("Fetched Exams Data:", data);
+  
         const dropdownData = data.reduce((acc, item) => {
           if (!acc[item.exam]) acc[item.exam] = [];
           if (!acc[item.exam].some((entry) => entry.examName === item.examName)) {
@@ -38,26 +51,49 @@ const ExamResult = () => {
           }
           return acc;
         }, {});
-
+  
+        // Log the processed dropdown data to see which paper codes are included
+        // console.log("Processed Dropdown Data:", dropdownData);
+  
         setExamDropdownData(dropdownData);
       } catch (error) {
         console.error('Error fetching exams:', error);
       }
     };
-
+  
     fetchExams();
   }, []);
+  
 
   // Handle selection of an exam name
+  // const handleExamNameSelect = (examName) => {
+  //   setSelectedExamName(examName);
+
+  //   const paperCode = Object.values(examDropdownData)
+  //     .flat()
+  //     .find((item) => item.examName === examName)?.paper_code;
+
+  //   setSelectedPaperCode(paperCode);
+
+  //   if (paperCode) {
+  //     fetchResults(paperCode);
+  //   } else {
+  //     setExamResults([]);
+  //     setFilteredResults([]);
+  //   }
+  // };
+
+
   const handleExamNameSelect = (examName) => {
     setSelectedExamName(examName);
-
-    const paperCode = Object.values(examDropdownData)
+  
+    // Use static mapping for paper codes
+    const paperCode = staticPaperCodes[examName] || Object.values(examDropdownData)
       .flat()
       .find((item) => item.examName === examName)?.paper_code;
-
+  
     setSelectedPaperCode(paperCode);
-
+  
     if (paperCode) {
       fetchResults(paperCode);
     } else {
