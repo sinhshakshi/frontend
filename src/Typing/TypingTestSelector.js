@@ -338,11 +338,13 @@ useEffect(() => {
       </div>
 
       <div className="message-for-exam-select">
-  Select the months starting from September for all exams. 
-  For SSC CGL, select the months starting from January only. 
+  Select the months starting from <strong>September</strong> for all exams in <strong>2024</strong>, 
+  except for <strong>SSC CGL</strong>, which starts from <strong>January 2024</strong>. 
+  From <strong>2025</strong> onwards, all exams will start from <strong>January</strong>. 
   Today's test will be a live test, and the results will be displayed 
   on the <strong>Results</strong> page.
 </div>
+
 
 
       <div id="footer">Version : 17.07.00</div>

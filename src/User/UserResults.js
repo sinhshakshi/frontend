@@ -48,7 +48,7 @@ const UserResults = () => {
   useEffect(() => {
     const fetchExams = async () => {
       try {
-        console.log("Fetching exams from API...");
+        // console.log("Fetching exams from API...");
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-user-for-result`);
   
         if (!response.ok) {
@@ -56,7 +56,7 @@ const UserResults = () => {
         }
   
         const data = await response.json();
-        console.log("Fetched Exams Data:", data);
+        // console.log("Fetched Exams Data:", data);
   
         // Process dropdown data
         const dropdownData = data.reduce((acc, item) => {
@@ -71,7 +71,7 @@ const UserResults = () => {
           return acc;
         }, {});
   
-        console.log("Processed Dropdown Data:", dropdownData);
+        // console.log("Processed Dropdown Data:", dropdownData);
   
         setExamDropdownData(dropdownData);
       } catch (error) {
