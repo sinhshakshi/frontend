@@ -44,17 +44,17 @@ const AfterBanner = () => {
         const cglResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paper_code: 'CGL24-ENG-TYP01' }),
+          body: JSON.stringify({ paper_code: 'CGL25-ENG-TYP01' }),
         });
         const chslResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paper_code: 'CHSL24-ENG-TYP01' }),
+          body: JSON.stringify({ paper_code: 'CHSL25-ENG-TYP01' }),
         });
         const ntpcResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paper_code: 'RRB-TYPING-ENG-01' }),
+          body: JSON.stringify({ paper_code: 'RRB-TYPING-ENG-02-2025' }),
         });
     
         // Parse responses and handle errors
