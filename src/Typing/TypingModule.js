@@ -452,7 +452,7 @@ const TypingModule = () => {
           <div id="unique-typing-div" className="unique-typing-question-div">
             <div class="textAreaDiv-typed-div" onpaste="return false">
               <textarea
-                class="typedAnswer-typed-answr"
+                className="typedAnswer-typed-answr"
                 style={{}}
                 value={message}
                 spellCheck="false"

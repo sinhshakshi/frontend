@@ -22,7 +22,7 @@ const ExamResult = () => {
     "JCA": "SC-JCA-TYPING-02-2025",
     "NTPC English": "RRB-TYPING-ENG-2025",
     "NTPC Hindi": "RRB-TYPING-HIN-2025",
-    "CHSL": "CHSL24-ENG-TYP01",
+    "CHSL": "CHSL25-ENG-TYP01",
     "JSA-LDC-PA-JJA English": "DSSSB-ENG-01",
     "JSA-LDC-PA-JJA Hindi": "DSSSB-HIN-01",
   };
@@ -34,7 +34,7 @@ const ExamResult = () => {
   useEffect(() => {
     const fetchExams = async () => {
       try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-user-for-result`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/exams-user-for-result-live`);
         if (!response.ok) {
           throw new Error('Failed to fetch exams');
         }

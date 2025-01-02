@@ -162,6 +162,26 @@
     background-color: #fff; /* White background for selects */
     transition: border-color 0.3s; /* Smooth transition for border color */
 }
+
+.year-selector-dash select {
+    display: flex
+;
+    width: 50%;
+    margin-right: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+
+.year-selector-dash select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
 .month-selector-both-select{
     display: flex;
 }
