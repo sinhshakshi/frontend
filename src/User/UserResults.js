@@ -94,10 +94,12 @@ const UserResults = () => {
       if (!response.ok) throw new Error('Failed to fetch user results');
   
       const data = await response.json();
+     
       const formattedResults = data.map((item) => ({
         date: new Date(item.ts).toLocaleDateString(),
         testname: item.testname,
         accuracy: item.accuracy.toFixed(2),
+        paper_code: item.paper_code,
         status: item.accuracy >= 95 ? 'Pass' : 'Fail', // Pass if accuracy >= 95%
       }));
       setUserResults(formattedResults);
@@ -110,8 +112,8 @@ const UserResults = () => {
   };
   
 
-  const handleViewResult = (testname) => {
-    navigate(`/${selectedPaperCode}/${selectedExamName}/${testname}/typing-test-result`);
+  const handleViewResult = (testname, paper_code) => {
+    navigate(`/${paper_code}/${selectedExamName}/${testname}/typing-test-result`);
   };
 
   return (
@@ -160,7 +162,7 @@ const UserResults = () => {
               <div className="result-action">
                 <button
                   className="view-button"
-                  onClick={() => handleViewResult(result.testname)}
+                  onClick={() => handleViewResult(result.testname, result.paper_code)}
                 >
                   View Results
                 </button>

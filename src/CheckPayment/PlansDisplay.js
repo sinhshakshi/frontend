@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../AuthContext/AuthContext";
 import MainFooter from '../Footermain/Footer';
 import { useCookies } from 'react-cookie';
+import OfferMessage from './OfferMessage';
 
 const PlansDisplay = () => {
   const [plans, setPlans] = useState([]);
@@ -135,7 +136,7 @@ const PlansDisplay = () => {
       </Helmet>
       <Header />
 
-      
+      <OfferMessage/>
 
       <div className="plans-display">
         {plans.map((plan, index) => {

@@ -20,11 +20,11 @@ const ExamResult = () => {
   const staticPaperCodes = {
     "CGL": "CGL25-ENG-TYP01",
     "JCA": "SC-JCA-TYPING-02-2025",
-    "NTPC English": "RRB-TYPING-ENG-2025",
-    "NTPC Hindi": "RRB-TYPING-HIN-2025",
+    "NTPC English": "RRB-TYPING-ENG-02-2025",
+    "NTPC Hindi": "RRB-TYPING-HIN-02-2025",
     "CHSL": "CHSL25-ENG-TYP01",
-    "JSA-LDC-PA-JJA English": "DSSSB-ENG-01",
-    "JSA-LDC-PA-JJA Hindi": "DSSSB-HIN-01",
+    "JSA-LDC-PA-JJA English": "DSSSB-ENG-02-2025",
+    "JSA-LDC-PA-JJA Hindi": "DSSSB-HIN-02-2025",
   };
 
   useEffect(() => {

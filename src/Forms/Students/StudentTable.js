@@ -41,15 +41,12 @@ const StudentTable = () => {
     navigate(`/students-for-purchase/${studentId}`);
   };
 
-  const handleEdit = (studentId) => {
-    // Logic for editing the student
-  };
-
-  const handleDelete = (studentId) => {
-    // Logic for deleting the student
-  };
-
   const columns = useMemo(() => [
+    {
+      accessorKey: 'serial_number',
+      header: 'Serial No.',
+      Cell: ({ row }) => <span>{page * pageSize + row.index + 1}</span>, // Add serial number logic
+    },
     {
       accessorKey: 'full_name',
       header: 'Full Name',
@@ -65,17 +62,7 @@ const StudentTable = () => {
     { accessorKey: 'email_id', header: 'Email ID' },
     { accessorKey: 'mobile_number', header: 'Mobile Number' },
     { accessorKey: 'ts', header: 'Date', Cell: ({ row }) => new Date(row.original.ts).toLocaleDateString() },
-    {
-      id: 'actions',
-      header: 'Action',
-      Cell: ({ row }) => (
-        <div>
-          <button onClick={() => handleEdit(row.original._id)} className="edit-btn">Edit</button>
-          <button onClick={() => handleDelete(row.original._id)} className="delete-btn">Delete</button>
-        </div>
-      ),
-    },
-  ], []);
+  ], [page, pageSize]);
 
   const handleNextPage = () => {
     if (page < totalPages - 1) {
@@ -100,6 +87,10 @@ const StudentTable = () => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
+      </div>
+
+      <div className="student-info">
+        <span>Total Students: {rowCount}</span> {/* Display total number of students */}
       </div>
 
       {loading ? (

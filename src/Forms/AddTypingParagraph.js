@@ -1,117 +1,4 @@
-// import React, { useState } from 'react';
-// import { useCookies } from 'react-cookie';
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
-// import './AddTypingParagraph.css';
 
-// const AddTypingParagraph = () => {
-//   const [formData, setFormData] = useState({
-//     exam: '',
-//     examName: '',
-//     paper_code: '',
-//     testName: '', // New field for test name
-//     title: '',
-//     date: '',
-//     time: '',
-//     type: '',
-//     paragraph: '',
-//     status: '1',
-//   });
-
-//   const [cookies] = useCookies(['myadmin']);
-
-//   const handleChange = (e) => {
-//     setFormData({
-//       ...formData,
-//       [e.target.name]: e.target.value,
-//     });
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     // Format the date here if necessary, e.g., converting to a specific format
-//     const formattedDate = new Date(formData.date).toISOString().split('T')[0]; // Change the format as needed
-
-//     const response = await fetch(`${process.env.REACT_APP_API_URL}/api/addTypingParagraph`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Authorization': `Bearer ${cookies.myadmin}`,
-//       },
-//       body: JSON.stringify({ ...formData, date: formattedDate }), // Send the formatted date
-//     });
-
-//     if (response.ok) {
-//       toast.success('Typing paragraph added successfully');
-//       setFormData({
-//         exam: '',
-//         examName: '',
-//         paper_code: '',
-//         testName: '', // Reset test name field
-//         type: '',
-//         date: '',       
-//         title: '',
-//         paragraph: '',
-//         time: '',
-//         status: '1',
-//       });
-//     } else {
-//       toast.error('Failed to add typing paragraph');
-//     }
-//   };
-
-//   return (
-//     <>
-//       <ToastContainer />
-//       <h1 className="add-ebook-form">Add Typing Content</h1>
-//       <form onSubmit={handleSubmit} className="typing-paragraph-form">
-//         {Object.entries(formData).map(([key, value]) => (
-//           <div className="typing-paragraph-form-group" key={key}>
-//             <label className="typing-paragraph-label" htmlFor={`${key}-typing`}>
-//               {key.charAt(0).toUpperCase() + key.slice(1).replace('_', ' ')}
-//             </label>
-//             {key === 'paragraph' ? (
-//               <textarea
-//                 id={`${key}-typing`}
-//                 className="typing-paragraph-textarea"
-//                 name={key}
-//                 value={value}
-//                 onChange={handleChange}
-//                 required
-//               />
-//             ) : key === 'date' ? (
-//               <input
-//                 id={`${key}-typing`}
-//                 className="typing-paragraph-input"
-//                 type="date" // Custom date input
-//                 name={key}
-//                 value={value}
-//                 onChange={handleChange}
-//                 required
-//               />
-//             ) : (
-//               <input
-//                 id={`${key}-typing`}
-//                 className="typing-paragraph-input"
-//                 type={key === 'time' ? 'number' : 'text'}
-//                 name={key}
-//                 value={value}
-//                 onChange={handleChange}
-//                 required
-//               />
-//             )}
-//           </div>
-//         ))}
-//         <button type="submit" className="typing-paragraph-button">
-//           Add Typing Paragraph
-//         </button>
-//       </form>
-//     </>
-//   );
-// };
-
-// export default AddTypingParagraph;
 
 
 import React, { useState } from 'react';
@@ -134,54 +21,54 @@ const AddTypingParagraph = () => {
   const examData = {
     SSC: {
       examNames: {
-        CHSL: ['CHSL24-ENG-TYP01'],
-        CGL: ['CGL24-ENG-TYP01'],
+        CHSL: ['CHSL24-ENG-TYP01', 'CHSL25-ENG-TYP01'],
+        CGL: ['CGL24-ENG-TYP01', 'CGL25-ENG-TYP01'],
       },
     },
     DSSSB: {
       examNames: {
-        'JSA-LDC-PA-JJA English': ['DSSSB-ENG-01'],
-        'JSA-LDC-PA-JJA Hindi': ['DSSSB-HIN-01'],
+        'JSA-LDC-PA-JJA English': ['DSSSB-ENG-01', 'DSSSB-ENG-02-2025'],
+        'JSA-LDC-PA-JJA Hindi': ['DSSSB-HIN-01', 'DSSSB-HIN-02-2025'],
       },
     },
     RRB: {
       examNames: {
-        'NTPC Hindi': ['RRB-TYPING-HIN-01'],
-        'NTPC English': ['RRB-TYPING-ENG-01'],
+        'NTPC Hindi': ['RRB-TYPING-HIN-01', 'RRB-TYPING-HIN-02-2025'],
+        'NTPC English': ['RRB-TYPING-ENG-01', 'RRB-TYPING-ENG-02-2025'],
       },
     },
     'Supreme Court': {
       examNames: {
-        JCA: ['SC-JCA-TYPING-01'],
+        JCA: ['SC-JCA-TYPING-01', 'SC-JCA-TYPING-02-2025'],
       },
     },
     'Delhi Police': {
       examNames: {
-        'AWO-TPO English': ['DELHI-POLICE-TYPING-ENG-01'],
-        'AWO-TPO Hindi': ['DELHI-POLICE-TYPING-HIN-01'],
+        'AWO-TPO English': ['DELHI-POLICE-TYPING-ENG-01', 'DELHI-POLICE-TYPING-ENG-02-2025'],
+        'AWO-TPO Hindi': ['DELHI-POLICE-TYPING-HIN-01', 'DELHI-POLICE-TYPING-HIN-02-2025'],
       },
     },
     'Delhi High Court': {
       examNames: {
-        'SPA-PA': ['DHC-SPA-PA-01'],
+        'SPA-PA': ['DHC-SPA-PA-01', 'DHC-SPA-PA-02-2025'],
       },
     },
     DRDO: {
       examNames: {
-        'Admin Assistant English': ['DRDO-TYPING-ENG-01'],
-        'Stenographer English': ['DRDO-STENO-ENG-01'],
+        'Admin Assistant English': ['DRDO-TYPING-ENG-01', 'DRDO-TYPING-ENG-02-2025'],
+        'Stenographer English': ['DRDO-STENO-ENG-01', 'DRDO-STENO-ENG-02-2025'],
       },
     },
     EPFO: {
       examNames: {
-        'Social Security Assistant English': ['EPFO-TYPING-ENG-01'],
-        'Stenographer English': ['EPFO-STENO-ENG-01'],
+        'Social Security Assistant English': ['EPFO-TYPING-ENG-01', 'EPFO-TYPING-ENG-02-2025'],
+        'Stenographer English': ['EPFO-STENO-ENG-01', 'EPFO-STENO-ENG-02-2025'],
       },
     },
     BSF: {
       examNames: {
-        HCM: ['BSF-TYPING-ENG-01'],
-        'Stenographer English': ['BSF-STENO-ENG-01'],
+        HCM: ['BSF-TYPING-ENG-01', 'BSF-TYPING-ENG-02-2025'],
+        'Stenographer English': ['BSF-STENO-ENG-01', 'BSF-STENO-ENG-02-2025'],
       },
     },
   };
