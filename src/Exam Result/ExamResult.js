@@ -278,7 +278,7 @@ const ExamResult = () => {
     const currentMinute = new Date().getMinutes();
     
     // Show results if the time is 11:00 PM or later
-    if (currentHour >= 23) {
+    if (currentHour >= 22) {
       setIsResultsAvailable(true);
     } else {
       setIsResultsAvailable(false);
@@ -462,7 +462,7 @@ const ExamResult = () => {
             </div>
           </>
         ) : (
-          <p className="no-results-message">Results will be available after 11:00 PM.</p>
+          <p className="no-results-message">Results will be available after 10:00 PM.</p>
         )}
       </div>
       <MainFooter />

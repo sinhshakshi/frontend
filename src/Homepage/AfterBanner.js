@@ -407,7 +407,7 @@ const AfterBanner = () => {
     const currentMinute = new Date().getMinutes();
 
     // Check if it's after 11:00 PM
-    if (currentHour >= 23) {
+    if (currentHour >= 22) {
       setIsResultsAvailable(true);
     } else {
       setIsResultsAvailable(false);
@@ -567,7 +567,7 @@ const AfterBanner = () => {
                 <p className="no-results">No results found for SSC CHSL today.</p>
               )
             ) : (
-              <p className="no-results">Today live test results available after 11:00 PM.</p>
+              <p className="no-results">Today live test results available after 10:00 PM.</p>
             )}
           </div>
 
@@ -595,7 +595,7 @@ const AfterBanner = () => {
                 <p className="no-results">No results found for SSC CGL today.</p>
               )
             ) : (
-              <p className="no-results">Today live test results available after 11:00 PM.</p>
+              <p className="no-results">Today live test results available after 10:00 PM.</p>
             )}
           </div>
 
@@ -623,7 +623,7 @@ const AfterBanner = () => {
                 <p className="no-results">No results found for Railway NTPC English today.</p>
               )
             ) : (
-              <p className="no-results">Today live test results available after 11:00 PM.</p>
+              <p className="no-results">Today live test results available after 10:00 PM.</p>
             )}
           </div>
         </div>
