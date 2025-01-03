@@ -84,10 +84,11 @@
 }
 
 .test-list-user-bolt{
-    display: flex;
+    display: none;
     align-items: center;
-    display: flex;
+   
     font-size: 0.8rem;
+  
 }
 
 .test-list-user-duration{
