@@ -82,7 +82,7 @@ const ContactUs = () => {
         
         <div className="contactus-options">
           <div className="contactus-option">
-            <h2>By Phone : <strong>6203505821</strong></h2>
+            <h2>By Phone : <strong>+91 6203505821</strong></h2>
             <p>Get telephone support by signing into your account.</p>
             <a href="/login" className="contactus-link">Log In</a>
           </div>
