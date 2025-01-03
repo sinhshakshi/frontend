@@ -118,7 +118,7 @@ const TermsAndConditions = () => {
       <p>
         <strong>Testdesk Pvt. Ltd.</strong><br />
         Email: <a href="mailto:testdesktypingtest@gmail.com">testdesktypingtest@gmail.com</a><br />
-        Phone: [Your Contact Number]
+        Phone: [+916203505821]
       </p>
     </div>
     <MainFooter/>

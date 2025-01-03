@@ -118,7 +118,7 @@ const ExamResult = () => {
       setExamResults(data);
       setFilteredResults(data); // Initialize filtered results
     } catch (error) {
-      console.error('Error fetching results:', error);
+      // console.error('Error fetching results:', error);
       setExamResults([]);
       setFilteredResults([]);
     } finally {
@@ -222,7 +222,9 @@ const ExamResult = () => {
                     <td>{result.full_name}</td>
                     <td>{result.speed} WPM</td>
                     <td>{result.accuracy}%</td>
-                    <td className={result.status === 'Pass' ? 'pass' : 'fail'}>{result.status}</td>
+                    <td className={result.status === 'Pass' ? 'pass' : 'fail'}>
+  {result.status === 'Fail' ? 'Improve' : result.status}
+</td>
                   </tr>
                 ))}
               </tbody>
