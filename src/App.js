@@ -38,6 +38,8 @@ import TypingPerformanceDashboard from "./User/TypingPerformanceDashboard";
 import TypingTestfee from "./FreeTyping/TypingTest";
 import TestSelection from "./FreeTyping/TestSelection";
 import StudentDetail from "./Forms/Students/StudentDetail";
+import RefundPolicy from "./Footermain/RefundPolicy";
+import ShippingAndDelivery from "./Footermain/ShippingAndDelivery";
 
 
 const App = () => {
@@ -158,6 +160,8 @@ const App = () => {
       <Route path='/acceptable-use-policy' element={<AcceptableUsePolicy />} />  
       <Route path='/privacy-policy' element={<PrivacyPolicy />} />  
       <Route path='/terms-of-service' element={<TermsAndConditions />} /> 
+      <Route path='/refund' element={<RefundPolicy />} /> 
+      <Route path='/shipping' element={<ShippingAndDelivery />} /> 
 
       <Route path="/forget-password" element={<ForgetPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />

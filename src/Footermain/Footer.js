@@ -82,6 +82,9 @@ const MainFooter = () => {
                     <a href="/acceptable-use-policy">User Policy</a>
                     <a href="/terms-of-service">Terms</a>
                     <a href="/privacy-policy">Privacy</a>
+                    <a href="/refund">Refund Policy</a>
+                    <a href="/help">Contact Us</a>
+                    <a href="/shipping">Shipping and Delivery</a>
                 </div>
             </div>
         </footer>
