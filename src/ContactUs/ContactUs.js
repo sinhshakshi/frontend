@@ -82,7 +82,7 @@ const ContactUs = () => {
         
         <div className="contactus-options">
           <div className="contactus-option">
-            <h2>By Phone</h2>
+            <h2>By Phone : <strong>6203505821</strong></h2>
             <p>Get telephone support by signing into your account.</p>
             <a href="/login" className="contactus-link">Log In</a>
           </div>
@@ -92,11 +92,11 @@ const ContactUs = () => {
 
             
           </div>
-          {/* <div className="contactus-option">
+          <div className="contactus-option">
             <h2>Live Chat</h2>
             <p>Chat with a member of our in-house team.</p>
             <a href="/chat" className="contactus-link">Start Chat</a>
-          </div> */}
+          </div>
         </div>
 
         <form className="contactus-form" onSubmit={handleSubmit}>
