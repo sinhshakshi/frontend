@@ -173,6 +173,12 @@ const InfoPage = () => {
            <meta property="og:image" content="https://testdesk.in/logo.png?v=1" />
         <meta property="og:url" content={`https://testdesk.in/course-page/${paramLink}`} />
         <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
+
+        <link
+    rel="canonical"
+    href={`https://testdesk.in/course-page/${paramLink}`} // Replace with the actual URL
+  />
+
       </Helmet>
     <div className="info-container">
     <button className="info-back-button" onClick={() => navigate(-1)}>
