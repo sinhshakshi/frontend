@@ -33,7 +33,7 @@ const ResponsiveAdComponent = () => {
       {/* Second Responsive AdSense Manual Ad Unit */}
       <ins
         className="adsbygoogle"
-        style={{ display: "block" }}  
+        style={{ display: "block", marginTop: "2%", marginBottom: "2%" }} 
         data-ad-client="ca-pub-7439051765477438"
         data-ad-slot="8071357905"
         data-ad-format="auto"

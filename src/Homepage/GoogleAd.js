@@ -30,7 +30,7 @@ const AdComponent = () => {
       {/* AdSense Manual Ad Unit */}
       <ins
         className="adsbygoogle"  
-        style={{ display: "block" }}  
+        style={{ display: "block", marginTop: "2%", marginBottom: "2%" }}
         data-ad-format="fluid"
         data-ad-layout-key="-fb+5w+4e-db+86"
         data-ad-client="ca-pub-7439051765477438"
