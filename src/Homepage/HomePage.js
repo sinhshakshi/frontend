@@ -54,7 +54,7 @@ const HomePage = () => {
           content="Join Testdesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
         <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
-
+        <meta name="google-adsense-account" content="ca-pub-7439051765477438"/>
         {/* Canonical URL */}
         <link rel="canonical" href="https://testdesk.in" />
         <script type="application/ld+json">
