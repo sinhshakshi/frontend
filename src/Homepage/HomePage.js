@@ -10,6 +10,9 @@ import MainFooter from '../Footermain/Footer';
 import HomePageDescription from './HomePageDescription';
 import BrowseExam from './BrowseExam';
 import ExamList from './ExamList';
+import AdComponent from "./GoogleAd";
+import ResponsiveAdComponent from './ResponsiveAdComponent';
+
 
 const HomePage = () => {
   useEffect(() => {
@@ -76,8 +79,10 @@ const HomePage = () => {
       <TypingHeader />
       <Banner />
       <AfterBanner />
+      <AdComponent/>
       <ExamList />
       <HomePageDescription />
+<ResponsiveAdComponent/>
       <BrowseExam />
       <MainFooter />
     </>
