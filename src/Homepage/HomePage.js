@@ -79,7 +79,7 @@ const HomePage = () => {
       <TypingHeader />
       <Banner />
       <AfterBanner />
-      <AdComponent/>
+      {/* <AdComponent/> */}
       <ExamList />
       <HomePageDescription />
 <ResponsiveAdComponent/>
