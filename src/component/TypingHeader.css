@@ -58,13 +58,11 @@
 
 .typing-nav-menu {
   position: relative;
-  width: 58%;
+  width: 74%;
   display: flex
 ;
   align-items: center;
   justify-content: space-between;
-  /* margin-right: 34rem; */
-  margin-right: 18%;
 
 
 
@@ -309,6 +307,25 @@
 .hamburger {
   display: none; /* Initially hidden */
   cursor: pointer;
+}
+
+
+.social-icon-header {
+  width: 24px;
+  
+ /* Add spacing between icon and text */
+}
+
+.typing-help-item-social{
+  background-color: white;
+  border-radius: 76%;
+  padding: 5px;
+  display: flex
+;
+cursor: pointer;
+  justify-content: center;
+  align-items: center;
+
 }
 
 

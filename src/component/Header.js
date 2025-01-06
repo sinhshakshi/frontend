@@ -4,6 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext/AuthContext';
 import './TypingHeader.css';
 import logo from "../i/newlogo.gif";
+import fb from "../i/fb.svg";
+import insta from "../i/insta.svg";
+import tg from "../i/tg.svg";
+import youtube from "../i/youtube.svg";
+
 import { useCookies } from "react-cookie";
 import Loading from '../Loading';
 import { Helmet } from 'react-helmet-async';
@@ -119,6 +124,13 @@ const TypingHeader = () => {
     navigate('/');
   };
 
+  const handleyoutubeClick = () => {
+    window.location.href = "https://www.youtube.com/@Testdesktyping"; // Redirect to YouTube
+  };
+
+
+
+
   // Close search pop-up on outside click
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -187,6 +199,26 @@ const TypingHeader = () => {
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
           <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
+
+
+
+<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+  <img src={insta} alt="Instagram Icon" className="social-icon-header" />
+
+</div>
+
+<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+  <img src={tg} alt="Telegram Icon" className="social-icon-header" />
+
+</div>
+
+<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+  <img src={youtube} alt="YouTube Icon" className="social-icon-header" />
+
+</div>
+
+        
+        
         </div>
 
         <div className="typing-auth-buttons">
@@ -220,6 +252,30 @@ const TypingHeader = () => {
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
           <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
+         
+         
+          <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>
+  <img src={fb} alt="Facebook Icon" className="social-icon-header" />
+
+</div>
+
+<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+  <img src={insta} alt="Instagram Icon" className="social-icon-header" />
+
+</div>
+
+<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+  <img src={tg} alt="Telegram Icon" className="social-icon-header" />
+
+</div>
+
+<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+  <img src={youtube} alt="YouTube Icon" className="social-icon-header" />
+
+</div>
+
+         
+         
           {/* <div className="typing-nav-item" onClick={toggleSearch}>Search</div> */}
           {/* <div className="close-button" onClick={toggleMenu}>❌</div> */}
         </div>
