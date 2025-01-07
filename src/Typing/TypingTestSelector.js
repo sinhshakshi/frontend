@@ -213,10 +213,13 @@ useEffect(() => {
 // 
 
   // Filter paragraphs based on the selected month
-  const filteredTests = paragraphs.filter(paragraph => {
+  const filteredTests = paragraphs
+  .filter(paragraph => {
     const testDate = new Date(paragraph.date);
     return testDate.toLocaleString('default', { month: 'long' }) === selectedMonth;
-  });
+  })
+  .sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort by date in ascending order
+
 
   // Utility function to format date to DD-MM-YYYY
   const formatDate = (dateString) => {
