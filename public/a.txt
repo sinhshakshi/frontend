@@ -1,9 +1,0 @@
-
-domain:100k.pw
-domain:topmillion.pw
-domain:urllists.pw
-domain:topwebsites.pw
-domain:weblists.pw
-domain:10k.pw
-domain:weblist.pw
-domain:urldirectory.pw
