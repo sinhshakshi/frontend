@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { MaterialReactTable } from 'material-react-table';
-import { Box, Typography, Chip } from '@mui/material';
+import { Box, Typography, Chip, Grid, CardContent, Card } from '@mui/material';
 
 const StudentPurchase = () => {
   const [data, setData] = useState([]);
@@ -121,58 +121,46 @@ const StudentPurchase = () => {
   }));
 
   return (
+    <>
     <Box sx={{ padding: 2 }}>
       <Typography variant="h4" textAlign="center" marginBottom={2} sx={{ fontWeight: 'bold', color: '#333' }}>
         Student Purchases
       </Typography>
 
       {/* Displaying plan totals in a table */}
-      <MaterialReactTable
-        columns={planColumns}
-        data={planData}
-        isLoading={isLoading}
-        enablePagination={false}
-        muiTableContainerProps={{
-          sx: {
-            marginBottom: '20px',
-            border: '2px solid #bbb',
-            borderRadius: 3,
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-          },
-        }}
-        muiTableBodyRowProps={({ row }) => ({
-          sx: {
-            backgroundColor: getRowColor(row.original.plan),
-            borderBottom: '1px solid #aaa',
-            // Removed hover effect from here
-          },
-        })}
-        muiTableHeadCellProps={{
-          sx: {
-            fontWeight: 'bold',
-            backgroundColor: '#757575',
-            color: '#fff',
-            borderBottom: '2px solid #ccc',
-          },
-        }}
-        muiTableBodyCellProps={{
-          sx: {
-            color: '#222',
-            fontWeight: '600',
-            borderBottom: '1px solid #ccc',
-          },
-        }}
-        muiTableProps={{
-          sx: {
-            borderCollapse: 'separate',
-            borderSpacing: '0 8px',
-            '& tbody tr': {
-              borderRadius: '8px',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-            },
-          },
-        }}
-      />
+      <Grid container spacing={3}>
+        {planData.map(({ plan, count }) => (
+          <Grid item xs={12} sm={6} md={4} key={plan}>
+            <Card
+              sx={{
+                backgroundColor: getRowColor(plan),
+                borderRadius: 2,
+                boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                transition: 'transform 0.3s ease',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                },
+              }}
+            >
+              <CardContent>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#fff' }}>
+                  {plan}
+                </Typography>
+                <Chip
+                  label={`${count} students`}
+                  sx={{
+                    marginTop: 1,
+                    backgroundColor: '#fff',
+                    color: '#333',
+                    fontWeight: 'bold',
+                  }}
+                />
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+  
 
       {/* Student data table */}
       <MaterialReactTable
@@ -226,7 +214,7 @@ const StudentPurchase = () => {
           },
         }}
       />
-    </Box>
+    </Box></>
   );
 };
 
