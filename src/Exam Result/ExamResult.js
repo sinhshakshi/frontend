@@ -209,7 +209,7 @@ const ExamResult = () => {
                         <td>{result.accuracy}%</td>
                         <td>{result.wrong}%</td>
                         <td className={result.status === 'Pass' ? 'pass' : 'fail'}>
-                          {result.status === 'Fail' ? 'More Try!' : result.status}
+                          {result.status === 'Fail' ? 'Try More!' : result.status}
                         </td>
                       </tr>
                     ))}
