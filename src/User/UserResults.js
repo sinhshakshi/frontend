@@ -278,12 +278,13 @@ const UserResults = () => {
   
       // Format the results received from the backend
       const formattedResults = data.map((item) => ({
-        date: new Date(item.ts).toLocaleDateString(),
+        date: item.date, // Use the date directly from the backend response
         testname: item.testname,
         accuracy: item.accuracy ? parseFloat(item.accuracy).toFixed(2) : 'N/A', // Safe conversion
         paper_code: item.paper_code,
         status: item.status, // Use the status returned from backend
       }));
+      
   
       if (formattedResults.length === 0) {
         // console.log('No results found for selected exam.');
