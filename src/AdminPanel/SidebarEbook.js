@@ -72,10 +72,40 @@ const SidebarEbook = ({ setComponent }) => {
 
               <button
                 className="sidebar-ebook__link"
+                onClick={() => setComponent("PlansTable")}
+              >
+                Update price plans
+              </button>
+
+              <button
+                className="sidebar-ebook__link"
                 onClick={() => setComponent("TypingInfo")}
               >
                 Add typing info
               </button>
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("TypingInfoFormUpdate")}
+              >
+                Update typing info
+              </button>
+
+
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("AdminContactUs")}
+              >
+               Contact us
+              </button>
+
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("TypingCategoryErrorTable")}
+              >
+               Exam error percent
+              </button>
+
+
             </div>
           )}
         </div>
@@ -97,6 +127,13 @@ const SidebarEbook = ({ setComponent }) => {
                 onClick={() => setComponent("StudentTable")}
               >
                 Student Table{" "}
+              </button>
+
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("StudentPurchase")}
+              >
+                Student Purchase Table{" "}
               </button>
              
             </div>

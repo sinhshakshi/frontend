@@ -19,6 +19,11 @@ import AddPlanForm from "../Forms/AddPlanForm";
 import ManageStatusTypingParagraph from "../Forms/ManageStatusTypingParagraph";
 import TypingInfo from "../Forms/TypingInfo";
 import StudentTable from "../Forms/Students/StudentTable";
+import AdminContactUs from "../Forms/AdminContactUs";
+import TypingInfoFormUpdate from "../Forms/TypingInfoFormUpdate";
+import PlansTable from "../Forms/UpdatePlanForm";
+import TypingCategoryErrorTable from "../Forms/TypingCategoryErrorTable"; 
+import StudentPurchase from "../Forms/Students/StudentPurchase";
 
 const AdminTyping = () => {
   const [activeComponent, setActiveComponent] = useState(
@@ -86,6 +91,16 @@ const AdminTyping = () => {
         return <TypingInfo />;
         case "StudentTable":
           return <StudentTable />;
+          case "StudentPurchase":
+            return <StudentPurchase />;
+          case "AdminContactUs":
+            return <AdminContactUs />;
+            case "TypingInfoFormUpdate":
+              return <TypingInfoFormUpdate />;
+              case "PlansTable":
+                return <PlansTable />;
+                case "TypingCategoryErrorTable":
+                  return <TypingCategoryErrorTable />;
       default:
         return <AddTypingParagraph />;
     }
