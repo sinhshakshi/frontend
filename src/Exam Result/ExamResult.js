@@ -201,6 +201,7 @@ const ExamResult = () => {
                       <th>Accuracy</th>
                       <th>Wrong</th>
                       <th>Status</th>
+                      <th>Message</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -214,6 +215,9 @@ const ExamResult = () => {
                         <td className={result.status === 'Pass' ? 'pass' : 'fail'}>
                           {result.status === 'Fail' ? 'Try More!' : result.status}
                         </td>
+                        <td className="failure-reason">
+        {result.failureReason || 'Good Job!'} {/* Show failure reason or 'N/A' for Pass */}
+      </td>
                       </tr>
                     ))}
                   </tbody>

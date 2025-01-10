@@ -88,7 +88,7 @@
 
 .result-table {
   margin: 20px auto;
-  width: 80%;
+  width: 90%;
   border-collapse: collapse;
   text-align: center;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -104,9 +104,26 @@
   background-color: #6a5acd; 
   color: white;
 }
+.failure-reason {
+  background-color: #f3ff17; /* Yellow background */
+  color: #333; /* Darker text for better readability */
+  font-weight: bold; /* Make it stand out */
+  padding: 5px 10px; /* Add some spacing for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer; /* Add a pointer to indicate it's interactive */
+}
+
+.failure-reason:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  background-color: #f3ff17; /* Slightly darker yellow on hover */
+}
 
 .result-table td {
   font-size: 14px;
+  cursor: pointer;
 }
 
 .result-table .pass {
@@ -118,6 +135,9 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
+
 
 .result-table .pass:hover {
   transform: scale(1.1); 
