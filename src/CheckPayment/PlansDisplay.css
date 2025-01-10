@@ -1,8 +1,8 @@
 .plans-display {
     display: flex;
     flex-wrap: wrap;
-    /* margin: 0px auto; */
-    margin: 6% auto;
+    margin: 0px auto;
+    /* margin: 6% auto; */
     margin-bottom: 79px;
     width: 92%;
 

@@ -9,6 +9,7 @@ import { useAuth } from "../AuthContext/AuthContext";
 import { useCookies } from 'react-cookie';
 import { Helmet } from "react-helmet-async"; // Import Helmet
 import MainFooter from "../Footermain/Footer";
+import OfferMessage from "../CheckPayment/OfferMessage";
 
 const InfoPage = () => {
   const { paramLink } = useParams(); // Get paramLink from URL
@@ -192,7 +193,7 @@ const InfoPage = () => {
           </span>
         ))}
       </div>
-
+<OfferMessage/>
       <div className="plans-display-info">
         {plans.map((plan, index) => (
           <div className="small-plan-card-info" key={index}>

@@ -136,7 +136,7 @@ const PlansDisplay = () => {
       </Helmet>
       <Header />
 
-  
+  <OfferMessage/>
 
       <div className="plans-display">
         {plans.map((plan, index) => {
