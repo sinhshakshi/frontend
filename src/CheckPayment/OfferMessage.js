@@ -31,7 +31,7 @@ const OfferMessage = () => {
           <span className="celebration-icon">🎉</span> One Payment, Unlimited Access to All Exams! <span className="celebration-icon">🎉</span>
         </h2>
         <p className="offer-description">
-          Pay once and get unlimited access to all typing tests for every exam—no need to buy separate access for each exam. Start preparing for SSC, CGL, DSSSB, and more, all in one place!
+          Pay once and get unlimited access to all typing tests for every exam—no need to buy separate access for each exam. Start preparing for SSC, CGL, CHSL, DSSSB, BSF, Supreme Court, Delhi Police, and more, all in one place!
         </p>
       </div>
     </div>
@@ -39,3 +39,4 @@ const OfferMessage = () => {
 };
 
 export default OfferMessage;
+
