@@ -168,6 +168,12 @@ const AfterBanner = () => {
     }
   };
 
+
+  const handleGoToResult = () => {
+    // Navigate to the '/typing-test-dest-results' page
+    navigate('/typing-test-dest-results');
+  };
+
   // Filter tests based on the selected exam type
   const filteredTests = tests.filter(test => test.examName === selectedExam);
 
@@ -238,7 +244,10 @@ const AfterBanner = () => {
 
         {/* Live Results Section */}
         <div className="results-section">
-          <h4>Live Typing Results Today</h4>
+        <div className="results-header-live">
+  <h4>Live Typing Results Today</h4>
+  <button className="go-to-result-btn" onClick={handleGoToResult}>Go to Result</button>
+</div>
 
           <div className="result-item">
             <h5>SSC CHSL Results:</h5>
