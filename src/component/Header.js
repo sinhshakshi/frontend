@@ -254,10 +254,7 @@ const TypingHeader = () => {
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
          
          
-          <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>
-  <img src={fb} alt="Facebook Icon" className="social-icon-header" />
 
-</div>
 
 
 
