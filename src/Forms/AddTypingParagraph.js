@@ -40,6 +40,10 @@ const AddTypingParagraph = () => {
     'Supreme Court': {
       examNames: {
         JCA: ['SC-JCA-TYPING-01', 'SC-JCA-TYPING-02-2025'],
+        SPA: ['SC-SPA-TYPING-01', 'SC-SPA-TYPING-02-2025'],
+    PA: ['SC-PA-TYPING-01', 'SC-PA-TYPING-02-2025'],
+    Legal: ['SC-Legal-TYPING-01', 'SC-Legal-TYPING-02-2025'],
+
       },
     },
     'Delhi Police': {

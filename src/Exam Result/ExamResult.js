@@ -22,6 +22,9 @@ const ExamResult = () => {
     "CHSL": "CHSL25-ENG-TYP01",
     "JSA-LDC-PA-JJA English": "DSSSB-ENG-02-2025",
     "JSA-LDC-PA-JJA Hindi": "DSSSB-HIN-02-2025",
+    "SPA": 'SC-SPA-TYPING-02-2025',
+    "PA": 'SC-PA-TYPING-02-2025',
+    "Legal": 'SC-Legal-TYPING-02-2025',
   };
 
   useEffect(() => {
