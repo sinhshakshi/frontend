@@ -183,7 +183,7 @@ const TypingPerformance = () => {
         <Header/>   
        <div className="report-container">
     <div className="heading-container">
-        <h2 className="report-title">Your Typing Skill Test Report (As per SSC Rules)</h2>
+        <h2 className="report-title">Your Typing Skill Test Report </h2>
     </div>
     
     <div className="content-container">
@@ -229,10 +229,10 @@ const TypingPerformance = () => {
                     <td>{wrongper}%</td>
                 </tr> */}
                 <tr> 
-                    <td>Test Result</td>
-                    <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
+                    {/* <td>Test Result</td> */}
+                    {/* <td style={{ fontWeight: 'bold', textAlign: 'center' }}>
                         SSC-CGL22: More Try to Pass Under Error @5%, @20%, @25% or @30%
-                    </td>
+                    </td> */}
                 </tr>
             </tbody>
         </table>
