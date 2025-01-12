@@ -135,6 +135,12 @@ const SidebarEbook = ({ setComponent }) => {
               >
                 Student Purchase Table{" "}
               </button>
+              <button
+                className="sidebar-ebook__link"
+                onClick={() => setComponent("NotificationTable")}
+              >
+               Notification{" "}
+              </button>
              
             </div>
           )}

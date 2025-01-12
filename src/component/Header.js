@@ -8,6 +8,7 @@ import fb from "../i/fb.svg";
 import insta from "../i/insta.svg";
 import tg from "../i/tg.svg";
 import youtube from "../i/youtube.svg";
+import { FaBell } from 'react-icons/fa'; 
 
 import { useCookies } from "react-cookie";
 import Loading from '../Loading';
@@ -17,14 +18,18 @@ const TypingHeader = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const searchRef = useRef(null);
+  const notificationRef = useRef(null);
   const navigate = useNavigate();
   const [cookies] = useCookies(["session_id"]);
   const { userDetails } = useAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false); // State for mobile menu
-
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false); // State to track notification visibility
+  const [hasNotification, setHasNotification] = useState(false);
   const [loading, setLoading] = useState(true); // Add loading state
+  const [message, setMessage] = useState('');
+  const [notifications, setNotifications] = useState([]);
+  const [defaultMessage] = useState('🔔 You have new notifications! Stay up to date with the latest updates and tests.'); 
 
   const checkAccess = async () => {
     if (cookies.session_id) {
@@ -59,9 +64,73 @@ const TypingHeader = () => {
     setLoading(false); // Stop loading once the API call completes
   };
 
+  const checkExpiredSubscriptionsMessage = async () => {
+    const email = cookies.SSIDCE; // Extract SSIDCE directly from cookies
+    if (!email) {
+      console.error("SSIDCE cookie is missing.");
+      return;
+    }
+  
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/get-expired-subscriptions-message`, {
+        method: 'POST', // Use POST method
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`, // Include session ID for authorization
+        },
+        body: JSON.stringify({ email }), // Include email in the request body
+      });
+  
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+  
+      // Check if expired subscription message exists
+      if (data.expiredSubscription && data.expiredSubscription.message) {
+        setMessage(data.expiredSubscription.message); // Update the message state with the expired subscription message
+      } else {
+        setMessage(''); // If no expired subscription message, reset the message state
+      }
+    } catch (err) {
+      console.error('Error:', err.message); // Log any errors
+    }
+  };
+  
+  
+  
+  const fetchNotifications = async () => {
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/get-notifications-header`);
+      const data = await response.json();
+
+      if (data.notifications && data.notifications.length > 0) {
+        setNotifications(data.notifications);
+        // Set the first message if it exists
+        if (data.notifications[0]?.message) {
+          setMessage(data.notifications[0].message);
+        }
+        setHasNotification(true);
+      } else {
+        setHasNotification(false);
+      }
+    } catch (err) {
+      console.error('Error fetching notifications:', err);
+    }
+  };
+  useEffect(() => {
+    fetchNotifications();  // Fetch notifications without login check
+  }, []);
+
+
+
+
   // Call checkAccess when the component mounts
   useEffect(() => {
     checkAccess();
+    checkExpiredSubscriptionsMessage();
   }, [cookies.session_id]);
 
   const toggleDropdown = () => {
@@ -128,34 +197,44 @@ const TypingHeader = () => {
     window.location.href = "https://www.youtube.com/@Testdesktyping"; // Redirect to YouTube
   };
 
-
+  const handleRedirect = () => {
+    // Redirect to the Telegram link
+    window.location.href = "https://t.me/+4qa-d1bgP7pmYTVl";
+  }
 
 
   // Close search pop-up on outside click
   useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
-        setSearchOpen(false);
+
+    if (notifications.length > 0) {
+      setHasNotification(true); // If there are notifications, set hasNotification to true
+    } else {
+      setHasNotification(false); // If no notifications, set hasNotification to false
+    }
+ 
+    const handleClickOutside = (event) => {
+      if (notificationRef.current && !notificationRef.current.contains(event.target)) {
+        setIsNotificationOpen(false);
+        document.body.style.overflow = ''; // Enable scroll when notification is closed
       }
     };
 
-    if (isSearchOpen) {
-      document.addEventListener('mousedown', handleOutsideClick);
-    } else {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    }
+    document.addEventListener('mousedown', handleClickOutside);
 
+    // Cleanup the event listener when the component is unmounted
     return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isSearchOpen]);
+  }, []);
 
   // Toggle mobile menu visibility
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-
+  const handleNotificationClick = () => {
+    setIsNotificationOpen(!isNotificationOpen); // Toggle the notification open/close
+  };
 
   return (
     <>
@@ -181,19 +260,8 @@ const TypingHeader = () => {
   <div className="typing-dropdown-item" onClick={examclick}>BSF Typing Test</div>
   <div className="typing-dropdown-item" onClick={examclick}>Supreme Court Typing Test</div>
 </div>
-<div className={`typing-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
-  <div className="typing-dropdown-item" onClick={examclick}>SSC Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>DSSSB Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Delhi Police Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Delhi High Court Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Railways Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>DRDO Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>EPFO Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>BSF Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Supreme Court Typing Test</div>
-</div>
 
-          </div>
+</div>
           
           <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
           <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
@@ -207,7 +275,7 @@ const TypingHeader = () => {
 
 </div>
 
-<div className="typing-help-item-social" onClick={handleyoutubeClick}>
+<div className="typing-help-item-social" onClick={handleRedirect}>
   <img src={tg} alt="Telegram Icon" className="social-icon-header" />
 
 </div>
@@ -217,7 +285,59 @@ const TypingHeader = () => {
 
 </div>
 
-        
+{cookies.session_id && (
+  <div
+    className={`typing-help-item-notification ${hasNotification || message ? 'animated' : ''}`}
+    onClick={handleNotificationClick}
+  >
+    <FaBell className="notification-icon" />
+
+    {/* Show red circle when there is a message or notifications */}
+    {hasNotification || message ? (
+      <span className="notification-badge"></span>
+    ) : null}
+  </div>
+)}
+
+{isNotificationOpen && (
+  <div className="notification-content-overlay">
+            <div className="notification-content" ref={notificationRef}>
+      {/* Close button */}
+      <button
+        className="close-button"
+        onClick={handleNotificationClick}
+      >
+        <FaTimes />
+      </button>
+      <h2 className="notification-heading">📢 Notifications</h2>
+      {/* Display main message if available */}
+      {message ? (
+        <div className="static-notification">
+          <p>{message}</p>
+        </div>
+      ) : (
+        // Default message when no message exists
+        <div className="static-notification">
+          <p>🔔 Stay updated with the latest news and tests!</p>
+        </div>
+      )}
+
+      {/* Display notifications if available */}
+      {notifications.length > 0 ? (
+        notifications.map((notification) => (
+          <div key={notification.id} className="static-notification">
+            <p>{notification.notification}</p>
+          </div>
+        ))
+      ) : (
+        // Show nothing if there are no notifications
+        <></>
+      )}
+    </div>
+  </div>
+)}
+
+
         
         </div>
 
@@ -265,22 +385,7 @@ const TypingHeader = () => {
         </div>
       )}
 
-      {isSearchOpen && (
-        <div className="typing-search-popup-overlay fade-in">
-          <div className="typing-search-popup" ref={searchRef}>
-            {/* <div className="close-button" onClick={toggleSearch}>
-              <FaTimes />
-            </div> */}
-            <input
-              type="text"
-              placeholder="Search for products..."
-              value={searchQuery}
-              onChange={handleSearchInputChange}
-            />
-            <button onClick={performSearch}>Search</button>
-          </div>
-        </div>
-      )}
+      
     </header>
         {loading && <Loading />}
         </>

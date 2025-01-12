@@ -24,6 +24,7 @@ import TypingInfoFormUpdate from "../Forms/TypingInfoFormUpdate";
 import PlansTable from "../Forms/UpdatePlanForm";
 import TypingCategoryErrorTable from "../Forms/TypingCategoryErrorTable"; 
 import StudentPurchase from "../Forms/Students/StudentPurchase";
+import NotificationTable from "../Forms/NotificationTable";
 
 const AdminTyping = () => {
   const [activeComponent, setActiveComponent] = useState(
@@ -101,6 +102,8 @@ const AdminTyping = () => {
                 return <PlansTable />;
                 case "TypingCategoryErrorTable":
                   return <TypingCategoryErrorTable />;
+                  case "NotificationTable":
+                    return <NotificationTable />;
       default:
         return <AddTypingParagraph />;
     }

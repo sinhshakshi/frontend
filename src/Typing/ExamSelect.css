@@ -355,6 +355,66 @@ cursor: pointer;
 }
 
 
+.heading-with-telegram {
+  display: flex
+  ;
+      flex-direction: row;
+      justify-content: space-between;
+  
+
+  
+}
+
+
+.join-now-container {
+  display: flex;
+  align-items: center; /* Align the icon and text horizontally */
+  animation: pump 1.5s ease-out infinite; /* Apply the animation automatically */
+}
+
+.telegram-icon-link {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.telegram-icon {
+  color: #0088cc;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.telegram-icon:hover {
+  color: #006d99; /* Hover color */
+}
+
+.join-now-text {
+  font-weight: bold;
+  color: #0077cc;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.join-now-text:hover {
+  color: #005fa3;
+}
+
+/* Keyframe animation for the "pumping" effect */
+@keyframes pump {
+  0% {
+    transform: scale(1); /* Initial size */
+  }
+  50% {
+    transform: scale(1.1); /* Scale up */
+  }
+  100% {
+    transform: scale(1); /* Return to normal size */
+  }
+}
+
+
+
 .exam-header {
   font-size: 2rem;
   font-weight: bold;

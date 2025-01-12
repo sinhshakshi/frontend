@@ -128,10 +128,47 @@ const App = () => {
         console.error('Error checking subscription:', error);
       }
     };
+    const checkExpiry = async () => {
+      const email = cookies.SSIDCE; // Extract SSIDCE directly from cookies
+      if (!email) {
+        console.error("SSIDCE cookie is missing.");
+        return;
+      }
+    
+      try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/check-expiry-user`, {
+          method: 'POST', // Use POST to send the email
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${cookies.session_id}` // Include session ID for authorization
+          },
+          body: JSON.stringify({ email }), // Include email in the request body
+        });
+    
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log('Response:', data.message); // Log the success message
+      } catch (err) {
+        console.error('Error:', err.message); // Log any errors
+      }
+    };
+    
+
+    
 
     // Call the function when the component mounts
     checkSubscription();
+    checkExpiry();
+   
   }, [cookies]);
+
+
+  
+
 
 
 

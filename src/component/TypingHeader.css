@@ -219,12 +219,49 @@
   background-color: #218838;
 }
 
+.typing-help-item-notification {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
 
 
 
+/* Animation applied only when there is a notification or message */
+.typing-help-item-notification.animated {
+  animation: rotateIcon 1s infinite ease-in-out; /* Apply rotation animation */
+}
+.notification-icon {
+  font-size: 28px;
 
+  cursor: pointer;
+  color: white;
+  
+}
+@keyframes rotateIcon {
+  0% {
+    transform: rotate(-15deg); /* Start with a slight tilt to the left */
+  }
+  50% {
+    transform: rotate(15deg); /* Rotate to the right */
+  }
+  100% {
+    transform: rotate(-15deg); /* Return to the left tilt */
+  }
+}
 
-.typing-search-popup-overlay {
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.notification-content-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -235,16 +272,17 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
-  opacity: 0;
+
   transition: opacity 0.4s ease;
 }
 
-.typing-search-popup-overlay.fade-in {
+
+
+
+.notification-content-overlay.fade-in {
   opacity: 1;
 }
-
-
-.typing-search-popup {
+.notification-content {
   position: relative;
   width: 80%;
   max-width: 526px;
@@ -254,23 +292,52 @@
   border-radius: 10px;
   text-align: center;
   animation: slide-down 0.5s ease;
+  height: 23rem;
+  overflow: auto; /* Changed to auto to allow scroll when content overflows */
+  
+  /* Custom scrollbar styles */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #888 #f1f1f1; /* Thumb and track color for Firefox */
+}
+
+.notification-content::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+}
+
+.notification-content::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+  border-radius: 10px; /* Rounded track corners */
+}
+
+.notification-content::-webkit-scrollbar-thumb {
+  background: #888; /* Thumb color */
+  border-radius: 10px; /* Rounded thumb corners */
+}
+
+.notification-content::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darken thumb color on hover */
 }
 
 
+.static-notification {
+
+  padding: 2px;
+
+  
+}
+
 @keyframes slide-down {
-  from {
-    transform: translateY(-20px);
+  0% {
+    transform: translateY(-30px);
   }
-  to {
+  100% {
     transform: translateY(0);
   }
 }
 
-
 .close-button {
   position: absolute;
   top: 7px;
-
   right: 10px;
   background: none;
   border: none;
@@ -278,6 +345,9 @@
   color: #333;
   cursor: pointer;
 }
+
+
+
 
 .typing-search-popup input {
   width: 100%;
@@ -328,6 +398,18 @@ cursor: pointer;
 
 }
 
+
+.typing-help-item-notification{
+  /* background-color: white; */
+  border-radius: 76%;
+  
+  display: flex
+;
+cursor: pointer;
+  justify-content: center;
+  align-items: center;
+
+}
 
 
 
@@ -386,6 +468,7 @@ cursor: pointer;
     animation: slideOut 0.3s forwards; /* Start with slide-out animation */
     z-index: 7;
   }
+
   
   /* Show sidebar when active */
   .mobile-menu.show {
@@ -441,54 +524,149 @@ cursor: pointer;
 @media (max-width: 1200px) {
   .typing-nav-menu {
     position: relative;
-    width: 60%;
+    width: 76%;
+
     display: flex
 ;
     align-items: center;
     justify-content: space-between;
     /* margin-right: 34rem; */
-    margin-right: 13%;
+  
 }
 }
 
 
 @media (max-width: 1024px) {
+  .hamburger {
+    display: block; /* Show hamburger menu for small devices */
+    font-size: 24px;
+    color: white;
+
+  }
+
+  .typing-header-container {
+    padding: 8px 0px;
+  }
+
   .typing-nav-menu {
-    /* gap: 0%; */
-    margin-right: 19%;
-    width: 51%;
+    display: none; /* Hide navigation menu */
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28%;
+    /* Reduce mobile menu width */
+    height: 100%;
+    background-color: #495057;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    animation: slideOut 0.3s forwards;
+    z-index: 7;
+  }
+
+  .mobile-menu.show {
+    animation: slideIn 0.3s forwards;
+  }
 }
 
-  .typing-brand-logo {
-    height: 40px; /* Slightly reduce logo size */
+
+
+
+
+@media (max-width: 1083px) {
+  .hamburger {
+    display: block; /* Show hamburger menu for small devices */
+    font-size: 24px;
+    color: white;
+
   }
 
-  .typing-auth-buttons {
-    gap: 0.5rem; /* Adjust button spacing */
+  .typing-header-container {
+    padding: 8px 0px;
   }
 
-  .typing-nav-item {
-    font-size: 16px; /* Reduce font size slightly */
+  .typing-nav-menu {
+    display: none; /* Hide navigation menu */
   }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28%;
+    /* Reduce mobile menu width */
+    height: 100%;
+    background-color: #495057;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    animation: slideOut 0.3s forwards;
+    z-index: 7;
+  }
+
+  .mobile-menu.show {
+    animation: slideIn 0.3s forwards;
+  }
+
 }
+
+
+
 
 @media (max-width: 992px) {
-  .typing-nav-menu {
-    flex-grow: 1;
-    justify-content: space-around; /* Better alignment for smaller tablets */
-    margin-right: 2rem; /* Adjust margin */
+  .hamburger {
+    display: block; /* Show hamburger menu for small devices */
+    font-size: 24px;
+    color: white;
+
   }
 
-  .typing-login-btn,
-  .typing-signup-btn {
-    padding: 8px 16px; /* Adjust button padding */
-    font-size: 14px; /* Reduce font size for buttons */
+
+
+  .typing-nav-menu {
+    display: none; /* Hide navigation menu */
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 28%;
+    /* Reduce mobile menu width */
+    height: 100%;
+    background-color: #495057;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    animation: slideOut 0.3s forwards;
+    z-index: 7;
+  }
+
+  .mobile-menu.show {
+    animation: slideIn 0.3s forwards;
   }
 }
+
+
+
+
+
+
+
+
 
 @media (max-width: 950px) {
   .hamburger {
     display: block; /* Show hamburger menu for small devices */
+    font-size: 24px;
+    color: white;
+
   }
 
   .typing-header-container {

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css'; // Ensure the CSS file is updated with class name changes
 import logo from "../i/newlogo.gif";
+import { FaTelegram } from 'react-icons/fa';
 
 const MainFooter = () => {
     return (
@@ -67,11 +68,13 @@ const MainFooter = () => {
                     <h4>Follow us on</h4>
                     <div className="social-icons">
                         <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                        {/* <a href="#"><i className="fab fa-twitter"></i></a>
+                        <a href="#"><i className="fab fa-linkedin-in"></i></a> */}
                         <a href="#"><i className="fab fa-instagram"></i></a>
                         <a href="https://www.youtube.com/@Testdesktyping"><i className="fab fa-youtube"></i></a>
-                        <a href="#"><i className="fab fa-quora"></i></a>
+                        <a href="https://t.me/+4qa-d1bgP7pmYTVl" target="_blank" rel="noopener noreferrer">
+      <FaTelegram className="fab fa-instagram" />
+    </a>
                     </div>
                 </div>
             </div>

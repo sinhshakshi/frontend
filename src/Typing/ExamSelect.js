@@ -11,6 +11,7 @@ import pic1 from '../i/sscLogo.webp';
 import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { MdKeyboardArrowRight } from "react-icons/md";
 import MainFooter from '../Footermain/Footer';
+import { FaTelegram } from 'react-icons/fa';
 
 const ExamSelect = () => {
   const [examList, setExamList] = useState([]);
@@ -172,6 +173,11 @@ const ExamSelect = () => {
 
   const examNameCounts = countExamNames();
 
+  const handleRedirect = () => {
+    // Redirect to the Telegram link
+    window.location.href = "https://t.me/+4qa-d1bgP7pmYTVl";
+  }
+
   return (
     <>
      
@@ -215,11 +221,26 @@ const ExamSelect = () => {
       <TypingHeader />
 
 
-
       <div className='container-exam-selection'>
+
+        
+      <a href="https://t.me/yourTelegramLink" target="_blank" rel="noopener noreferrer" className="telegram-icon-link">
+        <FaTelegram className="telegram-icon" />
+      </a>
         <div className='heading-exam-select'>
-          <h2>Explore all typing test</h2>
-          <p>Get exam-ready with structured typing practice, skill-building exercises, and real-time feedback.</p>
+  
+  <h2>Explore all typing test</h2>
+
+
+  <div className="heading-with-telegram">
+  <p>Get exam-ready with structured typing practice, skill-building exercises, and real-time feedback.</p>
+  <div className="join-now-container"  onClick={handleRedirect}>
+    <a href="https://t.me/+4qa-d1bgP7pmYTVl" target="_blank" rel="noopener noreferrer" className="telegram-icon-link">
+      <FaTelegram className="telegram-icon" />
+    </a>
+    <span className="join-now-text">Join Now</span>
+  </div>
+</div>
         </div>
         <div className="layout-section-exam">
           <div className="layout-section">

@@ -26,8 +26,30 @@
     font-size: 24px; /* Size of the dashboard title */
     font-weight: bold; /* Bold text */
   }
+  .notification-icon-dash {
+    font-size: 28px;
   
-
+    cursor: pointer;
+    color: #31a0a0;
+    
+  }
+  .static-notification p {
+    color: #333; /* Darker text color for better readability */
+    background-color: #f8f9fa; /* Light background to make the text stand out */
+    border-left: 5px solid purple; /* Add a blue border on the left */
+    padding: 15px 15px; /* Add padding for spacing */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Arial', sans-serif; /* Use a clean font */
+    font-size: 16px; /* Slightly larger font size for readability */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    margin: 10px 0; /* Add some space between notifications */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+.static-notification p:hover {
+  background-color: #e9ecef; /* Slightly darker background when hovered */
+  border-left-color: purple; /* Change border color on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
 
   .header-logout{
     margin-right: 23px;
