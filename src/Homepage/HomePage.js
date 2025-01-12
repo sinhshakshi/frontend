@@ -10,8 +10,7 @@ import MainFooter from '../Footermain/Footer';
 import HomePageDescription from './HomePageDescription';
 import BrowseExam from './BrowseExam';
 import ExamList from './ExamList';
-import AdComponent from "./GoogleAd";
-import ResponsiveAdComponent from './ResponsiveAdComponent';
+
 
 
 const HomePage = () => {
@@ -54,9 +53,29 @@ const HomePage = () => {
           content="Join Testdesk for the best typing practice tests for SSC CHSL, CGL, DSSSB, EPFO, and RRB exams. Improve typing speed and accuracy today!"
         />
         <meta name="twitter:image" content="https://testdesk.in/logo.png?v=1"  />
-        <meta name="google-adsense-account" content="ca-pub-7439051765477438"/>
+      
         {/* Canonical URL */}
         <link rel="canonical" href="https://testdesk.in" />
+
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439051765477438"
+          crossorigin="anonymous"
+        ></script>
+
+        {/* Auto Ads Script */}
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-7439051765477438",
+                enable_page_level_ads: true
+              });
+            `
+          }}
+        />
+
         <script type="application/ld+json">
     {`
       {
@@ -79,10 +98,10 @@ const HomePage = () => {
       <TypingHeader />
       <Banner />
       <AfterBanner />
-      {/* <AdComponent/> */}
+     
       <ExamList />
       <HomePageDescription />
-<ResponsiveAdComponent/>
+
       <BrowseExam />
       <MainFooter />
     </>

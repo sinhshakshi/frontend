@@ -64,8 +64,8 @@ const AfterBanner = () => {
         const ntpcResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users-liveresult`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paper_code: 'SC-JCA-TYPING-02-2025', 
-            exam: 'JCA',  // Static exam
+          body: JSON.stringify({ paper_code: 'RRB-TYPING-ENG-01', 
+            exam: 'NTPC',  // Static exam
             category: 'UR'  // Static category
           }),
           
@@ -306,7 +306,7 @@ const AfterBanner = () => {
           </div>
 
           <div className="result-item">
-            <h5>Supreme Court JCA Results:</h5>
+            <h5>RRB NTPC Results:</h5>
             {isResultsAvailable ? (
               liveResults.ntpc?.length > 0 ? (
                 <table className="results-table">
