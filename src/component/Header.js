@@ -373,19 +373,7 @@ const TypingHeader = () => {
           <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
           <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
          
-          {cookies.session_id && (
-  <div
-    className={`typing-help-item-notification ${hasNotification || message ? 'animated' : ''}`}
-    onClick={handleNotificationClick}
-  >
-    <FaBell className="notification-icon" />
-
-    {/* Show red circle when there is a message or notifications */}
-    {hasNotification || message ? (
-      <span className="notification-badge"></span>
-    ) : null}
-  </div>
-)}
+          {/*  */}
 
 
 
