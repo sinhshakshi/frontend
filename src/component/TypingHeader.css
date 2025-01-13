@@ -537,40 +537,23 @@ cursor: pointer;
 
 
 @media (max-width: 1024px) {
-  .hamburger {
-    display: block; /* Show hamburger menu for small devices */
-    font-size: 24px;
-    color: white;
-
-  }
-
-  .typing-header-container {
-    padding: 8px 0px;
-  }
-
   .typing-nav-menu {
-    display: none; /* Hide navigation menu */
-  }
+    position: relative;
 
-  .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 28%;
-    /* Reduce mobile menu width */
-    height: 100%;
-    background-color: #495057;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(-100%);
-    animation: slideOut 0.3s forwards;
-    z-index: 7;
-  }
 
-  .mobile-menu.show {
-    animation: slideIn 0.3s forwards;
-  }
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-right: 34rem; */
+   
+
+}
+.typing-nav-item {
+  cursor: pointer;
+  font-size: 14px;
+}
+
 }
 
 
@@ -578,40 +561,18 @@ cursor: pointer;
 
 
 @media (max-width: 1083px) {
-  .hamburger {
-    display: block; /* Show hamburger menu for small devices */
-    font-size: 24px;
-    color: white;
-
-  }
-
-  .typing-header-container {
-    padding: 8px 0px;
-  }
-
   .typing-nav-menu {
-    display: none; /* Hide navigation menu */
-  }
+    position: relative;
+    width: 80%;
 
-  .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 28%;
-    /* Reduce mobile menu width */
-    height: 100%;
-    background-color: #495057;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(-100%);
-    animation: slideOut 0.3s forwards;
-    z-index: 7;
-  }
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-right: 34rem; */
+   
 
-  .mobile-menu.show {
-    animation: slideIn 0.3s forwards;
-  }
+}
 
 }
 
@@ -648,6 +609,7 @@ cursor: pointer;
     z-index: 7;
   }
 
+
   .mobile-menu.show {
     animation: slideIn 0.3s forwards;
   }
@@ -670,7 +632,7 @@ cursor: pointer;
   }
 
   .typing-header-container {
-    padding: 8px 16px; /* Adjust header padding */
+    padding: 8px 0px;
   }
 
   .typing-nav-menu {

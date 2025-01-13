@@ -270,10 +270,7 @@ const TypingHeader = () => {
 
 
 
-<div className="typing-help-item-social" onClick={handleyoutubeClick}>
-  <img src={insta} alt="Instagram Icon" className="social-icon-header" />
 
-</div>
 
 <div className="typing-help-item-social" onClick={handleRedirect}>
   <img src={tg} alt="Telegram Icon" className="social-icon-header" />
