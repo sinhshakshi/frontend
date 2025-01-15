@@ -322,6 +322,7 @@ font-size: 15px;
     background-color: #f9f9f9;
     border-radius: 10px;
     flex: 1;
+    overflow: overlay;
   }
 
   .results-section h4{
