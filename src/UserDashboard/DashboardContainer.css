@@ -1,22 +1,23 @@
 .right-content-container {
     margin-top: 40px;
-   
     margin-left: 249px;
-   
     /* padding: 20px; */
-    width: calc(100% - 263px);
-    
+    /* width: calc(100% - 263px); */
+    width: 100%;
     padding-right: 26px;
     padding-left: 26px;
     /* background-color: #f9f9f9; */
-    background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Linear gradient from white to light grey */
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    /* Linear gradient from white to light grey */
     /* height: 100vh; */
-
-   
-   
-  
 }
 
-.dashboard-container{
+@media (max-width: 768px) {
+    .right-content-container {
+        overflow: auto;
+    }
+}
+
+.dashboard-container {
     display: flex;
 }

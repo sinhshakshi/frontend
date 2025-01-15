@@ -8,7 +8,7 @@ import fb from "../i/fb.svg";
 import insta from "../i/insta.svg";
 import tg from "../i/tg.svg";
 import youtube from "../i/youtube.svg";
-import { FaBell } from 'react-icons/fa'; 
+import { FaBell } from 'react-icons/fa';
 
 import { useCookies } from "react-cookie";
 import Loading from '../Loading';
@@ -29,7 +29,7 @@ const TypingHeader = () => {
   const [loading, setLoading] = useState(true); // Add loading state
   const [message, setMessage] = useState('');
   const [notifications, setNotifications] = useState([]);
-  const [defaultMessage] = useState('🔔 You have new notifications! Stay up to date with the latest updates and tests.'); 
+  const [defaultMessage] = useState('🔔 You have new notifications! Stay up to date with the latest updates and tests.');
 
   const checkAccess = async () => {
     if (cookies.session_id) {
@@ -70,7 +70,7 @@ const TypingHeader = () => {
       console.error("SSIDCE cookie is missing.");
       return;
     }
-  
+
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/get-expired-subscriptions-message`, {
         method: 'POST', // Use POST method
@@ -81,13 +81,13 @@ const TypingHeader = () => {
         },
         body: JSON.stringify({ email }), // Include email in the request body
       });
-  
+
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-  
+
       const data = await response.json();
-  
+
       // Check if expired subscription message exists
       if (data.expiredSubscription && data.expiredSubscription.message) {
         setMessage(data.expiredSubscription.message); // Update the message state with the expired subscription message
@@ -98,9 +98,9 @@ const TypingHeader = () => {
       console.error('Error:', err.message); // Log any errors
     }
   };
-  
-  
-  
+
+
+
   const fetchNotifications = async () => {
     try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/get-notifications-header`);
@@ -211,7 +211,7 @@ const TypingHeader = () => {
     } else {
       setHasNotification(false); // If no notifications, set hasNotification to false
     }
- 
+
     const handleClickOutside = (event) => {
       if (notificationRef.current && !notificationRef.current.contains(event.target)) {
         setIsNotificationOpen(false);
@@ -239,153 +239,146 @@ const TypingHeader = () => {
   return (
     <>
 
-    <header className="typing-header-container">
-      <div className="typing-header-content">
-        <div className="typing-brand" onClick={home}>
-          <img src={logo} alt="Brand Logo" className="typing-brand-logo" />
-        </div>
-
-        <div className="typing-nav-menu">
-        <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
-          <div className="typing-nav-item" onClick={toggleDropdown}>
-            Typing Test Links
-            <div className={`typing-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
-  <div className="typing-dropdown-item" onClick={examclick}>SSC Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>DSSSB Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Delhi Police Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Delhi High Court Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Railways Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>DRDO Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>EPFO Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>BSF Typing Test</div>
-  <div className="typing-dropdown-item" onClick={examclick}>Supreme Court Typing Test</div>
-</div>
-
-</div>
-          
-          <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
-          <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
-          <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
-          <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
-
-
-
-
-
-<div className="typing-help-item-social" onClick={handleRedirect}>
-  <img src={tg} alt="Telegram Icon" className="social-icon-header" />
-
-</div>
-
-<div className="typing-help-item-social" onClick={handleyoutubeClick}>
-  <img src={youtube} alt="YouTube Icon" className="social-icon-header" />
-
-</div>
-
-{cookies.session_id && (
-  <div
-    className={`typing-help-item-notification ${hasNotification || message ? 'animated' : ''}`}
-    onClick={handleNotificationClick}
-  >
-    <FaBell className="notification-icon" />
-
-    {/* Show red circle when there is a message or notifications */}
-    {hasNotification || message ? (
-      <span className="notification-badge"></span>
-    ) : null}
-  </div>
-)}
-
-{isNotificationOpen && (
-  <div className="notification-content-overlay">
-            <div className="notification-content" ref={notificationRef}>
-      {/* Close button */}
-      <button
-        className="close-button"
-        onClick={handleNotificationClick}
-      >
-        <FaTimes />
-      </button>
-      <h2 className="notification-heading">📢 Notifications</h2>
-      {/* Display main message if available */}
-      {message ? (
-        <div className="static-notification">
-          <p>{message}</p>
-        </div>
-      ) : (
-        // Default message when no message exists
-        <div className="static-notification">
-          <p>🔔 Stay updated with the latest news and tests!</p>
-        </div>
-      )}
-
-      {/* Display notifications if available */}
-      {notifications.length > 0 ? (
-        notifications.map((notification) => (
-          <div key={notification.id} className="static-notification">
-            <p>{notification.notification}</p>
+      <header className="typing-header-container">
+        <div className="typing-header-content">
+          <div className="typing-brand" onClick={home}>
+            <img src={logo} alt="Brand Logo" className="typing-brand-logo" />
           </div>
-        ))
-      ) : (
-        // Show nothing if there are no notifications
-        <></>
-      )}
-    </div>
-  </div>
-)}
 
+          <div className="typing-nav-menu">
+            <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
+            <div className="typing-nav-item" onClick={toggleDropdown}>
+              Typing Test Links
+              <div className={`typing-dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+                <div className="typing-dropdown-item" onClick={examclick}>SSC Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>DSSSB Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>Delhi Police Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>Delhi High Court Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>Railways Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>DRDO Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>EPFO Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>BSF Typing Test</div>
+                <div className="typing-dropdown-item" onClick={examclick}>Supreme Court Typing Test</div>
+              </div>
 
-        
-        </div>
-
-        <div className="typing-auth-buttons">
-          {isLoggedIn ? (
-            <div className="typing-dashboard" onClick={handleDashboardClick}>
-              <FaUserCircle className="user-icon" />
-              Dashboard
             </div>
-          ) : (
-            <>
-              <button className="typing-btn typing-login-btn" onClick={handleLoginClick}>Login</button>
-              <button className="typing-btn typing-signup-btn" onClick={handleSignUpClick}>Sign Up</button>
-              
-            </>
-          )}
+
+            <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
+            <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
+            <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
+            <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
+          </div>
+          <div className='socalIcon'>
+            <div className="typing-help-item-social" onClick={handleRedirect}>
+              <img src={tg} alt="Telegram Icon" className="social-icon-header" />
+            </div>
+            <div className="typing-help-item-social" onClick={handleyoutubeClick}>
+              <img src={youtube} alt="YouTube Icon" className="social-icon-header" />
+            </div>
+            {cookies.session_id && (
+              <div
+                className={`typing-help-item-notification ${hasNotification || message ? 'animated' : ''}`}
+                onClick={handleNotificationClick}
+              >
+                <FaBell className="notification-icon" />
+
+                {/* Show red circle when there is a message or notifications */}
+                {hasNotification || message ? (
+                  <span className="notification-badge"></span>
+                ) : null}
+              </div>
+            )}
+
+            {isNotificationOpen && (
+              <div className="notification-content-overlay">
+                <div className="notification-content" ref={notificationRef}>
+                  {/* Close button */}
+                  <button
+                    className="close-button"
+                    onClick={handleNotificationClick}
+                  >
+                    <FaTimes />
+                  </button>
+                  <h2 className="notification-heading">📢 Notifications</h2>
+                  {/* Display main message if available */}
+                  {message ? (
+                    <div className="static-notification">
+                      <p>{message}</p>
+                    </div>
+                  ) : (
+                    // Default message when no message exists
+                    <div className="static-notification">
+                      <p>🔔 Stay updated with the latest news and tests!</p>
+                    </div>
+                  )}
+
+                  {/* Display notifications if available */}
+                  {notifications.length > 0 ? (
+                    notifications.map((notification) => (
+                      <div key={notification.id} className="static-notification">
+                        <p>{notification.notification}</p>
+                      </div>
+                    ))
+                  ) : (
+                    // Show nothing if there are no notifications
+                    <></>
+                  )}
+                </div>
+              </div>
+            )}
+
+
+
+          </div>
+
+          <div className="typing-auth-buttons">
+            {isLoggedIn ? (
+              <div className="typing-dashboard" onClick={handleDashboardClick}>
+                <FaUserCircle className="user-icon" />
+                Dashboard
+              </div>
+            ) : (
+              <>
+                <button className="typing-btn typing-login-btn" onClick={handleLoginClick}>Login</button>
+                <button className="typing-btn typing-signup-btn" onClick={handleSignUpClick}>Sign Up</button>
+
+              </>
+            )}
+          </div>
+
+          {/* Hamburger menu for mobile */}
+          <div className="hamburger" onClick={toggleMenu}>
+            &#9776;
+          </div>
         </div>
 
-        {/* Hamburger menu for mobile */}
-        <div className="hamburger" onClick={toggleMenu}>
-          &#9776;
-        </div>
-      </div>
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className={`mobile-menu ${isMenuOpen ? "show" : ""}`}>
+            <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
+            <div className="typing-nav-item" onClick={toggleDropdownmobile}>Typing Test Links</div>
 
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className={`mobile-menu ${isMenuOpen ? "show" : ""}`}>
-          <div className="typing-nav-item typing-help-item" onClick={handleHomeClick}>Home</div>
-          <div className="typing-nav-item" onClick={toggleDropdownmobile}>Typing Test Links</div>
+            <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
+            <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
+            <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
+            <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
 
-          <div className="typing-nav-item typing-buy-now-item" onClick={handleBuyNowClick}>Buy Now</div>
-          <div className="typing-nav-item" onClick={handleresultClick}>Typing results</div>
-          <div className="typing-nav-item typing-help-item" onClick={handleFreeClick}>Free Typing Tests</div>
-          <div className="typing-nav-item typing-help-item" onClick={handleHelpClick}>Help</div>
-         
-          {/*  */}
+            {/*  */}
 
 
 
 
-         
-         
-          {/* <div className="typing-nav-item" onClick={toggleSearch}>Search</div> */}
-          {/* <div className="close-button" onClick={toggleMenu}>❌</div> */}
-        </div>
-      )}
 
-      
-    </header>
-        {loading && <Loading />}
-        </>
+
+            {/* <div className="typing-nav-item" onClick={toggleSearch}>Search</div> */}
+            {/* <div className="close-button" onClick={toggleMenu}>❌</div> */}
+          </div>
+        )}
+
+
+      </header>
+      {loading && <Loading />}
+    </>
   );
 };
 

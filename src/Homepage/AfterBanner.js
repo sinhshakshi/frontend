@@ -177,7 +177,7 @@ const AfterBanner = () => {
   };
 
   // Filter tests based on the selected exam type
-  const filteredTests = tests.filter(test => test.examName === selectedExam);
+  const filteredTests = tests?.filter(test => test?.examName === selectedExam);
 
   return (
     <div className="after-banner-container">

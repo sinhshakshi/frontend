@@ -41,6 +41,8 @@
 
 
 .typing-header-content {
+  margin-left: 10px;
+  margin-right: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,19 +57,21 @@
   margin-left: 38px;
 
 }
+.socalIcon {
+  position: relative;
+    display: flex;
+    width: 5%;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 10px;
+}
 
 .typing-nav-menu {
   position: relative;
-  width: 74%;
-  display: flex
-;
+  width: auto;
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-
-
-
-
-
+  /* justify-content: space-between; */
 }
 .typing-nav-item {
   cursor: pointer;
@@ -426,11 +430,6 @@ cursor: pointer;
   .typing-auth-buttons {
     flex-direction: row;
     gap: 1rem;
-  }
-  .typing-header-container{
-    width: 96%;
-
-
   }
 }
 

@@ -13,6 +13,13 @@
     /* border: solid; */
 }
 
+@media (max-width: 768px) {
+    .settings-page {
+        width: 95%;
+    }
+}
+
+
 .setting-form-group {
     margin-bottom: 20px; /* Space between form groups */
 }

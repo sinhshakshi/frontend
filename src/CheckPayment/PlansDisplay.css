@@ -1,11 +1,25 @@
 .plans-display {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-left: 10px;
+    justify-items: stretch;
     margin: 0px auto;
-    /* margin: 6% auto; */
+    margin: 6% auto;
     margin-bottom: 79px;
     width: 92%;
+}
 
+@media (max-width: 1024px) {
+    .plans-display {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .plans-display {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
 }
 
 .small-plan-card {
@@ -18,7 +32,7 @@
     border-bottom: 1px solid #ccc;
 
     font-family: sans-serif;
-    width: calc(30% - 25px);
+    /* width: calc(30% - 25px); */
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
@@ -92,7 +106,7 @@
 
 @media (max-width: 768px) {
     .small-plan-card {
-        width: calc(50% - 30px);
+        /* width: calc(50% - 30px); */
     }
 }
 
