@@ -322,7 +322,7 @@ font-size: 15px;
     background-color: #f9f9f9;
     border-radius: 10px;
     flex: 1;
-    overflow: overlay;
+    
   }
 
   .results-section h4{
@@ -337,6 +337,7 @@ text-align: center;
     background: #fff;
     border-radius: 8px;
     height: 20rem;
+    overflow: overlay;
   }
   
   .result-item h5 {
