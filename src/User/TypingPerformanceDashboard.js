@@ -184,7 +184,7 @@ const TypingPerformanceDashboard = () => {
             <tbody>
              
                 <tr>
-                    <td>Total Keystrokes</td>
+                    <td>Your Total Typed Keystrokes</td>
                     <td>{totaltyped}</td>
                 </tr>
                 <tr>

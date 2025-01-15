@@ -57,25 +57,7 @@ const HomePage = () => {
         {/* Canonical URL */}
         <link rel="canonical" href="https://testdesk.in" />
 
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7439051765477438"
-          crossorigin="anonymous"
-        ></script>
-
-        {/* Auto Ads Script */}
-        <script
-          type="text/javascript"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-7439051765477438",
-                enable_page_level_ads: true
-              });
-            `
-          }}
-        />
-
+        
         <script type="application/ld+json">
     {`
       {
