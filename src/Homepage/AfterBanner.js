@@ -12,6 +12,7 @@ import { useCookies } from 'react-cookie';
 
 const AfterBanner = () => {
   const [tests, setTests] = useState([]);
+  const [totalTests, setTotalTests] = useState([]);
   const [accessStatus, setAccessStatus] = useState({});
   const [selectedExam, setSelectedExam] = useState('CHSL'); // Default selection for CHSL
   const navigate = useNavigate();
@@ -34,7 +35,8 @@ const AfterBanner = () => {
           body: JSON.stringify({ exam: 'SSC' })
         });
         const data = await response.json();
-        setTests(data);
+        setTests(data.combinedData);
+        setTotalTests(data)
         handleUnlock();
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -190,13 +192,13 @@ const AfterBanner = () => {
                 className={`mock-tests-para1 ${selectedExam === 'CHSL' ? 'active' : ''}`} 
                 onClick={() => setSelectedExam('CHSL')}
               >
-                SSC CHSL ({tests.filter(test => test.examName === 'CHSL').length})
+                SSC CHSL ({totalTests?.totalChslCount})
               </span>
               <span 
                 className={`mock-tests-para1 ${selectedExam === 'CGL' ? 'active' : ''}`} 
                 onClick={() => setSelectedExam('CGL')}
               >
-                SSC CGL ({tests.filter(test => test.examName === 'CGL').length})
+                SSC CGL ({totalTests?.totalCglCount})
               </span>
             </div>
           </div>
