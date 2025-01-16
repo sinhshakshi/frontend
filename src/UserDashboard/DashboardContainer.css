@@ -14,7 +14,7 @@
 
 @media (max-width: 768px) {
     .right-content-container {
-        overflow: auto;
+        overflow: visible;
     }
 }
 
