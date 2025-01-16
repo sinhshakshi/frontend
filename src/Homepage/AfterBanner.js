@@ -15,6 +15,7 @@ const AfterBanner = () => {
   const [totalTests, setTotalTests] = useState([]);
   const [accessStatus, setAccessStatus] = useState({});
   const [selectedExam, setSelectedExam] = useState('CHSL'); // Default selection for CHSL
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [cookies] = useCookies(['session_id']);
   const [isStartButtonEnabled, setIsStartButtonEnabled] = useState(false);
@@ -28,6 +29,7 @@ const AfterBanner = () => {
 
   useEffect(() => {
     const fetchSSCData = async () => {
+      setLoading(true)
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/get-ssc-data`, {
           method: 'POST',
@@ -38,7 +40,9 @@ const AfterBanner = () => {
         setTests(data.combinedData);
         setTotalTests(data)
         handleUnlock();
+        setLoading(false)
       } catch (error) {
+        setLoading(false)
         console.error("Error fetching data:", error);
       }
     };
@@ -53,12 +57,13 @@ const AfterBanner = () => {
             exam: 'CGL',  // Static exam
             category: 'UR'  // Static category
           }),
-          
+
         });
         const chslResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users-liveresult`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paper_code: 'CHSL25-ENG-TYP01',    
+          body: JSON.stringify({
+            paper_code: 'CHSL25-ENG-TYP01',
             exam: 'CHSL',  // Static exam
             category: 'UR'  // Static category
           }),
@@ -66,11 +71,12 @@ const AfterBanner = () => {
         const ntpcResponse = await fetch(`${process.env.REACT_APP_API_URL}/api/get-results-users-liveresult`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ paper_code: 'RRB-TYPING-ENG-01', 
+          body: JSON.stringify({
+            paper_code: 'RRB-TYPING-ENG-01',
             exam: 'NTPC',  // Static exam
             category: 'UR'  // Static category
           }),
-          
+
         });
 
         // Parse responses and handle errors
@@ -181,6 +187,7 @@ const AfterBanner = () => {
 
   return (
     <div className="after-banner-container">
+    {loading && <div className="loader"></div>}
       <div className="content-wrapper">
         <div className="test-section">
           <div className="header-section">
@@ -188,14 +195,14 @@ const AfterBanner = () => {
               <h2>Typing Test for All SSC Exams</h2>
             </div>
             <div className="mock-tests">
-              <span 
-                className={`mock-tests-para1 ${selectedExam === 'CHSL' ? 'active' : ''}`} 
+              <span
+                className={`mock-tests-para1 ${selectedExam === 'CHSL' ? 'active' : ''}`}
                 onClick={() => setSelectedExam('CHSL')}
               >
                 SSC CHSL ({totalTests?.totalChslCount})
               </span>
-              <span 
-                className={`mock-tests-para1 ${selectedExam === 'CGL' ? 'active' : ''}`} 
+              <span
+                className={`mock-tests-para1 ${selectedExam === 'CGL' ? 'active' : ''}`}
                 onClick={() => setSelectedExam('CGL')}
               >
                 SSC CGL ({totalTests?.totalCglCount})
@@ -209,23 +216,23 @@ const AfterBanner = () => {
                 <div className="test-list-user">
                   <div className="test-list-user-number">
                     <h5>{test.paper_code}</h5>
-                    <div className="test-list-user-bolt">  
-                      <FaBolt className="icon-bolt" /> 
+                    <div className="test-list-user-bolt">
+                      <FaBolt className="icon-bolt" />
                       <p>49.3k Users</p>
                     </div>
                   </div>
                   <div className="test-list-user-duration">
-                    <div className="AiOutlineQuestionCircle"> 
+                    <div className="AiOutlineQuestionCircle">
                       <HiBolt className="icon-question" />
                       <p>{filteredTests.length} Question(s)</p>
                     </div>
-                    <div className="GoClock"> 
-    <GoClock className="icon-clock" />
-    <p>{selectedExam === 'CGL' ? '15 Mins' : '10 Mins'}</p>  {/* Conditional duration */}
-  </div>
+                    <div className="GoClock">
+                      <GoClock className="icon-clock" />
+                      <p>{selectedExam === 'CGL' ? '15 Mins' : '10 Mins'}</p>  {/* Conditional duration */}
+                    </div>
                   </div>
                 </div>
-                <button 
+                <button
                   className="unlock-button"
                   onClick={() => checkProductAccess(test)}
                 >
@@ -246,10 +253,10 @@ const AfterBanner = () => {
 
         {/* Live Results Section */}
         <div className="results-section">
-        <div className="results-header-live">
-  <h4>Live Typing Results Today</h4>
-  <button className="go-to-result-btn" onClick={handleGoToResult}>Go to Result</button>
-</div>
+          <div className="results-header-live">
+            <h4>Live Typing Results Today</h4>
+            <button className="go-to-result-btn" onClick={handleGoToResult}>Go to Result</button>
+          </div>
 
           <div className="result-item">
             <h5>SSC CHSL Results:</h5>
