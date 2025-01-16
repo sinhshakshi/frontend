@@ -17,6 +17,7 @@ const ExamSelect = () => {
   const [examList, setExamList] = useState([]);
   const [allTypingData, setAllTypingData] = useState([]);
   const [selectedExamCategory, setSelectedExamCategory] = useState(null);
+  const [examType, setExamType] = useState('SSC');
   const [paragraphs, setParagraphs] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [examImages, setExamImages] = useState({}); // To store images from the API
@@ -27,8 +28,6 @@ const ExamSelect = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // console.log("all data", allTypingData);
-  // console.log("selectedExamCategory", selectedExamCategory);
 
   // Fetch exams and their corresponding images
   useEffect(() => {
@@ -64,16 +63,6 @@ const ExamSelect = () => {
       }
     };
 
-    const fetchAllTypingData = async () => {
-      try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing/getalltypingdata`);
-        const data = await response.json();
-        setAllTypingData(data); // Set the fetched data to state
-      } catch (error) {
-        console.error("Error fetching all typing data:", error);
-      }
-    };
-
     const fetchExamImages = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/examImages`);
@@ -91,9 +80,33 @@ const ExamSelect = () => {
     };
 
     fetchExams();
-    fetchAllTypingData();
     fetchExamImages(); // Fetch images
   }, []);
+
+  useEffect(() => {
+    const fetchAllTypingData = async () => {
+      try {
+        setLoading(true)
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/typing/getalltypingdata`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ examType }),
+        });
+  
+        setLoading(false)
+        const data = await response.json();
+        setAllTypingData(data);
+      } catch (error) {
+        setLoading(false)
+        console.error("Error fetching all typing data:", error);
+      }
+    };
+  
+    fetchAllTypingData();
+  }, [selectedExamCategory]);
+  
 
   const fetchParagraphs = (examName) => {
     return fetch(`${process.env.REACT_APP_API_URL}/api/typingParagraphs-exam`, {
@@ -115,6 +128,7 @@ const ExamSelect = () => {
   
 
   const handleExamHover = (examCategory) => {
+    setExamType(examCategory.exam)
     setSelectedExamCategory(examCategory);
   };
 
@@ -248,7 +262,9 @@ const ExamSelect = () => {
               <div className='new-category-select'>
                 <div className="category-list">
                   {examList.map((item, index) => (
-                    <div key={index} className="div-exam-name-image">
+                    <div key={index} className="div-exam-name-image"
+                        onMouseEnter={() => handleExamHover(item)}
+                    >
                       <img
                         width="31"
                         height="31"
@@ -258,7 +274,6 @@ const ExamSelect = () => {
                       />
                       <div 
                         className="category-item" 
-                        onMouseEnter={() => handleExamHover(item)}
                       >
                         {item.exam} Exams
                       </div>
@@ -268,6 +283,7 @@ const ExamSelect = () => {
               </div>
             </div>
             <div className="exam-details">
+            {loading && <div className="loader"></div>}
               <div className="exam-cards">
                 {selectedExamCategory && 
                   Array.from(new Set(selectedExamCategory.examNames)).map((examName, idx) => (
