@@ -152,7 +152,7 @@ const ExamResult = () => {
         <h2 className='myhead'>Today Live Typing Test Results</h2>
 
         {/* Only show the exam content if results are available */}
-        {!isResultsAvailable ? (
+        {isResultsAvailable ? (
           <>
             <nav className="horizontal-nav">
               {Object.keys(examDropdownData).map((exam, index) => (
