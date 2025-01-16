@@ -35,7 +35,7 @@ const ExamResult = () => {
   const checkResultAvailability = () => {
     const currentHour = new Date().getHours();
     const currentMinute = new Date().getMinutes();
-    
+
     // Show results if the time is 11:00 PM or later
     if (currentHour >= 22) {
       setIsResultsAvailable(true);
@@ -51,35 +51,35 @@ const ExamResult = () => {
         if (!response.ok) {
           throw new Error('Failed to fetch exams');
         }
-  
+
         const data = await response.json();
-  
-        const dropdownData = data.reduce((acc, item) => {
-          if (!acc[item.exam]) acc[item.exam] = [];
-          if (!acc[item.exam].some((entry) => entry.examName === item.examName)) {
-            acc[item.exam].push({ examName: item.examName, paper_code: item.paper_code });
-          }
-          return acc;
-        }, {});
-  
-        setExamDropdownData(dropdownData);
+
+        setExamDropdownData(data);
+        // const dropdownData = data.reduce((acc, item) => {
+        //   if (!acc[item.exam]) acc[item.exam] = [];
+        //   if (!acc[item.exam].some((entry) => entry.examName === item.examName)) {
+        //     acc[item.exam].push({ examName: item.examName, paper_code: item.paper_code });
+        //   }
+        //   return acc;
+        // }, {});
+        // setExamDropdownData(dropdownData);
       } catch (error) {
         console.error('Error fetching exams:', error);
       }
     };
-  
+
     fetchExams();
   }, []);
-  
+
   const handleExamNameSelect = (examName) => {
     setSelectedExamName(examName);
-  
+
     const paperCode = staticPaperCodes[examName] || Object.values(examDropdownData)
       .flat()
       .find((item) => item.examName === examName)?.paper_code;
-  
+
     setSelectedPaperCode(paperCode);
-  
+
     if (paperCode) {
       fetchResults(paperCode, examName); // Pass examName along with paper_code
     } else {
@@ -96,9 +96,9 @@ const ExamResult = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ paper_code, exam, category }), // Include the category in the request
       });
-  
+
       if (!response.ok) throw new Error('Failed to fetch results');
-  
+
       const data = await response.json();
       setExamResults(data);
       setFilteredResults(data); // Initialize filtered results
@@ -125,18 +125,18 @@ const ExamResult = () => {
       <TypingHeader />
       <Helmet>
         <title>Exam Results - Testdesk</title>
-        <meta 
-          name="description" 
-          content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." 
+        <meta
+          name="description"
+          content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy."
         />
-        <meta 
-          name="keywords" 
-          content="typing test results, exam results, SSC CGL typing, RRB NTPC typing, typing practice, typing speed results, online typing test" 
+        <meta
+          name="keywords"
+          content="typing test results, exam results, SSC CGL typing, RRB NTPC typing, typing practice, typing speed results, online typing test"
         />
         <meta property="og:title" content="Exam Results - Testdesk" />
-        <meta 
-          property="og:description" 
-          content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy." 
+        <meta
+          property="og:description"
+          content="View the latest live typing test results for exams like SSC CGL, CHSL, RRB, and more. Check your rank, speed, and accuracy."
         />
         <meta property="og:image" content="https://testdesk.in/logo.png?v=1" />
         <meta property="og:url" content="https://testdesk.in/typing-test-dest-results" />
@@ -152,7 +152,7 @@ const ExamResult = () => {
         <h2 className='myhead'>Today Live Typing Test Results</h2>
 
         {/* Only show the exam content if results are available */}
-        {isResultsAvailable ? (
+        {!isResultsAvailable ? (
           <>
             <nav className="horizontal-nav">
               {Object.keys(examDropdownData).map((exam, index) => (
@@ -216,8 +216,8 @@ const ExamResult = () => {
                           {result.status === 'Fail' ? 'Try More!' : result.status}
                         </td>
                         <td className="failure-reason">
-        {result.failureReason || 'Good Job!'} {/* Show failure reason or 'N/A' for Pass */}
-      </td>
+                          {result.failureReason || 'Good Job!'} {/* Show failure reason or 'N/A' for Pass */}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
