@@ -16,7 +16,7 @@ const Profile = () => {
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
-        "Authorization": `Bearer ${cookies.session_id}`, // Add Authorization header
+        "Authorization": `Bearer ${cookies.session_id}`,
       },
     })
       .then((response) => {
@@ -44,7 +44,6 @@ const Profile = () => {
   };
 
   const handleUpdateClick = async () => {
-    // Form validation
     if (!user.full_name || !user.mobile_number) {
       Swal.fire({
         icon: 'error',
@@ -53,15 +52,14 @@ const Profile = () => {
       });
       return;
     }
-  
+
     try {
-      // Update user profile logic here
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/update/${user.email_id}`, {
-        method: 'POST',  // Changed to PUT to match the new API method
+        method: 'POST',
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json",
-          "Authorization": `Bearer ${cookies.session_id}`,  // Using session_id for authorization
+          "Authorization": `Bearer ${cookies.session_id}`,
         },
         body: JSON.stringify({
           full_name: user.full_name,
@@ -70,19 +68,17 @@ const Profile = () => {
           gender: user.gender,
           membership: user.membership,
           exam_shortcut: user.exam_shortcut,
-          // Only include the fields you want to update
         }),
       });
-  
-      const data = await response.json();  // Parse the response as JSON
-  debugger
+
+      const data = await response.json();
       if (data.status === "1") {
         Swal.fire({
           icon: 'success',
           title: 'Profile Updated',
           text: 'Your profile has been updated successfully.',
         });
-        setIsEditing(false);  // Switch back to view-only mode after update
+        setIsEditing(false);
       } else {
         Swal.fire({
           icon: 'error',
@@ -99,8 +95,6 @@ const Profile = () => {
       });
     }
   };
-  
-  
 
   if (loading) {
     return <p>Loading...</p>;
@@ -158,12 +152,16 @@ const Profile = () => {
               <div className="register-test-input-groups">
                 <label>Gender</label>
                 {isEditing ? (
-                  <input
-                    type="text"
+                  <select
                     value={user.gender}
                     onChange={(e) => setUser({ ...user, gender: e.target.value })}
                     className="editable-input"
-                  />
+                  >
+                    <option className="input-status-option" value="">Select Gender</option>
+                    <option className="input-status-option" value="Male">Male</option>
+                    <option className="input-status-option" value="Female">Female</option>
+                    <option className="input-status-option" value="Other">Other</option>
+                  </select>
                 ) : (
                   <p>{user.gender}</p>
                 )}
@@ -187,7 +185,7 @@ const Profile = () => {
             <div className="register-form-grid">
               <div className="register-test-input-groups">
                 <label>Email</label>
-                <p>{user.email_id}</p> {/* Email is always view-only */}
+                <p>{user.email_id}</p>
               </div>
               <div className="register-test-input-groups">
                 <label>Mobile Number</label>
@@ -200,7 +198,7 @@ const Profile = () => {
                     disabled
                   />
                 ) : (
-                  <p>{user.mobile_number}</p>  // Display as text when not in edit mode
+                  <p>{user.mobile_number}</p>
                 )}
               </div>
             </div>
@@ -208,7 +206,7 @@ const Profile = () => {
             <div className="register-form-grid">
               <div className="register-test-input-groups">
                 <label>Status</label>
-                <p>{user.status}</p> {/* Status is always view-only */}
+                <p>{user.status}</p>
               </div>
               <div className="register-test-input-groups">
                 <label>Membership</label>
