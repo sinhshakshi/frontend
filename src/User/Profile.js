@@ -1,23 +1,24 @@
-// components/Profile.js
 import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import { useCookies } from 'react-cookie';
 import pic from '../i/profile.png';
+import Swal from 'sweetalert2';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [isEditing, setIsEditing] = useState(false);
   const userId = 'user-id'; // Replace with the actual user ID
-  const [cookies] = useCookies(['session_id, SSIDCE']);
+  const [cookies] = useCookies(['session_id', 'SSIDCE']);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_URL}/api/users/profile/${cookies.SSIDCE}`, {
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json",
-      "Authorization": `Bearer ${cookies.session_id}`, // Add Authorization header
-    },
-  })
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": `Bearer ${cookies.session_id}`, // Add Authorization header
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -34,6 +35,73 @@ const Profile = () => {
       });
   }, [userId]);
 
+  const handleEditClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancelClick = () => {
+    setIsEditing(false);
+  };
+
+  const handleUpdateClick = async () => {
+    // Form validation
+    if (!user.full_name || !user.mobile_number) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Validation Error',
+        text: 'Please fill in all the required fields.',
+      });
+      return;
+    }
+  
+    try {
+      // Update user profile logic here
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/users/update/${user.email_id}`, {
+        method: 'POST',  // Changed to PUT to match the new API method
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${cookies.session_id}`,  // Using session_id for authorization
+        },
+        body: JSON.stringify({
+          full_name: user.full_name,
+          dob: user.dob,
+          city_name: user.city_name,
+          gender: user.gender,
+          membership: user.membership,
+          exam_shortcut: user.exam_shortcut,
+          // Only include the fields you want to update
+        }),
+      });
+  
+      const data = await response.json();  // Parse the response as JSON
+  debugger
+      if (data.status === "1") {
+        Swal.fire({
+          icon: 'success',
+          title: 'Profile Updated',
+          text: 'Your profile has been updated successfully.',
+        });
+        setIsEditing(false);  // Switch back to view-only mode after update
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Update Error',
+          text: 'There was an error updating your profile. Please try again.',
+        });
+      }
+    } catch (error) {
+      console.error('Error updating user data:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Update Error',
+        text: 'There was an error updating your profile. Please try again.',
+      });
+    }
+  };
+  
+  
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -43,38 +111,144 @@ const Profile = () => {
   }
 
   return (
-    <div className="profile-page">
-    <div className="profile-header">
-      <img src={pic} className="profile-image" />
-      <div className="header-text">
-        <h2>{user.full_name}</h2>
-        <p>Welcome to your profile page</p>
-       
-      </div>
-    </div>
+    <div className="register-container">
+      <div className="register-content">
+        <div className="register-left">
+          <img src={pic} className="profile-image" alt="Profile" />
+          <h1>{user.full_name}</h1>
+          <p>Welcome to your profile page</p>
+          {!isEditing && (
+            <button onClick={handleEditClick} className="play-btn">Edit</button>
+          )}
+        </div>
 
-      <div className="profile-content">
-        <div className="profile-info">
-        <div className="info-section-personal">
-          <h3>Personal Information</h3>
-          <div className="info-section">
-            <p><strong>Full Name:</strong> {user.full_name}</p>
-            <p><strong>Date of Birth:</strong> {new Date(user.dob).toLocaleDateString()}</p>
-            <p><strong>Gender:</strong> {user.gender}</p>
-            <p><strong>City:</strong> {user.city_name}</p>
-          </div> </div>
-          <div className="info-section-personal">
-          <h3>Contact Information</h3>
-          <div className="info-section">
-            <p><strong>Email:</strong> {user.email_id}</p>
-            <p><strong>Mobile Number:</strong> {user.mobile_number}</p>
-            <p><strong>Status:</strong> {user.status}</p>
-            <p><strong>Membership:</strong> {user.membership}</p>
-            <p><strong>Exam Shortcut:</strong> {user.exam_shortcut}</p>
+        <div className="register-right">
+          <div className="register-form">
+            <h2>Personal Information</h2>
+            <div className="register-form-grid">
+              <div className="register-test-input-groups">
+                <label>Full Name</label>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={user.full_name}
+                    onChange={(e) => setUser({ ...user, full_name: e.target.value })}
+                    className="editable-input"
+                  />
+                ) : (
+                  <p>{user.full_name}</p>
+                )}
+              </div>
+              <div className="register-test-input-groups">
+                <label>Date of Birth</label>
+                {isEditing ? (
+                  <input
+                    type="date"
+                    value={new Date(user.dob).toLocaleDateString('en-CA')}
+                    onChange={(e) => setUser({ ...user, dob: e.target.value })}
+                    className="editable-input"
+                  />
+                ) : (
+                  <p>{new Date(user.dob).toLocaleDateString('en-GB')}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="register-form-grid">
+              <div className="register-test-input-groups">
+                <label>Gender</label>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={user.gender}
+                    onChange={(e) => setUser({ ...user, gender: e.target.value })}
+                    className="editable-input"
+                  />
+                ) : (
+                  <p>{user.gender}</p>
+                )}
+              </div>
+              <div className="register-test-input-groups">
+                <label>City</label>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={user.city_name}
+                    onChange={(e) => setUser({ ...user, city_name: e.target.value })}
+                    className="editable-input"
+                  />
+                ) : (
+                  <p>{user.city_name}</p>
+                )}
+              </div>
+            </div>
+
+            <h2>Contact Information</h2>
+            <div className="register-form-grid">
+              <div className="register-test-input-groups">
+                <label>Email</label>
+                <p>{user.email_id}</p> {/* Email is always view-only */}
+              </div>
+              <div className="register-test-input-groups">
+                <label>Mobile Number</label>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={user.mobile_number}
+                    onChange={(e) => setUser({ ...user, mobile_number: e.target.value })}
+                    className="editable-input"
+                    disabled
+                  />
+                ) : (
+                  <p>{user.mobile_number}</p>  // Display as text when not in edit mode
+                )}
+              </div>
+            </div>
+
+            <div className="register-form-grid">
+              <div className="register-test-input-groups">
+                <label>Status</label>
+                <p>{user.status}</p> {/* Status is always view-only */}
+              </div>
+              <div className="register-test-input-groups">
+                <label>Membership</label>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={user.membership}
+                    onChange={(e) => setUser({ ...user, membership: e.target.value })}
+                    className="editable-input"
+                  />
+                ) : (
+                  <p>{user.membership}</p>
+                )}
+              </div>
+            </div>
+
+            <div className="register-form-grid">
+              <div className="register-test-input-groups">
+                <label>Exam Shortcut</label>
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={user.exam_shortcut}
+                    onChange={(e) => setUser({ ...user, exam_shortcut: e.target.value })}
+                    className="editable-input"
+                  />
+                ) : (
+                  <p>{user.exam_shortcut}</p>
+                )}
+              </div>
+            </div>
+
+            {isEditing && (
+              <div className="button-group">
+                <button onClick={handleUpdateClick} className="register-btn update">Update</button>
+                <button onClick={handleCancelClick} className="register-btn cancle">Cancel</button>
+              </div>
+            )}
           </div>
-        </div></div>
-
-      
+        </div>
       </div>
     </div>
   );

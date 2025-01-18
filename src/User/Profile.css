@@ -119,4 +119,21 @@
     color: #4caf50; /* Green */
     font-weight: bold;
   }
-  
+  .register-form p {
+    margin-bottom: 0;
+}
+
+.register-test-input-groups label {
+  margin-bottom: 5px;
+  display: block;
+  font-size: 14px;
+}
+
+.register-test-input-groups {
+  margin-bottom: 25px;
+}
+
+.update, .cancle {
+  width: 20%;
+  margin: 5px;
+}
