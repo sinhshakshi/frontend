@@ -157,7 +157,6 @@ const Profile = () => {
                     onChange={(e) => setUser({ ...user, gender: e.target.value })}
                     className="editable-input"
                   >
-                    <option className="input-status-option" value="">Select Gender</option>
                     <option className="input-status-option" value="Male">Male</option>
                     <option className="input-status-option" value="Female">Female</option>
                     <option className="input-status-option" value="Other">Other</option>
