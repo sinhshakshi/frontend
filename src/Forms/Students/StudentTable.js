@@ -61,7 +61,12 @@ const StudentTable = () => {
     },
     { accessorKey: 'email_id', header: 'Email ID' },
     { accessorKey: 'mobile_number', header: 'Mobile Number' },
-    { accessorKey: 'ts', header: 'Date', Cell: ({ row }) => new Date(row.original.ts).toLocaleDateString() },
+    // { accessorKey: 'ts', header: 'Date', Cell: ({ row }) => new Date(row.original.ts).toLocaleDateString() },
+    {
+      accessorKey: 'dob',
+      header: 'Date of Birth',
+      Cell: ({ row }) => new Date(row.original.dob).toLocaleDateString(),
+    }
   ], [page, pageSize]);
 
   const handleNextPage = () => {
